@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Ekran startowy -->
+    <div v-if="currentScreen === 'start'" class="main-card center">
+      <h2>🍹 Quiz Barmański</h2>
+      <p>Wybierz kategorie pytań:</p>
+
+      <div class="selector">
+        <label><input type="checkbox" v-model="selectedCategories.drinks"> 🍹 Drinki</label>
+        <label><input type="checkbox" v-model="selectedCategories.glasses"> 🥃 Szkło</label>
+        <label><input type="checkbox" v-model="selectedCategories.proportions"> ⚖️ Proporcje</label>
+        <label><input type="checkbox" v-model="selectedCategories.review"> 🔄 Powtórka składników TAK/NIE</label>
+      </div>
+
+      <button class="btn" @click="startQuiz" :disabled="!hasSelectedCategories">
+        Rozpocznij Quiz
+      </button>
+    </div>
+
+    <!-- Ekran quizu -->
+    <div v-if="currentScreen === 'quiz'" class="main-card">
+      <div class="progress-bar">
+        <div class="progress" :style="{ width: progressWidth }"></div>
+      </div>
+
+      <!-- Pytania o drinki/szkło - ze zdjęciem -->
+      <div v-if="currentQuestion.type !== 'proportions' && currentQuestion.type !== 'review'">
+        <img v-if="!imageLoadError" 
+             :src="currentQuestion.image" 
+             alt="Quiz image" 
+             class="img-drink" 
+             @error="imageLoadError = true">
+        <div v-else class="center">📷 Brak zdjęcia</div>
+
+        <h3 class="center">{{ getQuestionTitle() }}</h3>
+
+        <button v-for="(answer, idx) in shuffledAnswers"
+                :key="idx"
+                class="answer-btn"
+                :class="getAnswerClass(idx)"
+                @click="answerQuestion(idx)"
+                :disabled="answerSelected">
+          {{ answer }}
+        </button>
+      </div>
+
+      <!-- Pytania o proporcje -->
+      <div v-else-if="currentQuestion.type === 'proportions'">
+        <h3 class="center">Jakie są proporcje w {{ currentQuestion.correct }}?</h3>
+
+        <div v-for="(recipe, idx) in shuffledAnswers"
+             :key="idx"
+             class="recipe-option"
+             :class="getAnswerClass(idx)"
+             @click="answerQuestion(idx)">
+          <div v-for="ingredient in recipe" :key="ingredient.name" class="ingredient">
+            {{ ingredient.amount }}ml {{ ingredient.name }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Pytania powtórkowe TAK/NIE -->
+      <div v-else-if="currentQuestion.type === 'review'">
+        <div class="center">🍸</div>
+        <h3 class="center">{{ currentQuestion.question }}</h3>
+
+        <div class="yn-wrapper">
+          <button class="answer-btn yn-btn" 
+                  :class="getAnswerClass(0)" 
+                  @click="answerQuestion(0)" 
+                  :disabled="answerSelected">
+            TAK
+          </button>
+          <button class="answer-btn yn-btn" 
+                  :class="getAnswerClass(1)" 
+                  @click="answerQuestion(1)" 
+                  :disabled="answerSelected">
+            NIE
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ekran wyników -->
+    <div v-if="currentScreen === 'result'" class="main-card center">
+      <h2>Twój wynik</h2>
+      <p class="score">{{ score }} / {{ questions.length }}</p>
+      <p class="percentage">{{ Math.round((score/questions.length)*100) }}%</p>
+      <button class="btn" @click="restartQuiz">Zagraj ponownie</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
