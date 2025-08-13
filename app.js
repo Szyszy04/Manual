@@ -190,7 +190,9 @@ createApp({
         let ingredient;
         if (isTrue) {
           // Wybierz składnik z przepisu
-          ingredient = drinkRecipe[Math.floor(Math.random() * drinkRecipe.length)].name;
+          x = Math.floor(Math.random() * drinkRecipe.length)
+          ingredient = drinkRecipe[x].name;
+          ingredientAmount = drinkRecipe[x].amount;
         } else {
           // Wybierz składnik NIE z przepisu
           const ingredientsNotInDrink = allIngredients.filter(ing => 
@@ -199,7 +201,7 @@ createApp({
           ingredient = ingredientsNotInDrink[Math.floor(Math.random() * ingredientsNotInDrink.length)];
         }
 
-        const questionText = `Czy ${ingredient} jest składnikiem drinka ${item}?`;
+        const questionText = `Czy ${ingredientAmount} ${ingredient} jest składnikiem drinka ${item}?`;
 
         return {
           type: 'review',
