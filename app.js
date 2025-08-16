@@ -17,10 +17,10 @@ createApp({
 
     const recipes = {
       "Vodka Sour": [
-        {"name": "Wódka", "amount": 50},
-        {"name": "Sok z cytryny", "amount": 30},
-        {"name": "Syrop cukrowy", "amount": 20},
-        {"name": "Białko jajka", "amount": 20}
+        {"name": "Wódka", "amount": 40},
+        {"name": "Sok z cytryny", "amount": 25},
+        {"name": "Syrop cukrowy", "amount": 15},
+        {"name": "Białko jajka", "amount": 15}
       ],
       "Bloody Mary": [
         {"name": "Wódka", "amount": 50},
