@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz</title>
+  <title>Quiz: Proporcje, Składniki i Wódki</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -15,10 +15,9 @@
       <p>Wybierz kategorie pytań:</p>
 
       <div class="selector">
-        <label><input type="checkbox" v-model="selectedCategories.drinks"> 🍹 Drinki</label>
-        <label><input type="checkbox" v-model="selectedCategories.glasses"> 🥃 Szkło</label>
-        <label><input type="checkbox" v-model="selectedCategories.proportions"> ⚖️ Proporcje</label>
+        <label><input type="checkbox" v-model="selectedCategories.proportions"> ⚖️ Proporcje składników</label>
         <label><input type="checkbox" v-model="selectedCategories.review"> 🔄 Powtórka składników TAK/NIE</label>
+        <label><input type="checkbox" v-model="selectedCategories.vodka"> 🥃 Wódki (cena/surowiec)</label>
       </div>
 
       <button class="btn" @click="startQuiz" :disabled="!hasSelectedCategories">
@@ -32,29 +31,8 @@
         <div class="progress" :style="{ width: progressWidth }"></div>
       </div>
 
-      <!-- Pytania o drinki/szkło - ze zdjęciem -->
-      <div v-if="currentQuestion.type !== 'proportions' && currentQuestion.type !== 'review'">
-        <img v-if="!imageLoadError" 
-             :src="currentQuestion.image" 
-             alt="Quiz image" 
-             class="img-drink" 
-             @error="imageLoadError = true">
-        <div v-else class="center">📷 Brak zdjęcia</div>
-
-        <h3 class="center">{{ getQuestionTitle() }}</h3>
-
-        <button v-for="(answer, idx) in shuffledAnswers"
-                :key="idx"
-                class="answer-btn"
-                :class="getAnswerClass(idx)"
-                @click="answerQuestion(idx)"
-                :disabled="answerSelected">
-          {{ answer }}
-        </button>
-      </div>
-
       <!-- Pytania o proporcje -->
-      <div v-else-if="currentQuestion.type === 'proportions'">
+      <div v-if="currentQuestion.type === 'proportions'">
         <h3 class="center">Jakie są proporcje w {{ currentQuestion.correct }}?</h3>
 
         <div v-for="(recipe, idx) in shuffledAnswers"
@@ -85,6 +63,27 @@
                   @click="answerQuestion(1)" 
                   :disabled="answerSelected">
             NIE
+          </button>
+        </div>
+      </div>
+
+      <!-- Pytania o wódki -->
+      <div v-else-if="currentQuestion.type === 'vodka'">
+        <div class="center">🥃</div>
+        <h3 class="center">{{ currentQuestion.question }}</h3>
+
+        <div class="yn-wrapper">
+          <button class="answer-btn yn-btn" 
+                  :class="getAnswerClass(0)" 
+                  @click="answerQuestion(0)" 
+                  :disabled="answerSelected">
+            {{ currentQuestion.answers[0] }}
+          </button>
+          <button class="answer-btn yn-btn" 
+                  :class="getAnswerClass(1)" 
+                  @click="answerQuestion(1)" 
+                  :disabled="answerSelected">
+            {{ currentQuestion.answers[1] }}
           </button>
         </div>
       </div>
