@@ -2,25 +2,30 @@ const { createApp, ref, computed } = Vue;
 
 createApp({
   setup() {
-    // Dane podstawowe
-    const drinks = [
-      'Bloody Mary', 'Cosmopolitan', 'Vodka Sour', 'Espresso Martini',
-      'Pornstar Martini', 'Golden Cadillac', 'Long Island Iced Tea',
-      'Kyiv Mule', 'Grasshooper'
-    ];
-
-    const glasses = [
-      'Swizzle Glass', 'Collins', 'Old Fashioned', 'Coupette',
-      'Champage Flute', 'Snifter', 'Nick & Nora', 'Double Old Fashioned',
-      'Irish Coffee', 'Copper Mug', 'Mini Coupette'
+    // Dane wódek
+    const vodkas = [
+      { name: "Belvedere", price: "28,00", country: "Polska", ingredient: "Żyto" },
+      { name: "Belvedere Lake Bartężek", price: "39,00", country: "Polska", ingredient: "Żyto" },
+      { name: "Belvedere Organic Infusions Blackberry & Lemongrass", price: "39,00", country: "Polska", ingredient: "Żyto" },
+      { name: "Belvedere Organic Infusions Lemon & Basil", price: "39,00", country: "Polska", ingredient: "Żyto" },
+      { name: "Belvedere Organic Infusions Pear & Ginger", price: "39,00", country: "Polska", ingredient: "Żyto" },
+      { name: "Belvedere Smogóry Forest", price: "39,00", country: "Polska", ingredient: "Żyto" },
+      { name: "Chopin Potato", price: "35,00", country: "Polska", ingredient: "Ziemniaki" },
+      { name: "Grey Goose", price: "28,00", country: "Francja", ingredient: "Pszenica (winter wheat)" },
+      { name: "Młody Ziemniak 2021", price: "28,00 L", country: "Polska", ingredient: "Ziemniaki" },
+      { name: "Ostoya Vodka", price: "19,00", country: "Polska", ingredient: "Pszenica" },
+      { name: "Ostoya Black", price: "21,00", country: "Polska", ingredient: "Pszenica" },
+      { name: "Podole Wielkie Okowita Pszenica", price: "29,00", country: "Polska", ingredient: "Pszenica" },
+      { name: "Podole Wielkie Okowita Żyto", price: "29,00", country: "Polska", ingredient: "Żyto" },
+      { name: "Podole Wielkie Okowita Ziemniak", price: "29,00", country: "Polska", ingredient: "Ziemniaki" }
     ];
 
     const recipes = {
       "Vodka Sour": [
-        {"name": "Wódka", "amount": 40},
-        {"name": "Sok z cytryny", "amount": 25},
-        {"name": "Syrop cukrowy", "amount": 15},
-        {"name": "Białko jajka", "amount": 15}
+        {"name": "Wódka", "amount": 50},
+        {"name": "Sok z cytryny", "amount": 30},
+        {"name": "Syrop cukrowy", "amount": 20},
+        {"name": "Białko jajka", "amount": 20}
       ],
       "Bloody Mary": [
         {"name": "Wódka", "amount": 50},
@@ -76,11 +81,11 @@ createApp({
     // Stan aplikacji
     const currentScreen = ref('start');
     const selectedCategories = ref({
-      drinks: true,
-      glasses: false,
-      proportions: false,
-      review: false
+      proportions: true,
+      review: false,
+      vodka: false
     });
+
     const questions = ref([]);
     const currentQuestionIndex = ref(0);
     const score = ref(0);
@@ -141,33 +146,7 @@ createApp({
     }
 
     function createQuestion(type, item) {
-      if (type === 'drinks') {
-        const wrongAnswers = drinks.filter(d => d !== item)
-                                   .sort(() => 0.5 - Math.random())
-                                   .slice(0, 3);
-        const allAnswers = [item, ...wrongAnswers].sort(() => 0.5 - Math.random());
-
-        return {
-          type: 'drinks',
-          image: `img/wodka_${item.replace(/\s/g, '')}.jpg`,
-          correct: item,
-          answers: allAnswers,
-          correctIndex: allAnswers.indexOf(item)
-        };
-      } else if (type === 'glasses') {
-        const wrongAnswers = glasses.filter(g => g !== item)
-                                   .sort(() => 0.5 - Math.random())
-                                   .slice(0, 3);
-        const allAnswers = [item, ...wrongAnswers].sort(() => 0.5 - Math.random());
-
-        return {
-          type: 'glasses',
-          image: `img/szklo_${item.replace(/[\s&]/g, '')}.jpg`,
-          correct: item,
-          answers: allAnswers,
-          correctIndex: allAnswers.indexOf(item)
-        };
-      } else if (type === 'proportions') {
+      if (type === 'proportions') {
         const correctRecipe = recipes[item];
         const wrongRecipes = [
           generateWrongRecipe(correctRecipe),
@@ -190,9 +169,8 @@ createApp({
         let ingredient;
         if (isTrue) {
           // Wybierz składnik z przepisu
-          x = Math.floor(Math.random() * drinkRecipe.length)
+          const x = Math.floor(Math.random() * drinkRecipe.length);
           ingredient = drinkRecipe[x].name;
-          ingredientAmount = drinkRecipe[x].amount;
         } else {
           // Wybierz składnik NIE z przepisu
           const ingredientsNotInDrink = allIngredients.filter(ing => 
@@ -201,7 +179,7 @@ createApp({
           ingredient = ingredientsNotInDrink[Math.floor(Math.random() * ingredientsNotInDrink.length)];
         }
 
-        const questionText = `Czy ${ingredientAmount} ${ingredient} jest składnikiem drinka ${item}?`;
+        const questionText = `Czy ${ingredient} jest składnikiem drinka ${item}?`;
 
         return {
           type: 'review',
@@ -210,24 +188,40 @@ createApp({
           answers: ['TAK', 'NIE'],
           correctIndex: isTrue ? 0 : 1
         };
+      } else if (type === 'vodka') {
+        if (Math.random() > 0.5) {
+          // PYTANIE O CENĘ
+          const correct = item.price;
+          const wrong = shuffleArray(vodkas.filter(v => v.name !== item.name).map(v => v.price))[0];
+          const options = shuffleArray([correct, wrong]);
+
+          return {
+            type: 'vodka',
+            subType: 'price',
+            question: `Ile kosztuje shota wódki "${item.name}"?`,
+            answers: options.map(price => price + " zł"),
+            correctIndex: options.indexOf(correct)
+          };
+        } else {
+          // PYTANIE O SUROWIEC
+          const correct = item.ingredient;
+          const wrong = shuffleArray(vodkas.filter(v => v.ingredient !== correct).map(v => v.ingredient))[0];
+          const options = shuffleArray([correct, wrong]);
+
+          return {
+            type: 'vodka',
+            subType: 'ingredient',
+            question: `Jaki jest surowiec wódki "${item.name}"?`,
+            answers: options,
+            correctIndex: options.indexOf(correct)
+          };
+        }
       }
     }
 
-    // Logika quizu
+    // Logika quizu 
     function startQuiz() {
       const selectedQuestions = [];
-
-      if (selectedCategories.value.drinks) {
-        drinks.forEach(drink => {
-          selectedQuestions.push(createQuestion('drinks', drink));
-        });
-      }
-
-      if (selectedCategories.value.glasses) {
-        glasses.forEach(glass => {
-          selectedQuestions.push(createQuestion('glasses', glass));
-        });
-      }
 
       if (selectedCategories.value.proportions) {
         Object.keys(recipes).forEach(drink => {
@@ -238,6 +232,12 @@ createApp({
       if (selectedCategories.value.review) {
         Object.keys(recipes).forEach(drink => {
           selectedQuestions.push(createQuestion('review', drink));
+        });
+      }
+
+      if (selectedCategories.value.vodka) {
+        vodkas.forEach(vodka => {
+          selectedQuestions.push(createQuestion('vodka', vodka));
         });
       }
 
@@ -274,15 +274,6 @@ createApp({
       return '';
     }
 
-    function getQuestionTitle() {
-      if (currentQuestion.value.type === 'drinks') {
-        return 'Jaki to drink?';
-      } else if (currentQuestion.value.type === 'glasses') {
-        return 'Jak nazywa się to szkło?';
-      }
-      return '';
-    }
-
     function nextQuestion() {
       if (currentQuestionIndex.value < questions.value.length - 1) {
         currentQuestionIndex.value++;
@@ -312,7 +303,6 @@ createApp({
       imageLoadError,
       answerQuestion,
       getAnswerClass,
-      getQuestionTitle,
       restartQuiz
     };
   }
