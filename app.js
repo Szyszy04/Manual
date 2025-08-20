@@ -2,7 +2,7 @@ const { createApp, ref, computed } = Vue;
 
 createApp({
   setup() {
-    // Dane wódek
+    // Dane
     const vodkas = [
       { name: "Belvedere", price: "28,00", country: "Polska", ingredient: "Żyto" },
       { name: "Belvedere Lake Bartężek", price: "39,00", country: "Polska", ingredient: "Żyto" },
@@ -115,6 +115,18 @@ createApp({
       `${questions.value.length ? ((currentQuestionIndex.value) / questions.value.length) * 100 : 0}%`
     );
 
+    // Wyświetlanie przepisu po odpowiedzi w trybie review
+    const showRecipe = computed(() => {
+      return currentQuestion.value.type === 'review' && answerSelected.value;
+    });
+
+    const currentRecipe = computed(() => {
+      if (currentQuestion.value.type === 'review' && currentQuestion.value.drinkName) {
+        return recipes[currentQuestion.value.drinkName] || [];
+      }
+      return [];
+    });
+
     // Funkcje pomocnicze
     function shuffleArray(array) {
       const shuffled = [...array];
@@ -168,11 +180,9 @@ createApp({
 
         let ingredient;
         if (isTrue) {
-          // Wybierz składnik z przepisu
           const x = Math.floor(Math.random() * drinkRecipe.length);
           ingredient = drinkRecipe[x].name;
         } else {
-          // Wybierz składnik NIE z przepisu
           const ingredientsNotInDrink = allIngredients.filter(ing => 
             !drinkRecipe.some(recipeIng => recipeIng.name === ing)
           );
@@ -185,6 +195,7 @@ createApp({
           type: 'review',
           correct: isTrue,
           question: questionText,
+          drinkName: item,
           answers: ['TAK', 'NIE'],
           correctIndex: isTrue ? 0 : 1
         };
@@ -219,7 +230,7 @@ createApp({
       }
     }
 
-    // Logika quizu 
+    // Logika quizu
     function startQuiz() {
       const selectedQuestions = [];
 
@@ -303,7 +314,10 @@ createApp({
       imageLoadError,
       answerQuestion,
       getAnswerClass,
-      restartQuiz
+      restartQuiz,
+      showRecipe,
+      currentRecipe,
+      recipes
     };
   }
 }).mount('#app');
