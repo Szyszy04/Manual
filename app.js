@@ -2,7 +2,7 @@ const { createApp, ref, computed } = Vue;
 
 createApp({
   setup() {
-    // Dane
+    // Dane wódek
     const vodkas = [
       { name: "Belvedere", price: "28,00", country: "Polska", ingredient: "Żyto" },
       { name: "Belvedere Lake Bartężek", price: "39,00", country: "Polska", ingredient: "Żyto" },
@@ -18,6 +18,40 @@ createApp({
       { name: "Podole Wielkie Okowita Pszenica", price: "29,00", country: "Polska", ingredient: "Pszenica" },
       { name: "Podole Wielkie Okowita Żyto", price: "29,00", country: "Polska", ingredient: "Żyto" },
       { name: "Podole Wielkie Okowita Ziemniak", price: "29,00", country: "Polska", ingredient: "Ziemniaki" }
+    ];
+
+    // Dane ginów
+    const gins = [
+      { 
+        name: "Bombay Sapphire", 
+        location: "Wielka Brytania, Laverstoke Mill", 
+        taste: "cytrusowy, świeży profil z wyraźnie korzennym finiszem" 
+      },
+      { 
+        name: "Gin Mare", 
+        location: "Hiszpania, niedaleko Barcelony", 
+        taste: "ziołowy, wytrawny i oliwkowy profil smakowy" 
+      },
+      { 
+        name: "Tanqueray No. 10", 
+        location: "Londyn, destyleria Charles Tanqueray", 
+        taste: "niezwykle świeży i wytrawny, idealny do klasycznego Martini" 
+      },
+      { 
+        name: "Oxley", 
+        location: "Anglia", 
+        taste: "intensywnie cytrusowy i lekko ziołowy charakter, bardzo czysty smak" 
+      },
+      { 
+        name: "Monkey 47", 
+        location: "Niemcy, Schwarzwald", 
+        taste: "wyjątkowo aromatyczny i złożony - jałowiec, cytrusy, leśne zioła, kwiaty i przyprawy" 
+      },
+      { 
+        name: "Hendrick's", 
+        location: "Szkocja", 
+        taste: "kwiatowo-warzywne nuty" 
+      }
     ];
 
     const recipes = {
@@ -78,12 +112,13 @@ createApp({
       ]
     };
 
-    // Stan aplikacji
+    // Stan aplikacji - DODANO gins
     const currentScreen = ref('start');
     const selectedCategories = ref({
       proportions: true,
       review: false,
-      vodka: false
+      vodka: false,
+      gins: false
     });
 
     const questions = ref([]);
@@ -227,10 +262,39 @@ createApp({
             correctIndex: options.indexOf(correct)
           };
         }
+      } else if (type === 'gins') {
+        // NOWE: Pytania o giny - losowo o profil smakowy lub lokalizację
+        if (Math.random() > 0.5) {
+          // PYTANIE O PROFIL SMAKOWY
+          const correct = item.name;
+          const wrongGins = shuffleArray(gins.filter(g => g.name !== correct).map(g => g.name)).slice(0, 3);
+          const allAnswers = shuffleArray([correct, ...wrongGins]);
+
+          return {
+            type: 'gins',
+            subType: 'taste',
+            question: `Który gin ma ${item.taste}?`,
+            answers: allAnswers,
+            correctIndex: allAnswers.indexOf(correct)
+          };
+        } else {
+          // PYTANIE O LOKALIZACJĘ
+          const correct = item.name;
+          const wrongGins = shuffleArray(gins.filter(g => g.name !== correct).map(g => g.name)).slice(0, 3);
+          const allAnswers = shuffleArray([correct, ...wrongGins]);
+
+          return {
+            type: 'gins',
+            subType: 'location',
+            question: `Który gin pochodzi z ${item.location}?`,
+            answers: allAnswers,
+            correctIndex: allAnswers.indexOf(correct)
+          };
+        }
       }
     }
 
-    // Logika quizu
+    // Logika quizu - DODANO gins
     function startQuiz() {
       const selectedQuestions = [];
 
@@ -249,6 +313,12 @@ createApp({
       if (selectedCategories.value.vodka) {
         vodkas.forEach(vodka => {
           selectedQuestions.push(createQuestion('vodka', vodka));
+        });
+      }
+
+      if (selectedCategories.value.gins) {
+        gins.forEach(gin => {
+          selectedQuestions.push(createQuestion('gins', gin));
         });
       }
 
