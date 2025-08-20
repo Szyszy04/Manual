@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz: Proporcje, Składniki i Wódki</title>
+  <title>Quiz: Proporcje, Składniki, Wódki i Giny</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -18,6 +18,7 @@
         <label><input type="checkbox" v-model="selectedCategories.proportions"> ⚖️ Proporcje składników</label>
         <label><input type="checkbox" v-model="selectedCategories.review"> 🔄 Powtórka składników TAK/NIE</label>
         <label><input type="checkbox" v-model="selectedCategories.vodka"> 🥃 Wódki (cena/surowiec)</label>
+        <label><input type="checkbox" v-model="selectedCategories.gins"> 🍸 Giny (profil smakowy/pochodzenie)</label>
       </div>
 
       <button class="btn" @click="startQuiz" :disabled="!hasSelectedCategories">
@@ -96,6 +97,21 @@
             {{ currentQuestion.answers[1] }}
           </button>
         </div>
+      </div>
+
+      <!-- NOWE: Pytania o giny -->
+      <div v-else-if="currentQuestion.type === 'gins'">
+        <div class="center">🍸</div>
+        <h3 class="center">{{ currentQuestion.question }}</h3>
+
+        <button v-for="(answer, idx) in shuffledAnswers"
+                :key="idx"
+                class="answer-btn"
+                :class="getAnswerClass(idx)"
+                @click="answerQuestion(idx)"
+                :disabled="answerSelected">
+          {{ answer }}
+        </button>
       </div>
     </div>
 
