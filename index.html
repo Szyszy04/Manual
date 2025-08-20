@@ -65,6 +65,16 @@
             NIE
           </button>
         </div>
+
+        <!-- Wyświetlanie przepisu po odpowiedzi -->
+        <div v-if="showRecipe && currentRecipe.length > 0" class="recipe-review-box">
+          <h4>📋 Przepis na {{ currentQuestion.drinkName }}:</h4>
+          <ul>
+            <li v-for="skladnik in currentRecipe" :key="skladnik.name">
+              <strong>{{ skladnik.amount }}ml</strong> {{ skladnik.name }}
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Pytania o wódki -->
