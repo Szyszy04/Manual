@@ -56,10 +56,10 @@ createApp({
 
     const recipes = {
       "Vodka Sour": [
-        {"name": "Wódka", "amount": 50},
-        {"name": "Sok z cytryny", "amount": 30},
-        {"name": "Syrop cukrowy", "amount": 20},
-        {"name": "Białko jajka", "amount": 20}
+        {"name": "Wódka", "amount": 40},
+        {"name": "Sok z cytryny", "amount": 25},
+        {"name": "Syrop cukrowy", "amount": 12},
+        {"name": "Abumina", "amount": 20}
       ],
       "Bloody Mary": [
         {"name": "Wódka", "amount": 50},
@@ -75,19 +75,19 @@ createApp({
       ],
       "Espresso Martini": [
         {"name": "Wódka", "amount": 40},
-        {"name": "Galliano Ristretto", "amount": 20},
+        {"name": "Galliano Espresso", "amount": 20},
         {"name": "Syrop waniliowy", "amount": 10}
       ],
       "Golden Cadillac": [
         {"name": "Creme De Cacao", "amount": 30},
         {"name": "Galliano Autentico", "amount": 30},
-        {"name": "Half & Half", "amount": 30}
+        {"name": "Half Half", "amount": 30}
       ],
       "Grasshooper": [
         {"name": "Creme De Cacao", "amount": 20},
         {"name": "Creme De Menthe", "amount": 20},
         {"name": "Wódka", "amount": 20},
-        {"name": "Half & Half", "amount": 30}
+        {"name": "Half Half", "amount": 30}
       ],
       "Long Island Iced Tea": [
         {"name": "Gin", "amount": 20},
@@ -100,7 +100,7 @@ createApp({
         {"name": "Coca Cola", "amount": 40}
       ],
       "Pornstar Martini": [
-        {"name": "Wódka waniliowa", "amount": 40},
+        {"name": "Wódka", "amount": 40},
         {"name": "Syrop waniliowy", "amount": 20},
         {"name": "Sok z limonki", "amount": 20},
         {"name": "Przecier z marakui", "amount": 20}
@@ -108,11 +108,12 @@ createApp({
       "Kyiv Mule": [
         {"name": "Wódka", "amount": 40},
         {"name": "Sok z limonki", "amount": 15},
-        {"name": "Syrop cukrowy", "amount": 10}
+        {"name": "Syrop cukrowy", "amount": 10},
+        {"name": "Thomas Henry Spicy Ginger", "amount": 100}
       ]
     };
 
-    // Stan aplikacji - DODANO gins
+    // Stan aplikacji
     const currentScreen = ref('start');
     const selectedCategories = ref({
       proportions: true,
