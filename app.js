@@ -58,7 +58,7 @@ createApp({
       "Vodka Sour": [
         {"name": "Wódka", "amount": 40},
         {"name": "Sok z cytryny", "amount": 25},
-        {"name": "Syrop cukrowy", "amount": 12},
+        {"name": "Syrop cukrowy", "amount": 15},
         {"name": "Abumina", "amount": 20}
       ],
       "Bloody Mary": [
@@ -70,7 +70,7 @@ createApp({
       "Cosmopolitan": [
         {"name": "Wódka", "amount": 30},
         {"name": "Aperol", "amount": 10},
-        {"name": "Kordiał żurawinowy", "amount": 30},
+        {"name": "Kordiał z żurawiny i róży", "amount": 30},
         {"name": "Esencja trawy cytrynowej", "amount": 10}
       ],
       "Espresso Martini": [
