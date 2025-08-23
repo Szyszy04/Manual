@@ -20,8 +20,8 @@ createApp({
       { name: "Podole Wielkie Okowita Ziemniak", price: "29,00", country: "Polska", ingredient: "Ziemniaki" }
     ];
 
-    // Dane ginów
-    const gins = [
+    // Dane alkocholi
+    const spirits = [
       { 
         name: "Bombay Sapphire", 
         location: "Wielka Brytania, Laverstoke Mill", 
@@ -51,6 +51,26 @@ createApp({
         name: "Hendrick's", 
         location: "Szkocja", 
         taste: "kwiatowo-warzywne nuty" 
+      },
+      { 
+        name: "Patrón Silver", 
+        location: "Meksyk", 
+        taste: "świeży aromat cytrusów, wyraźna agawa, nuty ziołowe" 
+      },
+      { 
+        name: "Patrón Reposado", 
+        location: "Meksyk", 
+        taste: "aromat delikatnej agawy, dąb, wanilia; smak gładka agawa, miód, cytrusy, nuty owocowe i drewna" 
+      },
+      { 
+        name: "Patrón Añejo", 
+        location: "Meksyk", 
+        taste: "aromat dębu, wanilii, rodzynek; smak dominujące nuty dębowe, wanilia, miód, rodzynki" 
+      },
+      { 
+        name: "Angel’s Envy", 
+        location: "Louisville, w stanie Kentucky", 
+        taste: "aromat wanilii, rodzynek, syropu klonowego, prażonych orzechów; smak wanilia, dojrzałe owoce, gorzka czekolada, karmel" 
       }
     ];
 
@@ -113,13 +133,14 @@ createApp({
       ]
     };
 
-    // Stan aplikacji
+    // Stan aplikacji - ZMIENIONO: gins → spirits
     const currentScreen = ref('start');
     const selectedCategories = ref({
       proportions: true,
       review: false,
       vodka: false,
-      gins: false
+      spirits: false, // ZMIENIONO: gins → spirits
+      builder: false
     });
 
     const questions = ref([]);
@@ -128,6 +149,13 @@ createApp({
     const answerSelected = ref(false);
     const selectedAnswer = ref(null);
     const imageLoadError = ref(false);
+
+    // Stan dla trybu builder
+    const builderStep = ref(1);
+    const selectedIngredients = ref(new Set());
+    const ingredientAmounts = ref({});
+    const allIngredientsList = ref([]);
+    const showBuilderRecipe = ref(false);
 
     // Computed properties
     const hasSelectedCategories = computed(() => 
@@ -163,6 +191,23 @@ createApp({
       return [];
     });
 
+    // Computed dla trybu builder
+    const selectedIngredientsCount = computed(() => selectedIngredients.value.size);
+
+    const correctIngredients = computed(() => {
+      if (currentQuestion.value.type === 'builder') {
+        return new Set(recipes[currentQuestion.value.drinkName].map(ing => ing.name));
+      }
+      return new Set();
+    });
+
+    const hasCorrectIngredients = computed(() => {
+      const selected = selectedIngredients.value;
+      const correct = correctIngredients.value;
+      return selected.size === correct.size && 
+             Array.from(selected).every(ing => correct.has(ing));
+    });
+
     // Funkcje pomocnicze
     function shuffleArray(array) {
       const shuffled = [...array];
@@ -191,6 +236,83 @@ createApp({
         });
       });
       return Array.from(allIngredients);
+    }
+
+    // Funkcje dla trybu builder
+    function createBuilderQuestion() {
+      const drinkNames = Object.keys(recipes);
+      const randomDrink = drinkNames[Math.floor(Math.random() * drinkNames.length)];
+      const allIngredients = shuffleArray(getAllIngredients());
+
+      return {
+        type: 'builder',
+        drinkName: randomDrink,
+        allIngredients: allIngredients,
+        correctRecipe: recipes[randomDrink]
+      };
+    }
+
+    function toggleIngredient(ingredient) {
+      if (selectedIngredients.value.has(ingredient)) {
+        selectedIngredients.value.delete(ingredient);
+      } else {
+        selectedIngredients.value.add(ingredient);
+      }
+      selectedIngredients.value = new Set(selectedIngredients.value);
+    }
+
+    function checkIngredients() {
+      if (hasCorrectIngredients.value) {
+        builderStep.value = 2;
+        ingredientAmounts.value = {};
+        Array.from(selectedIngredients.value).forEach(ing => {
+          ingredientAmounts.value[ing] = '';
+        });
+      } else {
+        showBuilderRecipe.value = true;
+        setTimeout(() => {
+          nextBuilderQuestion();
+        }, 3000);
+      }
+    }
+
+    function checkProportions() {
+      const correct = recipes[currentQuestion.value.drinkName];
+      let isCorrect = true;
+
+      for (let ingredient of correct) {
+        const userAmount = parseInt(ingredientAmounts.value[ingredient.name]) || 0;
+        if (Math.abs(userAmount - ingredient.amount) > 5) {
+          isCorrect = false;
+          break;
+        }
+      }
+
+      if (isCorrect) {
+        score.value++;
+        nextBuilderQuestion();
+      } else {
+        showBuilderRecipe.value = true;
+        setTimeout(() => {
+          nextBuilderQuestion();
+        }, 3000);
+      }
+    }
+
+    function nextBuilderQuestion() {
+      builderStep.value = 1;
+      selectedIngredients.value = new Set();
+      ingredientAmounts.value = {};
+      showBuilderRecipe.value = false;
+
+      questions.value[currentQuestionIndex.value] = createBuilderQuestion();
+
+      if (currentQuestionIndex.value < questions.value.length - 1) {
+        currentQuestionIndex.value++;
+        resetState();
+      } else {
+        currentScreen.value = 'result';
+      }
     }
 
     function createQuestion(type, item) {
@@ -237,7 +359,6 @@ createApp({
         };
       } else if (type === 'vodka') {
         if (Math.random() > 0.5) {
-          // PYTANIE O CENĘ
           const correct = item.price;
           const wrong = shuffleArray(vodkas.filter(v => v.name !== item.name).map(v => v.price))[0];
           const options = shuffleArray([correct, wrong]);
@@ -250,7 +371,6 @@ createApp({
             correctIndex: options.indexOf(correct)
           };
         } else {
-          // PYTANIE O SUROWIEC
           const correct = item.ingredient;
           const wrong = shuffleArray(vodkas.filter(v => v.ingredient !== correct).map(v => v.ingredient))[0];
           const options = shuffleArray([correct, wrong]);
@@ -263,39 +383,38 @@ createApp({
             correctIndex: options.indexOf(correct)
           };
         }
-      } else if (type === 'gins') {
-        // NOWE: Pytania o giny - losowo o profil smakowy lub lokalizację
+      } else if (type === 'spirits') { // ZMIENIONO: gins → spirits
         if (Math.random() > 0.5) {
-          // PYTANIE O PROFIL SMAKOWY
           const correct = item.name;
-          const wrongGins = shuffleArray(gins.filter(g => g.name !== correct).map(g => g.name)).slice(0, 3);
-          const allAnswers = shuffleArray([correct, ...wrongGins]);
+          const wrongSpirits = shuffleArray(spirits.filter(s => s.name !== correct).map(s => s.name)).slice(0, 3);
+          const allAnswers = shuffleArray([correct, ...wrongSpirits]);
 
           return {
-            type: 'gins',
+            type: 'spirits',
             subType: 'taste',
-            question: `Który gin ma ${item.taste}?`,
+            question: `Który alkohol ma ${item.taste}?`, // ZMIENIONO: gin → alkohol
             answers: allAnswers,
             correctIndex: allAnswers.indexOf(correct)
           };
         } else {
-          // PYTANIE O LOKALIZACJĘ
           const correct = item.name;
-          const wrongGins = shuffleArray(gins.filter(g => g.name !== correct).map(g => g.name)).slice(0, 3);
-          const allAnswers = shuffleArray([correct, ...wrongGins]);
+          const wrongSpirits = shuffleArray(spirits.filter(s => s.name !== correct).map(s => s.name)).slice(0, 3);
+          const allAnswers = shuffleArray([correct, ...wrongSpirits]);
 
           return {
-            type: 'gins',
+            type: 'spirits',
             subType: 'location',
-            question: `Który gin pochodzi z ${item.location}?`,
+            question: `Który alkohol pochodzi z ${item.location}?`, // ZMIENIONO: gin → alkohol
             answers: allAnswers,
             correctIndex: allAnswers.indexOf(correct)
           };
         }
+      } else if (type === 'builder') {
+        return createBuilderQuestion();
       }
     }
 
-    // Logika quizu - DODANO gins
+    // Logika quizu - ZMIENIONO: gins → spirits
     function startQuiz() {
       const selectedQuestions = [];
 
@@ -317,16 +436,23 @@ createApp({
         });
       }
 
-      if (selectedCategories.value.gins) {
-        gins.forEach(gin => {
-          selectedQuestions.push(createQuestion('gins', gin));
+      if (selectedCategories.value.spirits) { // ZMIENIONO: gins → spirits
+        spirits.forEach(spirit => { // ZMIENONO: gin → spirit
+          selectedQuestions.push(createQuestion('spirits', spirit));
         });
+      }
+
+      if (selectedCategories.value.builder) {
+        for (let i = 0; i < 5; i++) {
+          selectedQuestions.push(createQuestion('builder'));
+        }
       }
 
       questions.value = shuffleArray(selectedQuestions);
       currentQuestionIndex.value = 0;
       score.value = 0;
       resetState();
+      resetBuilderState();
       currentScreen.value = 'quiz';
     }
 
@@ -334,6 +460,13 @@ createApp({
       answerSelected.value = false;
       selectedAnswer.value = null;
       imageLoadError.value = false;
+    }
+
+    function resetBuilderState() {
+      builderStep.value = 1;
+      selectedIngredients.value = new Set();
+      ingredientAmounts.value = {};
+      showBuilderRecipe.value = false;
     }
 
     function answerQuestion(idx) {
@@ -360,6 +493,7 @@ createApp({
       if (currentQuestionIndex.value < questions.value.length - 1) {
         currentQuestionIndex.value++;
         resetState();
+        resetBuilderState();
       } else {
         currentScreen.value = 'result';
       }
@@ -367,6 +501,7 @@ createApp({
 
     function restartQuiz() {
       currentScreen.value = 'start';
+      resetBuilderState();
     }
 
     return {
@@ -388,7 +523,16 @@ createApp({
       restartQuiz,
       showRecipe,
       currentRecipe,
-      recipes
+      recipes,
+      // Builder functions
+      builderStep,
+      selectedIngredients,
+      ingredientAmounts,
+      selectedIngredientsCount,
+      showBuilderRecipe,
+      toggleIngredient,
+      checkIngredients,
+      checkProportions
     };
   }
 }).mount('#app');
