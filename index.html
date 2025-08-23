@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz: Proporcje, Składniki, Wódki i Giny</title>
+  <title>Quiz: Proporcje, Składniki, Wódki, Alkochole i Konstruktor</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -18,7 +18,8 @@
         <label><input type="checkbox" v-model="selectedCategories.proportions"> ⚖️ Proporcje składników</label>
         <label><input type="checkbox" v-model="selectedCategories.review"> 🔄 Powtórka składników TAK/NIE</label>
         <label><input type="checkbox" v-model="selectedCategories.vodka"> 🥃 Wódki (cena/surowiec)</label>
-        <label><input type="checkbox" v-model="selectedCategories.gins"> 🍸 Giny (profil smakowy/pochodzenie)</label>
+        <label><input type="checkbox" v-model="selectedCategories.spirits"> 🥂 Alkochole (profil smakowy/pochodzenie)</label>
+        <label><input type="checkbox" v-model="selectedCategories.builder"> 🔧 Konstruktor drinka (buduj przepis)</label>
       </div>
 
       <button class="btn" @click="startQuiz" :disabled="!hasSelectedCategories">
@@ -99,9 +100,9 @@
         </div>
       </div>
 
-      <!-- NOWE: Pytania o giny -->
-      <div v-else-if="currentQuestion.type === 'gins'">
-        <div class="center">🍸</div>
+      <!-- Pytania o alkochole (poprzednio giny) -->
+      <div v-else-if="currentQuestion.type === 'spirits'">
+        <div class="center">🥂</div>
         <h3 class="center">{{ currentQuestion.question }}</h3>
 
         <button v-for="(answer, idx) in shuffledAnswers"
@@ -112,6 +113,66 @@
                 :disabled="answerSelected">
           {{ answer }}
         </button>
+      </div>
+
+      <!-- Konstruktor drinka -->
+      <div v-else-if="currentQuestion.type === 'builder'">
+        <div class="center">🔧</div>
+        <h3 class="center">Zbuduj {{ currentQuestion.drinkName }}</h3>
+
+        <!-- ETAP 1: Wybór składników -->
+        <div v-if="builderStep === 1">
+          <p class="builder-instruction">Wybierz składniki dla tego drinka:</p>
+          <div class="builder-ingredients">
+            <label v-for="ingredient in currentQuestion.allIngredients" 
+                   :key="ingredient" 
+                   class="ingredient-checkbox">
+              <input type="checkbox" 
+                     :checked="selectedIngredients.has(ingredient)"
+                     @change="toggleIngredient(ingredient)">
+              <span>{{ ingredient }}</span>
+            </label>
+          </div>
+          <div class="builder-actions">
+            <p class="selected-count">Wybrano: {{ selectedIngredientsCount }}</p>
+            <button class="btn" @click="checkIngredients" :disabled="selectedIngredientsCount === 0">
+              Zatwierdź składniki
+            </button>
+          </div>
+        </div>
+
+        <!-- ETAP 2: Wpisywanie proporcji -->
+        <div v-if="builderStep === 2">
+          <p class="builder-instruction">Wpisz proporcje dla wybranych składników:</p>
+          <div class="builder-proportions">
+            <div v-for="ingredient in Array.from(selectedIngredients)" 
+                 :key="ingredient" 
+                 class="proportion-input">
+              <label>{{ ingredient }}:</label>
+              <input type="number" 
+                     v-model="ingredientAmounts[ingredient]" 
+                     placeholder="ml"
+                     min="1"
+                     max="200">
+              <span>ml</span>
+            </div>
+          </div>
+          <div class="builder-actions">
+            <button class="btn" @click="checkProportions">
+              Zatwierdź proporcje
+            </button>
+          </div>
+        </div>
+
+        <!-- Wyświetlanie przepisu po błędnej odpowiedzi -->
+        <div v-if="showBuilderRecipe" class="recipe-review-box">
+          <h4>📋 Poprawny przepis na {{ currentQuestion.drinkName }}:</h4>
+          <ul>
+            <li v-for="skladnik in currentQuestion.correctRecipe" :key="skladnik.name">
+              <strong>{{ skladnik.amount }}ml</strong> {{ skladnik.name }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
