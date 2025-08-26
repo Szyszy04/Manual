@@ -20,7 +20,7 @@ createApp({
       { name: "Podole Wielkie Okowita Ziemniak", price: "29,00", country: "Polska", ingredient: "Ziemniaki" }
     ];
 
-    // Dane alkocholi
+    // Dane alkocholi 
     const spirits = [
       { 
         name: "Bombay Sapphire", 
@@ -51,28 +51,118 @@ createApp({
         name: "Hendrick's", 
         location: "Szkocja", 
         taste: "kwiatowo-warzywne nuty" 
-      },
-      { 
-        name: "Patrón Silver", 
-        location: "Meksyk", 
-        taste: "świeży aromat cytrusów, wyraźna agawa, nuty ziołowe" 
-      },
-      { 
-        name: "Patrón Reposado", 
-        location: "Meksyk", 
-        taste: "aromat delikatnej agawy, dąb, wanilia; smak gładka agawa, miód, cytrusy, nuty owocowe i drewna" 
-      },
-      { 
-        name: "Patrón Añejo", 
-        location: "Meksyk", 
-        taste: "aromat dębu, wanilii, rodzynek; smak dominujące nuty dębowe, wanilia, miód, rodzynki" 
-      },
-      { 
-        name: "Angel’s Envy", 
-        location: "Louisville, w stanie Kentucky", 
-        taste: "aromat wanilii, rodzynek, syropu klonowego, prażonych orzechów; smak wanilia, dojrzałe owoce, gorzka czekolada, karmel" 
       }
     ];
+
+    // Biblioteka informacji o alkocholach
+    const alcoholLibrary = {
+      "Tequila": [
+        {
+          name: "Patrón Silver",
+          description: "Krystalicznie czysta tequila premium o łagodnym smaku z delikatną nutą cytrusów. To prawdziwe 'płynne srebro', które doskonale oddaje czysty smak agawy. Każda butelka jest ręcznie numerowana i podpisana, co gwarantuje jej wyjątkowość. Idealnie sprawdzi się zarówno do degustacji solo, jak i jako fundament dla koktajli Margarita."
+        },
+        {
+          name: "Patrón Reposado",
+          description: "Leżakuje średnio 6 miesięcy w dębowych beczkach, łącząc świeżość Silver z subtelną nutką dębu. Oferuje idealnie zbalansowany smak agawy z nutkami cytrusów i miodu. To doskonały kompromis między młodością a dojrzałością."
+        },
+        {
+          name: "Patrón Añejo",
+          description: "Minimum 12 miesięcy dojrzewania w beczkach z białego dębu z Francji, Węgier i Ameryki daje jej bogaty smak z nutami wanilii, miodu, rodzynek i delikatną nutką melona. Każda butelka jest starannie wykonana i numerowana ręcznie. To tequila dla prawdziwych koneserów."
+        }
+      ],
+      "Amerykańskie Whiskey": [
+        {
+          name: "Angel's Envy",
+          description: "Nazwa 'Angel's Envy' niesie ze sobą legendę 5% alkoholu, który 'anioły piją' podczas procesu starzenia, znane jako 'Angel's Share'. Unikalny bourbon wykończony w beczkach po porto, co nadaje mu charakterystyczną słodycz i owocowe nuty."
+        },
+        {
+          name: "Jim Beam Black",
+          description: "7-letnie dojrzewanie w spalanych beczkach dębowych daje mu gładkość wzbogaconą nutami słodkiego karmelu, wanilii i charakterystycznego dla bourbonu palonego dębu. W aromacie dominują wanilia, karmel i pomarańcza, a w smaku słodkie, zrównoważone tony z korzennymi nutami."
+        },
+        {
+          name: "Jim Beam Rye",
+          description: "Charakterystyczna pikantność żyta nadaje mu więcej charakteru i przypraw w porównaniu do klasycznego bourbona."
+        },
+        {
+          name: "Maker's Mark",
+          description: "Słynny z używania 16% miękkiej czerwonej pszenicy ozimej zamiast tradycyjnego żyta, co nadaje mu wyjątkową słodycz. Charakterystyczna czerwona pieczęć woskowa to dzieło Margie Samuels, współzałożycielki destylarni. W smaku królują wanilia z krówką i delikatna dymna nuta."
+        },
+        {
+          name: "Maker's Mark 46",
+          description: "Ulepszona wersja z dodatkowymi francuskimi dębowymi klepkami, które dodają złożoności i głębi smaku."
+        }
+      ],
+      "Szkockie Single Malty": [
+        {
+          name: "Aberfeldy 12",
+          description: "Z regionu Highlands. Aromat bogaty i pełny z nutami wanilii, jęczmiennego słodu, rodzynek, karmelu, skórki cytrynowej, miodu i ananasa. Smak świeży i zbalansowany z wanilią, miodem, cytrusami i zielonymi jabłkami."
+        },
+        {
+          name: "Aberfeldy 16",
+          description: "Głębszy, bardziej złożony smak z dodatkiem nut czekolady, przypraw i czerwonych owoców. W zapachu miód, toffi i cytrusy z pikantną nutką goździków. Zdobyła złote medale na Scotch Whisky Masters."
+        },
+        {
+          name: "Craigellachie 13",
+          description: "Speyside o unikalnym charakterze. Aromat owocowy z silną nutą słodową, jabłka, gruszki, morele, wanilia, miód, cynamon i delikatne tony mineralne. W smaku słodki i owocowy z delikatnie oleistą teksturą. Finisz średnio długi z nutami dębu i subtelnym podmuchem torfowego dymu."
+        },
+        {
+          name: "Royal Brackla 12",
+          description: "O eleganckim profilu Highland. Finiszowana w beczkach po sherry oloroso. Subtelna w smaku, z wyczuwalnymi nutami dojrzałych brzoskwiń i prażonych migdałów."
+        },
+        {
+          name: "Deveron 12",
+          description: "Dawniej Glen Deveron, zmienił nazwę w 2015 roku. Przyjemny zapach charakteryzujący się mieszanką jabłek w toffee, imbiru i delikatnym aromatem przypraw korzennych. W smaku świeżo pieczona szarlotka, kremowy karmel i wyraźny akcent słodu."
+        },
+        {
+          name: "Aultmore 12",
+          description: "To klasyczna whisky z regionu Speyside. Aromatyczna, elegancka i nieskomplikowana. Aromat: owoce z sadu, miód, lawenda."
+        }
+      ],
+      "Rumy": [
+        {
+          name: "Bacardi Carta Blanca",
+          description: "Klasyczny biały rum, pierwszy biały rum specjalnie przeznaczony do koktajli, fundament niezliczonych koktajli karaibskich."
+        },
+        {
+          name: "Bacardi Reserva Ocho",
+          description: "8-letnie dojrzewanie w dębowych beczkach nadaje mu głęboki, mahoniowo-złocisty kolor. Aromat pełen suszonych śliwek, moreli, fig, wanilii i karmelu z akcentami przypraw. Smak aksamitny z nutami suszonych owoców, karmelizowanego banana i syropu klonowego. To rum który był przez 136 lat produkowany wyłącznie dla rodziny Bacardi."
+        },
+        {
+          name: "Banks 5",
+          description: "Blend rumów z pięciu różnych krajów karaibskich, każdy wnosi swój unikalny charakter. Można wyczuć w nim nuty melasy, zielonej herbaty, cytrusów, pieprzu, cynamonu, miodu, karmelu i drewna dębowego."
+        },
+        {
+          name: "Santa Teresa 1796",
+          description: "Wenezuelski rum dojrzewający metodą solera w beczkach po bourbonie i koniaku. Od 4 do 35 lat dojrzewania. Aromat słodki i owocowy z nutami miodu, karmelu, toffi, gorzkiej czekolady."
+        }
+      ],
+      "Giny": [
+        {
+          name: "Bombay Sapphire",
+          description: "Destylowany metodą parowej infuzji z 10 botaników z całego świata. Charakterystyczne błękitne butelki inspirowane orientalnymi motywami. Harmonijne połączenie jałowca, cytrusów, korzennych przypraw i delikatnej kwiatowości."
+        },
+        {
+          name: "Gin Mare",
+          description: "Śródziemnomorski gin z oliwkami, tymiankiem, rozmarynem i bazylią."
+        },
+        {
+          name: "Tanqueray No. 10",
+          description: "Premium gin z świeżymi cytrusami destylowanymi w małym szkarłatnym alembiku 'Tiny Ten'."
+        },
+        {
+          name: "Oxley",
+          description: "Rewolucyjny gin destylowany w temperaturze -5°C. Pierwszy gin wykorzystujący próżniową destylację zimną. 8 lat prac nad 38 recepturami zaowocowało unikalnym profilem z 14 botaników."
+        },
+        {
+          name: "Monkey 47",
+          description: "Niemiecki gin z Schwarzwaldu zawierający 47 botaników! Wiodące składniki to jałowiec, lawenda, szyszki świerkowe oraz egzotyczne botaniki jak aframon madagaskarski. Produkowany w małych 100-litrowych alembikach."
+        },
+        {
+          name: "Hendrick's",
+          description: "Szkocki gin infuzowany esencją ogórka i płatkami róż bułgarskiej. Najlepiej podawać z plasterkami ogórka zamiast cytrusów."
+        }
+      ]
+    };
 
     const recipes = {
       "Vodka Sour": [
@@ -116,7 +206,7 @@ createApp({
         {"name": "Cointreau", "amount": 20},
         {"name": "Tequila", "amount": 20},
         {"name": "Syrop cukrowy", "amount": 10},
-        {"name": "Sok cytrynowy", "amount": 20},
+        {"name": "Sok z cytryny", "amount": 20},
         {"name": "Coca Cola", "amount": 40}
       ],
       "Pornstar Martini": [
@@ -133,15 +223,18 @@ createApp({
       ]
     };
 
-    // Stan aplikacji - ZMIENIONO: gins → spirits
+    // Stan aplikacji
     const currentScreen = ref('start');
     const selectedCategories = ref({
       proportions: true,
       review: false,
       vodka: false,
-      spirits: false, // ZMIENIONO: gins → spirits
+      spirits: false,
       builder: false
     });
+
+    // Stan dla biblioteki
+    const selectedLibraryCategory = ref('Tequila');
 
     const questions = ref([]);
     const currentQuestionIndex = ref(0);
@@ -208,6 +301,10 @@ createApp({
              Array.from(selected).every(ing => correct.has(ing));
     });
 
+    // Computed dla biblioteki
+    const libraryCategories = computed(() => Object.keys(alcoholLibrary));
+    const currentLibraryItems = computed(() => alcoholLibrary[selectedLibraryCategory.value] || []);
+
     // Funkcje pomocnicze
     function shuffleArray(array) {
       const shuffled = [...array];
@@ -236,6 +333,20 @@ createApp({
         });
       });
       return Array.from(allIngredients);
+    }
+
+    // Funkcje nawigacji
+    function goToLibrary() {
+      currentScreen.value = 'library';
+    }
+
+    function goToStart() {
+      currentScreen.value = 'start';
+      resetBuilderState();
+    }
+
+    function selectLibraryCategory(category) {
+      selectedLibraryCategory.value = category;
     }
 
     // Funkcje dla trybu builder
@@ -383,7 +494,7 @@ createApp({
             correctIndex: options.indexOf(correct)
           };
         }
-      } else if (type === 'spirits') { // ZMIENIONO: gins → spirits
+      } else if (type === 'spirits') {
         if (Math.random() > 0.5) {
           const correct = item.name;
           const wrongSpirits = shuffleArray(spirits.filter(s => s.name !== correct).map(s => s.name)).slice(0, 3);
@@ -392,7 +503,7 @@ createApp({
           return {
             type: 'spirits',
             subType: 'taste',
-            question: `Który alkohol ma ${item.taste}?`, // ZMIENIONO: gin → alkohol
+            question: `Który alkohol ma ${item.taste}?`,
             answers: allAnswers,
             correctIndex: allAnswers.indexOf(correct)
           };
@@ -404,7 +515,7 @@ createApp({
           return {
             type: 'spirits',
             subType: 'location',
-            question: `Który alkohol pochodzi z ${item.location}?`, // ZMIENIONO: gin → alkohol
+            question: `Który alkohol pochodzi z ${item.location}?`,
             answers: allAnswers,
             correctIndex: allAnswers.indexOf(correct)
           };
@@ -414,7 +525,7 @@ createApp({
       }
     }
 
-    // Logika quizu - ZMIENIONO: gins → spirits
+    // Logika quizu
     function startQuiz() {
       const selectedQuestions = [];
 
@@ -436,8 +547,8 @@ createApp({
         });
       }
 
-      if (selectedCategories.value.spirits) { // ZMIENIONO: gins → spirits
-        spirits.forEach(spirit => { // ZMIENONO: gin → spirit
+      if (selectedCategories.value.spirits) {
+        spirits.forEach(spirit => {
           selectedQuestions.push(createQuestion('spirits', spirit));
         });
       }
@@ -532,7 +643,15 @@ createApp({
       showBuilderRecipe,
       toggleIngredient,
       checkIngredients,
-      checkProportions
+      checkProportions,
+      // Library functions
+      alcoholLibrary,
+      selectedLibraryCategory,
+      libraryCategories,
+      currentLibraryItems,
+      goToLibrary,
+      goToStart,
+      selectLibraryCategory
     };
   }
 }).mount('#app');
