@@ -147,7 +147,7 @@ createApp({
       "Rumy": [
         {
           name: "Bacardi Carta Blanca",
-          description: "Klasyczny biały rum, pierwszy biały rum specjalnie przeznaczony do koktajli, fundament niezliczonych koktajli karaibskich."
+          description: "Klasyczny biały rum, pierwszy biały rum specjalnie przeznaczony do koktajli. Subtelne nuty wanilii, migdałów i owoców tropikalnych"
         },
         {
           name: "Bacardi Reserva Ocho",
