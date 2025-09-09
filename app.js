@@ -276,7 +276,7 @@ createApp({
             "40 ml Wódka",
             "25 ml soku z cytryny",
             "15 ml syropu cukrowego", 
-            "20 ml białka z kurzego jajka",
+            "20 ml Albumina",
             "1 x dash Angostura Bitters"
           ],
           decoration: "coin z pomarańczy"
