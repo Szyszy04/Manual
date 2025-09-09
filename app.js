@@ -20,7 +20,7 @@ createApp({
       { name: "Podole Wielkie Okowita Ziemniak", price: "29,00", country: "Polska", ingredient: "Ziemniaki" }
     ];
 
-    // Dane alkocholi 
+    // Dane alkocholi
     const spirits = [
       { 
         name: "Bombay Sapphire", 
@@ -190,6 +190,115 @@ createApp({
       ]
     };
 
+    // Biblioteka drinków
+    const drinkLibrary = {
+      "Wódka": [
+        {
+          name: "Bloody Mary",
+          ingredients: [
+            "50 ml Wódka",
+            "100 ml Big Tom Tomato Juice", 
+            "10 ml Sok z cytryny",
+            "10 ml Bloody Mary Mix",
+            "3 krople oliwy truflowej"
+          ],
+          decoration: "Oliwka na szpadce - plus wierzch koktajlu skropiony oliwą truflową - picanto mix na szkle, slice ogórka"
+        },
+        {
+          name: "Cosmopolitan",
+          ingredients: [
+            "30 ml Wódka",
+            "10 ml Aperol",
+            "30 ml Kordiał z Żurawiny i Róży",
+            "10 ml Esencji z trawy cytrynowej",
+            "różowy glitter"
+          ],
+          decoration: "suszony, czerwony kwiatostan róży"
+        },
+        {
+          name: "Espresso Martini",
+          ingredients: [
+            "40 ml Wódka",
+            "20 ml Galliano Espresso",
+            "1 espresso",
+            "10 ml Syrop Waniliowy",
+            "1 x dash Angostura Cocoa Bitters"
+          ],
+          decoration: "tarta fasola tonka + bezik"
+        },
+        {
+          name: "Golden Cadillac",
+          ingredients: [
+            "30 ml Creme De Cacao",
+            "30 ml Galliano Autentico",
+            "30 ml Half Half"
+          ],
+          decoration: "Bezik plus gorzka tarta czekolada + złoty pył"
+        },
+        {
+          name: "Grasshooper",
+          ingredients: [
+            "20 ml Creme De Cacao",
+            "20 ml Creme De Menthe",
+            "20 ml Wódka",
+            "30 ml Half Half"
+          ],
+          decoration: "Bezik plus gorzka tarta czekolada"
+        },
+        {
+          name: "Long Island Iced Tea",
+          ingredients: [
+            "20 ml gin",
+            "20 ml wódka",
+            "20 ml rum",
+            "20 ml Cointreau",
+            "20 ml tequila",
+            "10 ml syropu cukrowego",
+            "20 ml soku cytrynowego",
+            "40 ml Coca Coli"
+          ],
+          decoration: "Plasterek cytryny"
+        },
+        {
+          name: "Pornstar Martini",
+          ingredients: [
+            "40 ml wódka",
+            "20 ml syropu waniliowego", 
+            "20 ml soku z limonki",
+            "20 ml przecieru z marakui",
+            "Obok koktajlu - shot prosecco"
+          ],
+          decoration: "posypka z pudru buraczanego + kwiatostan róży"
+        },
+        {
+          name: "Vodka Sour",
+          ingredients: [
+            "40 ml Wódka",
+            "25 ml soku z cytryny",
+            "15 ml syropu cukrowego", 
+            "20 ml białka z kurzego jajka",
+            "1 x dash Angostura Bitters"
+          ],
+          decoration: "coin z pomarańczy"
+        },
+        {
+          name: "Kyiv Mule",
+          ingredients: [
+            "40 ml Wódka",
+            "1 x dash Angostura Bitters",
+            "15 ml soku z limonki",
+            "10 ml syropu cukrowego",
+            "100 ml Thomas Henry Spicy Ginger"
+          ],
+          decoration: "2 szczyty mięty + ćwiartka limonki"
+        }
+      ],
+      "Gin": [],
+      "Rum": [],
+      "Tequila": [],
+      "Whiskey": []
+    };
+
     const recipes = {
       "Vodka Sour": [
         {"name": "Wódka", "amount": 40},
@@ -259,8 +368,12 @@ createApp({
       builder: false
     });
 
-    // Stan dla biblioteki
+    // Stan dla biblioteki alkocholi
     const selectedLibraryCategory = ref('Tequila');
+
+    // NOWY: Stan dla biblioteki drinków
+    const selectedDrinkCategory = ref('Wódka');
+    const hiddenDrinks = ref(new Set()); // Set nazw drinków które są ukryte
 
     const questions = ref([]);
     const currentQuestionIndex = ref(0);
@@ -327,9 +440,13 @@ createApp({
              Array.from(selected).every(ing => correct.has(ing));
     });
 
-    // Computed dla biblioteki
+    // Computed dla biblioteki alkocholi
     const libraryCategories = computed(() => Object.keys(alcoholLibrary));
     const currentLibraryItems = computed(() => alcoholLibrary[selectedLibraryCategory.value] || []);
+
+    // NOWY: Computed dla biblioteki drinków
+    const drinkCategories = computed(() => Object.keys(drinkLibrary));
+    const currentDrinkItems = computed(() => drinkLibrary[selectedDrinkCategory.value] || []);
 
     // Funkcje pomocnicze
     function shuffleArray(array) {
@@ -366,6 +483,11 @@ createApp({
       currentScreen.value = 'library';
     }
 
+    // NOWA: Funkcja dla biblioteki drinków  
+    function goToDrinkLibrary() {
+      currentScreen.value = 'drink-library';
+    }
+
     function goToStart() {
       currentScreen.value = 'start';
       resetBuilderState();
@@ -373,6 +495,25 @@ createApp({
 
     function selectLibraryCategory(category) {
       selectedLibraryCategory.value = category;
+    }
+
+    // NOWE: Funkcje dla biblioteki drinków
+    function selectDrinkCategory(category) {
+      selectedDrinkCategory.value = category;
+    }
+
+    function toggleDrinkVisibility(drinkName) {
+      if (hiddenDrinks.value.has(drinkName)) {
+        hiddenDrinks.value.delete(drinkName);
+      } else {
+        hiddenDrinks.value.add(drinkName);
+      }
+      // Force reactivity
+      hiddenDrinks.value = new Set(hiddenDrinks.value);
+    }
+
+    function isDrinkHidden(drinkName) {
+      return hiddenDrinks.value.has(drinkName);
     }
 
     // Funkcje dla trybu builder
@@ -677,7 +818,17 @@ createApp({
       currentLibraryItems,
       goToLibrary,
       goToStart,
-      selectLibraryCategory
+      selectLibraryCategory,
+      // Drink library functions
+      drinkLibrary,
+      selectedDrinkCategory,
+      drinkCategories,
+      currentDrinkItems,
+      hiddenDrinks,
+      goToDrinkLibrary,
+      selectDrinkCategory,
+      toggleDrinkVisibility,
+      isDrinkHidden
     };
   }
 }).mount('#app');
