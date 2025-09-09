@@ -220,8 +220,8 @@ createApp({
           ingredients: [
             "40 ml Wódka",
             "20 ml Galliano Espresso",
-            "1 espresso",
             "10 ml Syrop Waniliowy",
+            "1 espresso",
             "1 x dash Angostura Cocoa Bitters"
           ],
           decoration: "tarta fasola tonka + bezik"
@@ -248,13 +248,13 @@ createApp({
         {
           name: "Long Island Iced Tea",
           ingredients: [
-            "20 ml gin",
-            "20 ml wódka",
-            "20 ml rum",
+            "20 ml Gin",
+            "20 ml Wódka",
+            "20 ml Rum",
             "20 ml Cointreau",
-            "20 ml tequila",
+            "20 ml Tequila",
             "10 ml syropu cukrowego",
-            "20 ml soku cytrynowego",
+            "20 ml soku z cytryny",
             "40 ml Coca Coli"
           ],
           decoration: "Plasterek cytryny"
@@ -285,10 +285,10 @@ createApp({
           name: "Kyiv Mule",
           ingredients: [
             "40 ml Wódka",
-            "1 x dash Angostura Bitters",
             "15 ml soku z limonki",
             "10 ml syropu cukrowego",
-            "100 ml Thomas Henry Spicy Ginger"
+            "100 ml Thomas Henry Spicy Ginger",
+            "1 x dash Angostura Bitters"
           ],
           decoration: "2 szczyty mięty + ćwiartka limonki"
         }
