@@ -82,7 +82,7 @@ h2, h3 { margin-top: 0; }
   box-shadow: 0 4px 15px rgba(245, 101, 101, 0.3);
 }
 
-/* NOWE: Nawigacja główna */
+/* Nawigacja główna */
 .main-navigation {
   display: flex;
   flex-direction: column;
@@ -106,6 +106,17 @@ h2, h3 { margin-top: 0; }
   box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
 }
 
+/* NOWY: Przycisk biblioteki drinków */
+.drinks-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+}
+
+.drinks-btn:hover {
+  background: linear-gradient(135deg, #3e9bfd 0%, #00e1ed 100%);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+}
+
 .btn-back {
   width: auto;
   margin: 0 0 20px 0;
@@ -119,7 +130,7 @@ h2, h3 { margin-top: 0; }
   background: #5a6570;
 }
 
-/* NOWE: Style dla biblioteki alkocholi */
+/* Style dla biblioteki alkocholi */
 .library-subtitle {
   color: #667eea;
   font-size: 1rem;
@@ -196,6 +207,98 @@ h2, h3 { margin-top: 0; }
   line-height: 1.6;
   margin: 0;
   font-size: 0.95rem;
+}
+
+/* NOWE: Style dla biblioteki drinków */
+.drink-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+}
+
+.drink-card:hover {
+  border-color: #4facfe;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.1);
+  transform: translateY(-2px);
+}
+
+.drink-card.hidden {
+  opacity: 0.6;
+}
+
+.drink-name {
+  color: #4facfe;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.drink-details {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.drink-details.hidden {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.drink-ingredients, .drink-decoration {
+  margin: 15px 0;
+}
+
+.drink-ingredients h4, .drink-decoration h4 {
+  color: #667eea;
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.drink-ingredients ul {
+  margin: 0;
+  padding: 0 0 0 18px;
+  color: #4a5568;
+}
+
+.drink-ingredients li {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.drink-decoration p {
+  color: #4a5568;  
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.empty-category {
+  text-align: center;
+  padding: 40px 20px;
+  color: #718096;
+}
+
+.empty-category p {
+  font-size: 1.1rem;
+  margin: 0 0 8px 0;
+}
+
+.empty-category small {
+  font-size: 0.85rem;
+  opacity: 0.7;
 }
 
 .progress-bar {
@@ -461,7 +564,7 @@ h2, h3 { margin-top: 0; }
     max-width: 120px;
   }
 
-  /* Responsywne kategorie w bibliotece */
+  /* Responsywne kategorie w bibliotekach */
   .library-categories {
     gap: 8px;
   }
@@ -475,17 +578,21 @@ h2, h3 { margin-top: 0; }
     max-height: 350px;
   }
 
-  .alcohol-card {
+  .alcohol-card, .drink-card {
     padding: 15px;
     margin: 12px 0;
   }
 
-  .alcohol-name {
+  .alcohol-name, .drink-name {
     font-size: 1.1rem;
   }
 
   .alcohol-description {
     font-size: 0.9rem;
+  }
+
+  .drink-ingredients li, .drink-decoration p {
+    font-size: 0.85rem;
   }
 
   .main-navigation {
