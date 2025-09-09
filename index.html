@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Barmański z Biblioteką Alkoholi</title>
+  <title>Quiz Barmański z Bibliotekami</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -22,6 +22,9 @@
         <button class="btn main-nav-btn library-btn" @click="goToLibrary">
           📖 Biblioteka Alkoholi
         </button>
+        <button class="btn main-nav-btn drinks-btn" @click="goToDrinkLibrary">
+          🍸 Biblioteka Drinków
+        </button>
       </div>
     </div>
 
@@ -36,7 +39,7 @@
         <label><input type="checkbox" v-model="selectedCategories.proportions"> ⚖️ Proporcje składników</label>
         <label><input type="checkbox" v-model="selectedCategories.review"> 🔄 Powtórka składników TAK/NIE</label>
         <label><input type="checkbox" v-model="selectedCategories.vodka"> 🥃 Wódki (cena/surowiec)</label>
-        <label><input type="checkbox" v-model="selectedCategories.spirits"> 🥂 Alkochole (profil smakowy/pochodzenie)</label>
+        <label><input type="checkbox" v-model="selectedCategories.spirits"> 🥂 Alkohole (profil smakowy/pochodzenie)</label>
         <label><input type="checkbox" v-model="selectedCategories.builder"> 🔧 Konstruktor drinka (buduj przepis)</label>
       </div>
 
@@ -45,12 +48,12 @@
       </button>
     </div>
 
-    <!-- NOWY: Ekran biblioteki alkocholi -->
+    <!-- Ekran biblioteki alkocholi -->
     <div v-if="currentScreen === 'library'" class="main-card">
       <button class="btn btn-back" @click="goToStart">← Powrót do menu głównego</button>
 
-      <h2 class="center">📖 Biblioteka Alkocholi</h2>
-      <p class="center library-subtitle">Poznaj charakterystyki różnych alkocholi</p>
+      <h2 class="center">📖 Biblioteka Alkoholi</h2>
+      <p class="center library-subtitle">Poznaj charakterystyki różnych alkoholi</p>
 
       <!-- Kategorie -->
       <div class="library-categories">
@@ -63,13 +66,66 @@
         </button>
       </div>
 
-      <!-- Karty alkocholi -->
+      <!-- Karty alkoholi -->
       <div class="library-content">
         <div v-for="alcohol in currentLibraryItems" 
              :key="alcohol.name" 
              class="alcohol-card">
           <h3 class="alcohol-name">{{ alcohol.name }}</h3>
           <p class="alcohol-description">{{ alcohol.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ekran biblioteki drinków -->
+    <div v-if="currentScreen === 'drink-library'" class="main-card">
+      <button class="btn btn-back" @click="goToStart">← Powrót do menu głównego</button>
+
+      <h2 class="center">🍸 Biblioteka Drinków</h2>
+      <p class="center library-subtitle">Przepisy koktajli według alkoholi bazowych</p>
+
+      <!-- Kategorie drinków -->
+      <div class="library-categories">
+        <button v-for="category in drinkCategories"
+                :key="category"
+                class="category-btn"
+                :class="{ active: selectedDrinkCategory === category }"
+                @click="selectDrinkCategory(category)">
+          {{ category }}
+        </button>
+      </div>
+
+      <!-- Karty drinków -->
+      <div class="library-content">
+        <div v-for="drink in currentDrinkItems" 
+             :key="drink.name" 
+             class="drink-card"
+             :class="{ hidden: isDrinkHidden(drink.name) }"
+             @click="toggleDrinkVisibility(drink.name)">
+          <h3 class="drink-name">{{ drink.name }}</h3>
+
+          <!-- Składniki - ukrywane/pokazywane -->
+          <div class="drink-details" :class="{ hidden: isDrinkHidden(drink.name) }">
+            <div class="drink-ingredients">
+              <h4>Składniki:</h4>
+              <ul>
+                <li v-for="ingredient in drink.ingredients" :key="ingredient">
+                  {{ ingredient }}
+                </li>
+              </ul>
+            </div>
+
+            <div class="drink-decoration">
+              <h4>Dekoracja:</h4>
+              <p>{{ drink.decoration }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info gdy kategoria pusta -->
+        <div v-if="currentDrinkItems.length === 0" class="empty-category">
+          <p>Brak drinków w tej kategorii</p>
+          <small>Przepisy będą dodane wkrótce</small>
         </div>
       </div>
     </div>
