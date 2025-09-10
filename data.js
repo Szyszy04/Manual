@@ -268,7 +268,7 @@ export const drinkLibrary = {
         "10 ml Dewar’s 8 Caribbean Smooth",
         "30 ml soku z cytryny",
         "10 ml syropu cukrowego",
-        "Albumina"
+        "15 ml Albumina"
       ],
       decoration: "wierzch koktajlu posypany pudrem buraczanym oraz suszony kwiatostan róży."
     },
