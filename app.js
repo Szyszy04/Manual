@@ -4,7 +4,7 @@ const { createApp, ref, computed } = Vue;
 
 createApp({
   setup() {
-    // Stan aplikacji - USUNIĘTO spirits
+    // Stan aplikacji
     const currentScreen = ref('start');
     const selectedCategories = ref({
       proportions: true,
@@ -310,7 +310,7 @@ createApp({
       }
     }
 
-    // Logika quizu - USUNIĘTO spirits
+    // Logika quizu
     function startQuiz() {
       const selectedQuestions = [];
 
