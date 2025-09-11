@@ -1,4 +1,4 @@
-import { vodkas, alcoholLibrary, drinkLibrary, recipes } from './data.js';
+import { vodkas, alcoholLibrary, drinkLibrary, recipes, glassOptions, drinkDetails } from './data.js';
 
 const { createApp, ref, computed } = Vue;
 
@@ -27,34 +27,39 @@ createApp({
     const selectedAnswer = ref(null);
     const imageLoadError = ref(false);
 
-    // Stan dla trybu builder
+    // Stan dla trybu builder - ROZSZERZONY
     const builderStep = ref(1);
     const selectedIngredients = ref(new Set());
     const ingredientAmounts = ref({});
+    const selectedGlass = ref('');
     const allIngredientsList = ref([]);
     const showBuilderRecipe = ref(false);
+    const showDecorationSuccess = ref(false);
 
-    // Computed properties
-    const hasSelectedCategories = computed(() => 
+    // Computed properties z walidacją
+    const hasSelectedCategories = computed(() =>
       Object.values(selectedCategories.value).some(Boolean)
     );
 
-    const currentQuestion = computed(() => 
-      questions.value[currentQuestionIndex.value] || {}
-    );
+    const currentQuestion = computed(() => {
+      if (!questions.value || questions.value.length === 0) return {};
+      if (currentQuestionIndex.value < 0 || currentQuestionIndex.value >= questions.value.length) return {};
+      return questions.value[currentQuestionIndex.value] || {};
+    });
 
     const shuffledAnswers = computed(() => {
       if (!currentQuestion.value?.answers) return [];
       return currentQuestion.value.answers;
     });
 
-    const correctAnswerIndex = computed(() => 
+    const correctAnswerIndex = computed(() =>
       currentQuestion.value?.correctIndex || 0
     );
 
-    const progressWidth = computed(() => 
-      `${questions.value.length ? ((currentQuestionIndex.value) / questions.value.length) * 100 : 0}%`
-    );
+    const progressWidth = computed(() => {
+      if (!questions.value || questions.value.length === 0) return '0%';
+      return `${((currentQuestionIndex.value || 0) / questions.value.length) * 100}%`;
+    });
 
     // Wyświetlanie przepisu po odpowiedzi w trybie review
     const showRecipe = computed(() => {
@@ -72,8 +77,11 @@ createApp({
     const selectedIngredientsCount = computed(() => selectedIngredients.value.size);
 
     const correctIngredients = computed(() => {
-      if (currentQuestion.value.type === 'builder') {
-        return new Set(recipes[currentQuestion.value.drinkName].map(ing => ing.name));
+      if (currentQuestion.value.type === 'builder' && currentQuestion.value.drinkName) {
+        const recipe = recipes[currentQuestion.value.drinkName];
+        if (recipe) {
+          return new Set(recipe.map(ing => ing.name));
+        }
       }
       return new Set();
     });
@@ -81,8 +89,20 @@ createApp({
     const hasCorrectIngredients = computed(() => {
       const selected = selectedIngredients.value;
       const correct = correctIngredients.value;
-      return selected.size === correct.size && 
-             Array.from(selected).every(ing => correct.has(ing));
+      return selected.size === correct.size &&
+        Array.from(selected).every(ing => correct.has(ing));
+    });
+
+    // Computed dla szkła
+    const correctGlass = computed(() => {
+      if (currentQuestion.value.type === 'builder' && currentQuestion.value.drinkName) {
+        return drinkDetails[currentQuestion.value.drinkName]?.glass || '';
+      }
+      return '';
+    });
+
+    const hasCorrectGlass = computed(() => {
+      return selectedGlass.value === correctGlass.value;
     });
 
     // Computed dla biblioteki alkocholi
@@ -93,8 +113,17 @@ createApp({
     const drinkCategories = computed(() => Object.keys(drinkLibrary));
     const currentDrinkItems = computed(() => drinkLibrary[selectedDrinkCategory.value] || []);
 
+    // Shuffled glass options dla konstruktora
+    const shuffledGlassOptions = computed(() => {
+      if (currentQuestion.value.type === 'builder' && currentQuestion.value.allGlasses) {
+        return currentQuestion.value.allGlasses;
+      }
+      return [];
+    });
+
     // Funkcje pomocnicze
     function shuffleArray(array) {
+      if (!Array.isArray(array)) return [];
       const shuffled = [...array];
       for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -104,10 +133,11 @@ createApp({
     }
 
     function generateWrongRecipe(correctRecipe) {
+      if (!Array.isArray(correctRecipe)) return [];
       return correctRecipe.map(ingredient => ({
         name: ingredient.name,
-        amount: Math.max(5, ingredient.amount + (Math.random() > 0.5 ? 
-          (Math.random() > 0.5 ? 5 : 10) : 
+        amount: Math.max(5, ingredient.amount + (Math.random() > 0.5 ?
+          (Math.random() > 0.5 ? 5 : 10) :
           (Math.random() > 0.5 ? -5 : -10)
         ))
       }));
@@ -116,9 +146,13 @@ createApp({
     function getAllIngredients() {
       const allIngredients = new Set();
       Object.values(recipes).forEach(recipe => {
-        recipe.forEach(ingredient => {
-          allIngredients.add(ingredient.name);
-        });
+        if (Array.isArray(recipe)) {
+          recipe.forEach(ingredient => {
+            if (ingredient && ingredient.name) {
+              allIngredients.add(ingredient.name);
+            }
+          });
+        }
       });
       return Array.from(allIngredients);
     }
@@ -163,18 +197,26 @@ createApp({
     // Funkcje dla trybu builder
     function createBuilderQuestion() {
       const drinkNames = Object.keys(recipes);
+      if (drinkNames.length === 0) return null;
+
       const randomDrink = drinkNames[Math.floor(Math.random() * drinkNames.length)];
       const allIngredients = shuffleArray(getAllIngredients());
+      const allGlasses = shuffleArray([...glassOptions]); // Shuffled glass options
 
       return {
         type: 'builder',
         drinkName: randomDrink,
         allIngredients: allIngredients,
-        correctRecipe: recipes[randomDrink]
+        allGlasses: allGlasses,
+        correctRecipe: recipes[randomDrink],
+        correctGlass: drinkDetails[randomDrink]?.glass || '',
+        decoration: drinkDetails[randomDrink]?.decoration || ''
       };
     }
 
     function toggleIngredient(ingredient) {
+      if (!ingredient) return;
+
       if (selectedIngredients.value.has(ingredient)) {
         selectedIngredients.value.delete(ingredient);
       } else {
@@ -183,9 +225,14 @@ createApp({
       selectedIngredients.value = new Set(selectedIngredients.value);
     }
 
+    // Funkcja wyboru szkła
+    function selectGlass(glass) {
+      selectedGlass.value = glass;
+    }
+
     function checkIngredients() {
       if (hasCorrectIngredients.value) {
-        builderStep.value = 2;
+        builderStep.value = 2; // Przejdź do proporcji
         ingredientAmounts.value = {};
         Array.from(selectedIngredients.value).forEach(ing => {
           ingredientAmounts.value[ing] = '';
@@ -200,8 +247,9 @@ createApp({
 
     function checkProportions() {
       const correct = recipes[currentQuestion.value.drinkName];
-      let isCorrect = true;
+      if (!correct) return;
 
+      let isCorrect = true;
       for (let ingredient of correct) {
         const userAmount = parseInt(ingredientAmounts.value[ingredient.name]) || 0;
         if (Math.abs(userAmount - ingredient.amount) > 5) {
@@ -211,10 +259,26 @@ createApp({
       }
 
       if (isCorrect) {
-        score.value++;
-        nextBuilderQuestion();
+        builderStep.value = 3; // Przejdź do wyboru szkła
+        selectedGlass.value = '';
       } else {
         showBuilderRecipe.value = true;
+        setTimeout(() => {
+          nextBuilderQuestion();
+        }, 3000);
+      }
+    }
+
+    // Funkcja sprawdzania szkła
+    function checkGlass() {
+      if (hasCorrectGlass.value) {
+        score.value++;
+        showDecorationSuccess.value = true; // Pokaż dekorację przy sukcesie
+        setTimeout(() => {
+          nextBuilderQuestion();
+        }, 3000);
+      } else {
+        showBuilderRecipe.value = true; // Pokaż prawidłowe szkło
         setTimeout(() => {
           nextBuilderQuestion();
         }, 3000);
@@ -225,9 +289,14 @@ createApp({
       builderStep.value = 1;
       selectedIngredients.value = new Set();
       ingredientAmounts.value = {};
+      selectedGlass.value = '';
       showBuilderRecipe.value = false;
+      showDecorationSuccess.value = false;
 
-      questions.value[currentQuestionIndex.value] = createBuilderQuestion();
+      const newQuestion = createBuilderQuestion();
+      if (newQuestion) {
+        questions.value[currentQuestionIndex.value] = newQuestion;
+      }
 
       if (currentQuestionIndex.value < questions.value.length - 1) {
         currentQuestionIndex.value++;
@@ -240,13 +309,14 @@ createApp({
     function createQuestion(type, item) {
       if (type === 'proportions') {
         const correctRecipe = recipes[item];
+        if (!correctRecipe) return null;
+
         const wrongRecipes = [
           generateWrongRecipe(correctRecipe),
           generateWrongRecipe(correctRecipe),
           generateWrongRecipe(correctRecipe)
         ];
         const allAnswers = [correctRecipe, ...wrongRecipes].sort(() => 0.5 - Math.random());
-
         return {
           type: 'proportions',
           correct: item,
@@ -255,22 +325,24 @@ createApp({
         };
       } else if (type === 'review') {
         const drinkRecipe = recipes[item];
+        if (!drinkRecipe) return null;
+
         const allIngredients = getAllIngredients();
         const isTrue = Math.random() > 0.5;
-
         let ingredient;
+
         if (isTrue) {
           const x = Math.floor(Math.random() * drinkRecipe.length);
           ingredient = drinkRecipe[x].name;
         } else {
-          const ingredientsNotInDrink = allIngredients.filter(ing => 
+          const ingredientsNotInDrink = allIngredients.filter(ing =>
             !drinkRecipe.some(recipeIng => recipeIng.name === ing)
           );
+          if (ingredientsNotInDrink.length === 0) return null;
           ingredient = ingredientsNotInDrink[Math.floor(Math.random() * ingredientsNotInDrink.length)];
         }
 
         const questionText = `Czy ${ingredient} jest składnikiem drinka ${item}?`;
-
         return {
           type: 'review',
           correct: isTrue,
@@ -280,11 +352,15 @@ createApp({
           correctIndex: isTrue ? 0 : 1
         };
       } else if (type === 'vodka') {
+        if (!item) return null;
+
         if (Math.random() > 0.5) {
           const correct = item.price;
-          const wrong = shuffleArray(vodkas.filter(v => v.name !== item.name).map(v => v.price))[0];
-          const options = shuffleArray([correct, wrong]);
+          const availableVodkas = vodkas.filter(v => v.name !== item.name && v.price);
+          if (availableVodkas.length === 0) return null;
 
+          const wrong = shuffleArray(availableVodkas.map(v => v.price))[0];
+          const options = shuffleArray([correct, wrong]);
           return {
             type: 'vodka',
             subType: 'price',
@@ -294,9 +370,11 @@ createApp({
           };
         } else {
           const correct = item.ingredient;
-          const wrong = shuffleArray(vodkas.filter(v => v.ingredient !== correct).map(v => v.ingredient))[0];
-          const options = shuffleArray([correct, wrong]);
+          const availableVodkas = vodkas.filter(v => v.ingredient !== correct && v.ingredient);
+          if (availableVodkas.length === 0) return null;
 
+          const wrong = shuffleArray(availableVodkas.map(v => v.ingredient))[0];
+          const options = shuffleArray([correct, wrong]);
           return {
             type: 'vodka',
             subType: 'ingredient',
@@ -308,6 +386,8 @@ createApp({
       } else if (type === 'builder') {
         return createBuilderQuestion();
       }
+
+      return null;
     }
 
     // Logika quizu
@@ -316,26 +396,35 @@ createApp({
 
       if (selectedCategories.value.proportions) {
         Object.keys(recipes).forEach(drink => {
-          selectedQuestions.push(createQuestion('proportions', drink));
+          const question = createQuestion('proportions', drink);
+          if (question) selectedQuestions.push(question);
         });
       }
 
       if (selectedCategories.value.review) {
         Object.keys(recipes).forEach(drink => {
-          selectedQuestions.push(createQuestion('review', drink));
+          const question = createQuestion('review', drink);
+          if (question) selectedQuestions.push(question);
         });
       }
 
       if (selectedCategories.value.vodka) {
         vodkas.forEach(vodka => {
-          selectedQuestions.push(createQuestion('vodka', vodka));
+          const question = createQuestion('vodka', vodka);
+          if (question) selectedQuestions.push(question);
         });
       }
 
       if (selectedCategories.value.builder) {
         for (let i = 0; i < 5; i++) {
-          selectedQuestions.push(createQuestion('builder'));
+          const question = createQuestion('builder');
+          if (question) selectedQuestions.push(question);
         }
+      }
+
+      if (selectedQuestions.length === 0) {
+        console.warn('Nie udało się utworzyć żadnych pytań');
+        return;
       }
 
       questions.value = shuffleArray(selectedQuestions);
@@ -356,15 +445,15 @@ createApp({
       builderStep.value = 1;
       selectedIngredients.value = new Set();
       ingredientAmounts.value = {};
+      selectedGlass.value = '';
       showBuilderRecipe.value = false;
+      showDecorationSuccess.value = false;
     }
 
     function answerQuestion(idx) {
       if (answerSelected.value) return;
-
       answerSelected.value = true;
       selectedAnswer.value = idx;
-
       if (idx === correctAnswerIndex.value) {
         score.value++;
       }
@@ -392,6 +481,7 @@ createApp({
     function restartQuiz() {
       currentScreen.value = 'start';
       resetBuilderState();
+      resetState();
     }
 
     return {
@@ -418,11 +508,16 @@ createApp({
       builderStep,
       selectedIngredients,
       ingredientAmounts,
+      selectedGlass,
       selectedIngredientsCount,
       showBuilderRecipe,
+      showDecorationSuccess,
+      shuffledGlassOptions,
       toggleIngredient,
+      selectGlass,
       checkIngredients,
       checkProportions,
+      checkGlass,
       // Library functions
       alcoholLibrary,
       selectedLibraryCategory,
@@ -440,7 +535,12 @@ createApp({
       goToDrinkLibrary,
       selectDrinkCategory,
       toggleDrinkVisibility,
-      isDrinkHidden
+      isDrinkHidden,
+      // Eksportujemy currentQuestionIndex
+      currentQuestionIndex,
+      // Glass i decoration details
+      glassOptions,
+      drinkDetails
     };
   }
 }).mount('#app');
