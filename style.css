@@ -106,7 +106,6 @@ h2, h3 { margin-top: 0; }
   box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
 }
 
-/* NOWY: Przycisk biblioteki drinków */
 .drinks-btn {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
   box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
@@ -209,7 +208,7 @@ h2, h3 { margin-top: 0; }
   font-size: 0.95rem;
 }
 
-/* NOWE: Style dla biblioteki drinków */
+/* Style dla biblioteki drinków */
 .drink-card {
   background: white;
   border: 2px solid #e2e8f0;
@@ -254,11 +253,35 @@ h2, h3 { margin-top: 0; }
   padding: 0;
 }
 
-.drink-ingredients, .drink-decoration {
+/* NOWE: Style dla szkła */
+.drink-glass {
+  margin: 15px 0;
+  background: #f8f9ff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.drink-glass h4 {
+  color: #667eea;
+  font-size: 1rem;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.drink-glass p {
+  color: #4a5568;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Zaktualizowane style dla składników */
+.drink-ingredients {
   margin: 15px 0;
 }
 
-.drink-ingredients h4, .drink-decoration h4 {
+.drink-ingredients h4 {
   color: #667eea;
   font-size: 1rem;
   margin: 0 0 8px 0;
@@ -277,8 +300,50 @@ h2, h3 { margin-top: 0; }
   line-height: 1.4;
 }
 
+/* NOWE: Style dla metody przygotowania */
+.drink-method {
+  margin: 15px 0;
+  background: #fff9f5;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #ff8c00;
+}
+
+.drink-method h4 {
+  color: #ff8c00;
+  font-size: 1rem;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.drink-method ol {
+  margin: 0;
+  padding: 0 0 0 20px;
+  color: #4a5568;
+  counter-reset: step-counter;
+}
+
+.drink-method li {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-left: 5px;
+}
+
+/* Style dla dekoracji */
+.drink-decoration {
+  margin: 15px 0;
+}
+
+.drink-decoration h4 {
+  color: #667eea;
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
 .drink-decoration p {
-  color: #4a5568;  
+  color: #4a5568;
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -595,6 +660,20 @@ h2, h3 { margin-top: 0; }
     font-size: 0.85rem;
   }
 
+  /* Responsywność dla nowych sekcji */
+  .drink-glass, .drink-method {
+    padding: 8px 12px;
+    margin: 10px 0;
+  }
+
+  .drink-method ol {
+    padding: 0 0 0 16px;
+  }
+
+  .drink-method li, .drink-glass p {
+    font-size: 0.85rem;
+  }
+
   .main-navigation {
     gap: 12px;
     margin: 20px 0;
@@ -603,5 +682,181 @@ h2, h3 { margin-top: 0; }
   .main-nav-btn {
     padding: 16px;
     font-size: 1rem;
+  }
+}
+
+
+/* Style dla wyboru szklanek w konstruktorze */
+.builder-glasses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 15px;
+  background: #f8f9ff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.glass-btn {
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  background: white;
+  color: #4a5568;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.glass-btn:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+  color: #667eea;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.glass-btn.selected {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Style dla sukcesu dekoracji */
+.decoration-success-box {
+  background: linear-gradient(135deg, #f0fff4 0%, #e8f5e8 100%);
+  border: 2px solid #48bb78;
+  border-radius: 12px;
+  margin: 24px auto 0 auto;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.2);
+  animation: successPulse 0.5s ease-out;
+}
+
+.decoration-success-box h4 {
+  margin: 0 0 15px 0;
+  color: #38a169;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.decoration-section {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0 0 0;
+}
+
+.decoration-section h5 {
+  color: #38a169;
+  font-size: 1rem;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.decoration-section p {
+  color: #2d7d32;
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+@keyframes successPulse {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  50% {
+    transform: translateY(-5px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Style dla sekcji prawidłowych odpowiedzi */
+.correct-answer-section {
+  margin: 15px 0;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.correct-answer-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.correct-answer-section h5 {
+  color: #667eea;
+  font-size: 0.95rem;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.correct-answer-section ul {
+  margin: 8px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.correct-answer-section li {
+  padding: 6px 0;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.correct-answer-section li:last-child {
+  border-bottom: none;
+}
+
+.correct-answer-section p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+/* Responsywność dla szklanek */
+@media (max-width: 600px) {
+  .builder-glasses {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .glass-btn {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .decoration-success-box {
+    margin: 20px auto 0 auto;
+    padding: 15px;
+  }
+
+  .decoration-success-box h4 {
+    font-size: 1.1rem;
+  }
+
+  .decoration-section {
+    padding: 12px;
+  }
+
+  .correct-answer-section {
+    padding: 10px 0;
   }
 }
