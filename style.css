@@ -860,3 +860,98 @@ h2, h3 { margin-top: 0; }
     padding: 10px 0;
   }
 }
+
+
+/* Nowe style dla menu wyboru alkoholi w konstruktorze */
+.builder-alcohol-selection {
+    background: #f8f9ff;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.alcohol-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.alcohol-selector label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    font-size: 0.95rem;
+}
+
+.alcohol-selector label:hover {
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.alcohol-selector input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.1);
+    accent-color: #667eea;
+}
+
+.alcohol-selector span {
+    flex: 1;
+    color: #4a5568;
+}
+
+.alcohol-warning {
+    background: #fff5f5;
+    color: #e53e3e;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    border: 1px solid #fed7d7;
+    font-weight: 500;
+}
+
+/* Responsywność dla nowej sekcji alkoholi */
+@media (max-width: 600px) {
+    .builder-alcohol-selection {
+        padding: 12px;
+        margin: 12px 0;
+    }
+
+    .alcohol-selector label {
+        padding: 6px 8px;
+        font-size: 0.9rem;
+    }
+
+    .alcohol-warning {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
+}
+
+/* Usprawnienia dla przycisków w stanie disabled gdy brak wyboru alkoholi */
+.btn:disabled {
+    background: #e2e8f0 !important;
+    color: #a0aec0 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn:disabled:hover {
+    background: #e2e8f0 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Dodatkowe style dla lepszej czytelności nagłówków w sekcji alkoholi */
+.builder-alcohol-selection h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+}
