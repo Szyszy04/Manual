@@ -1065,7 +1065,7 @@ export const drinkLibrary = {
                 "40 ml Blended Scotch Whisky",
                 "25 ml soku z cytryny",
                 "15 ml syropu cukrowego",
-                "20 ml białka z kurzego jajka",
+                "20 ml Albumina",
                 "1 x dash Angostura Bitters"
             ],
             decoration: "coin z pomarańczy"
@@ -1084,7 +1084,7 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "50 ml Irish Whiskey",
-                "120 ml kawy przelewowej (mocna)",
+                "120 ml kawy przelewowej",
                 "15 ml syropu waniliowego"
             ],
             decoration: "tarta fasola tonka na wierzch + gwiazdka anyżu"
@@ -1459,7 +1459,7 @@ export const recipes = {
         {"name": "Blended Scotch Whisky", "amount": 40},
         {"name": "soku z cytryny", "amount": 25},
         {"name": "syropu cukrowego", "amount": 15},
-        {"name": "białka z kurzego jajka", "amount": 20},
+        {"name": "Albumina", "amount": 20},
         {"name": "Angostura Bitters", "amount": 1},
     ],
     "Irish Coffee":     [
@@ -1702,7 +1702,7 @@ export const recipes = {
         {"name": "Cointreau", "amount": 20.0},
         {"name": "soku z cytryny", "amount": 20.0},
         {"name": "cukru", "amount": 5.0},
-        {"name": "Albuminy", "amount": 15.0},
+        {"name": "Albumina", "amount": 15.0},
     ],
     "white NEGRONI":     [
         {"name": "London Dry Gin", "amount": 20.0},
@@ -1761,7 +1761,7 @@ export const recipes = {
         {"name": "Aperitif", "amount": 80.0},
         {"name": "Martini Prosecco", "amount": 100.0},
         {"name": "sody", "amount": 100},
-        {"name": "dodajemy wody gazowanej oraz", "amount": 100},
+        {"name": "woda gazowana", "amount": 100},
     ],
     "Martini vibrante/floreale spritz":     [
         {"name": "Aperitif bezalkoholowy/mFloreale", "amount": 40.0},
@@ -1770,7 +1770,7 @@ export const recipes = {
         {"name": "sody", "amount": 100},
         {"name": "Aperitif bezalkoholowy/Floreale", "amount": 40.0},
         {"name": "Prosecco", "amount": 80.0},
-        {"name": "dodajemy wody gazowanej oraz", "amount": 100},
+        {"name": "woda gazowana", "amount": 100},
     ]
 };
 
