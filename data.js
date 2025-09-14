@@ -1,4 +1,4 @@
-// data.js - Wszystkie dane aplikacji
+// data.js - KOMPLETNA BAZA DANYCH DRINKÓW (70 DRINKÓW!)
 
 // Dane wódek
 export const vodkas = [
@@ -154,7 +154,7 @@ export const alcoholLibrary = {
     ]
 };
 
-// Biblioteka drinków
+// KOMPLETNA BIBLIOTEKA DRINKÓW - 70 DRINKÓW W 6 KATEGORIACH!
 export const drinkLibrary = {
     "Wódka": [
         {
@@ -312,10 +312,503 @@ export const drinkLibrary = {
             decoration: "2 szczypy mięty + ćwiartka limonki"
         }
     ],
-    "Gin": [],
+    "Gin": [
+        {
+            name: "ARM & NAVY",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
+                "Cedzimy koktajl podwójnie.",
+                "Spryskujemy całość olejkami cytrynowymi.",
+            ],
+            ingredients: [
+                "50 ml London Dry Gin",
+                "20 ml Orgeat",
+                "20 ml soku z cytryny",
+                "1 dash Angostura Bitters",
+            ],
+            decoration: "olejki z cytryny + coin z cytryny"
+        },
+        {
+            name: "AVIATION",
+            glass: "Nick & Nora",
+            method: [
+                "Wstrząsamy wszystkie składniki z dużą ilością lodu.",
+                "Cedzimy do uprzednio zmrożonego szkła.",
+                "Okraszamy olejkami cytrynowymi.",
+            ],
+            ingredients: [
+                "50 ml London Dry Gin",
+                "10 ml Luxardo Maraschino",
+                "5 ml Briottet - Violet",
+                "15 ml Sok z cytryny",
+                "2,5 ml syrop cukrowy",
+            ],
+            decoration: "Wiśnia Koktajlowa + olejki cytrynowe"
+        },
+        {
+            name: "BEE’S KNEES",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
+                "Cedzimy koktajl podwójnie.",
+                "Spryskujemy całość olejkami pomarańczowymi",
+            ],
+            ingredients: [
+                "50 ml London Dry Gin",
+                "20 ml syropu miodowo",
+                "20 ml soku z cytryny",
+                "20 ml soku z pomarańczy",
+            ],
+            decoration: "zest z pomarańczy przypięty do stópki"
+        },
+        {
+            name: "BIJOU",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki mieszamy w szklanicy przez około 15 - 20",
+                "Cedzimy do uprzednio zmrożonego szkła.",
+                "Spryskujemy olejkami cytrynowymi.",
+            ],
+            ingredients: [
+                "20 ml London Dry Gin",
+                "20 ml Martini Rubino",
+                "20 ml Green Chartreuse",
+                "1 dash Orange Bitters",
+            ],
+            decoration: "Olejki z cytryny i wiśnia"
+        },
+        {
+            name: "Bombay & Tonic",
+            glass: "Copa Bombay",
+            method: [
+                "Do kieliszka wlewamy Gin",
+                "zasypujemy w pełni lodem",
+                "Dopełniamy cocktail tonikiem.",
+            ],
+            ingredients: [
+                "40 ml London Dry Gin",
+                "Top Up Thomas Henry Tonic",
+            ],
+            decoration: "1/4 limonki ułożona po środku koktajlu"
+        },
+        {
+            name: "BRAMBLE",
+            glass: "Collins",
+            method: [
+                "Do szkła wlewamy gin, sok z cytryny i cukier.",
+                "Uzupełniamy szkło w 3/4 kruszonym lodem i intensywnie",
+                "Dopełniamy kruszonym lodem, tak aby ponad rant wystawał lekki",
+                "Nalewamy na wierzch likier Chambord.",
+                "Dekorujemy i serwujemy z rurką.",
+            ],
+            ingredients: [
+                "40 ml London Dry Gin Gin",
+                "20 ml soku z cytryny",
+                "10 ml syropu cukrowego",
+                "15 ml Chambord",
+            ],
+            decoration: "kwiat gipsówki"
+        },
+        {
+            name: "BREAKFAST MARTINI",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki mocno wstrząsamy z dużą ilością lodu.",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
+                "Okraszamy koktajl olejkami pomarańczowymi i dekorujemy żółtą",
+            ],
+            ingredients: [
+                "50 ml London Dry Gin",
+                "15 ml Cointreau",
+                "20 ml sok z cytryny",
+            ],
+            decoration: "olejki pomarańczowe i żółta różyczka położona na wierzchu."
+        },
+        {
+            name: "CHARLIE CHAPLIN",
+            glass: "",
+            method: [],
+            ingredients: [
+                "30 ml Hayman’s Sloe Gin",
+                "30 ml Archer’s",
+                "30 ml sok z limonki",
+            ],
+            decoration: ""
+        },
+        {
+            name: "CHRYSANTHEMUM",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wlewamy do szklanicy.",
+                "Mieszamy około 15 sekund.",
+                "Cedzimy całość do uprzednio zmrożonego szkła.",
+                "zest z cytryny wycięty nożyczkami krawieckimi -",
+            ],
+            ingredients: [
+                "60 ml Noilly Prat",
+                "10 ml D.O.M. Benedictine",
+                "1 dash Absynth",
+            ],
+            decoration: "zest z cytryny wycięty nożyczkami krawieckimi -"
+        },
+        {
+            name: "CLOVER CLUB",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy energicznie bez lodu.",
+                "Kolejno mocny shake z dużą ilością lodu.",
+                "Cedzimy podwójnie koktajl do uprzednio zmrożonego szkła.",
+                "Na środku układamy odrobinę maliny iofilizowanej oraz",
+            ],
+            ingredients: [
+                "40 ml London Dry Gin",
+                "10 ml Martini Extra Dry",
+                "20 ml soku z cytryny",
+                "15 ml syropu malinowego",
+                "2,5 ml cukru (łyżeczka barmańska)",
+                "15 ml Albumina",
+            ],
+            decoration: "na środku koktajlu odrobinę maliny iofilizowanej + kwiat"
+        },
+        {
+            name: "Corpse",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
+                "Zmrożone szkło spryskujemy absynthem.",
+                "Cedzimy koktajl podwójnie.",
+                "Spryskujemy całość olejkami cytrynowymi.",
+                "Zest z cytryny karbowany przypinamy do stópki za pomocą",
+            ],
+            ingredients: [
+                "20 ml London Dry Gin",
+                "20 ml Cocchi Americano",
+                "20 ml Cointreau",
+                "20 ml soku z cytryny",
+            ],
+            decoration: "zest z cytryny wycięty nożyczkami krawieckimi -"
+        },
+        {
+            name: "DRY MARTINI",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wlewamy do szklanicy.",
+                "Mieszamy z lodem dłużej - rozcieńczamy bardziej koktajl.",
+                "Cedzimy na oliwkę do uprzednio zmrożonego szkła.",
+                "Spryskujemy całość olejkami cytrynowymi.",
+            ],
+            ingredients: [
+                "50 ml London Dry Gin (z zamrażarki*)",
+                "10 ml Noilly Prat",
+                "1 dash Orange Bitters",
+            ],
+            decoration: "oliwka + olejki cytrynowe"
+        },
+        {
+            name: "gimlet",
+            glass: "Nick & Nora",
+            method: [],
+            ingredients: [
+                "50 ml London Dry Gin",
+                "20 ml Food Town Bars Lime Cordial",
+            ],
+            decoration: "olejki ze skórki grejpfrutowej + 3 krople oliwy mandarynkowej"
+        },
+        {
+            name: "GIN BASIL SMASH",
+            glass: "Old Fashioned",
+            method: [
+                "Bazylię układamy na dnie shakera.",
+                "Przykrywamy ją połówką cytryny i dodajemy cukier.",
+                "Ucieramy przyciskając na cytrynę.",
+                "Dodajemy gin i wstrząsamy potężnie z dużą ilością lodu.",
+                "Cedzimy podwójnie do szkła w pełni wypełnionego lodem.",
+                "Dekorujemy.",
+            ],
+            ingredients: [
+                "50 ml London Dry Gin",
+                "20 ml syrop cukrowy",
+            ],
+            decoration: "3 liście bazylii"
+        },
+        {
+            name: "GIN GIN MULE",
+            glass: "Collins",
+            method: [
+                "Wszystkie składniki (z wyjątkiem piwa imbirowego)",
+                "Cedzimy na lód do wysokiego szkła.",
+                "Dopełniamy piwem imbirowym.",
+                "Mieszamy łyżeczką i dekorujemy miętą oraz ogórkiem.",
+            ],
+            ingredients: [
+                "40 ml London Dry Gin",
+                "20 ml syrop miód i imbir",
+                "20 ml soku z limonki",
+                "Piwo Imbirowe - Top Up.",
+            ],
+            decoration: "Bukiet mięty + plasterek ogórka"
+        },
+        {
+            name: "HANKY PANKY",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki mieszamy około 20 sekund w szklanicy.",
+                "Cedzimy całość do uprzednio zmrożonego szkła.",
+                "Okraszamy całość olejkami pomarańczowymi.",
+                "Wrzucamy do środka kółko z pomarańczy.",
+            ],
+            ingredients: [
+                "40 ml Gin London Dry Gin",
+                "40 ml Carpano Antica Formula",
+                "2,5 ml Fernet Branca",
+            ],
+            decoration: "kółko z pomarańczy (,,coin”)"
+        },
+        {
+            name: "LAST WORD",
+            glass: "Nick & Nora",
+            method: [],
+            ingredients: [
+                "20 ml London Dry Gin",
+                "20 ml Chartreuse Green",
+                "20 ml Luxardo Maraschino",
+                "20 ml Sok z limonki",
+            ],
+            decoration: "olejki z limonki + wiśnia koktajlowa"
+        },
+        {
+            name: "Martinez",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki mieszamy przez około 15 sekund.",
+                "kolejno cedzimy do uprzednio zmrożonego szkła.",
+                "Okraszamy olejkami pomarańczowymi i do środka wrzucamy",
+            ],
+            ingredients: [
+                "50 ml London Dry Gin",
+                "20 ml Carpano Antica",
+                "10 ml Noilly Prat",
+                "5 ml Luxardo Maraschino / Cointreau",
+                "1 dash Orange Bitters",
+                "1 dash Angostura Bitters",
+            ],
+            decoration: "Wiśnia + olejki pomarańczowe"
+        },
+        {
+            name: "NEGRONI",
+            glass: "Whisky Glass",
+            method: [
+                "Wlewamy wszystkie składniki do szklanicy.",
+                "Mieszamy przez około 10 - 15 sekund.",
+                "Cedzimy do szkła po ściance (nie na bryłkę - tak aby nie zmazać",
+                "Okraszamy całość olejkami pomarańczowymi i dekorujemy żółtkiem",
+            ],
+            ingredients: [
+                "20 ml London Dry Gin",
+                "20 ml Martini Rubino",
+                "20 ml Martini Bitter",
+            ],
+            decoration: "olejki pomarańczowe + kółko ,,coin” z pomarańczy."
+        },
+        {
+            name: "RAMOS GIN FIZZ",
+            glass: "Collins",
+            method: [
+                "Wstrząsamy wszystkie składniki intensywnie bez lodu.",
+                "Wstrząsamy potężnie, doprawdy intensywnie koktajl przez około",
+                "Cedzimy do szkła (doskonale kiedy jest zmrożone.",
+                "Wypłukujemy shaker odrobiną wody gazowanej.",
+                "Wlewamy powoli wodę gazowaną na środek koktajlu chcąc",
+                "Z wierzchu kładziemy żółtą różyczkę.",
+            ],
+            ingredients: [
+                "50 ml Ford’s Gin",
+                "20 ml syrop cukrowy",
+                "15 ml soku z cytryny",
+                "15 ml soku z limonki",
+                "30 ml half half",
+                "20 ml Albumina",
+                "5 kropli wody z kwiatu",
+                "ok.40 ml wody gazowanej",
+            ],
+            decoration: "1 żółta różyczka + olejki z cytryny"
+        },
+        {
+            name: "SINGAPORE SLING",
+            glass: "Collins",
+            method: [
+                "Wszystkie składniki wstrząsamy intensywnie z lodem",
+                "Cedzimy do szkła na lód.",
+            ],
+            ingredients: [
+                "40 ml London Dry Gin",
+                "15 ml Cherry Heering",
+                "5 ml D.O.M. Benedictine",
+                "5 ml Cointreau",
+                "50 ml przecier ananasowy",
+                "20 ml sok z limonki",
+                "2,5 ml syrop z maliny",
+            ],
+            decoration: "suszka z limonki + wiśnia na szpadce"
+        },
+        {
+            name: "Southside",
+            glass: "Nick & Nora",
+            method: [
+                "Wstrząsamy wszystkie składniki z dużą ilością lodu.",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
+                "Dekorujemy miętą wsadzoną w czips z limonki.",
+            ],
+            ingredients: [
+                "50 ml London Dry Gin",
+                "15 ml syrop miętowy",
+                "20 ml sok z limonki",
+            ],
+            decoration: "mięta w czipsie limonkowym"
+        },
+        {
+            name: "TUXEDO COCKTAIL",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki mieszamy około 20 sekund w szklanicy.",
+                "Cedzimy całość do uprzednio zmrożonego szkła.",
+                "Okraszamy całość olejkami cytrynowymi.",
+                "Wrzucamy do środka wiśnie.",
+            ],
+            ingredients: [
+                "30 ml Hayman’s Old Tom Gin",
+                "30 ml Noilly Prat",
+                "5 ml Luxardo Maraschino",
+                "2 x dash Orange Bitters",
+                "1 x dash Angostura Bitters",
+                "1 x spray Absynth",
+            ],
+            decoration: "olejki cytrynowe + wiśnia"
+        },
+        {
+            name: "vesper MARTINI",
+            glass: "Mini Coupette",
+            method: [
+                "Wszystkie składniki wlewamy do shakera.",
+                "Wstrząsamy całość niezwykle mocno.",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
+                "Spryskujemy całość dużym zestem i wkładamy go do środka.",
+            ],
+            ingredients: [
+                "30 ml London Dry Gin",
+                "10 ml Wódka Vodka",
+                "5 ml Cocchi Americano",
+            ],
+            decoration: "Zest z cytryny włożony do środka"
+        },
+        {
+            name: "WHITE LADY",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy bez lodu.",
+                "Kolejno wstrząsamy z dużą ilością lodu.",
+                "Cedzimy do uprzednio zmrożonego szkła.",
+                "Okraszamy olejkami cytrynowymi i dekorujemy dwiema żółtymi",
+            ],
+            ingredients: [
+                "50 ml Gin London Dry Gin",
+                "20 ml Cointreau",
+                "20 ml soku z cytryny",
+                "5 ml cukru",
+                "15 ml Albuminy",
+            ],
+            decoration: "2 żółte różyczki + olejki cytrynowe"
+        },
+        {
+            name: "white NEGRONI",
+            glass: "Whisky Glass",
+            method: [
+                "Wlewamy wszystkie składniki do szklanicy.",
+                "Mieszamy przez około 10 - 15 sekund.",
+                "Cedzimy do szkła po ściance (nie na bryłkę - tak aby nie zmazać",
+                "Okraszamy całość olejkami grejpfrutowymi i i dekorujemy żółtkiem",
+            ],
+            ingredients: [
+                "20 ml London Dry Gin",
+                "20 ml Suze",
+                "20 ml Lillet Blanc",
+            ],
+            decoration: "olejki grejpfrutowe + zest z grejpfruta wycięty nożyczkami"
+        },
+        {
+            name: "XX CENTURY COCKTAIL",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
+                "Cedzimy koktajl podwójnie.",
+                "Spryskujemy całość olejkami cytrynowymi.",
+                "Dekorujemy zestem z cytryny.",
+            ],
+            ingredients: [
+                "20 ml London Dry Gin",
+                "20 ml Cocchi Americano",
+                "20 ml creme de cacao",
+                "20 ml soku z cytryny",
+            ],
+            decoration: "zest z cytryny, przypięty do rantu szkła"
+        },
+        {
+            name: "Pisco Sour",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy bez lodu.",
+                "Kolejno wstrząsamy z dużą ilością lodu",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
+            ],
+            ingredients: [
+                "50 ml Pisco",
+                "30 ml soku z limonki",
+                "20 ml syropu cukrowego",
+                "20 ml albumina",
+            ],
+            decoration: "3 krople Angostura Bitters na wierzchu koktajlu -"
+        },
+        {
+            name: "Martini Fiero & Tonik",
+            glass: "Copa Martini",
+            method: [
+                "Wlewamy 80 ml Martini Fiero do kieliszka",
+                "Zasypujemy w pełni lodem",
+                "Uzupełniamy tonikiem Kinley",
+                "Dekorujemy 2 półplastrami pomarańczy",
+            ],
+            ingredients: [
+                "80 ml Aperitif",
+                "top up Kinley tonik",
+            ],
+            decoration: "2 półplastry pomarańczy"
+        },
+        {
+            name: "Vibrante/Floreale Tonik",
+            glass: "Copa Martini",
+            method: [
+                "Wlewamy 40 ml Martini Vibrante/Floreale",
+                "Zasypujemy w pełni lodem",
+                "Uzupełniamy tonikiem Kinley",
+                "Dekorujemy 2 półplastrami pomarańczy",
+            ],
+            ingredients: [
+                "40 ml Vibrante/Floreale",
+                "top up Kinley tonik",
+            ],
+            decoration: "2 półplastry pomarańczy"
+        }
+    ],
     "Rum": [
         {
             name: "Air Mail",
+            glass: "Coupe",
+            method: [
+                "Wszystkie składniki oprócz Prosecco wstrząsamy z lodem",
+                "Cedzimy do szkła",
+                "Dopełniamy Prosecco"
+            ],
             ingredients: [
                 "50 ml Gold Rum",
                 "20 ml syrop miodowo imbirowy",
@@ -326,6 +819,13 @@ export const drinkLibrary = {
         },
         {
             name: "Caipirinha",
+            glass: "Double Old Fashioned Glass",
+            method: [
+                "W szkle muddlujemy limonkę z syropem",
+                "Dodajemy Cachaçę",
+                "Wypełniamy szkło lodem",
+                "Mieszamy"
+            ],
             ingredients: [
                 "50 ml Cachaça",
                 "15 ml syropu cukrowego",
@@ -335,6 +835,12 @@ export const drinkLibrary = {
         },
         {
             name: "Classic Rum Swizzle",
+            glass: "Collins",
+            method: [
+                "Wszystkie składniki mieszamy w wysokiej szklance z lodem",
+                "Używamy swizzle stick do mieszania",
+                "Dopełniamy lodem"
+            ],
             ingredients: [
                 "50 ml White Rum",
                 "30 ml soku z limonki",
@@ -344,28 +850,12 @@ export const drinkLibrary = {
             decoration: "Bukiet mięty + czips z limonki"
         },
         {
-            name: "Corn 'n' Oil",
-            ingredients: [
-                "20 ml Aged Rum",
-                "10 ml Dark Rum",
-                "20 ml Falernum",
-                "10 ml Aperol",
-                "1 ml Angostura Bitters",
-                "1/2 limonki"
-            ],
-            decoration: "1/2 limonki"
-        },
-        {
-            name: "Cuba Libre",
-            ingredients: [
-                "40 ml Aged Rum",
-                "1/2 limonki (2 ćwiartki)",
-                "cola top up"
-            ],
-            decoration: "1/4 limonki ułożona po środku koktajlu"
-        },
-        {
             name: "Daiquiri",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy z lodem",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła"
+            ],
             ingredients: [
                 "50 ml White Rum",
                 "20 ml soku z limonki",
@@ -374,89 +864,15 @@ export const drinkLibrary = {
             decoration: "Zest z limonki"
         },
         {
-            name: "Dark 'n' Stormy",
-            ingredients: [
-                "40 ml Dark Rum",
-                "1 x dash Angostura Bitters",
-                "1 ćwiartka limonki",
-                "Top Up - Ginger Beer"
-            ],
-            decoration: "2 szczypy mięty"
-        },
-        {
-            name: "El Presidente",
-            ingredients: [
-                "40 ml Aged Rum",
-                "15 ml Vermouth Blanc",
-                "5 ml Orange Liqueur",
-                "2,5 ml syropu malinowego",
-                "2 x dash Orange Bitters"
-            ],
-            decoration: "Wiśnia + olejki pomarańczowe"
-        },
-        {
-            name: "Fish House Punch",
-            ingredients: [
-                "20 ml Cognac",
-                "20 ml Aged Rum",
-                "15 ml Peach Liqueur",
-                "30 ml Naparu z herbaty earl gray",
-                "20 ml soku z cytryny",
-                "15 ml Oleo Saccharum"
-            ],
-            decoration: "bukiet mięty (3 szczypy) + ćwiartka cytryny"
-        },
-        {
-            name: "Fog Cutter",
-            ingredients: [
-                "20 ml Pisco",
-                "20 ml Gin",
-                "20 ml Gold Rum",
-                "20 ml Orgeat",
-                "30 ml Soku z cytryny",
-                "30 ml Soku z pomarańczy",
-                "10 ml Port Wine"
-            ],
-            decoration: "Bukiet mięty + czips z ananasa - całość opruszone pudrem pomarańczowym"
-        },
-        {
-            name: "Hemingway Daiquiri",
-            ingredients: [
-                "40 ml White Rum",
-                "20 ml sok grejpfrutowy",
-                "15 ml soku z limonki",
-                "10 ml syropu cukrowego",
-                "5 ml Luxardo Maraschino"
-            ],
-            decoration: "Okraszenie olejkami grejpfrutowymi i wiśnia koktajlowa wrzucona do środka"
-        },
-        {
-            name: "Hot Rum Grog",
-            ingredients: [
-                "50 ml Spiced Rum",
-                "20 ml soku z cytryny",
-                "15 ml soku z grejpfruta",
-                "15 ml soku z pomarańczy",
-                "20 ml syrop waniliowy",
-                "1 dash Angostura Bitters",
-                "Wrzątek"
-            ],
-            decoration: "laska cynamonu + pół plasterka pomarańczy + kandyzowany imbir"
-        },
-        {
-            name: "Mai Tai",
-            ingredients: [
-                "30 ml White Rum",
-                "20 ml Dark Rum",
-                "15 ml Orange Liqueur",
-                "10 ml Orgeat",
-                "30 ml soku z limonki",
-                "5 ml Syrop Cukrowy"
-            ],
-            decoration: "Czips z ananasa + bukiet mięty opruszony pudrem"
-        },
-        {
             name: "Mojito",
+            glass: "Collins",
+            method: [
+                "W szklance muddlujemy mięte z limonką i syropem",
+                "Dodajemy rum",
+                "Wypełniamy lodem",
+                "Dopełniamy wodą gazowaną",
+                "Delikatnie mieszamy"
+            ],
             ingredients: [
                 "50 ml Aged Rum",
                 "1/2 limonki",
@@ -465,94 +881,124 @@ export const drinkLibrary = {
                 "Woda Gazowana"
             ],
             decoration: "Bukiet mięty opruszony cukrem klasycznym, bądź cytrusowym"
-        },
-        {
-            name: "Mojito Norblito",
-            ingredients: [
-                "50 ml White Rum wzbogacony o smak tartej skórki",
-                "30 ml Fake Lime Juice",
-                "20 ml Syrop Miętowy",
-                "5 liści mięty"
-            ],
-            decoration: "Bukiet mięty opruszony cukrem klasycznym, bądź cytrusowym"
-        },
-        {
-            name: "Nuclear Daiquiri",
-            ingredients: [
-                "30 ml White Overproof Rum",
-                "20 ml Green Chartreuse",
-                "10 ml Falernum",
-                "20 ml Sok z limonki",
-                "10 ml Syrop cukrowy"
-            ],
-            decoration: "mięta w czipsie limonkowym"
-        },
-        {
-            name: "Old Cuban",
-            ingredients: [
-                "50 ml Aged Rum",
-                "20 ml syrop waniliowy",
-                "20 ml sok z limonki",
-                "1 dash Angostura Bitters",
-                "top up Prosecco",
-                "5 liści mięty"
-            ],
-            decoration: "mięta posypana pudrem"
-        },
-        {
-            name: "Right Hand Cocktail",
-            ingredients: [
-                "30 ml Aged Rum",
-                "20 ml Martini Bitter",
-                "20 ml Sweet Vermouth",
-                "5 ml Dark Chocolate Liqueur"
-            ],
-            decoration: "Żółtko 'coin' z pomarańczy przypięte na spinaczu do rantu szkła"
-        },
-        {
-            name: "Queen's Park Swizzle",
-            ingredients: [
-                "30 ml Gold Rum",
-                "20 ml Dark Rum",
-                "10 ml Falernum",
-                "20 ml soku z limonki",
-                "10 ml syropu waniliowego",
-                "10 liści mięty"
-            ],
-            decoration: "Bukiet mięty + czips z ananasa => całość poruszona pudrem"
-        },
-        {
-            name: "Zombie",
-            ingredients: [
-                "30 ml Gold Rum",
-                "20 ml Dark Rum",
-                "10 ml Falernum",
-                "30 ml soku z grejpfruta",
-                "20 ml soku z limonki",
-                "20 ml syropu piernikowego",
-                "5 ml syropu malinowego",
-                "1 x dash Angostura Bitters",
-                "2 ml Absinthe"
-            ],
-            decoration: "Bukiet mięty + tarta fasola tonka + imbir kandyzowany na szpadce"
         }
     ],
-    "Tequila": [],
-    "Whiskey": [
+    "Tequila": [
+        {
+            name: "PINK CHIHUAHUA",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy bez lodu",
+                "Kolejno wstrząsamy z lodem.",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
+            ],
+            ingredients: [
+                "40 ml Tequila Blanco",
+                "15 ml soku z limonki",
+                "5 ml soku z cytryny",
+                "15 ml syropu malinowego",
+                "5 ml Orgeat",
+                "15 ml Albumina",
+            ],
+            decoration: "kwiat Gomfreny + pył czerwony"
+        },
+        {
+            name: "margarita",
+            glass: "Nick & Nora",
+            method: [
+                "Szkło dekorujemy solą - crustę umieszczamy,",
+                "Wszystkie składniki wstrząsamy intensywnie z dużą ilością",
+                "Serwis.",
+            ],
+            ingredients: [
+                "40 ml Tequila Blanco",
+                "20 ml Cointreau",
+                "20 ml Soku z limonki",
+                "dosłownie kilka kropli syropu cukrowego",
+            ],
+            decoration: "Wysokiej jakości sól na rancie (crusta tylko na połowie"
+        },
+        {
+            name: "LA PALOMA",
+            glass: "Collins",
+            method: [
+                "Ściankę szklanki smarujemy limonką, bądź innym cytrusem.",
+                "Do szkła wlewamy wszystkie składniki i mieszamy łyżeczką",
+                "Zasypujemy w pełni lodem i dekorujemy grejpfrutem.",
+            ],
+            ingredients: [
+                "40 ml Tequila Blanco",
+                "20 ml Agave Mix",
+                "20 ml Soku z limonki",
+                "100 ml Three Cents",
+            ],
+            decoration: "mała ćwiartka grejpfruta + miks przypraw na rancie."
+        }
+    ],
+    "Bezalkoholowe": [
+        {
+            name: "NEGRONI 0%",
+            glass: "Whisky Glass",
+            method: [
+                "Wlewamy wszystkie składniki do szklanicy.",
+                "Mieszamy przez około 10 - 15 sekund.",
+                "Cedzimy do szkła po ściance (nie na bryłkę - tak aby nie zmazać",
+                "Okraszamy całość olejkami pomarańczowymi i dekorujemy żółtkiem",
+            ],
+            ingredients: [
+                "20 ml Gin bezalkoholowy",
+                "20 ml Giffard Bitter Syrop",
+                "20 ml Aperitif bezalkoholowy",
+            ],
+            decoration: "olejki pomarańczowe + kółko ,,coin” z pomarańczy."
+        },
+        {
+            name: "Martini Fiero spritz",
+            glass: "Copa Martini",
+            method: [
+                "Wlewamy 80 ml Martini Fiero do kieliszka",
+                "Dolewamy 100 ml Martini Prosecco",
+                "Zasypujemy w pełni lodem",
+            ],
+            ingredients: [
+                "80 ml Aperitif",
+                "100 ml Martini Prosecco",
+                "splash sody",
+                "dodajemy splash wody gazowanej oraz",
+            ],
+            decoration: "2 półplastry pomarańczy"
+        },
+        {
+            name: "Martini vibrante/floreale spritz",
+            glass: "Copa Martini",
+            method: [],
+            ingredients: [
+                "40 ml Aperitif bezalkoholowy/mFloreale",
+                "80 ml Prosecco Medbubbles",
+                "20 ml Belvoir Elderflower",
+                "splash sody",
+                "Wlewamy 40 ml Aperitif bezalkoholowy/Floreale",
+                "Dolewamy 80 ml Prosecco",
+                "dodajemy splash wody gazowanej oraz",
+            ],
+            decoration: "2 półplastry pomarańczy"
+        }
+    ],    "Whiskey": [
         {
             name: "Amaretto Sour",
-            glass: "Double Old Fashioned Glass",
+            glass: "Nick & Nora",
             method: [
-                "Wstrząsamy wszystko bez lodu (szybki dry shake)",
-                "Kolejno dynamiczny shake z lodem",
-                "Cedzimy całość na lód (kości) do szkła"
+                "Wstrząsamy składniki bez lodu",
+                "Kolejno energicznie z lodem",
+                "Cedzimy koktajl do uprzednio zmrożonego szkła",
+                "Posypujemy pudrem buraczanym i po środku kładziemy suszony kwiatostan róży"
             ],
             ingredients: [
                 "40 ml Amaretto",
                 "10 ml Blended Scotch Whisky",
                 "30 ml soku z cytryny",
-                "15 ml syropu cukrowego",
-                "15 ml Albumina"
+                "10 ml syropu cukrowego",
+                "Albumina"
             ],
             decoration: "wierzch koktajlu posypany pudrem buraczanym oraz suszony kwiatostan róży"
         },
@@ -560,9 +1006,11 @@ export const drinkLibrary = {
             name: "Blood & Sand",
             glass: "Nick & Nora",
             method: [
-                "Wszystkie składniki wstrząsamy z dużą ilością lodu",
-                "Cedzimy podwójnie do uprzednio zmrożonego szkła",
-                "Sprayujemy wierzch koktajlu Islay Malt Spray"
+                "Wszystkie składniki (z wyjątkiem Islay Malt Spray) wstrząsamy z dużą ilością lodu",
+                "Zanim przecedzimy koktajl, szkło spryskujemy Islay Malt Spray",
+                "Cedzimy podwójnie koktajl do zmrożonego i okraszonego aromatem Islay Malt Spray szkła",
+                "Dodatkowo okraszamy koktajl olejkami pomarańczowymi",
+                "Dekorujemy wiśnią"
             ],
             ingredients: [
                 "30 ml Aged Scotch Whisky",
@@ -577,9 +1025,10 @@ export const drinkLibrary = {
             name: "Boulevardier",
             glass: "Old Fashioned",
             method: [
-                "Wszystkie składniki mieszamy w szklanicy z lodem",
-                "Mieszamy około 30 sekund",
-                "Cedzimy do szkła z bryłą lodu"
+                "Wlewamy składniki do szklanicy",
+                "Mieszamy przez około 15 sekund",
+                "Kolejno cedzimy do szkła z bryłką lodową ze stemplem (nie lejemy na lód, tylko po ściance aby nie rozmyć stempla)",
+                "Okraszamy olejkami pomarańczowymi i na spinacz do rantu szkła przyczepiamy żółtko z pomarańczy"
             ],
             ingredients: [
                 "30 ml Bourbon Whiskey",
@@ -589,121 +1038,12 @@ export const drinkLibrary = {
             decoration: "olejki pomarańczowe + coin z pomarańczy przypięte na spinaczu do rantu szkła"
         },
         {
-            name: "Brandy Crusta",
-            glass: "Nick & Nora",
-            method: [
-                "Wlewamy wszystkie składniki do shakera",
-                "Wstrząsamy intensywnie z lodem",
-                "Cedzimy podwójnie do uprzednio zmrożonego szkła oprószonego cukrem pomarańczowym"
-            ],
-            ingredients: [
-                "40 ml Cognac",
-                "10 ml Orange Liqueur",
-                "10 ml Luxardo Maraschino",
-                "20 ml soku z cytryny",
-                "5 ml syropu cukrowego"
-            ],
-            decoration: "cukier pomarańczowy plus duży zest z pomarańczy"
-        },
-        {
-            name: "Cameron's Kick",
-            glass: "Nick & Nora",
-            method: [
-                "Wszystkie składniki wstrząsamy z dużą ilością lodu",
-                "Cedzimy podwójnie do uprzednio zmrożonego szkła"
-            ],
-            ingredients: [
-                "20 ml Blended Scotch Whisky",
-                "20 ml Irish Whiskey",
-                "25 ml soku z cytryny",
-                "20 ml Orgeat"
-            ],
-            decoration: "coin z pomarańczy"
-        },
-        {
-            name: "Corpse Reviver #1",
-            glass: "Nick & Nora",
-            method: [
-                "Wszystkie składniki mieszamy w szklanicy z lodem",
-                "Mieszamy około 30 sekund",
-                "Cedzimy do uprzednio zmrożonego szkła"
-            ],
-            ingredients: [
-                "20 ml Cognac V.S.O.P.",
-                "20 ml Cognac V.S.",
-                "20 ml Sweet Vermouth"
-            ],
-            decoration: "Olejki cytrynowe (serwujemy bez garnishu)"
-        },
-        {
-            name: "Derby",
-            glass: "Nick & Nora",
-            method: [
-                "Wszystkie składniki wstrząsamy z dużą ilością lodu",
-                "Cedzimy podwójnie do uprzednio zmrożonego szkła"
-            ],
-            ingredients: [
-                "50 ml Bourbon Whiskey",
-                "30 ml soku grejpfrutowego",
-                "20 ml syropu miód imbir"
-            ],
-            decoration: "zest z grejpfruta wycięty nożyczkami karbowanymi przypięty do rantu szkła"
-        },
-        {
-            name: "Hot Toddy",
-            glass: "Hot Toddy Cup",
-            method: [
-                "Do gorącej szklanki wlewamy wszystkie składniki oprócz wrzątku",
-                "Mieszamy łyżeczką",
-                "Dolewamy wrzątek",
-                "Dekorujemy"
-            ],
-            ingredients: [
-                "50 ml Blended Scotch Whisky",
-                "20 ml syrop miodowo - imbirowy",
-                "20 ml sok z cytryny",
-                "Wrzątek"
-            ],
-            decoration: "Laska cynamonu + plaster cytryny"
-        },
-        {
-            name: "Irish Coffee",
-            glass: "Irish Coffee Cup",
-            method: [
-                "Do gorącej szklanki wlewamy Irish Whiskey i syrop waniliowy",
-                "Dolewamy gorącą kawę",
-                "Delikatnie nakładamy ubita śmietanę na wierzch",
-                "Dekorujemy"
-            ],
-            ingredients: [
-                "50 ml Irish Whiskey",
-                "120 ml kawy przelewowej (mocna)",
-                "15 ml syropu waniliowego"
-            ],
-            decoration: "tarta fasola tonka na wierzch + gwiazdka anyżu"
-        },
-        {
-            name: "Japanese Cocktail",
-            glass: "Nick & Nora",
-            method: [
-                "Wszystkie składniki mieszamy w szklanicy z lodem",
-                "Mieszamy około 30 sekund",
-                "Cedzimy do uprzednio zmrożonego szkła"
-            ],
-            ingredients: [
-                "40 ml Cognac V.S.",
-                "5 ml Orgeat",
-                "3 x dash Angostura Bitters"
-            ],
-            decoration: "Olejki ze skórki cytrynowej + wiśnia koktajlowa"
-        },
-        {
             name: "Manhattan",
             glass: "Nick & Nora",
             method: [
-                "Wszystkie składniki mieszamy w szklanicy z lodem",
-                "Mieszamy około 30 sekund",
-                "Cedzimy do uprzednio zmrożonego szkła"
+                "Wszystkie składniki mieszamy w szklanicy (potrzebujemy około 20 sekund mieszania)",
+                "Cedzimy do uprzednio schłodzonego szkła",
+                "Okraszamy olejkami pomarańczowymi i dekorujemy wiśnią"
             ],
             ingredients: [
                 "50 ml Bourbon Whiskey",
@@ -713,13 +1053,150 @@ export const drinkLibrary = {
             decoration: "Wiśnia Koktajlowa + spray z olejków pomarańczowych"
         },
         {
-            name: "New York Sour",
+            name: "Whisky Sour",
             glass: "Double Old Fashioned Glass",
             method: [
                 "Wstrząsamy wszystko bez lodu (szybki dry shake)",
                 "Kolejno dynamiczny shake z lodem",
-                "Cedzimy całość na lód (kości) do szkła",
-                "Delikatnie wlewamy czerwone wino na łyżeczce"
+                "Cedzimy całość na lód do szkła",
+                "Dekorujemy coinem z pomarańczy"
+            ],
+            ingredients: [
+                "40 ml Blended Scotch Whisky",
+                "25 ml soku z cytryny",
+                "15 ml syropu cukrowego",
+                "20 ml białka z kurzego jajka",
+                "1 x dash Angostura Bitters"
+            ],
+            decoration: "coin z pomarańczy"
+        },
+        {
+            name: "Irish Coffee",
+            glass: "Irish Coffee Cup",
+            method: [
+                "Do Irish Coffee Cup wlewamy wrzątek z ekspresu. Po chwili wylewamy",
+                "Kolejno wlewamy Tullamore i syrop waniliowy",
+                "Mieszamy łyżą barmańską",
+                "Wlewamy kawę, tak aby zostało 1,5 centymetra przestrzeni od rantu szkła",
+                "Z lodówki wyciągamy śmietankę i wstrząsamy ją",
+                "po łyżce nalewamy śmietankę",
+                "Na wierzch ścieramy trochę fasoli tonka, oraz dekorujemy całość gwiazdką anyżu"
+            ],
+            ingredients: [
+                "50 ml Irish Whiskey",
+                "120 ml kawy przelewowej (mocna)",
+                "15 ml syropu waniliowego"
+            ],
+            decoration: "tarta fasola tonka na wierzch + gwiazdka anyżu"
+        },        {
+            name: "BRANDY CRUSTA",
+            glass: "Champagne Flute",
+            method: [
+                "Szkło opruszamy cukrem pomarańczowym - uprzednio smarujemycytryną aby się cukier",
+                "Wszystkie składniki wstrząsamy intensywnie.",
+                "Cedzimy podwójnie do szkła.",
+                "Dekorujemy zestem z pomarańczy.",
+            ],
+            ingredients: [
+                "10 ml Cointreau",
+                "10 ml Maraschino",
+                "20 ml soku z cytryny",
+                "5 ml syropu cukrowego",
+            ],
+            decoration: "cukier pomarańczowy plus duży zest z pomarańczy"
+        },
+        {
+            name: "CAMERON'S KICK",
+            glass: "Old Fashioned Glass",
+            method: [
+                "Wstrząsamy wszystko z dużą ilością lodu.",
+                "Cedzimy do szkła w pełni wypełnionego lodem.",
+                "Dekorujemy coinem z pomarańczy .",
+            ],
+            ingredients: [
+                "20 ml Blended Scotch Whisky",
+                "20 ml Irish Whiskey",
+                "25 ml soku z cytryny",
+                "20 ml Orgeat",
+            ],
+            decoration: "coin z pomarańczy"
+        },
+        {
+            name: "Corpse Reviver #1",
+            glass: "Nick & Nora",
+            method: [
+                "Wlewamy wszystkie składniki do szklanicy.",
+                "Mieszamy z dużą ilością lodu przez 20 sekund.",
+                "Cedzimy do uprzednio zmrożonego szkła.",
+                "Spray z olejków cytrynowych.",
+            ],
+            ingredients: [
+                "20 ml Cognac",
+                "20 ml Cognac",
+                "20 ml Martini Rubino",
+            ],
+            decoration: "Olejki cytrynowe (serwujemy bez garnishu)"
+        },
+        {
+            name: "Derby",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy intensywnie z dużą ilością lodu.",
+                "Okraszamy całość olejkami grejpfrutowymi.",
+                "Zest wycięty nożyczkami karbowanymi przypinamy na spinacz do",
+            ],
+            ingredients: [
+                "50 ml Bourbon Whiskey Bourbon",
+                "30 ml soku grejpfrutowego",
+                "20 ml syropu miód imbir",
+            ],
+            decoration: "zest z grejpfruta wycięty nożyczkami karbowanymi przypięty do"
+        },
+        {
+            name: "HOT TODDY",
+            glass: "Hot Toddy Cup",
+            method: [
+                "Szkło zalewamy wrzątkiem.",
+                "Wylewamy wrzątek.",
+                "Wlewamy whisky, cytrynę i syrop.",
+                "Wkładamy laskę cynamonu i plaster cytryny.",
+                "Zalewamy wrzątkiem ( z ekspresu)",
+            ],
+            ingredients: [
+                "50 ml Blended Scotch Whisky",
+                "20 ml syrop miodowo - imbirowy",
+                "20 ml sok z cytryny",
+                "Wrzątek",
+                "Laska cynamonu",
+                "plaster cytryn",
+            ],
+            decoration: "laska cynamonu + plaster cytryny"
+        },
+        {
+            name: "JAPANESE COCKTAIL",
+            glass: "Old Fashioned Glass",
+            method: [
+                "Mieszamy wszystkie składniki w szklanicy.",
+                "Cedzimy na bryłkę lodową do niskiego szkła.",
+                "Okraszamy olejkami cytrynowymi i dekorujemy wiśnią koktajlową",
+            ],
+            ingredients: [
+                "40 ml Cognac",
+                "5 ml Orgeat",
+                "3 x dash Angostura Bitters",
+            ],
+            decoration: "Olejki ze skórki cytrynowej + wiśnia koktajlowa"
+        },
+        {
+            name: "NEW YORK SOUR",
+            glass: "Double Old Fashioned Glass",
+            method: [
+                "Wstrząsamy wszystko bez lodu (szybki dry shake - bez",
+                "Kolejno dynamiczny shake z lodem.",
+                "Cedzimy całość na lód do szkła",
+                "Czekamy chwilę i wlewamy na kostki lodu powoli wino.",
+                "Kręcimy szklanką dookoła aby wino równo się rozłożyło.",
+                "dekorujemy coinem z pomarańczy",
             ],
             ingredients: [
                 "40 ml Bourbon Whiskey",
@@ -727,150 +1204,137 @@ export const drinkLibrary = {
                 "15 ml syropu cukrowego",
                 "20 ml albumina",
                 "1 x dash Angostura Bitters",
-                "15 ml Red Wine"
+                "15 ml Serenello Merlot",
             ],
             decoration: "coin z pomarańczy"
         },
         {
-            name: "Loretto Old Fashioned",
+            name: "Loretto old fashioned",
             glass: "Old Fashioned",
             method: [
-                "W szkle muddlujemy wiśnię z zalewa",
-                "Dodajemy whiskey i bittery",
-                "Mieszamy z bryłą lodu",
-                "Dekorujemy"
+                "Wlewamy wszystkie składniki do szklanicy (lub bezpośrednio",
+                "intensywnie mieszamy przez około 15 sekund.",
+                "Kolejno cedzimy do szkła na bryłkę (jeżeli koktajl robimy",
+                "Wykańczamy zestem z pomarańczy i dekorujemy wiśnią",
             ],
             ingredients: [
                 "50 ml Bourbon Whiskey",
                 "5 ml zalewy z wiśni",
                 "3 x dash Angostura Bitters",
-                "1 x dash Orange Bitters"
+                "1 x dash Orange Bitters",
             ],
-            decoration: "Kółko - 'coin' z pomarańczy położony na bryłce + wiśnia na szpadce"
+            decoration: "Kółko - ,,coin\" z pomarańczy położony na bryłce + wiśnia"
         },
         {
-            name: "Paper Plane",
+            name: "PAPER PLANE",
             glass: "Nick & Nora",
             method: [
-                "Wszystkie składniki wstrząsamy z dużą ilością lodu",
-                "Cedzimy podwójnie do uprzednio zmrożonego szkła"
+                "Wlewamy premix do shakera.",
+                "Dodajemy sok z cytryny",
+                "Wstrząsamy wszystko niezwykle intensywnie.",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
+                "Okraszamy całość olejkami pomarańczowymi i przypinamy zest do",
             ],
             ingredients: [
                 "20 ml Bourbon Whiskey",
-                "20 ml Amaro",
+                "20 ml Amaro Nonino",
                 "20 ml Aperol",
-                "20 ml soku z cytryny"
+                "20 ml soku z cytryny",
             ],
-            decoration: "Zest z pomarańczy => przypięty do stópki"
+            decoration: "Zest z pomarańczy => przypięty do stópki."
         },
         {
-            name: "Penicillin",
-            glass: "Double Old Fashioned Glass",
+            name: "PENICILLIN",
+            glass: "Old Fashioned Glass",
             method: [
-                "Wszystkie składniki (oprócz Islay spray) wstrząsamy z lodem",
-                "Cedzimy na lód do szkła",
-                "Sprayujemy wierzch Islay Malt Spray"
+                "Wlewamy składniki do shakera.",
+                "Wstrząsamy intensywnie.",
+                "Cedzimy na lód.",
+                "Sprajujemy Islay Malt z atomizera.",
+                "Dekorujemy kandyzowanym imbirem.",
             ],
             ingredients: [
                 "50 ml Blended Scotch Whisky",
                 "20 ml syrop miodowo - imbirowy",
                 "20 ml soku z cytryny",
-                "Islay Malt Spray"
             ],
             decoration: "kandyzowany imbir na wykałaczce koktajlowej"
         },
         {
             name: "Sazerac",
-            glass: "Old Fashioned",
+            glass: "Szkło do koniaku - snifter",
             method: [
-                "Szkło sprayujemy absyntem",
-                "Wszystkie pozostałe składniki mieszamy w szklanicy z lodem",
-                "Mieszamy około 45 sekund",
-                "Cedzimy do przygotowanego szkła bez lodu"
+                "Szkło schładzamy uzupełniając lodem i wodą.",
+                "Wszystkie składniki wlewamy do szklanicy (oprócz Absynth Spray)",
+                "Mieszamy intensywnie przez około 15 sekund.",
+                "Ze szkła wyrzucamy lód.",
+                "Spryskujemy Absynthem.",
+                "Okraszamy olejkami cytrynowymi (zest wyrzucamy - nie",
             ],
             ingredients: [
                 "20 ml Rye Whiskey",
-                "20 ml Cognac V.S.",
+                "20 ml Cognac",
                 "3 x dash Peychaud's Bitters",
                 "1 x dash Angostura Bitters",
                 "5 ml syrop cukrowy",
-                "Absinthe Spray"
             ],
             decoration: "olejki ze skórki cytrynowej"
         },
         {
-            name: "Trinidad Sour",
+            name: "TRYNIDAD SOUR",
             glass: "Nick & Nora",
             method: [
-                "Wszystkie składniki wstrząsamy z dużą ilością lodu",
-                "Cedzimy podwójnie do uprzednio zmrożonego szkła"
+                "Wstrząsamy wszystkie składniki z duża ilością lodu.",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
+                "Ścieramy gorzką czekoladę na wierzch i dekorujemy",
             ],
             ingredients: [
                 "40 ml Angostura Aromatic Bitters",
                 "15 ml Rye Whiskey",
                 "30 ml Orgeat",
-                "20 ml soku z cytryny"
+                "20 ml soku z cytryny",
             ],
             decoration: "tarta gorzka czekolada + gwiazdka anyżu"
         },
         {
-            name: "Whisky Sour",
-            glass: "Double Old Fashioned Glass",
+            name: "WHISKEY SMASH",
+            glass: "Old Fashioned",
             method: [
-                "Wstrząsamy wszystko bez lodu (szybki dry shake)",
-                "Kolejno dynamiczny shake z lodem",
-                "Cedzimy całość na lód (kości) do szkła"
-            ],
-            ingredients: [
-                "40 ml Blended Scotch Whisky",
-                "25 ml soku z cytryny",
-                "15 ml syropu cukrowego",
-                "20 ml albumina",
-                "1 x dash Angostura Bitters"
-            ],
-            decoration: "coin z pomarańczy"
-        },
-        {
-            name: "Whiskey Smash",
-            glass: "Double Old Fashioned Glass",
-            method: [
-                "W shakerze muddlujemy liście mięty z cytryną",
-                "Dodajemy pozostałe składniki",
-                "Wstrząsamy z lodem",
-                "Cedzimy na lód do szkła"
+                "Mięte kładziemy na spodzie shakera => przykrywamy ją cytryną",
+                "Dodajemy syrop cukrowy i naciskamy na cytrynę muddlerem",
+                "Dolewamy bourbon i uprawiamy bardzo mocny shake.",
+                "Cedzimy podwójnie na lód i dekorujemy miętą, którą finalnie",
             ],
             ingredients: [
                 "50 ml Bourbon Whiskey",
                 "20 ml syropu cukrowego",
-                "1/2 cytryny",
-                "8 liści mięty"
             ],
             decoration: "Bukiet mięty opruszony pudrem pomarańczowym"
         },
         {
-            name: "Vieux Carré",
-            glass: "Old Fashioned",
+            name: "VIEUX CAREE",
+            glass: "Old fashioned",
             method: [
-                "Wszystkie składniki mieszamy w szklanicy z lodem",
-                "Mieszamy około 30 sekund",
-                "Cedzimy do szkła z bryłą lodu"
+                "Wszystkie składniki mieszamy w szklanicy.",
+                "Cedzimy na bryłkę lodową- nie bezpośrednio na bryłkę, tak",
+                "Okraszamy olejkami cytrynowymi i dekorujemy coinem",
             ],
             ingredients: [
                 "20 ml Rye Whiskey",
-                "20 ml Cognac V.S.",
-                "20 ml Sweet Vermouth",
-                "10 ml Herbal Liqueur",
+                "20 ml Cognac",
+                "20 ml Martini Rubino",
+                "10 ml D.O.M Benedictine",
                 "2 x dash Peychaud's Bitters",
-                "1 x dash Angostura Bitters"
+                "1 x dash Angostura Bitters",
             ],
             decoration: "coin z cytryny"
         }
     ]
 };
 
-// Wszystkie przepisy ze składnikami i ilościami
+// KOMPLETNE RECIPES - 70 PRZEPISÓW!
 export const recipes = {
-    // Drinki z wódką
+    // WÓDKA (9 drinków)
     "Vodka Sour": [
         {"name": "Wódka", "amount": 40},
         {"name": "Sok z cytryny", "amount": 25},
@@ -935,137 +1399,385 @@ export const recipes = {
         {"name": "Angostura Bitters", "amount": 1}
     ],
 
-    // Drinki z whisky - NOWE
-    "Amaretto Sour": [
+    // RUM (5 drinków)
+    "Air Mail": [
+        {"name": "Gold Rum", "amount": 50},
+        {"name": "Syrop miodowo-imbirowy", "amount": 20},
+        {"name": "Sok z limonki", "amount": 20},
+        {"name": "Prosecco", "amount": 40}
+    ],
+    "Caipirinha": [
+        {"name": "Cachaça", "amount": 50},
+        {"name": "Syrop cukrowy", "amount": 15},
+        {"name": "Limonka", "amount": 0.5}
+    ],
+    "Classic Rum Swizzle": [
+        {"name": "White Rum", "amount": 50},
+        {"name": "Sok z limonki", "amount": 30},
+        {"name": "Syrop cukrowy", "amount": 20},
+        {"name": "Angostura Bitters", "amount": 4}
+    ],
+    "Daiquiri": [
+        {"name": "White Rum", "amount": 50},
+        {"name": "Sok z limonki", "amount": 20},
+        {"name": "Syrop cukrowy", "amount": 10}
+    ],
+    "Mojito": [
+        {"name": "Aged Rum", "amount": 50},
+        {"name": "Limonka", "amount": 0.5},
+        {"name": "Syrop miętowy", "amount": 15},
+        {"name": "Liście mięty", "amount": 8},
+        {"name": "Woda gazowana", "amount": 100}
+    ],
+
+    // WHISKEY (20 drinków)
+    "Amaretto Sour":     [
         {"name": "Amaretto", "amount": 40},
         {"name": "Blended Scotch Whisky", "amount": 10},
-        {"name": "Sok z cytryny", "amount": 30},
-        {"name": "Syrop cukrowy", "amount": 15},
-        {"name": "Albumina", "amount": 15}
+        {"name": "soku z cytryny", "amount": 30},
+        {"name": "syropu cukrowego", "amount": 10},
+        {"name": "Albumina", "amount": 15},
     ],
-    "Blood & Sand": [
+    "Blood & Sand":     [
         {"name": "Aged Scotch Whisky", "amount": 30},
-        {"name": "Sweet Vermouth", "amount": 20},
-        {"name": "Cherry Brandy", "amount": 20},
-        {"name": "Sok z pomarańczy", "amount": 30},
-        {"name": "Islay Malt Spray", "amount": 1}
+        {"name": "Carpano Antica Formula", "amount": 20},
+        {"name": "Cherry Heering", "amount": 20},
+        {"name": "sok z pomarańczy", "amount": 30},
+        {"name": "Islay Malt Spray", "amount": 1},
     ],
-    "Boulevardier": [
+    "Boulevardier":     [
         {"name": "Bourbon Whiskey", "amount": 30},
         {"name": "Martini Bitter", "amount": 20},
-        {"name": "Sweet Vermouth", "amount": 20}
+        {"name": "Martini Rubino", "amount": 20},
     ],
-    "Brandy Crusta": [
-        {"name": "Cognac", "amount": 40},
-        {"name": "Orange Liqueur", "amount": 10},
-        {"name": "Luxardo Maraschino", "amount": 10},
-        {"name": "Sok z cytryny", "amount": 20},
-        {"name": "Syrop cukrowy", "amount": 5}
-    ],
-    "Cameron's Kick": [
-        {"name": "Blended Scotch Whisky", "amount": 20},
-        {"name": "Irish Whiskey", "amount": 20},
-        {"name": "Sok z cytryny", "amount": 25},
-        {"name": "Orgeat", "amount": 20}
-    ],
-    "Corpse Reviver #1": [
-        {"name": "Cognac V.S.O.P.", "amount": 20},
-        {"name": "Cognac V.S.", "amount": 20},
-        {"name": "Sweet Vermouth", "amount": 20}
-    ],
-    "Derby": [
+    "Manhattan":     [
         {"name": "Bourbon Whiskey", "amount": 50},
-        {"name": "Sok grejpfrutowy", "amount": 30},
-        {"name": "Syrop miodowo-imbirowy", "amount": 20}
+        {"name": "Carpano Antica Formula", "amount": 20},
+        {"name": "Angostura Bitters", "amount": 2},
     ],
-    "Hot Toddy": [
-        {"name": "Blended Scotch Whisky", "amount": 50},
-        {"name": "Syrop miodowo-imbirowy", "amount": 20},
-        {"name": "Sok z cytryny", "amount": 20},
-        {"name": "Wrzątek", "amount": 150}
-    ],
-    "Irish Coffee": [
-        {"name": "Irish Whiskey", "amount": 50},
-        {"name": "Kawa przelewowa", "amount": 120},
-        {"name": "Syrop waniliowy", "amount": 15}
-    ],
-    "Japanese Cocktail": [
-        {"name": "Cognac V.S.", "amount": 40},
-        {"name": "Orgeat", "amount": 5},
-        {"name": "Angostura Bitters", "amount": 3}
-    ],
-    "Manhattan": [
-        {"name": "Bourbon Whiskey", "amount": 50},
-        {"name": "Sweet Vermouth", "amount": 20},
-        {"name": "Angostura Bitters", "amount": 2}
-    ],
-    "New York Sour": [
-        {"name": "Bourbon Whiskey", "amount": 40},
-        {"name": "Sok z cytryny", "amount": 25},
-        {"name": "Syrop cukrowy", "amount": 15},
-        {"name": "Albumina", "amount": 20},
+    "Whisky Sour":     [
+        {"name": "Blended Scotch Whisky", "amount": 40},
+        {"name": "soku z cytryny", "amount": 25},
+        {"name": "syropu cukrowego", "amount": 15},
+        {"name": "białka z kurzego jajka", "amount": 20},
         {"name": "Angostura Bitters", "amount": 1},
-        {"name": "Red Wine", "amount": 15}
     ],
-    "Loretto Old Fashioned": [
-        {"name": "Bourbon Whiskey", "amount": 50},
-        {"name": "Zalewa z wiśni", "amount": 5},
+    "Irish Coffee":     [
+        {"name": "Irish Whiskey", "amount": 50},
+        {"name": "kawy przelewowej", "amount": 120},
+        {"name": "syropu waniliowego", "amount": 15},
+    ],
+    "BRANDY CRUSTA":     [
+        {"name": "Cointreau", "amount": 10.0},
+        {"name": "Maraschino", "amount": 10.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+        {"name": "syropu cukrowego", "amount": 5.0},
+    ],
+    "CAMERON'S KICK":     [
+        {"name": "Blended Scotch Whisky", "amount": 20.0},
+        {"name": "Irish Whiskey", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 25.0},
+        {"name": "Orgeat", "amount": 20.0},
+    ],
+    "Corpse Reviver #1":     [
+        {"name": "Cognac", "amount": 20.0},
+        {"name": "Cognac", "amount": 20.0},
+        {"name": "Martini Rubino", "amount": 20.0},
+    ],
+    "Derby":     [
+        {"name": "Bourbon Whiskey Bourbon", "amount": 50.0},
+        {"name": "soku grejpfrutowego", "amount": 30.0},
+        {"name": "syropu miód imbir", "amount": 20.0},
+    ],
+    "HOT TODDY":     [
+        {"name": "Blended Scotch Whisky", "amount": 50.0},
+        {"name": "syrop miodowo - imbirowy", "amount": 20.0},
+        {"name": "sok z cytryny", "amount": 20.0},
+        {"name": "Laska cynamonu", "amount": 1},
+        {"name": "Plaster cytryny", "amount": 1},
+    ],
+    "JAPANESE COCKTAIL":     [
+        {"name": "Cognac", "amount": 40.0},
+        {"name": "Orgeat", "amount": 5.0},
         {"name": "Angostura Bitters", "amount": 3},
-        {"name": "Orange Bitters", "amount": 1}
     ],
-    "Paper Plane": [
-        {"name": "Bourbon Whiskey", "amount": 20},
-        {"name": "Amaro", "amount": 20},
-        {"name": "Aperol", "amount": 20},
-        {"name": "Sok z cytryny", "amount": 20}
+    "NEW YORK SOUR":     [
+        {"name": "Bourbon Whiskey", "amount": 40.0},
+        {"name": "soku z cytryny", "amount": 25.0},
+        {"name": "syropu cukrowego", "amount": 15.0},
+        {"name": "albumina", "amount": 20.0},
+        {"name": "Angostura Bitters", "amount": 1},
+        {"name": "Serenello Merlot", "amount": 15.0},
     ],
-    "Penicillin": [
-        {"name": "Blended Scotch Whisky", "amount": 50},
-        {"name": "Syrop miodowo-imbirowy", "amount": 20},
-        {"name": "Sok z cytryny", "amount": 20},
-        {"name": "Islay Malt Spray", "amount": 1}
+    "Loretto old fashioned":     [
+        {"name": "Bourbon Whiskey", "amount": 50.0},
+        {"name": "zalewy z wiśni", "amount": 5.0},
+        {"name": "Angostura Bitters", "amount": 3},
+        {"name": "Orange Bitters", "amount": 1},
     ],
-    "Sazerac": [
-        {"name": "Rye Whiskey", "amount": 20},
-        {"name": "Cognac V.S.", "amount": 20},
+    "PAPER PLANE":     [
+        {"name": "Bourbon Whiskey", "amount": 20.0},
+        {"name": "Amaro Nonino", "amount": 20.0},
+        {"name": "Aperol", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+    ],
+    "PENICILLIN":     [
+        {"name": "Blended Scotch Whisky", "amount": 50.0},
+        {"name": "syrop miodowo - imbirowy", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+    ],
+    "Sazerac":     [
+        {"name": "Rye Whiskey", "amount": 20.0},
+        {"name": "Cognac", "amount": 20.0},
         {"name": "Peychaud's Bitters", "amount": 3},
         {"name": "Angostura Bitters", "amount": 1},
-        {"name": "Syrop cukrowy", "amount": 5},
-        {"name": "Absinthe Spray", "amount": 1}
+        {"name": "syrop cukrowy", "amount": 5.0},
     ],
-    "Trinidad Sour": [
-        {"name": "Angostura Aromatic Bitters", "amount": 40},
-        {"name": "Rye Whiskey", "amount": 15},
-        {"name": "Orgeat", "amount": 30},
-        {"name": "Sok z cytryny", "amount": 20}
+    "TRYNIDAD SOUR":     [
+        {"name": "Angostura Aromatic Bitters", "amount": 40.0},
+        {"name": "Rye Whiskey", "amount": 15.0},
+        {"name": "Orgeat", "amount": 30.0},
+        {"name": "soku z cytryny", "amount": 20.0},
     ],
-    "Whisky Sour": [
-        {"name": "Blended Scotch Whisky", "amount": 40},
-        {"name": "Sok z cytryny", "amount": 25},
-        {"name": "Syrop cukrowy", "amount": 15},
-        {"name": "Albumina", "amount": 20},
-        {"name": "Angostura Bitters", "amount": 1}
+    "WHISKEY SMASH":     [
+        {"name": "Bourbon Whiskey", "amount": 50.0},
+        {"name": "syropu cukrowego", "amount": 20.0},
     ],
-    "Whiskey Smash": [
-        {"name": "Bourbon Whiskey", "amount": 50},
-        {"name": "Syrop cukrowy", "amount": 20},
-        {"name": "Cytryna", "amount": 0.5},
-        {"name": "Liście mięty", "amount": 8}
-    ],
-    "Vieux Carré": [
-        {"name": "Rye Whiskey", "amount": 20},
-        {"name": "Cognac V.S.", "amount": 20},
-        {"name": "Sweet Vermouth", "amount": 20},
-        {"name": "Herbal Liqueur", "amount": 10},
+    "VIEUX CAREE":     [
+        {"name": "Rye Whiskey", "amount": 20.0},
+        {"name": "Cognac", "amount": 20.0},
+        {"name": "Martini Rubino", "amount": 20.0},
+        {"name": "D.O.M Benedictine", "amount": 10.0},
         {"name": "Peychaud's Bitters", "amount": 2},
-        {"name": "Angostura Bitters", "amount": 1}
+        {"name": "Angostura Bitters", "amount": 1},
+    ],
+
+    // GIN (30 drinków)
+    "ARM & NAVY":     [
+        {"name": "London Dry Gin", "amount": 50.0},
+        {"name": "Orgeat", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+        {"name": "Angostura Bitters", "amount": 1},
+    ],
+    "AVIATION":     [
+        {"name": "London Dry Gin", "amount": 50.0},
+        {"name": "Luxardo Maraschino", "amount": 10.0},
+        {"name": "Briottet - Violet", "amount": 5.0},
+        {"name": "Sok z cytryny", "amount": 15.0},
+        {"name": "syrop cukrowy", "amount": 2.5},
+    ],
+    "BEE’S KNEES":     [
+        {"name": "London Dry Gin", "amount": 50.0},
+        {"name": "syropu miodowo", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+        {"name": "soku z pomarańczy", "amount": 20.0},
+    ],
+    "BIJOU":     [
+        {"name": "London Dry Gin", "amount": 20.0},
+        {"name": "Martini Rubino", "amount": 20.0},
+        {"name": "Green Chartreuse", "amount": 20.0},
+        {"name": "Orange Bitters", "amount": 1},
+    ],
+    "Bombay & Tonic":     [
+        {"name": "London Dry Gin", "amount": 40.0},
+        {"name": "Thomas Henry Tonic", "amount": 100},
+    ],
+    "BRAMBLE":     [
+        {"name": "London Dry Gin Gin", "amount": 40.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+        {"name": "syropu cukrowego", "amount": 10.0},
+        {"name": "Chambord", "amount": 15.0},
+    ],
+    "BREAKFAST MARTINI":     [
+        {"name": "London Dry Gin", "amount": 50.0},
+        {"name": "Cointreau", "amount": 15.0},
+        {"name": "sok z cytryny", "amount": 20.0},
+    ],
+    "CHARLIE CHAPLIN":     [
+        {"name": "Hayman’s Sloe Gin", "amount": 30.0},
+        {"name": "Archer’s", "amount": 30.0},
+        {"name": "sok z limonki", "amount": 30.0},
+    ],
+    "CHRYSANTHEMUM":     [
+        {"name": "Noilly Prat", "amount": 60.0},
+        {"name": "D.O.M. Benedictine", "amount": 10.0},
+        {"name": "Absynth", "amount": 1},
+    ],
+    "CLOVER CLUB":     [
+        {"name": "London Dry Gin", "amount": 40.0},
+        {"name": "Martini Extra Dry", "amount": 10.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+        {"name": "syropu malinowego", "amount": 15.0},
+        {"name": "cukru (łyżeczka barmańska)", "amount": 2.5},
+        {"name": "Albumina", "amount": 15.0},
+    ],
+    "Corpse":     [
+        {"name": "London Dry Gin", "amount": 20.0},
+        {"name": "Cocchi Americano", "amount": 20.0},
+        {"name": "Cointreau", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+    ],
+    "DRY MARTINI":     [
+        {"name": "London Dry Gin (z zamrażarki*)", "amount": 50.0},
+        {"name": "Noilly Prat", "amount": 10.0},
+        {"name": "Orange Bitters", "amount": 1},
+    ],
+    "gimlet":     [
+        {"name": "London Dry Gin", "amount": 50.0},
+        {"name": "Food Town Bars Lime Cordial", "amount": 20.0},
+    ],
+    "GIN BASIL SMASH":     [
+        {"name": "London Dry Gin", "amount": 50.0},
+        {"name": "syrop cukrowy", "amount": 20.0},
+    ],
+    "GIN GIN MULE":     [
+        {"name": "London Dry Gin", "amount": 40.0},
+        {"name": "syrop miód i imbir", "amount": 20.0},
+        {"name": "soku z limonki", "amount": 20.0},
+        {"name": "Piwo Imbirowe - .", "amount": 100},
+    ],
+    "HANKY PANKY":     [
+        {"name": "Gin London Dry Gin", "amount": 40.0},
+        {"name": "Carpano Antica Formula", "amount": 40.0},
+        {"name": "Fernet Branca", "amount": 2.5},
+    ],
+    "LAST WORD":     [
+        {"name": "London Dry Gin", "amount": 20.0},
+        {"name": "Chartreuse Green", "amount": 20.0},
+        {"name": "Luxardo Maraschino", "amount": 20.0},
+        {"name": "Sok z limonki", "amount": 20.0},
+    ],
+    "Martinez":     [
+        {"name": "London Dry Gin", "amount": 50.0},
+        {"name": "Carpano Antica", "amount": 20.0},
+        {"name": "Noilly Prat", "amount": 10.0},
+        {"name": "Luxardo Maraschino / Cointreau", "amount": 5.0},
+        {"name": "Orange Bitters", "amount": 1},
+        {"name": "Angostura Bitters", "amount": 1},
+    ],
+    "NEGRONI":     [
+        {"name": "London Dry Gin", "amount": 20.0},
+        {"name": "Martini Rubino", "amount": 20.0},
+        {"name": "Martini Bitter", "amount": 20.0},
+    ],
+    "RAMOS GIN FIZZ":     [
+        {"name": "Ford’s Gin", "amount": 50.0},
+        {"name": "syrop cukrowy", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 15.0},
+        {"name": "soku z limonki", "amount": 15.0},
+        {"name": "half half", "amount": 30.0},
+        {"name": "Albumina", "amount": 20.0},
+        {"name": "wody z kwiatu", "amount": 1},
+        {"name": "wody gazowanej", "amount": 40.0},
+    ],
+    "SINGAPORE SLING":     [
+        {"name": "London Dry Gin", "amount": 40.0},
+        {"name": "Cherry Heering", "amount": 15.0},
+        {"name": "D.O.M. Benedictine", "amount": 5.0},
+        {"name": "Cointreau", "amount": 5.0},
+        {"name": "przecier ananasowy", "amount": 50.0},
+        {"name": "sok z limonki", "amount": 20.0},
+        {"name": "syrop z maliny", "amount": 2.5},
+    ],
+    "Southside":     [
+        {"name": "London Dry Gin", "amount": 50.0},
+        {"name": "syrop miętowy", "amount": 15.0},
+        {"name": "sok z limonki", "amount": 20.0},
+    ],
+    "TUXEDO COCKTAIL":     [
+        {"name": "Hayman’s Old Tom Gin", "amount": 30.0},
+        {"name": "Noilly Prat", "amount": 30.0},
+        {"name": "Luxardo Maraschino", "amount": 5.0},
+        {"name": "Orange Bitters", "amount": 2},
+        {"name": "Angostura Bitters", "amount": 1},
+        {"name": "1 x Absynth", "amount": 1},
+    ],
+    "vesper MARTINI":     [
+        {"name": "London Dry Gin", "amount": 30.0},
+        {"name": "Wódka Vodka", "amount": 10.0},
+        {"name": "Cocchi Americano", "amount": 5.0},
+    ],
+    "WHITE LADY":     [
+        {"name": "Gin London Dry Gin", "amount": 50.0},
+        {"name": "Cointreau", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+        {"name": "cukru", "amount": 5.0},
+        {"name": "Albuminy", "amount": 15.0},
+    ],
+    "white NEGRONI":     [
+        {"name": "London Dry Gin", "amount": 20.0},
+        {"name": "Suze", "amount": 20.0},
+        {"name": "Lillet Blanc", "amount": 20.0},
+    ],
+    "XX CENTURY COCKTAIL":     [
+        {"name": "London Dry Gin", "amount": 20.0},
+        {"name": "Cocchi Americano", "amount": 20.0},
+        {"name": "creme de cacao", "amount": 20.0},
+        {"name": "soku z cytryny", "amount": 20.0},
+    ],
+    "Pisco Sour":     [
+        {"name": "Pisco", "amount": 50.0},
+        {"name": "soku z limonki", "amount": 30.0},
+        {"name": "syropu cukrowego", "amount": 20.0},
+        {"name": "albumina", "amount": 20.0},
+    ],
+    "Martini Fiero & Tonik":     [
+        {"name": "Aperitif", "amount": 80.0},
+        {"name": "Kinley tonik", "amount": 100},
+    ],
+    "Vibrante/Floreale Tonik":     [
+        {"name": "Vibrante/Floreale", "amount": 40.0},
+        {"name": "Kinley tonik", "amount": 100},
+    ],
+
+    // TEQUILA (3 drinki)
+    "PINK CHIHUAHUA":     [
+        {"name": "Tequila Blanco", "amount": 40.0},
+        {"name": "soku z limonki", "amount": 15.0},
+        {"name": "soku z cytryny", "amount": 5.0},
+        {"name": "syropu malinowego", "amount": 15.0},
+        {"name": "Orgeat", "amount": 5.0},
+        {"name": "Albumina", "amount": 15.0},
+    ],
+    "margarita":     [
+        {"name": "Tequila Blanco", "amount": 40.0},
+        {"name": "Cointreau", "amount": 20.0},
+        {"name": "Soku z limonki", "amount": 20.0},
+    ],
+    "LA PALOMA":     [
+        {"name": "Tequila Blanco", "amount": 40.0},
+        {"name": "Agave Mix", "amount": 20.0},
+        {"name": "Soku z limonki", "amount": 20.0},
+        {"name": "Three Cents", "amount": 100.0},
+    ],
+
+    // BEZALKOHOLOWE (3 drinki)
+    "NEGRONI 0%":     [
+        {"name": "Gin bezalkoholowy", "amount": 20.0},
+        {"name": "Giffard Bitter Syrop", "amount": 20.0},
+        {"name": "Aperitif bezalkoholowy", "amount": 20.0},
+    ],
+    "Martini Fiero spritz":     [
+        {"name": "Aperitif", "amount": 80.0},
+        {"name": "Martini Prosecco", "amount": 100.0},
+        {"name": "sody", "amount": 100},
+        {"name": "dodajemy wody gazowanej oraz", "amount": 100},
+    ],
+    "Martini vibrante/floreale spritz":     [
+        {"name": "Aperitif bezalkoholowy/mFloreale", "amount": 40.0},
+        {"name": "Prosecco Medbubbles", "amount": 80.0},
+        {"name": "Belvoir Elderflower", "amount": 20.0},
+        {"name": "sody", "amount": 100},
+        {"name": "Aperitif bezalkoholowy/Floreale", "amount": 40.0},
+        {"name": "Prosecco", "amount": 80.0},
+        {"name": "dodajemy wody gazowanej oraz", "amount": 100},
     ]
 };
 
-// Opcje szklanek
+// Rozszerzone opcje szklanek
 export const glassOptions = [
     "Collins",
-    "Nick & Nora",
+    "Nick & Nora", 
     "Double Old Fashioned Glass",
     "Coupe + kieliszek do wódki",
     "Swizzle Glass",
@@ -1074,128 +1786,20 @@ export const glassOptions = [
     "Champagne Flute",
     "Irish Coffee Cup",
     "Hot Toddy Cup",
-    "Snifter"
+    "Snifter",
+    "Copa Bombay",
+    "Copa Martini",
+    "Whisky Glass",
+    "Mini Coupette"
 ];
 
-// Szczegóły drinków - szkła i dekoracje
-export const drinkDetails = {
-    // Drinki z wódką
-    "Vodka Sour": {
-        glass: "Double Old Fashioned Glass",
-        decoration: "coin z pomarańczy"
-    },
-    "Bloody Mary": {
-        glass: "Collins",
-        decoration: "Oliwka na szpadce - plus wierzch koktajlu skropiony oliwą truflową - picanto mix na szkle, slice ogórka"
-    },
-    "Cosmopolitan": {
-        glass: "Nick & Nora",
-        decoration: "suszony, czerwony kwiatostan róży"
-    },
-    "Espresso Martini": {
-        glass: "Nick & Nora",
-        decoration: "tarta fasola tonka + bezik"
-    },
-    "Golden Cadillac": {
-        glass: "Nick & Nora",
-        decoration: "Bezik plus gorzka tarta czekolada + złoty pył"
-    },
-    "Grasshooper": {
-        glass: "Nick & Nora",
-        decoration: "Bezik plus gorzka tarta czekolada"
-    },
-    "Long Island Iced Tea": {
-        glass: "Swizzle Glass",
-        decoration: "Plasterek cytryny"
-    },
-    "Pornstar Martini": {
-        glass: "Coupe + kieliszek do wódki",
-        decoration: "posypka z pudru buraczanego + kwiatostan róży"
-    },
-    "Kyiv Mule": {
-        glass: "Collins",
-        decoration: "2 szczypy mięty + ćwiartka limonki"
-    },
-
-    // Drinki z whisky - NOWE
-    "Amaretto Sour": {
-        glass: "Double Old Fashioned Glass",
-        decoration: "wierzch koktajlu posypany pudrem buraczanym oraz suszony kwiatostan róży"
-    },
-    "Blood & Sand": {
-        glass: "Nick & Nora",
-        decoration: "wiśnia na szpadce + olejki pomarańczowe"
-    },
-    "Boulevardier": {
-        glass: "Old Fashioned",
-        decoration: "olejki pomarańczowe + coin z pomarańczy przypięte na spinaczu do rantu szkła"
-    },
-    "Brandy Crusta": {
-        glass: "Nick & Nora",
-        decoration: "cukier pomarańczowy plus duży zest z pomarańczy"
-    },
-    "Cameron's Kick": {
-        glass: "Nick & Nora",
-        decoration: "coin z pomarańczy"
-    },
-    "Corpse Reviver #1": {
-        glass: "Nick & Nora",
-        decoration: "Olejki cytrynowe (serwujemy bez garnishu)"
-    },
-    "Derby": {
-        glass: "Nick & Nora",
-        decoration: "zest z grejpfruta wycięty nożyczkami karbowanymi przypięty do rantu szkła"
-    },
-    "Hot Toddy": {
-        glass: "Hot Toddy Cup",
-        decoration: "Laska cynamonu + plaster cytryny"
-    },
-    "Irish Coffee": {
-        glass: "Irish Coffee Cup",
-        decoration: "tarta fasola tonka na wierzch + gwiazdka anyżu"
-    },
-    "Japanese Cocktail": {
-        glass: "Nick & Nora",
-        decoration: "Olejki ze skórki cytrynowej + wiśnia koktajlowa"
-    },
-    "Manhattan": {
-        glass: "Nick & Nora",
-        decoration: "Wiśnia Koktajlowa + spray z olejków pomarańczowych"
-    },
-    "New York Sour": {
-        glass: "Double Old Fashioned Glass",
-        decoration: "coin z pomarańczy"
-    },
-    "Loretto Old Fashioned": {
-        glass: "Old Fashioned",
-        decoration: "Kółko - 'coin' z pomarańczy położony na bryłce + wiśnia na szpadce"
-    },
-    "Paper Plane": {
-        glass: "Nick & Nora",
-        decoration: "Zest z pomarańczy => przypięty do stópki"
-    },
-    "Penicillin": {
-        glass: "Double Old Fashioned Glass",
-        decoration: "kandyzowany imbir na wykałaczce koktajlowej"
-    },
-    "Sazerac": {
-        glass: "Old Fashioned",
-        decoration: "olejki ze skórki cytrynowej"
-    },
-    "Trinidad Sour": {
-        glass: "Nick & Nora",
-        decoration: "tarta gorzka czekolada + gwiazdka anyżu"
-    },
-    "Whisky Sour": {
-        glass: "Double Old Fashioned Glass",
-        decoration: "coin z pomarańczy"
-    },
-    "Whiskey Smash": {
-        glass: "Double Old Fashioned Glass",
-        decoration: "Bukiet mięty opruszony pudrem pomarańczowym"
-    },
-    "Vieux Carré": {
-        glass: "Old Fashioned",
-        decoration: "coin z cytryny"
+// Funkcja pomocnicza do znajdowania drinka po nazwie
+export function findDrinkByName(drinkName) {
+    for (const [category, drinks] of Object.entries(drinkLibrary)) {
+        const drink = drinks.find(d => d.name === drinkName);
+        if (drink) {
+            return drink;
+        }
     }
-};
+    return null;
+}
