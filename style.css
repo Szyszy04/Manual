@@ -1,957 +1,746 @@
+/* Quiz Bartenderski - Kompletny CSS dla nowego interfejsu */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #222;
-  margin: 0;
-  min-height: 100vh;
-}
-
-.main-card {
-  max-width: 500px;
-  margin: 20px auto;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  padding: 30px;
-  backdrop-filter: blur(10px);
-}
-
-h2, h3 { margin-top: 0; }
-
-.selector {
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  font-size: 1.1rem;
-}
-
-.selector label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 10px;
-  transition: background 0.2s;
-}
-
-.selector label:hover {
-  background: rgba(102, 126, 234, 0.1);
-}
-
-.selector input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
-}
-
-.btn, .answer-btn {
-  display: block;
-  width: 100%;
-  margin: 15px 0;
-  padding: 15px 20px;
-  background: #667eea;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.btn:hover, .answer-btn:hover:not(:disabled) {
-  background: #5a67d8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-.btn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-.answer-btn.correct {
-  background: #48bb78;
-  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
-}
-
-.answer-btn.wrong {
-  background: #f56565;
-  box-shadow: 0 4px 15px rgba(245, 101, 101, 0.3);
-}
-
-/* Nawigacja główna */
-.main-navigation {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin: 30px 0;
-}
-
-.main-nav-btn {
-  font-size: 1.1rem;
-  padding: 20px;
-  font-weight: 600;
-}
-
-.library-btn {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
-}
-
-.library-btn:hover {
-  background: linear-gradient(135deg, #e082ea 0%, #e4465b 100%);
-  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
-}
-
-.drinks-btn {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
-}
-
-.drinks-btn:hover {
-  background: linear-gradient(135deg, #3e9bfd 0%, #00e1ed 100%);
-  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
-}
-
-.btn-back {
-  width: auto;
-  margin: 0 0 20px 0;
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  background: #718096;
-  box-shadow: 0 2px 8px rgba(113, 128, 150, 0.3);
-}
-
-.btn-back:hover {
-  background: #5a6570;
-}
-
-/* Style dla biblioteki alkocholi */
-.library-subtitle {
-  color: #667eea;
-  font-size: 1rem;
-  margin-bottom: 30px;
-  font-weight: 500;
-}
-
-.library-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 25px 0;
-  justify-content: center;
-}
-
-.category-btn {
-  padding: 8px 16px;
-  border: 2px solid #e2e8f0;
-  border-radius: 20px;
-  background: white;
-  color: #4a5568;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-weight: 500;
-}
-
-.category-btn:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
-  color: #667eea;
-}
-
-.category-btn.active {
-  background: #667eea;
-  border-color: #667eea;
-  color: white;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
-}
-
-.library-content {
-  margin-top: 25px;
-  max-height: 400px;
-  overflow-y: auto;
-}
-
-.alcohol-card {
-  background: white;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px 0;
-  transition: all 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.alcohol-card:hover {
-  border-color: #667eea;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
-  transform: translateY(-2px);
-}
-
-.alcohol-name {
-  color: #667eea;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin: 0 0 12px 0;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 8px;
-}
-
-.alcohol-description {
-  color: #4a5568;
-  line-height: 1.6;
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-/* Style dla biblioteki drinków */
-.drink-card {
-  background: white;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px 0;
-  transition: all 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  user-select: none;
-}
-
-.drink-card:hover {
-  border-color: #4facfe;
-  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.1);
-  transform: translateY(-2px);
-}
-
-.drink-card.hidden {
-  opacity: 0.6;
-}
-
-.drink-name {
-  color: #4facfe;
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 0 0 15px 0;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 10px;
-  text-align: center;
-}
-
-.drink-details {
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.drink-details.hidden {
-  opacity: 0;
-  max-height: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/* NOWE: Style dla szkła */
-.drink-glass {
-  margin: 15px 0;
-  background: #f8f9ff;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border-left: 4px solid #667eea;
-}
-
-.drink-glass h4 {
-  color: #667eea;
-  font-size: 1rem;
-  margin: 0 0 5px 0;
-  font-weight: 600;
-}
-
-.drink-glass p {
-  color: #4a5568;
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-/* Zaktualizowane style dla składników */
-.drink-ingredients {
-  margin: 15px 0;
-}
-
-.drink-ingredients h4 {
-  color: #667eea;
-  font-size: 1rem;
-  margin: 0 0 8px 0;
-  font-weight: 600;
-}
-
-.drink-ingredients ul {
-  margin: 0;
-  padding: 0 0 0 18px;
-  color: #4a5568;
-}
-
-.drink-ingredients li {
-  margin: 5px 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* NOWE: Style dla metody przygotowania */
-.drink-method {
-  margin: 15px 0;
-  background: #fff9f5;
-  padding: 15px;
-  border-radius: 10px;
-  border-left: 4px solid #ff8c00;
-}
-
-.drink-method h4 {
-  color: #ff8c00;
-  font-size: 1rem;
-  margin: 0 0 10px 0;
-  font-weight: 600;
-}
-
-.drink-method ol {
-  margin: 0;
-  padding: 0 0 0 20px;
-  color: #4a5568;
-  counter-reset: step-counter;
-}
-
-.drink-method li {
-  margin: 8px 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  padding-left: 5px;
-}
-
-/* Style dla dekoracji */
-.drink-decoration {
-  margin: 15px 0;
-}
-
-.drink-decoration h4 {
-  color: #667eea;
-  font-size: 1rem;
-  margin: 0 0 8px 0;
-  font-weight: 600;
-}
-
-.drink-decoration p {
-  color: #4a5568;
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  font-style: italic;
-}
-
-.empty-category {
-  text-align: center;
-  padding: 40px 20px;
-  color: #718096;
-}
-
-.empty-category p {
-  font-size: 1.1rem;
-  margin: 0 0 8px 0;
-}
-
-.empty-category small {
-  font-size: 0.85rem;
-  opacity: 0.7;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 10px;
-  background: rgba(102, 126, 234, 0.2);
-  border-radius: 5px;
-  margin: 20px 0;
-  overflow: hidden;
-}
-
-.progress {
-  height: 100%;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  border-radius: 5px;
-  transition: width 0.4s ease;
-}
-
-.recipe-option {
-  background: white;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.recipe-option:hover:not(.correct):not(.wrong) {
-  border-color: #667eea;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
-}
-
-.recipe-option.correct {
-  background: #f0fff4;
-  border-color: #48bb78;
-  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.2);
-}
-
-.recipe-option.wrong {
-  background: #fff5f5;
-  border-color: #f56565;
-  box-shadow: 0 4px 15px rgba(245, 101, 101, 0.2);
-}
-
-.ingredient {
-  padding: 5px 0;
-  font-weight: 500;
-  color: #4a5568;
-}
-
-.score {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #667eea;
-  margin: 10px 0;
-}
-
-.percentage {
-  font-size: 1.5rem;
-  color: #718096;
-  margin-bottom: 20px;
-}
-
-.yn-wrapper {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.yn-btn {
-  width: 45%;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* Sekcja wyświetlająca przepis po odpowiedzi */
-.recipe-review-box {
-  background: #f8f9ff;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  margin: 24px auto 0 auto;
-  padding: 20px;
-  text-align: left;
-  max-width: 400px;
-  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
-  animation: slideIn 0.3s ease-out;
-}
-
-.recipe-review-box h4 {
-  margin: 0 0 15px 0;
-  color: #667eea;
-  font-size: 1.1rem;
-  text-align: center;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 10px;
-}
-
-.recipe-review-box ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.recipe-review-box li {
-  padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 0.95rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.recipe-review-box li:last-child {
-  border-bottom: none;
-}
-
-.recipe-review-box strong {
-  color: #667eea;
-  font-weight: 600;
-  min-width: 50px;
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Style dla trybu builder */
-.builder-instruction {
-  text-align: center;
-  font-size: 1rem;
-  color: #4a5568;
-  margin: 20px 0 15px 0;
-  font-weight: 500;
-}
-
-.builder-ingredients {
-  max-height: 300px;
-  overflow-y: auto;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 15px;
-  margin: 15px 0;
-  background: #f8f9ff;
-}
-
-.ingredient-checkbox {
-  display: flex;
-  align-items: center;
-  padding: 8px 10px;
-  margin: 5px 0;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-size: 0.95rem;
-}
-
-.ingredient-checkbox:hover {
-  background: rgba(102, 126, 234, 0.1);
-}
-
-.ingredient-checkbox input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.1);
-  accent-color: #667eea;
-}
-
-.ingredient-checkbox span {
-  flex: 1;
-  color: #4a5568;
-}
-
-.builder-actions {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.selected-count {
-  font-size: 0.9rem;
-  color: #667eea;
-  margin: 10px 0;
-  font-weight: 600;
-}
-
-.builder-proportions {
-  background: #f8f9ff;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px 0;
-}
-
-.proportion-input {
-  display: flex;
-  align-items: center;
-  margin: 15px 0;
-  gap: 10px;
-}
-
-.proportion-input label {
-  flex: 1;
-  font-weight: 500;
-  color: #4a5568;
-  font-size: 0.95rem;
-}
-
-.proportion-input input[type="number"] {
-  width: 80px;
-  padding: 8px 12px;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 1rem;
-  text-align: center;
-  transition: border-color 0.2s;
-}
-
-.proportion-input input[type="number"]:focus {
-  outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.proportion-input span {
-  font-size: 0.9rem;
-  color: #718096;
-  font-weight: 500;
-}
-
-.center { text-align: center; }
-
-@media (max-width: 600px) {
-  .main-card {
-    margin: 10px;
-    padding: 20px;
-  }
-
-  .recipe-review-box {
-    margin: 20px auto 0 auto;
-    padding: 15px;
-  }
-
-  .builder-ingredients {
-    max-height: 250px;
-    padding: 12px;
-  }
-
-  .proportion-input {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  .proportion-input input[type="number"] {
-    width: 100%;
-    max-width: 120px;
-  }
-
-  /* Responsywne kategorie w bibliotekach */
-  .library-categories {
-    gap: 8px;
-  }
-
-  .category-btn {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
-
-  .library-content {
-    max-height: 350px;
-  }
-
-  .alcohol-card, .drink-card {
-    padding: 15px;
-    margin: 12px 0;
-  }
-
-  .alcohol-name, .drink-name {
-    font-size: 1.1rem;
-  }
-
-  .alcohol-description {
-    font-size: 0.9rem;
-  }
-
-  .drink-ingredients li, .drink-decoration p {
-    font-size: 0.85rem;
-  }
-
-  /* Responsywność dla nowych sekcji */
-  .drink-glass, .drink-method {
-    padding: 8px 12px;
-    margin: 10px 0;
-  }
-
-  .drink-method ol {
-    padding: 0 0 0 16px;
-  }
-
-  .drink-method li, .drink-glass p {
-    font-size: 0.85rem;
-  }
-
-  .main-navigation {
-    gap: 12px;
-    margin: 20px 0;
-  }
-
-  .main-nav-btn {
-    padding: 16px;
-    font-size: 1rem;
-  }
-}
-
-
-/* Style dla wyboru szklanek w konstruktorze */
-.builder-glasses {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 20px 0;
-  padding: 15px;
-  background: #f8f9ff;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-}
-
-.glass-btn {
-  padding: 12px 16px;
-  border: 2px solid #e2e8f0;
-  border-radius: 10px;
-  background: white;
-  color: #4a5568;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-weight: 500;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.glass-btn:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
-  color: #667eea;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
-}
-
-.glass-btn.selected {
-  background: #667eea;
-  border-color: #667eea;
-  color: white;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-  transform: translateY(-1px);
-}
-
-/* Style dla sukcesu dekoracji */
-.decoration-success-box {
-  background: linear-gradient(135deg, #f0fff4 0%, #e8f5e8 100%);
-  border: 2px solid #48bb78;
-  border-radius: 12px;
-  margin: 24px auto 0 auto;
-  padding: 20px;
-  text-align: center;
-  max-width: 400px;
-  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.2);
-  animation: successPulse 0.5s ease-out;
-}
-
-.decoration-success-box h4 {
-  margin: 0 0 15px 0;
-  color: #38a169;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.decoration-section {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 15px;
-  border-radius: 8px;
-  margin: 15px 0 0 0;
-}
-
-.decoration-section h5 {
-  color: #38a169;
-  font-size: 1rem;
-  margin: 0 0 8px 0;
-  font-weight: 600;
-}
-
-.decoration-section p {
-  color: #2d7d32;
-  margin: 0;
-  font-size: 0.95rem;
-  font-style: italic;
-  line-height: 1.4;
-}
-
-@keyframes successPulse {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.95);
-  }
-  50% {
-    transform: translateY(-5px) scale(1.02);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* Style dla sekcji prawidłowych odpowiedzi */
-.correct-answer-section {
-  margin: 15px 0;
-  padding: 12px 0;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.correct-answer-section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
-.correct-answer-section h5 {
-  color: #667eea;
-  font-size: 0.95rem;
-  margin: 0 0 8px 0;
-  font-weight: 600;
-}
-
-.correct-answer-section ul {
-  margin: 8px 0 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.correct-answer-section li {
-  padding: 6px 0;
-  font-size: 0.9rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.correct-answer-section li:last-child {
-  border-bottom: none;
-}
-
-.correct-answer-section p {
-  margin: 0;
-  color: #4a5568;
-  font-size: 0.95rem;
-}
-
-/* Responsywność dla szklanek */
-@media (max-width: 600px) {
-  .builder-glasses {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 12px;
-  }
-
-  .glass-btn {
-    padding: 10px 12px;
-    font-size: 0.85rem;
-  }
-
-  .decoration-success-box {
-    margin: 20px auto 0 auto;
-    padding: 15px;
-  }
-
-  .decoration-success-box h4 {
-    font-size: 1.1rem;
-  }
-
-  .decoration-section {
-    padding: 12px;
-  }
-
-  .correct-answer-section {
-    padding: 10px 0;
-  }
-}
-
-
-/* Nowe style dla menu wyboru alkoholi w konstruktorze */
-.builder-alcohol-selection {
-    background: #f8f9ff;
-    border: 2px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 15px;
-    margin: 15px 0;
-}
-
-.alcohol-selector {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin: 10px 0;
-}
-
-.alcohol-selector label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Layout podstawowy */
+.screen {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    padding: 8px 10px;
-    border-radius: 8px;
-    transition: background 0.2s;
-    font-size: 0.95rem;
+    justify-content: center;
+    padding: 20px;
 }
 
-.alcohol-selector label:hover {
-    background: rgba(102, 126, 234, 0.1);
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+    backdrop-filter: blur(10px);
 }
 
-.alcohol-selector input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.1);
-    accent-color: #667eea;
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-weight: bold;
 }
 
-.alcohol-selector span {
-    flex: 1;
-    color: #4a5568;
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #34495e;
+    text-align: center;
 }
 
-.alcohol-warning {
-    background: #fff5f5;
-    color: #e53e3e;
-    padding: 8px 12px;
-    border-radius: 8px;
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 30px;
+    padding: 25px;
+    background: rgba(236, 240, 241, 0.5);
+    border-radius: 15px;
+    border: 2px solid #ecf0f1;
+}
+
+.section h3 {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.help-text {
+    color: #7f8c8d;
     font-size: 0.9rem;
-    margin-top: 10px;
-    border: 1px solid #fed7d7;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Kategorie alkoholi - nowy styl */
+.alcohol-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.category-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: white;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid #ecf0f1;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.category-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+
+.category-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #3498db;
+}
+
+.category-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.drink-count {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-left: auto;
+    font-weight: normal;
+}
+
+/* Quiz categories */
+.quiz-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.quiz-categories .category-option {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.quiz-categories .category-option input {
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Status messages */
+.selected-info {
+    background: #d5f4e6;
+    color: #27ae60;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border-left: 4px solid #27ae60;
     font-weight: 500;
 }
 
-/* Responsywność dla nowej sekcji alkoholi */
-@media (max-width: 600px) {
-    .builder-alcohol-selection {
-        padding: 12px;
-        margin: 12px 0;
-    }
-
-    .alcohol-selector label {
-        padding: 6px 8px;
-        font-size: 0.9rem;
-    }
-
-    .alcohol-warning {
-        padding: 6px 10px;
-        font-size: 0.85rem;
-        margin-top: 8px;
-    }
+.warning {
+    background: #ffeaa7;
+    color: #e17055;
+    padding: 12px 20px;
+    border-radius: 10px;
+    border-left: 4px solid #e17055;
+    font-weight: 500;
 }
 
-/* Usprawnienia dla przycisków w stanie disabled gdy brak wyboru alkoholi */
-.btn:disabled {
-    background: #e2e8f0 !important;
-    color: #a0aec0 !important;
-    cursor: not-allowed !important;
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-.btn:disabled:hover {
-    background: #e2e8f0 !important;
-    transform: none !important;
-    box-shadow: none !important;
-}
-
-/* Dodatkowe style dla lepszej czytelności nagłówków w sekcji alkoholi */
-.builder-alcohol-selection h4 {
+/* Buttons */
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
     font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover:not(.disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+}
+
+.btn-primary.disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.6;
+}
+
+.btn-secondary {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 2px solid #bdc3c7;
+}
+
+.btn-secondary:hover {
+    background: #bdc3c7;
+    transform: translateY(-2px);
+}
+
+/* Actions */
+.actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.secondary-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Quiz Screen */
+.quiz-screen {
+    align-items: flex-start;
+    padding-top: 40px;
+}
+
+.progress-container {
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+    overflow: hidden;
     margin-bottom: 10px;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    transition: width 0.5s ease;
+}
+
+.progress-text {
+    text-align: center;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.question-container {
+    margin-bottom: 30px;
+}
+
+.question {
+    text-align: center;
+}
+
+/* Answers */
+.answers-grid {
+    display: grid;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.simple-answers {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 600px;
+    margin: 25px auto 0;
+}
+
+.answer-btn {
+    padding: 20px;
+    border: 2px solid #ecf0f1;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.answer-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: #3498db;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.answer-btn.correct {
+    background: #d5f4e6;
+    border-color: #27ae60;
+    color: #27ae60;
+}
+
+.answer-btn.wrong {
+    background: #fab1a0;
+    border-color: #e17055;
+    color: #e17055;
+}
+
+.answer-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* Recipe options */
+.recipe-option {
+    text-align: left;
+}
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ingredient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.amount {
+    font-weight: 600;
+    color: #667eea;
+    min-width: 50px;
+}
+
+.name {
+    color: #2c3e50;
+}
+
+/* Recipe reveal */
+.recipe-reveal {
+    margin-top: 25px;
+    padding: 20px;
+    background: #e8f4fd;
+    border-radius: 12px;
+    border-left: 4px solid #3498db;
+}
+
+.recipe-reveal.error {
+    background: #ffeaa7;
+    border-left-color: #e17055;
+}
+
+.recipe-reveal h4 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.correct-recipe p {
+    margin: 10px 0;
+    color: #34495e;
+}
+
+/* Builder styles */
+.builder-step {
+    text-align: center;
+}
+
+.builder-step h4 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+    margin: 20px 0 30px;
+}
+
+.ingredient-btn {
+    padding: 12px 16px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.ingredient-btn:hover {
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+.ingredient-btn.selected {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.proportions-input {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0 30px;
+}
+
+.proportion-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #ecf0f1;
+}
+
+.proportion-item label {
+    flex: 1;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.proportion-item input {
+    width: 80px;
+    padding: 8px;
+    border: 2px solid #ecf0f1;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.proportion-item span {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+.glasses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0 30px;
+}
+
+.glass-btn {
+    padding: 15px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.glass-btn:hover {
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+.glass-btn.selected {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.success-message {
+    background: #d5f4e6;
+    color: #27ae60;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.score-info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Result Screen */
+.final-score {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.score-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.score {
+    font-size: 3rem;
+}
+
+.total {
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.percentage {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.score-message {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.score-message p {
+    font-size: 1.2rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+/* Library Screens */
+.library-navigation {
+    margin-bottom: 20px;
+}
+
+.categories-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-btn {
+    padding: 12px 20px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.category-btn:hover {
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+.category-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.library-content {
+    display: grid;
+    gap: 20px;
+}
+
+.library-item {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #ecf0f1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.library-item h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.library-item p {
+    color: #34495e;
+    line-height: 1.6;
+}
+
+/* Drink Library */
+.drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.drink-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #ecf0f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.drink-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+
+.drink-card.hidden {
+    opacity: 0.7;
+}
+
+.drink-card h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.glass-info {
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.drink-details h4 {
+    margin: 15px 0 10px;
+    color: #34495e;
+    font-size: 1rem;
+}
+
+.ingredients ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ingredients li {
+    padding: 5px 0;
+    color: #34495e;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.method ol {
+    padding-left: 20px;
+}
+
+.method li {
+    padding: 5px 0;
+    color: #34495e;
+    line-height: 1.4;
+}
+
+.decoration p {
+    color: #34495e;
+    font-style: italic;
+}
+
+.hidden-state {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .alcohol-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .answers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .secondary-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categories-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .drinks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ingredients-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .proportions-input {
+        grid-template-columns: 1fr;
+    }
+
+    .glasses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .score-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .score {
+        font-size: 2.5rem;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
 }
