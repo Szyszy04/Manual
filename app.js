@@ -1,4 +1,4 @@
-import { vodkas, alcoholLibrary, drinkLibrary, recipes, glassOptions, drinkDetails } from './data.js';
+import { vodkas, alcoholLibrary, drinkLibrary, recipes, glassOptions, findDrinkByName } from './data.js';
 
 const { createApp, ref, computed } = Vue;
 
@@ -13,13 +13,14 @@ createApp({
             builder: false
         });
 
-        // Stan dla wyboru alkoholi w konstruktorze
-        const selectedBuilderAlcohols = ref({
-            'Wódka': false,
-            'Whiskey': false,
-            'Rum': false,
-            'Gin': false,
-            'Tequila': false
+        // NOWY: Uniwersalny wybór kategorii alkoholi dla wszystkich quizów
+        const selectedAlcoholCategories = ref({
+            'Wódka': true,
+            'Gin': true,
+            'Whiskey': true,
+            'Rum': true,
+            'Tequila': true,
+            'Bezalkoholowe': false
         });
 
         // Stan dla biblioteki alkocholi
@@ -36,7 +37,7 @@ createApp({
         const selectedAnswer = ref(null);
         const imageLoadError = ref(false);
 
-        // Stan dla trybu builder - ROZSZERZONY
+        // Stan dla trybu builder
         const builderStep = ref(1);
         const selectedIngredients = ref(new Set());
         const ingredientAmounts = ref({});
@@ -45,14 +46,14 @@ createApp({
         const showBuilderRecipe = ref(false);
         const showDecorationSuccess = ref(false);
 
-        // NOWY: Computed dla wybranych alkoholi w konstruktorze
-        const hasSelectedBuilderAlcohols = computed(() =>
-            Object.values(selectedBuilderAlcohols.value).some(Boolean)
+        // NOWY: Computed dla wybranych kategorii alkoholi
+        const hasSelectedAlcoholCategories = computed(() =>
+            Object.values(selectedAlcoholCategories.value).some(Boolean)
         );
 
-        const builderAlcoholList = computed(() => 
-            Object.keys(selectedBuilderAlcohols.value).filter(alcohol => 
-                selectedBuilderAlcohols.value[alcohol]
+        const selectedAlcoholCategoriesList = computed(() => 
+            Object.keys(selectedAlcoholCategories.value).filter(category => 
+                selectedAlcoholCategories.value[category]
             )
         );
 
@@ -113,10 +114,10 @@ createApp({
                 Array.from(selected).every(ing => correct.has(ing));
         });
 
-        // Computed dla szkła
         const correctGlass = computed(() => {
             if (currentQuestion.value.type === 'builder' && currentQuestion.value.drinkName) {
-                return drinkDetails[currentQuestion.value.drinkName]?.glass || '';
+                const drink = findDrinkByName(currentQuestion.value.drinkName);
+                return drink?.glass || '';
             }
             return '';
         });
@@ -177,12 +178,12 @@ createApp({
             return Array.from(allIngredients);
         }
 
-        // NOWA: Funkcja do pobierania drinków z wybranych alkoholi
-        function getDrinksFromSelectedAlcohols() {
+        // NOWA: Funkcja do pobierania drinków z wybranych kategorii alkoholi
+        function getDrinksFromSelectedCategories() {
             const availableDrinks = [];
-            builderAlcoholList.value.forEach(alcohol => {
-                if (drinkLibrary[alcohol]) {
-                    drinkLibrary[alcohol].forEach(drink => {
+            selectedAlcoholCategoriesList.value.forEach(category => {
+                if (drinkLibrary[category]) {
+                    drinkLibrary[category].forEach(drink => {
                         if (recipes[drink.name]) {
                             availableDrinks.push(drink.name);
                         }
@@ -228,19 +229,20 @@ createApp({
             return hiddenDrinks.value.has(drinkName);
         }
 
-        // NOWA: Funkcja toggle dla alkoholi w konstruktorze
-        function toggleBuilderAlcohol(alcohol) {
-            selectedBuilderAlcohols.value[alcohol] = !selectedBuilderAlcohols.value[alcohol];
+        // NOWA: Funkcja toggle dla kategorii alkoholi (uniwersalna)
+        function toggleAlcoholCategory(category) {
+            selectedAlcoholCategories.value[category] = !selectedAlcoholCategories.value[category];
         }
 
-        // ZAKTUALIZOWANA: Funkcja tworzenia pytania builder z filtrowaniem alkoholi
         function createBuilderQuestion() {
-            const availableDrinks = getDrinksFromSelectedAlcohols();
+            const availableDrinks = getDrinksFromSelectedCategories();
             if (availableDrinks.length === 0) return null;
 
             const randomDrink = availableDrinks[Math.floor(Math.random() * availableDrinks.length)];
             const allIngredients = shuffleArray(getAllIngredients());
             const allGlasses = shuffleArray([...glassOptions]);
+
+            const drinkInfo = findDrinkByName(randomDrink);
 
             return {
                 type: 'builder',
@@ -248,8 +250,8 @@ createApp({
                 allIngredients: allIngredients,
                 allGlasses: allGlasses,
                 correctRecipe: recipes[randomDrink],
-                correctGlass: drinkDetails[randomDrink]?.glass || '',
-                decoration: drinkDetails[randomDrink]?.decoration || ''
+                correctGlass: drinkInfo?.glass || '',
+                decoration: drinkInfo?.decoration || ''
             };
         }
 
@@ -339,6 +341,7 @@ createApp({
             }
         }
 
+        // ZAKTUALIZOWANA: Funkcja tworzenia pytań z filtrowaniem kategorii
         function createQuestion(type, item) {
             if (type === 'proportions') {
                 const correctRecipe = recipes[item];
@@ -415,19 +418,25 @@ createApp({
             return null;
         }
 
-        // ZAKTUALIZOWANA: Logika quizu z walidacją alkoholi dla konstruktora
+        // ZAKTUALIZOWANA: Logika quizu z zastosowaniem filtrowania kategorii
         function startQuiz() {
+            if (!hasSelectedAlcoholCategories.value) {
+                alert('Wybierz przynajmniej jedną kategorię alkoholu!');
+                return;
+            }
+
             const selectedQuestions = [];
+            const availableDrinks = getDrinksFromSelectedCategories();
 
             if (selectedCategories.value.proportions) {
-                Object.keys(recipes).forEach(drink => {
+                availableDrinks.forEach(drink => {
                     const question = createQuestion('proportions', drink);
                     if (question) selectedQuestions.push(question);
                 });
             }
 
             if (selectedCategories.value.review) {
-                Object.keys(recipes).forEach(drink => {
+                availableDrinks.forEach(drink => {
                     const question = createQuestion('review', drink);
                     if (question) selectedQuestions.push(question);
                 });
@@ -441,10 +450,6 @@ createApp({
             }
 
             if (selectedCategories.value.builder) {
-                if (!hasSelectedBuilderAlcohols.value) {
-                    alert('Wybierz przynajmniej jeden alkohol dla konstruktora!');
-                    return;
-                }
                 for (let i = 0; i < 5; i++) {
                     const question = createQuestion('builder');
                     if (question) selectedQuestions.push(question);
@@ -452,7 +457,7 @@ createApp({
             }
 
             if (selectedQuestions.length === 0) {
-                console.warn('Nie udało się utworzyć żadnych pytań');
+                alert('Nie udało się utworzyć żadnych pytań dla wybranych kategorii.');
                 return;
             }
 
@@ -564,16 +569,13 @@ createApp({
             selectDrinkCategory,
             toggleDrinkVisibility,
             isDrinkHidden,
-            // Eksportujemy currentQuestionIndex
             currentQuestionIndex,
-            // Glass i decoration details
             glassOptions,
-            drinkDetails,
-            // NOWE: Builder alcohol selection
-            selectedBuilderAlcohols,
-            hasSelectedBuilderAlcohols,
-            builderAlcoholList,
-            toggleBuilderAlcohol
+            // NOWE: Uniwersalny system wyboru kategorii alkoholi
+            selectedAlcoholCategories,
+            hasSelectedAlcoholCategories,
+            selectedAlcoholCategoriesList,
+            toggleAlcoholCategory
         };
     }
 }).mount('#app');
