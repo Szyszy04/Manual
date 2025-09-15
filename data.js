@@ -1,21 +1,155 @@
-// data.js - KOMPLETNA BAZA DANYCH DRINKÓW (70 DRINKÓW!)
+// data.js - KOMPLETNA BAZA DANYCH DRINKÓW Z SYSTEMEM ID SKŁADNIKÓW
+
+// Zunifikowana lista składników
+export const ingredients = [
+    { id: 1, name: "London Dry Gin" },
+    { id: 2, name: "Sloe Gin" },
+    { id: 3, name: "Wódka" },
+    { id: 4, name: "Bourbon Whiskey" },
+    { id: 5, name: "Rye Whiskey" },
+    { id: 6, name: "Irish Whiskey" },
+    { id: 7, name: "Blended Scotch Whisky" },
+    { id: 8, name: "Aged Scotch Whisky" },
+    { id: 9, name: "White Rum" },
+    { id: 10, name: "Gold Rum" },
+    { id: 11, name: "Aged Rum" },
+    { id: 12, name: "Jamaican Rum" },
+    { id: 13, name: "Spiced Rum" },
+    { id: 14, name: "Overproof White Rum" },
+    { id: 15, name: "Caribbean Blend Rum" },
+    { id: 16, name: "Cachaça" },
+    { id: 17, name: "Tequila Blanco" },
+    { id: 18, name: "Cognac" },
+    { id: 19, name: "Pisco" },
+    { id: 20, name: "Cointreau" },
+    { id: 21, name: "Maraschino Liqueur" },
+    { id: 22, name: "Green Chartreuse" },
+    { id: 23, name: "Amaretto" },
+    { id: 24, name: "Galliano Espresso" },
+    { id: 25, name: "Galliano Autentico" },
+    { id: 26, name: "Crème de Cacao" },
+    { id: 27, name: "Crème de Menthe" },
+    { id: 28, name: "Chambord" },
+    { id: 29, name: "Sweet Vermouth" },
+    { id: 30, name: "Dry Vermouth" },
+    { id: 31, name: "Lillet Blanc" },
+    { id: 32, name: "Cocchi Americano" },
+    { id: 33, name: "Campari" },
+    { id: 34, name: "Aperol" },
+    { id: 35, name: "Fernet Branca" },
+    { id: 36, name: "Suze" },
+    { id: 37, name: "Bénédictine" },
+    { id: 38, name: "Cherry Heering" },
+    { id: 39, name: "Falernum" },
+    { id: 40, name: "Orgeat" },
+    { id: 41, name: "Peach Liqueur" },
+    { id: 42, name: "Dark Chocolate Liqueur" },
+    { id: 43, name: "Sok z cytryny" },
+    { id: 44, name: "Sok z limonki" },
+    { id: 45, name: "Sok z pomarańczy" },
+    { id: 46, name: "Sok grejpfrutowy" },
+    { id: 47, name: "Limonka" },
+    { id: 48, name: "Cytryna" },
+    { id: 49, name: "Pomarańcza" },
+    { id: 50, name: "Liście mięty" },
+    { id: 51, name: "Syrop cukrowy" },
+    { id: 52, name: "Syrop miętowy" },
+    { id: 53, name: "Syrop waniliowy" },
+    { id: 54, name: "Syrop miodowo-imbirowy" },
+    { id: 55, name: "Syrop malinowy" },
+    { id: 56, name: "Syrop piernikowy" },
+    { id: 57, name: "Angostura Bitters" },
+    { id: 58, name: "Orange Bitters" },
+    { id: 59, name: "Peychaud's Bitters" },
+    { id: 60, name: "Angostura Cocoa Bitters" },
+    { id: 61, name: "Angostura Aromatic Bitters" },
+    { id: 62, name: "Albumina" },
+    { id: 63, name: "Half & Half" },
+    { id: 64, name: "Prosecco" },
+    { id: 65, name: "Woda gazowana" },
+    { id: 66, name: "Ginger Beer" },
+    { id: 67, name: "Cola" },
+    { id: 68, name: "Tonic Water" },
+    { id: 69, name: "Wrzątek" },
+    { id: 70, name: "Espresso" },
+    { id: 71, name: "Kawa przelewowa" },
+    { id: 72, name: "Absynth" },
+    { id: 73, name: "Ruby Port" },
+    { id: 74, name: "Red Wine" },
+    { id: 75, name: "Crème de Violette" },
+    { id: 76, name: "Lime Cordial" },
+    { id: 77, name: "Cranberry Rose Cordial" },
+    { id: 78, name: "Lemongrass Essence" },
+    { id: 79, name: "Tomato Juice" },
+    { id: 80, name: "Bloody Mary Mix" },
+    { id: 81, name: "Truffle Oil" },
+    { id: 82, name: "Edible Glitter" },
+    { id: 83, name: "Passion Fruit Purée" },
+    { id: 84, name: "Pineapple Juice" },
+    { id: 85, name: "Raspberry Syrup" },
+    { id: 86, name: "Lime Juice Cordial" },
+    { id: 87, name: "Earl Grey Tea" },
+    { id: 88, name: "Oleo Saccharum" },
+    { id: 89, name: "Orange Blossom Water" },
+    { id: 90, name: "Cherry Syrup" },
+    { id: 91, name: "Cinnamon Stick" },
+    { id: 92, name: "Lemon Slice" },
+    { id: 93, name: "Non-Alcoholic Gin" },
+    { id: 94, name: "Bitter Syrup" },
+    { id: 95, name: "Non-Alcoholic Aperitif" },
+    { id: 96, name: "Aperitif" },
+    { id: 97, name: "Floral Aperitif" },
+    { id: 98, name: "Tonic Water (Premium)" },
+    { id: 99, name: "Sparkling Wine" },
+    { id: 100, name: "Elderflower Cordial" },
+    { id: 101, name: "Soda Water" },
+    { id: 102, name: "Grapefruit Soda" },
+    { id: 103, name: "Agave Nectar" },
+    { id: 104, name: "Peach Schnapps" },
+    { id: 105, name: "Islay Whisky Spray" },
+    { id: 106, name: "Amaro Nonino" }
+];
+
+// Funkcje pomocnicze do pracy z składnikami
+export function getIngredientById(id) {
+    return ingredients.find(ingredient => ingredient.id === id);
+}
+
+export function getIngredientId(name) {
+    const ingredient = ingredients.find(ingredient => ingredient.name === name);
+    return ingredient ? ingredient.id : null;
+}
+
+// Funkcja do konwersji receptury z ID na nazwy
+export function getRecipeWithNames(recipeName) {
+    const recipe = recipes[recipeName];
+    if (!recipe) return [];
+
+    return recipe.map(item => {
+        if (item.ingredientId) {
+            const ingredient = getIngredientById(item.ingredientId);
+            return {
+                name: ingredient ? ingredient.name : `Nieznany składnik (ID: ${item.ingredientId})`,
+                amount: item.amount
+            };
+        } else {
+            // Fallback dla starych formatów
+            return {
+                name: item.name || 'Nieznany składnik',
+                amount: item.amount
+            };
+        }
+    });
+}
 
 // Dane wódek
 export const vodkas = [
     { name: "Belvedere", price: "28,00", country: "Polska", ingredient: "Żyto" },
     { name: "Belvedere Lake Bartężek", price: "39,00", country: "Polska", ingredient: "Żyto" },
-    { name: "Belvedere Organic Infusions Blackberry & Lemongrass", price: "39,00", country: "Polska", ingredient: "Żyto" },
-    { name: "Belvedere Organic Infusions Lemon & Basil", price: "39,00", country: "Polska", ingredient: "Żyto" },
-    { name: "Belvedere Organic Infusions Pear & Ginger", price: "39,00", country: "Polska", ingredient: "Żyto" },
-    { name: "Belvedere Smogóry Forest", price: "39,00", country: "Polska", ingredient: "Żyto" },
     { name: "Chopin Potato", price: "35,00", country: "Polska", ingredient: "Ziemniaki" },
     { name: "Grey Goose", price: "28,00", country: "Francja", ingredient: "Pszenica (winter wheat)" },
-    { name: "Młody Ziemniak 2021", price: "28,00 L", country: "Polska", ingredient: "Ziemniaki" },
     { name: "Ostoya Vodka", price: "19,00", country: "Polska", ingredient: "Pszenica" },
-    { name: "Ostoya Black", price: "21,00", country: "Polska", ingredient: "Pszenica" },
-    { name: "Podole Wielkie Okowita Pszenica", price: "29,00", country: "Polska", ingredient: "Pszenica" },
-    { name: "Podole Wielkie Okowita Żyto", price: "29,00", country: "Polska", ingredient: "Żyto" },
-    { name: "Podole Wielkie Okowita Ziemniak", price: "29,00", country: "Polska", ingredient: "Ziemniaki" }
+    { name: "Ostoya Black", price: "21,00", country: "Polska", ingredient: "Pszenica" }
 ];
 
 // Biblioteka informacji o alkocholach
@@ -154,7 +288,7 @@ export const alcoholLibrary = {
     ]
 };
 
-// KOMPLETNA BIBLIOTEKA DRINKÓW - 70 DRINKÓW W 6 KATEGORIACH!
+// KOMPLETNA BIBLIOTEKA DRINKÓW
 export const drinkLibrary = {
     "Wódka": [
         {
@@ -800,19 +934,20 @@ export const drinkLibrary = {
             decoration: "2 półplastry pomarańczy"
         }
     ],
-    "Rum": [
+        "Rum": [
         {
-            name: "Air Mail",
-            glass: "Coupe",
+            name: "AIR MAIL",
+            glass: "Champagne Flute",
             method: [
-                "Wszystkie składniki oprócz Prosecco wstrząsamy z lodem",
-                "Cedzimy do szkła",
-                "Dopełniamy Prosecco"
+                "Wstrząsamy niezwykle intensywnie wszystkie składnik (z wyjątkiem Prosecco)",
+                "Cedzimy do uprzednio zmrożonego szkła",
+                "Dopełniamy Prosecco",
+                "Dekorujemy"
             ],
             ingredients: [
                 "50 ml Gold Rum",
-                "20 ml syrop miodowo imbirowy",
-                "20 ml soku z limonki",
+                "20 ml Syrop miodowo-imbirowy",
+                "20 ml Soku z limonki",
                 "40 ml Prosecco"
             ],
             decoration: "3 kosteczki imbiru na szpadce"
@@ -821,14 +956,14 @@ export const drinkLibrary = {
             name: "Caipirinha",
             glass: "Double Old Fashioned Glass",
             method: [
-                "W szkle muddlujemy limonkę z syropem",
-                "Dodajemy Cachaçę",
-                "Wypełniamy szkło lodem",
-                "Mieszamy"
+                "Ćwiartki limonki ucieramy za pomocą muddlera w szkle",
+                "Dodajemy cachaçę i zasypujemy w pełni lodem",
+                "Mieszamy intensywnie łyżą",
+                "Dosypujemy kruszonego lodu i dekorujemy limonką"
             ],
             ingredients: [
                 "50 ml Cachaça",
-                "15 ml syropu cukrowego",
+                "15 ml Syrop cukrowy",
                 "1/2 limonki (2 ćwiartki)"
             ],
             decoration: "1/4 limonki ułożona po środku koktajlu"
@@ -837,50 +972,338 @@ export const drinkLibrary = {
             name: "Classic Rum Swizzle",
             glass: "Collins",
             method: [
-                "Wszystkie składniki mieszamy w wysokiej szklance z lodem",
-                "Używamy swizzle stick do mieszania",
-                "Dopełniamy lodem"
+                "Do szkła wlewamy wszystkie składniki (z wyjątkiem Angostura Bitters)",
+                "Do szkła z płynem wkładamy Swizzle Stick",
+                "Zasypujemy w pełni kruszonym lodem",
+                "Robimy Swizzle przez około 10 sekund",
+                "Dopełniamy szkło kruszonym lodem, aby wystawało nieco ponad rant",
+                "Na górę wlewamy Angostura Bitters",
+                "Dekorujemy bukietem miętowym posypanym pudrem cytrusowym"
             ],
             ingredients: [
                 "50 ml White Rum",
-                "30 ml soku z limonki",
-                "20 ml syropu cukrowego",
-                "4 x dash Angostura Bitters"
+                "30 ml Soku z limonki",
+                "20 ml Syrop cukrowy",
+                "4 dash Angostura Bitters"
             ],
             decoration: "Bukiet mięty + czips z limonki"
+        },
+        {
+            name: "Corn 'n' Oil",
+            glass: "Double Old Fashioned Glass",
+            method: [
+                "Wszystkie składniki wlewamy do szkła",
+                "Mieszamy łyżeczką i dodajemy bryłkę lodową",
+                "1/2 limonki wyciskamy za pomocą łokcia i wrzucamy do środka",
+                "Mieszamy przez około 10 sekund i serwujemy"
+            ],
+            ingredients: [
+                "20 ml Aged Rum",
+                "10 ml Jamaican Rum",
+                "20 ml Falernum",
+                "10 ml Aperol",
+                "1 dash Angostura Bitters",
+                "1/2 limonki"
+            ],
+            decoration: "1/2 limonki"
+        },
+        {
+            name: "Cuba Libre",
+            glass: "Collins",
+            method: [
+                "Ćwiartki limonki ucieramy za pomocą muddlera w szkle",
+                "Dodajemy rum i zasypujemy w pełni lodem",
+                "Dopełniamy koktajl colą",
+                "Dekorujemy limonką"
+            ],
+            ingredients: [
+                "40 ml Aged Rum",
+                "1/2 limonki (2 ćwiartki)",
+                "Cola - top up"
+            ],
+            decoration: "1/4 limonki ułożona po środku koktajlu"
         },
         {
             name: "Daiquiri",
             glass: "Nick & Nora",
             method: [
-                "Wszystkie składniki wstrząsamy z lodem",
-                "Cedzimy podwójnie do uprzednio zmrożonego szkła"
+                "Wszystkie składniki intensywnie wstrząsamy z dużą ilością lodu",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła",
+                "Dekorujemy zestem z limonki"
             ],
             ingredients: [
                 "50 ml White Rum",
-                "20 ml soku z limonki",
-                "10 ml syropu cukrowego"
+                "20 ml Soku z limonki",
+                "10 ml Syrop cukrowy"
             ],
             decoration: "Zest z limonki"
+        },
+        {
+            name: "Dark 'n' Stormy",
+            glass: "Collins",
+            method: [
+                "Szkło wypełniamy w pełni lodem",
+                "Wlewamy Angosturę i piwo imbirowe, wciskamy ćwiartkę limonki",
+                "Po lodzie wlewamy rum - tworzą się warstwy",
+                "Dekorujemy miętą",
+                "Serwujemy z rurką - przed konsumpcją zamieszać"
+            ],
+            ingredients: [
+                "40 ml Jamaican Rum",
+                "1 dash Angostura Bitters",
+                "1 ćwiartka limonki",
+                "Ginger Beer - top up"
+            ],
+            decoration: "2 szczypy mięty"
+        },
+        {
+            name: "El Presidente",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki mieszamy przez około 15 sekund",
+                "Cedzimy całość do uprzednio zmrożonego szkła",
+                "Okraszamy koktajl olejkami pomarańczowymi",
+                "Do środka wrzucamy wiśnię"
+            ],
+            ingredients: [
+                "40 ml Caribbean Blend Rum",
+                "15 ml Lillet Blanc",
+                "5 ml Cointreau",
+                "2,5 ml Syrop malinowy",
+                "2 dash Orange Bitters"
+            ],
+            decoration: "Wiśnia + olejki pomarańczowe"
+        },
+        {
+            name: "Fish House Punch",
+            glass: "Collins",
+            method: [
+                "Wlewamy składniki do shakera",
+                "Wstrząsamy intensywnie",
+                "Cedzimy na lód",
+                "Dekorujemy"
+            ],
+            ingredients: [
+                "20 ml Cognac",
+                "20 ml Aged Rum",
+                "15 ml Peach Liqueur",
+                "30 ml Napar z herbaty Earl Grey",
+                "20 ml Soku z cytryny",
+                "15 ml Oleo Saccharum"
+            ],
+            decoration: "Bukiet mięty (3 szczypy) + ćwiartka cytryny"
+        },
+        {
+            name: "Fog Cutter",
+            glass: "Collins",
+            method: [
+                "Wstrząsamy niezwykle intensywnie wszystkie składniki",
+                "Cedzimy na lód do wysokiego szkła",
+                "Dekorujemy"
+            ],
+            ingredients: [
+                "20 ml Pisco",
+                "20 ml London Dry Gin",
+                "20 ml Gold Rum",
+                "20 ml Orgeat",
+                "30 ml Soku z cytryny",
+                "30 ml Soku z pomarańczy",
+                "10 ml Ruby Port"
+            ],
+            decoration: "Bukiet mięty + czips z ananasa - całość oprószona pudrem pomarańczowym"
+        },
+        {
+            name: "Hemingway Daiquiri",
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wstrząsamy intensywnie z lodem",
+                "Cedzimy do uprzednio zmrożonego szkła",
+                "Okraszamy olejkami grejpfrutowymi",
+                "Wrzucamy wiśnię do środka"
+            ],
+            ingredients: [
+                "40 ml White Rum",
+                "20 ml Sok grejpfrutowy",
+                "15 ml Soku z limonki",
+                "10 ml Syrop cukrowy",
+                "5 ml Maraschino Liqueur"
+            ],
+            decoration: "Olejki grejpfrutowe + wiśnia koktajlowa"
+        },
+        {
+            name: "Hot Rum Grog",
+            glass: "Irish Coffee Cup",
+            method: [
+                "Szkło uzupełniamy wrzątkiem i trzymamy przez chwilę aby je rozgrzać",
+                "Wlewamy wszystkie składniki",
+                "Dopełniamy wrzątkiem",
+                "Dekorujemy"
+            ],
+            ingredients: [
+                "50 ml Spiced Rum",
+                "20 ml Soku z cytryny",
+                "15 ml Soku z grejpfruta",
+                "15 ml Soku z pomarańczy",
+                "20 ml Syrop waniliowy",
+                "1 dash Angostura Bitters",
+                "Wrzątek"
+            ],
+            decoration: "Laska cynamonu + pół plasterka pomarańczy + kandyzowany imbir"
+        },
+        {
+            name: "Mai Tai",
+            glass: "Double Old Fashioned Glass",
+            method: [
+                "Wszystkie składniki wlewamy do shakera",
+                "Dodajemy kości lodu i wstrząsamy",
+                "Przelewamy wraz z lodem do szkła (Dirty Shake)",
+                "Dopełniamy lodem",
+                "Dekorujemy"
+            ],
+            ingredients: [
+                "30 ml White Rum",
+                "20 ml Jamaican Rum",
+                "15 ml Cointreau",
+                "10 ml Orgeat",
+                "30 ml Soku z limonki",
+                "5 ml Syrop cukrowy"
+            ],
+            decoration: "Czips z ananasa + bukiet mięty oprószony pudrem"
         },
         {
             name: "Mojito",
             glass: "Collins",
             method: [
-                "W szklance muddlujemy mięte z limonką i syropem",
-                "Dodajemy rum",
-                "Wypełniamy lodem",
-                "Dopełniamy wodą gazowaną",
-                "Delikatnie mieszamy"
+                "Limonkę ucieramy wraz z syropem miętowym",
+                "Dodajemy miętę i rum",
+                "Zasypujemy w pełni lodem kruszonym",
+                "Intensywnie mieszamy łyżą barmańską",
+                "Dopełniamy lodem",
+                "Uzupełniamy wodą gazowaną",
+                "Dekorujemy miętą i ją opruszamy"
             ],
             ingredients: [
                 "50 ml Aged Rum",
                 "1/2 limonki",
-                "15 ml Syrop Miętowy",
+                "15 ml Syrop miętowy",
                 "8 liści mięty",
-                "Woda Gazowana"
+                "Woda gazowana"
             ],
-            decoration: "Bukiet mięty opruszony cukrem klasycznym, bądź cytrusowym"
+            decoration: "Bukiet mięty oprószony cukrem klasycznym lub cytrusowym"
+        },
+        {
+            name: "Mojito Norblito",
+            glass: "Collins",
+            method: [
+                "Premix wlewamy do shakera",
+                "Wstrząsamy intensywnie",
+                "Do szkła wlewamy splash wody gazowanej",
+                "Cedzimy koktajl podwójnie do szkła na wodę",
+                "Dopełniamy maksymalnie lodem",
+                "Dekorujemy miętą"
+            ],
+            ingredients: [
+                "50 ml White Rum (wzbogacony o smak tartej skórki)",
+                "30 ml Fake Lime Juice",
+                "20 ml Syrop miętowy",
+                "5 liści mięty"
+            ],
+            decoration: "Bukiet mięty oprószony pudrem klasycznym lub cytrusowym"
+        },
+        {
+            name: "Nuclear Daiquiri",
+            glass: "Nick & Nora",
+            method: [
+                "Wstrząsamy niezwykle intensywnie wszystkie składniki",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła",
+                "Dekorujemy"
+            ],
+            ingredients: [
+                "30 ml Overproof White Rum",
+                "20 ml Green Chartreuse",
+                "10 ml Falernum",
+                "20 ml Sok z limonki",
+                "10 ml Syrop cukrowy"
+            ],
+            decoration: "Mięta w czipsie limonkowym"
+        },
+        {
+            name: "Old Cuban",
+            glass: "Collins",
+            method: [
+                "Wszystkie składniki intensywnie wstrząsamy z dużą ilością lodu (z wyjątkiem prosecco)",
+                "Cedzimy podwójnie do szkła na lód",
+                "Dopełniamy Prosecco",
+                "Dekorujemy"
+            ],
+            ingredients: [
+                "50 ml Aged Rum",
+                "20 ml Syrop waniliowy",
+                "20 ml Sok z limonki",
+                "1 dash Angostura Bitters",
+                "40 ml Prosecco",
+                "5 liści mięty"
+            ],
+            decoration: "Mięta posypana pudrem"
+        },
+        {
+            name: "Queen's Park Swizzle",
+            glass: "Collins",
+            method: [
+                "Do szkła wrzucamy miętę",
+                "Przyciskamy ją Swizzle Stick i wlewamy wszystkie składniki",
+                "Dopełniamy w pełni kruszonym lodem",
+                "Uprawiamy swizzle przez około 10-15 sekund",
+                "Dopełniamy kruszonym lodem, aby ponad rant wystawał kopczyk",
+                "Dekorujemy miętą i czipsem z ananasa - całość posypujemy cukrem pudrem cytrusowym"
+            ],
+            ingredients: [
+                "30 ml Gold Rum",
+                "20 ml Jamaican Rum",
+                "10 ml Falernum",
+                "20 ml Soku z limonki",
+                "10 ml Syrop waniliowy",
+                "10 liści mięty"
+            ],
+            decoration: "Bukiet mięty + czips z ananasa - całość oprószona pudrem"
+        },
+        {
+            name: "Right Hand Cocktail",
+            glass: "Old Fashioned",
+            method: [
+                "Wlewamy wszystkie składniki do szklanicy",
+                "Intensywnie mieszamy przez około 15 sekund",
+                "Cedzimy do szkła na bryłkę",
+                "Okraszamy całość olejkami pomarańczowymi i dekorujemy coin na spinaczu"
+            ],
+            ingredients: [
+                "30 ml Aged Rum",
+                "20 ml Martini Bitter",
+                "20 ml Sweet Vermouth",
+                "5 ml Dark Chocolate Liqueur"
+            ],
+            decoration: "Coin z pomarańczy przypięte na spinaczu do rantu szkła"
+        },
+        {
+            name: "Zombie",
+            glass: "Collins",
+            method: [
+                "Wlewamy wszystkie składniki do shakera",
+                "Wstrząsamy z dużą ilością lodu",
+                "Cedzimy na kości do wysokiego szkła"
+            ],
+            ingredients: [
+                "30 ml Gold Rum",
+                "20 ml Jamaican Rum",
+                "10 ml Falernum",
+                "30 ml Soku z grejpfruta",
+                "20 ml Soku z limonki",
+                "20 ml Syrop piernikowy",
+                "5 ml Syrop malinowy",
+                "1 dash Angostura Bitters",
+                "2 ml Absynth"
+            ],
+            decoration: "Bukiet mięty + tarta fasola tonka + imbir kandyzowany na szpadce"
         }
     ],
     "Tequila": [
@@ -1332,465 +1755,554 @@ export const drinkLibrary = {
     ]
 };
 
-// KOMPLETNE RECIPES - 70 PRZEPISÓW!
+// RECIPES Z SYSTEMEM ID 
 export const recipes = {
-    // WÓDKA (9 drinków)
     "Vodka Sour": [
-        {"name": "Wódka", "amount": 40},
-        {"name": "Sok z cytryny", "amount": 25},
-        {"name": "Syrop cukrowy", "amount": 15},
-        {"name": "Albumina", "amount": 20},
-        {"name": "Angostura Bitters", "amount": 1}
+        {"ingredientId": 3, "amount": 40},
+        {"ingredientId": 43, "amount": 25},
+        {"ingredientId": 51, "amount": 15},
+        {"ingredientId": 62, "amount": 20},
+        {"ingredientId": 57, "amount": 1}
     ],
     "Bloody Mary": [
-        {"name": "Wódka", "amount": 50},
-        {"name": "Big Tom Tomato Juice", "amount": 100},
-        {"name": "Sok z cytryny", "amount": 10},
-        {"name": "Bloody Mary Mix", "amount": 10},
-        {"name": "Oliwa truflowa", "amount": 3}
+        {"ingredientId": 3, "amount": 50},
+        {"ingredientId": 79, "amount": 100},
+        {"ingredientId": 43, "amount": 10},
+        {"ingredientId": 80, "amount": 10},
+        {"ingredientId": 81, "amount": 3}
     ],
     "Cosmopolitan": [
-        {"name": "Wódka", "amount": 30},
-        {"name": "Aperol", "amount": 10},
-        {"name": "Kordiał z Żurawiny i Róży", "amount": 30},
-        {"name": "Esencja z trawy cytrynowej", "amount": 10},
-        {"name": "Różowy glitter", "amount": 1}
+        {"ingredientId": 3, "amount": 30},
+        {"ingredientId": 34, "amount": 10},
+        {"ingredientId": 77, "amount": 30},
+        {"ingredientId": 78, "amount": 10},
+        {"ingredientId": 82, "amount": 1}
     ],
     "Espresso Martini": [
-        {"name": "Wódka", "amount": 40},
-        {"name": "Galliano Espresso", "amount": 20},
-        {"name": "Syrop waniliowy", "amount": 10},
-        {"name": "Espresso", "amount": 1},
-        {"name": "Angostura Cocoa Bitters", "amount": 1}
+        {"ingredientId": 3, "amount": 40},
+        {"ingredientId": 24, "amount": 20},
+        {"ingredientId": 53, "amount": 10},
+        {"ingredientId": 70, "amount": 1},
+        {"ingredientId": 60, "amount": 1}
     ],
     "Golden Cadillac": [
-        {"name": "Creme De Cacao", "amount": 30},
-        {"name": "Galliano Autentico", "amount": 30},
-        {"name": "Half Half", "amount": 30}
+        {"ingredientId": 26, "amount": 30},
+        {"ingredientId": 25, "amount": 30},
+        {"ingredientId": 63, "amount": 30}
     ],
     "Grasshooper": [
-        {"name": "Creme De Cacao", "amount": 20},
-        {"name": "Creme De Menthe", "amount": 20},
-        {"name": "Wódka", "amount": 20},
-        {"name": "Half Half", "amount": 30}
+        {"ingredientId": 26, "amount": 20},
+        {"ingredientId": 27, "amount": 20},
+        {"ingredientId": 3, "amount": 20},
+        {"ingredientId": 63, "amount": 30}
     ],
     "Long Island Iced Tea": [
-        {"name": "Gin", "amount": 20},
-        {"name": "Wódka", "amount": 20},
-        {"name": "Rum", "amount": 20},
-        {"name": "Cointreau", "amount": 20},
-        {"name": "Tequila", "amount": 20},
-        {"name": "Syrop cukrowy", "amount": 10},
-        {"name": "Sok z cytryny", "amount": 20},
-        {"name": "Coca Cola", "amount": 40}
+        {"ingredientId": 1, "amount": 20},
+        {"ingredientId": 3, "amount": 20},
+        {"ingredientId": 9, "amount": 20},
+        {"ingredientId": 20, "amount": 20},
+        {"ingredientId": 17, "amount": 20},
+        {"ingredientId": 51, "amount": 10},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 67, "amount": 40}
     ],
     "Pornstar Martini": [
-        {"name": "Wódka", "amount": 40},
-        {"name": "Syrop waniliowy", "amount": 20},
-        {"name": "Sok z limonki", "amount": 20},
-        {"name": "Przecier z marakui", "amount": 20},
-        {"name": "Prosecco", "amount": 30}
+        {"ingredientId": 3, "amount": 40},
+        {"ingredientId": 53, "amount": 20},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 83, "amount": 20},
+        {"ingredientId": 64, "amount": 30}
     ],
     "Kyiv Mule": [
-        {"name": "Wódka", "amount": 40},
-        {"name": "Sok z limonki", "amount": 15},
-        {"name": "Syrop cukrowy", "amount": 10},
-        {"name": "Thomas Henry Spicy Ginger", "amount": 100},
-        {"name": "Angostura Bitters", "amount": 1}
+        {"ingredientId": 3, "amount": 40},
+        {"ingredientId": 44, "amount": 15},
+        {"ingredientId": 51, "amount": 10},
+        {"ingredientId": 66, "amount": 100},
+        {"ingredientId": 57, "amount": 1}
     ],
-
-    // RUM (5 drinków)
-    "Air Mail": [
-        {"name": "Gold Rum", "amount": 50},
-        {"name": "Syrop miodowo-imbirowy", "amount": 20},
-        {"name": "Sok z limonki", "amount": 20},
-        {"name": "Prosecco", "amount": 40}
+    "AIR MAIL": [
+        {"ingredientId": 10, "amount": 50},
+        {"ingredientId": 54, "amount": 20},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 64, "amount": 40}
     ],
     "Caipirinha": [
-        {"name": "Cachaça", "amount": 50},
-        {"name": "Syrop cukrowy", "amount": 15},
-        {"name": "Limonka", "amount": 0.5}
+        {"ingredientId": 16, "amount": 50},
+        {"ingredientId": 51, "amount": 15},
+        {"ingredientId": 47, "amount": 0.5}
     ],
     "Classic Rum Swizzle": [
-        {"name": "White Rum", "amount": 50},
-        {"name": "Sok z limonki", "amount": 30},
-        {"name": "Syrop cukrowy", "amount": 20},
-        {"name": "Angostura Bitters", "amount": 4}
+        {"ingredientId": 9, "amount": 50},
+        {"ingredientId": 44, "amount": 30},
+        {"ingredientId": 51, "amount": 20},
+        {"ingredientId": 57, "amount": 4}
+    ],
+    "Corn 'n' Oil": [
+        {"ingredientId": 11, "amount": 20},
+        {"ingredientId": 12, "amount": 10},
+        {"ingredientId": 39, "amount": 20},
+        {"ingredientId": 34, "amount": 10},
+        {"ingredientId": 57, "amount": 1},
+        {"ingredientId": 47, "amount": 0.5}
+    ],
+    "Cuba Libre": [
+        {"ingredientId": 11, "amount": 40},
+        {"ingredientId": 47, "amount": 0.5},
+        {"ingredientId": 67, "amount": 100}
     ],
     "Daiquiri": [
-        {"name": "White Rum", "amount": 50},
-        {"name": "Sok z limonki", "amount": 20},
-        {"name": "Syrop cukrowy", "amount": 10}
+        {"ingredientId": 9, "amount": 50},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 51, "amount": 10}
+    ],
+    "Dark 'n' Stormy": [
+        {"ingredientId": 12, "amount": 40},
+        {"ingredientId": 57, "amount": 1},
+        {"ingredientId": 47, "amount": 0.25},
+        {"ingredientId": 66, "amount": 100}
+    ],
+    "El Presidente": [
+        {"ingredientId": 15, "amount": 40},
+        {"ingredientId": 31, "amount": 15},
+        {"ingredientId": 20, "amount": 5},
+        {"ingredientId": 55, "amount": 2.5},
+        {"ingredientId": 58, "amount": 2}
+    ],
+    "Fish House Punch": [
+        {"ingredientId": 18, "amount": 20},
+        {"ingredientId": 11, "amount": 20},
+        {"ingredientId": 41, "amount": 15},
+        {"ingredientId": 87, "amount": 30},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 88, "amount": 15}
+    ],
+    "Fog Cutter": [
+        {"ingredientId": 19, "amount": 20},
+        {"ingredientId": 1, "amount": 20},
+        {"ingredientId": 10, "amount": 20},
+        {"ingredientId": 40, "amount": 20},
+        {"ingredientId": 43, "amount": 30},
+        {"ingredientId": 45, "amount": 30},
+        {"ingredientId": 73, "amount": 10}
+    ],
+    "Hemingway Daiquiri": [
+        {"ingredientId": 9, "amount": 40},
+        {"ingredientId": 46, "amount": 20},
+        {"ingredientId": 44, "amount": 15},
+        {"ingredientId": 51, "amount": 10},
+        {"ingredientId": 21, "amount": 5}
+    ],
+    "Hot Rum Grog": [
+        {"ingredientId": 13, "amount": 50},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 46, "amount": 15},
+        {"ingredientId": 45, "amount": 15},
+        {"ingredientId": 53, "amount": 20},
+        {"ingredientId": 57, "amount": 1},
+        {"ingredientId": 69, "amount": 100}
+    ],
+    "Mai Tai": [
+        {"ingredientId": 9, "amount": 30},
+        {"ingredientId": 12, "amount": 20},
+        {"ingredientId": 20, "amount": 15},
+        {"ingredientId": 40, "amount": 10},
+        {"ingredientId": 44, "amount": 30},
+        {"ingredientId": 51, "amount": 5}
     ],
     "Mojito": [
-        {"name": "Aged Rum", "amount": 50},
-        {"name": "Limonka", "amount": 0.5},
-        {"name": "Syrop miętowy", "amount": 15},
-        {"name": "Liście mięty", "amount": 8},
-        {"name": "Woda gazowana", "amount": 100}
+        {"ingredientId": 11, "amount": 50},
+        {"ingredientId": 47, "amount": 0.5},
+        {"ingredientId": 52, "amount": 15},
+        {"ingredientId": 50, "amount": 8},
+        {"ingredientId": 65, "amount": 100}
     ],
-
-    // WHISKEY (20 drinków)
-    "Amaretto Sour":     [
-        {"name": "Amaretto", "amount": 40},
-        {"name": "Blended Scotch Whisky", "amount": 10},
-        {"name": "soku z cytryny", "amount": 30},
-        {"name": "syropu cukrowego", "amount": 10},
-        {"name": "Albumina", "amount": 15},
+    "Mojito Norblito": [
+        {"ingredientId": 9, "amount": 50},
+        {"ingredientId": 86, "amount": 30},
+        {"ingredientId": 52, "amount": 20},
+        {"ingredientId": 50, "amount": 5}
     ],
-    "Blood & Sand":     [
-        {"name": "Aged Scotch Whisky", "amount": 30},
-        {"name": "Carpano Antica Formula", "amount": 20},
-        {"name": "Cherry Heering", "amount": 20},
-        {"name": "sok z pomarańczy", "amount": 30},
-        {"name": "Islay Malt Spray", "amount": 1},
+    "Nuclear Daiquiri": [
+        {"ingredientId": 14, "amount": 30},
+        {"ingredientId": 22, "amount": 20},
+        {"ingredientId": 39, "amount": 10},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 51, "amount": 10}
     ],
-    "Boulevardier":     [
-        {"name": "Bourbon Whiskey", "amount": 30},
-        {"name": "Martini Bitter", "amount": 20},
-        {"name": "Martini Rubino", "amount": 20},
+    "Old Cuban": [
+        {"ingredientId": 11, "amount": 50},
+        {"ingredientId": 53, "amount": 20},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 57, "amount": 1},
+        {"ingredientId": 64, "amount": 40},
+        {"ingredientId": 50, "amount": 5}
     ],
-    "Manhattan":     [
-        {"name": "Bourbon Whiskey", "amount": 50},
-        {"name": "Carpano Antica Formula", "amount": 20},
-        {"name": "Angostura Bitters", "amount": 2},
+    "Queen's Park Swizzle": [
+        {"ingredientId": 10, "amount": 30},
+        {"ingredientId": 12, "amount": 20},
+        {"ingredientId": 39, "amount": 10},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 53, "amount": 10},
+        {"ingredientId": 50, "amount": 10}
     ],
-    "Whisky Sour":     [
-        {"name": "Blended Scotch Whisky", "amount": 40},
-        {"name": "soku z cytryny", "amount": 25},
-        {"name": "syropu cukrowego", "amount": 15},
-        {"name": "Albumina", "amount": 20},
-        {"name": "Angostura Bitters", "amount": 1},
+    "Right Hand Cocktail": [
+        {"ingredientId": 11, "amount": 30},
+        {"ingredientId": 33, "amount": 20},
+        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 42, "amount": 5}
     ],
-    "Irish Coffee":     [
-        {"name": "Irish Whiskey", "amount": 50},
-        {"name": "kawy przelewowej", "amount": 120},
-        {"name": "syropu waniliowego", "amount": 15},
+    "Zombie": [
+        {"ingredientId": 10, "amount": 30},
+        {"ingredientId": 12, "amount": 20},
+        {"ingredientId": 39, "amount": 10},
+        {"ingredientId": 46, "amount": 30},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 56, "amount": 20},
+        {"ingredientId": 55, "amount": 5},
+        {"ingredientId": 57, "amount": 1},
+        {"ingredientId": 72, "amount": 2}
     ],
-    "BRANDY CRUSTA":     [
-        {"name": "Cointreau", "amount": 10.0},
-        {"name": "Maraschino", "amount": 10.0},
-        {"name": "soku z cytryny", "amount": 20.0},
-        {"name": "syropu cukrowego", "amount": 5.0},
+    "Amaretto Sour": [
+        {"ingredientId": 23, "amount": 40},
+        {"ingredientId": 7, "amount": 10},
+        {"ingredientId": 43, "amount": 30},
+        {"ingredientId": 51, "amount": 10},
+        {"ingredientId": 62, "amount": 15}
     ],
-    "CAMERON'S KICK":     [
-        {"name": "Blended Scotch Whisky", "amount": 20.0},
-        {"name": "Irish Whiskey", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 25.0},
-        {"name": "Orgeat", "amount": 20.0},
+    "Blood & Sand": [
+        {"ingredientId": 8, "amount": 30},
+        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 38, "amount": 20},
+        {"ingredientId": 45, "amount": 30},
+        {"ingredientId": 105, "amount": 1}
     ],
-    "Corpse Reviver #1":     [
-        {"name": "Cognac", "amount": 20.0},
-        {"name": "Cognac", "amount": 20.0},
-        {"name": "Martini Rubino", "amount": 20.0},
+    "Boulevardier": [
+        {"ingredientId": 4, "amount": 30},
+        {"ingredientId": 33, "amount": 20},
+        {"ingredientId": 29, "amount": 20}
     ],
-    "Derby":     [
-        {"name": "Bourbon Whiskey Bourbon", "amount": 50.0},
-        {"name": "soku grejpfrutowego", "amount": 30.0},
-        {"name": "syropu miód imbir", "amount": 20.0},
+    "Manhattan": [
+        {"ingredientId": 4, "amount": 50},
+        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 57, "amount": 2}
     ],
-    "HOT TODDY":     [
-        {"name": "Blended Scotch Whisky", "amount": 50.0},
-        {"name": "syrop miodowo - imbirowy", "amount": 20.0},
-        {"name": "sok z cytryny", "amount": 20.0},
-        {"name": "Laska cynamonu", "amount": 1},
-        {"name": "Plaster cytryny", "amount": 1},
+    "Whisky Sour": [
+        {"ingredientId": 7, "amount": 40},
+        {"ingredientId": 43, "amount": 25},
+        {"ingredientId": 51, "amount": 15},
+        {"ingredientId": 62, "amount": 20},
+        {"ingredientId": 57, "amount": 1}
     ],
-    "JAPANESE COCKTAIL":     [
-        {"name": "Cognac", "amount": 40.0},
-        {"name": "Orgeat", "amount": 5.0},
-        {"name": "Angostura Bitters", "amount": 3},
+    "Irish Coffee": [
+        {"ingredientId": 6, "amount": 50},
+        {"ingredientId": 71, "amount": 120},
+        {"ingredientId": 53, "amount": 15}
     ],
-    "NEW YORK SOUR":     [
-        {"name": "Bourbon Whiskey", "amount": 40.0},
-        {"name": "soku z cytryny", "amount": 25.0},
-        {"name": "syropu cukrowego", "amount": 15.0},
-        {"name": "albumina", "amount": 20.0},
-        {"name": "Angostura Bitters", "amount": 1},
-        {"name": "Serenello Merlot", "amount": 15.0},
+    "BRANDY CRUSTA": [
+        {"ingredientId": 20, "amount": 10},
+        {"ingredientId": 21, "amount": 10},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 51, "amount": 5}
     ],
-    "Loretto old fashioned":     [
-        {"name": "Bourbon Whiskey", "amount": 50.0},
-        {"name": "zalewy z wiśni", "amount": 5.0},
-        {"name": "Angostura Bitters", "amount": 3},
-        {"name": "Orange Bitters", "amount": 1},
+    "CAMERON'S KICK": [
+        {"ingredientId": 7, "amount": 20},
+        {"ingredientId": 6, "amount": 20},
+        {"ingredientId": 43, "amount": 25},
+        {"ingredientId": 40, "amount": 20}
     ],
-    "PAPER PLANE":     [
-        {"name": "Bourbon Whiskey", "amount": 20.0},
-        {"name": "Amaro Nonino", "amount": 20.0},
-        {"name": "Aperol", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 20.0},
+    "Corpse Reviver #1": [
+        {"ingredientId": 18, "amount": 20},
+        {"ingredientId": 18, "amount": 20},
+        {"ingredientId": 29, "amount": 20}
     ],
-    "PENICILLIN":     [
-        {"name": "Blended Scotch Whisky", "amount": 50.0},
-        {"name": "syrop miodowo - imbirowy", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 20.0},
+    "Derby": [
+        {"ingredientId": 4, "amount": 50},
+        {"ingredientId": 46, "amount": 30},
+        {"ingredientId": 54, "amount": 20}
     ],
-    "Sazerac":     [
-        {"name": "Rye Whiskey", "amount": 20.0},
-        {"name": "Cognac", "amount": 20.0},
-        {"name": "Peychaud's Bitters", "amount": 3},
-        {"name": "Angostura Bitters", "amount": 1},
-        {"name": "syrop cukrowy", "amount": 5.0},
+    "HOT TODDY": [
+        {"ingredientId": 7, "amount": 50},
+        {"ingredientId": 54, "amount": 20},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 91, "amount": 1},
+        {"ingredientId": 92, "amount": 1}
     ],
-    "TRYNIDAD SOUR":     [
-        {"name": "Angostura Aromatic Bitters", "amount": 40.0},
-        {"name": "Rye Whiskey", "amount": 15.0},
-        {"name": "Orgeat", "amount": 30.0},
-        {"name": "soku z cytryny", "amount": 20.0},
+    "JAPANESE COCKTAIL": [
+        {"ingredientId": 18, "amount": 40},
+        {"ingredientId": 40, "amount": 5},
+        {"ingredientId": 57, "amount": 3}
     ],
-    "WHISKEY SMASH":     [
-        {"name": "Bourbon Whiskey", "amount": 50.0},
-        {"name": "syropu cukrowego", "amount": 20.0},
+    "NEW YORK SOUR": [
+        {"ingredientId": 4, "amount": 40},
+        {"ingredientId": 43, "amount": 25},
+        {"ingredientId": 51, "amount": 15},
+        {"ingredientId": 62, "amount": 20},
+        {"ingredientId": 57, "amount": 1},
+        {"ingredientId": 74, "amount": 15}
     ],
-    "VIEUX CAREE":     [
-        {"name": "Rye Whiskey", "amount": 20.0},
-        {"name": "Cognac", "amount": 20.0},
-        {"name": "Martini Rubino", "amount": 20.0},
-        {"name": "D.O.M Benedictine", "amount": 10.0},
-        {"name": "Peychaud's Bitters", "amount": 2},
-        {"name": "Angostura Bitters", "amount": 1},
+    "Loretto old fashioned": [
+        {"ingredientId": 4, "amount": 50},
+        {"ingredientId": 90, "amount": 5},
+        {"ingredientId": 57, "amount": 3},
+        {"ingredientId": 58, "amount": 1}
     ],
-
-    // GIN (30 drinków)
-    "ARM & NAVY":     [
-        {"name": "London Dry Gin", "amount": 50.0},
-        {"name": "Orgeat", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 20.0},
-        {"name": "Angostura Bitters", "amount": 1},
+    "PAPER PLANE": [
+        {"ingredientId": 4, "amount": 20},
+        {"ingredientId": 106, "amount": 20},
+        {"ingredientId": 34, "amount": 20},
+        {"ingredientId": 43, "amount": 20}
     ],
-    "AVIATION":     [
-        {"name": "London Dry Gin", "amount": 50.0},
-        {"name": "Luxardo Maraschino", "amount": 10.0},
-        {"name": "Briottet - Violet", "amount": 5.0},
-        {"name": "Sok z cytryny", "amount": 15.0},
-        {"name": "syrop cukrowy", "amount": 2.5},
+    "PENICILLIN": [
+        {"ingredientId": 7, "amount": 50},
+        {"ingredientId": 54, "amount": 20},
+        {"ingredientId": 43, "amount": 20}
     ],
-    "BEE’S KNEES":     [
-        {"name": "London Dry Gin", "amount": 50.0},
-        {"name": "syropu miodowo", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 20.0},
-        {"name": "soku z pomarańczy", "amount": 20.0},
+    "Sazerac": [
+        {"ingredientId": 5, "amount": 20},
+        {"ingredientId": 18, "amount": 20},
+        {"ingredientId": 59, "amount": 3},
+        {"ingredientId": 57, "amount": 1},
+        {"ingredientId": 51, "amount": 5}
     ],
-    "BIJOU":     [
-        {"name": "London Dry Gin", "amount": 20.0},
-        {"name": "Martini Rubino", "amount": 20.0},
-        {"name": "Green Chartreuse", "amount": 20.0},
-        {"name": "Orange Bitters", "amount": 1},
+    "TRYNIDAD SOUR": [
+        {"ingredientId": 61, "amount": 40},
+        {"ingredientId": 5, "amount": 15},
+        {"ingredientId": 40, "amount": 30},
+        {"ingredientId": 43, "amount": 20}
     ],
-    "Bombay & Tonic":     [
-        {"name": "London Dry Gin", "amount": 40.0},
-        {"name": "Thomas Henry Tonic", "amount": 100},
+    "WHISKEY SMASH": [
+        {"ingredientId": 4, "amount": 50},
+        {"ingredientId": 51, "amount": 20}
     ],
-    "BRAMBLE":     [
-        {"name": "London Dry Gin Gin", "amount": 40.0},
-        {"name": "soku z cytryny", "amount": 20.0},
-        {"name": "syropu cukrowego", "amount": 10.0},
-        {"name": "Chambord", "amount": 15.0},
+    "VIEUX CAREE": [
+        {"ingredientId": 5, "amount": 20},
+        {"ingredientId": 18, "amount": 20},
+        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 37, "amount": 10},
+        {"ingredientId": 59, "amount": 2},
+        {"ingredientId": 57, "amount": 1}
     ],
-    "BREAKFAST MARTINI":     [
-        {"name": "London Dry Gin", "amount": 50.0},
-        {"name": "Cointreau", "amount": 15.0},
-        {"name": "sok z cytryny", "amount": 20.0},
+    "ARM & NAVY": [
+        {"ingredientId": 1, "amount": 50},
+        {"ingredientId": 40, "amount": 20},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 57, "amount": 1}
     ],
-    "CHARLIE CHAPLIN":     [
+    "AVIATION": [
+        {"ingredientId": 1, "amount": 50},
+        {"ingredientId": 21, "amount": 10},
+        {"ingredientId": 75, "amount": 5},
+        {"ingredientId": 43, "amount": 15},
+        {"ingredientId": 51, "amount": 2.5}
+    ],
+    "BEE’S KNEES": [
+        {"ingredientId": 1, "amount": 50},
+        {"ingredientId": 54, "amount": 20},
+        {"ingredientId": 43, "amount": 20},
+        {"name": "soku z pomarańczy", "amount": 20.0}
+    ],
+    "BIJOU": [
+        {"ingredientId": 1, "amount": 20},
+        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 22, "amount": 20},
+        {"ingredientId": 58, "amount": 1}
+    ],
+    "Bombay & Tonic": [
+        {"ingredientId": 1, "amount": 40},
+        {"ingredientId": 68, "amount": 100}
+    ],
+    "BRAMBLE": [
+        {"ingredientId": 1, "amount": 40},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 51, "amount": 10},
+        {"ingredientId": 28, "amount": 15}
+    ],
+    "BREAKFAST MARTINI": [
+        {"ingredientId": 1, "amount": 50},
+        {"ingredientId": 20, "amount": 15},
+        {"ingredientId": 43, "amount": 20}
+    ],
+    "CHARLIE CHAPLIN": [
         {"name": "Hayman’s Sloe Gin", "amount": 30.0},
         {"name": "Archer’s", "amount": 30.0},
-        {"name": "sok z limonki", "amount": 30.0},
+        {"ingredientId": 44, "amount": 30}
     ],
-    "CHRYSANTHEMUM":     [
-        {"name": "Noilly Prat", "amount": 60.0},
-        {"name": "D.O.M. Benedictine", "amount": 10.0},
-        {"name": "Absynth", "amount": 1},
+    "CHRYSANTHEMUM": [
+        {"ingredientId": 30, "amount": 60},
+        {"ingredientId": 37, "amount": 10},
+        {"ingredientId": 72, "amount": 1}
     ],
-    "CLOVER CLUB":     [
-        {"name": "London Dry Gin", "amount": 40.0},
-        {"name": "Martini Extra Dry", "amount": 10.0},
-        {"name": "soku z cytryny", "amount": 20.0},
-        {"name": "syropu malinowego", "amount": 15.0},
+    "CLOVER CLUB": [
+        {"ingredientId": 1, "amount": 40},
+        {"ingredientId": 30, "amount": 10},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 55, "amount": 15},
         {"name": "cukru (łyżeczka barmańska)", "amount": 2.5},
-        {"name": "Albumina", "amount": 15.0},
+        {"ingredientId": 62, "amount": 15}
     ],
-    "Corpse":     [
-        {"name": "London Dry Gin", "amount": 20.0},
-        {"name": "Cocchi Americano", "amount": 20.0},
-        {"name": "Cointreau", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 20.0},
+    "Corpse": [
+        {"ingredientId": 1, "amount": 20},
+        {"ingredientId": 32, "amount": 20},
+        {"ingredientId": 20, "amount": 20},
+        {"ingredientId": 43, "amount": 20}
     ],
-    "DRY MARTINI":     [
+    "DRY MARTINI": [
         {"name": "London Dry Gin (z zamrażarki*)", "amount": 50.0},
-        {"name": "Noilly Prat", "amount": 10.0},
-        {"name": "Orange Bitters", "amount": 1},
+        {"ingredientId": 30, "amount": 10},
+        {"ingredientId": 58, "amount": 1}
     ],
-    "gimlet":     [
-        {"name": "London Dry Gin", "amount": 50.0},
-        {"name": "Food Town Bars Lime Cordial", "amount": 20.0},
+    "gimlet": [
+        {"ingredientId": 1, "amount": 50},
+        {"ingredientId": 76, "amount": 20}
     ],
-    "GIN BASIL SMASH":     [
-        {"name": "London Dry Gin", "amount": 50.0},
-        {"name": "syrop cukrowy", "amount": 20.0},
+    "GIN BASIL SMASH": [
+        {"ingredientId": 1, "amount": 50},
+        {"ingredientId": 51, "amount": 20}
     ],
-    "GIN GIN MULE":     [
-        {"name": "London Dry Gin", "amount": 40.0},
+    "GIN GIN MULE": [
+        {"ingredientId": 1, "amount": 40},
         {"name": "syrop miód i imbir", "amount": 20.0},
-        {"name": "soku z limonki", "amount": 20.0},
-        {"name": "Piwo Imbirowe - .", "amount": 100},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 66, "amount": 100}
     ],
-    "HANKY PANKY":     [
-        {"name": "Gin London Dry Gin", "amount": 40.0},
-        {"name": "Carpano Antica Formula", "amount": 40.0},
-        {"name": "Fernet Branca", "amount": 2.5},
+    "HANKY PANKY": [
+        {"ingredientId": 1, "amount": 40},
+        {"ingredientId": 29, "amount": 40},
+        {"ingredientId": 35, "amount": 2.5}
     ],
-    "LAST WORD":     [
-        {"name": "London Dry Gin", "amount": 20.0},
-        {"name": "Chartreuse Green", "amount": 20.0},
-        {"name": "Luxardo Maraschino", "amount": 20.0},
-        {"name": "Sok z limonki", "amount": 20.0},
+    "LAST WORD": [
+        {"ingredientId": 1, "amount": 20},
+        {"ingredientId": 22, "amount": 20},
+        {"ingredientId": 21, "amount": 20},
+        {"ingredientId": 44, "amount": 20}
     ],
-    "Martinez":     [
-        {"name": "London Dry Gin", "amount": 50.0},
-        {"name": "Carpano Antica", "amount": 20.0},
-        {"name": "Noilly Prat", "amount": 10.0},
-        {"name": "Luxardo Maraschino / Cointreau", "amount": 5.0},
-        {"name": "Orange Bitters", "amount": 1},
-        {"name": "Angostura Bitters", "amount": 1},
+    "Martinez": [
+        {"ingredientId": 1, "amount": 50},
+        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 30, "amount": 10},
+        {"ingredientId": 20, "amount": 5},
+        {"ingredientId": 58, "amount": 1},
+        {"ingredientId": 57, "amount": 1}
     ],
-    "NEGRONI":     [
-        {"name": "London Dry Gin", "amount": 20.0},
-        {"name": "Martini Rubino", "amount": 20.0},
-        {"name": "Martini Bitter", "amount": 20.0},
+    "NEGRONI": [
+        {"ingredientId": 1, "amount": 20},
+        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 33, "amount": 20}
     ],
-    "RAMOS GIN FIZZ":     [
+    "RAMOS GIN FIZZ": [
         {"name": "Ford’s Gin", "amount": 50.0},
-        {"name": "syrop cukrowy", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 15.0},
-        {"name": "soku z limonki", "amount": 15.0},
-        {"name": "half half", "amount": 30.0},
-        {"name": "Albumina", "amount": 20.0},
-        {"name": "wody z kwiatu", "amount": 1},
-        {"name": "wody gazowanej", "amount": 40.0},
+        {"ingredientId": 51, "amount": 20},
+        {"ingredientId": 43, "amount": 15},
+        {"ingredientId": 44, "amount": 15},
+        {"ingredientId": 63, "amount": 30},
+        {"ingredientId": 62, "amount": 20},
+        {"ingredientId": 89, "amount": 1},
+        {"ingredientId": 89, "amount": 40}
     ],
-    "SINGAPORE SLING":     [
-        {"name": "London Dry Gin", "amount": 40.0},
-        {"name": "Cherry Heering", "amount": 15.0},
-        {"name": "D.O.M. Benedictine", "amount": 5.0},
-        {"name": "Cointreau", "amount": 5.0},
-        {"name": "przecier ananasowy", "amount": 50.0},
-        {"name": "sok z limonki", "amount": 20.0},
-        {"name": "syrop z maliny", "amount": 2.5},
+    "SINGAPORE SLING": [
+        {"ingredientId": 1, "amount": 40},
+        {"ingredientId": 38, "amount": 15},
+        {"ingredientId": 37, "amount": 5},
+        {"ingredientId": 20, "amount": 5},
+        {"ingredientId": 84, "amount": 50},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 85, "amount": 2.5}
     ],
-    "Southside":     [
-        {"name": "London Dry Gin", "amount": 50.0},
+    "Southside": [
+        {"ingredientId": 1, "amount": 50},
         {"name": "syrop miętowy", "amount": 15.0},
-        {"name": "sok z limonki", "amount": 20.0},
+        {"ingredientId": 44, "amount": 20}
     ],
-    "TUXEDO COCKTAIL":     [
+    "TUXEDO COCKTAIL": [
         {"name": "Hayman’s Old Tom Gin", "amount": 30.0},
-        {"name": "Noilly Prat", "amount": 30.0},
-        {"name": "Luxardo Maraschino", "amount": 5.0},
-        {"name": "Orange Bitters", "amount": 2},
-        {"name": "Angostura Bitters", "amount": 1},
-        {"name": "1 x Absynth", "amount": 1},
+        {"ingredientId": 30, "amount": 30},
+        {"ingredientId": 21, "amount": 5},
+        {"ingredientId": 58, "amount": 2},
+        {"ingredientId": 57, "amount": 1},
+        {"ingredientId": 72, "amount": 1}
     ],
-    "vesper MARTINI":     [
-        {"name": "London Dry Gin", "amount": 30.0},
-        {"name": "Wódka Vodka", "amount": 10.0},
-        {"name": "Cocchi Americano", "amount": 5.0},
+    "vesper MARTINI": [
+        {"ingredientId": 1, "amount": 30},
+        {"ingredientId": 3, "amount": 10},
+        {"ingredientId": 32, "amount": 5}
     ],
-    "WHITE LADY":     [
-        {"name": "Gin London Dry Gin", "amount": 50.0},
-        {"name": "Cointreau", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 20.0},
-        {"name": "cukru", "amount": 5.0},
-        {"name": "Albumina", "amount": 15.0},
+    "WHITE LADY": [
+        {"ingredientId": 1, "amount": 50},
+        {"ingredientId": 20, "amount": 20},
+        {"ingredientId": 43, "amount": 20},
+        {"ingredientId": 51, "amount": 5},
+        {"ingredientId": 62, "amount": 15}
     ],
-    "white NEGRONI":     [
-        {"name": "London Dry Gin", "amount": 20.0},
-        {"name": "Suze", "amount": 20.0},
-        {"name": "Lillet Blanc", "amount": 20.0},
+    "white NEGRONI": [
+        {"ingredientId": 1, "amount": 20},
+        {"ingredientId": 36, "amount": 20},
+        {"ingredientId": 31, "amount": 20}
     ],
-    "XX CENTURY COCKTAIL":     [
-        {"name": "London Dry Gin", "amount": 20.0},
-        {"name": "Cocchi Americano", "amount": 20.0},
-        {"name": "creme de cacao", "amount": 20.0},
-        {"name": "soku z cytryny", "amount": 20.0},
+    "XX CENTURY COCKTAIL": [
+        {"ingredientId": 1, "amount": 20},
+        {"ingredientId": 32, "amount": 20},
+        {"ingredientId": 26, "amount": 20},
+        {"ingredientId": 43, "amount": 20}
     ],
-    "Pisco Sour":     [
-        {"name": "Pisco", "amount": 50.0},
-        {"name": "soku z limonki", "amount": 30.0},
-        {"name": "syropu cukrowego", "amount": 20.0},
-        {"name": "albumina", "amount": 20.0},
+    "Pisco Sour": [
+        {"ingredientId": 19, "amount": 50},
+        {"ingredientId": 44, "amount": 30},
+        {"ingredientId": 51, "amount": 20},
+        {"ingredientId": 62, "amount": 20}
     ],
-    "Martini Fiero & Tonik":     [
-        {"name": "Aperitif", "amount": 80.0},
-        {"name": "Kinley tonik", "amount": 100},
+    "Martini Fiero & Tonik": [
+        {"ingredientId": 96, "amount": 80},
+        {"ingredientId": 98, "amount": 100}
     ],
-    "Vibrante/Floreale Tonik":     [
-        {"name": "Vibrante/Floreale", "amount": 40.0},
-        {"name": "Kinley tonik", "amount": 100},
+    "Vibrante/Floreale Tonik": [
+        {"ingredientId": 97, "amount": 40},
+        {"ingredientId": 98, "amount": 100}
     ],
-
-    // TEQUILA (3 drinki)
-    "PINK CHIHUAHUA":     [
-        {"name": "Tequila Blanco", "amount": 40.0},
-        {"name": "soku z limonki", "amount": 15.0},
-        {"name": "soku z cytryny", "amount": 5.0},
-        {"name": "syropu malinowego", "amount": 15.0},
-        {"name": "Orgeat", "amount": 5.0},
-        {"name": "Albumina", "amount": 15.0},
+    "PINK CHIHUAHUA": [
+        {"ingredientId": 17, "amount": 40},
+        {"ingredientId": 44, "amount": 15},
+        {"ingredientId": 43, "amount": 5},
+        {"ingredientId": 55, "amount": 15},
+        {"ingredientId": 40, "amount": 5},
+        {"ingredientId": 62, "amount": 15}
     ],
-    "margarita":     [
-        {"name": "Tequila Blanco", "amount": 40.0},
-        {"name": "Cointreau", "amount": 20.0},
-        {"name": "Soku z limonki", "amount": 20.0},
+    "margarita": [
+        {"ingredientId": 17, "amount": 40},
+        {"ingredientId": 20, "amount": 20},
+        {"ingredientId": 44, "amount": 20}
     ],
-    "LA PALOMA":     [
-        {"name": "Tequila Blanco", "amount": 40.0},
-        {"name": "Agave Mix", "amount": 20.0},
-        {"name": "Soku z limonki", "amount": 20.0},
-        {"name": "Three Cents", "amount": 100.0},
+    "LA PALOMA": [
+        {"ingredientId": 17, "amount": 40},
+        {"ingredientId": 103, "amount": 20},
+        {"ingredientId": 44, "amount": 20},
+        {"ingredientId": 102, "amount": 100}
     ],
-
-    // BEZALKOHOLOWE (3 drinki)
-    "NEGRONI 0%":     [
-        {"name": "Gin bezalkoholowy", "amount": 20.0},
-        {"name": "Giffard Bitter Syrop", "amount": 20.0},
-        {"name": "Aperitif bezalkoholowy", "amount": 20.0},
+    "NEGRONI 0%": [
+        {"ingredientId": 93, "amount": 20},
+        {"ingredientId": 94, "amount": 20},
+        {"ingredientId": 95, "amount": 20}
     ],
-    "Martini Fiero spritz":     [
-        {"name": "Aperitif", "amount": 80.0},
-        {"name": "Martini Prosecco", "amount": 100.0},
-        {"name": "sody", "amount": 100},
-        {"name": "woda gazowana", "amount": 100},
-    ],
-    "Martini vibrante/floreale spritz":     [
-        {"name": "Aperitif bezalkoholowy/mFloreale", "amount": 40.0},
-        {"name": "Prosecco Medbubbles", "amount": 80.0},
-        {"name": "Belvoir Elderflower", "amount": 20.0},
-        {"name": "sody", "amount": 100},
-        {"name": "Aperitif bezalkoholowy/Floreale", "amount": 40.0},
-        {"name": "Prosecco", "amount": 80.0},
-        {"name": "woda gazowana", "amount": 100},
+    "Martini Fiero spritz": [
+        {"ingredientId": 96, "amount": 80},
+        {"ingredientId": 64, "amount": 100},
+        {"ingredientId": 101, "amount": 100},
+        {"ingredientId": 65, "amount": 100}
     ]
 };
 
-// Rozszerzone opcje szklanek
+// Opcje szklanek
 export const glassOptions = [
     "Collins",
     "Nick & Nora", 
     "Double Old Fashioned Glass",
     "Coupe + kieliszek do wódki",
-    "Swizzle Glass",
     "Old Fashioned",
     "Coupe",
     "Champagne Flute",
     "Irish Coffee Cup",
-    "Hot Toddy Cup",
-    "Snifter",
-    "Copa Bombay",
-    "Copa Martini",
     "Whisky Glass",
-    "Mini Coupette"
+    "Copa Bombay",
+    "Copa Martini"
 ];
 
 // Funkcja pomocnicza do znajdowania drinka po nazwie
