@@ -1873,7 +1873,7 @@ export const recipes = {
         {"ingredientId": 58, "amount": 2}
     ],
     "Fish House Punch": [
-        {"ingredientId": 18, "amount": 20},
+        {"ingredientId": 110, "amount": 20},
         {"ingredientId": 11, "amount": 20},
         {"ingredientId": 41, "amount": 15},
         {"ingredientId": 87, "amount": 30},
@@ -1951,8 +1951,8 @@ export const recipes = {
     ],
     "Right Hand Cocktail": [
         {"ingredientId": 11, "amount": 30},
-        {"ingredientId": 33, "amount": 20},
-        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 108, "amount": 20},
+        {"ingredientId": 107, "amount": 20},
         {"ingredientId": 42, "amount": 5}
     ],
     "Zombie": [
@@ -2032,7 +2032,7 @@ export const recipes = {
         {"ingredientId": 92, "amount": 1}
     ],
     "JAPANESE COCKTAIL": [
-        {"ingredientId": 18, "amount": 40},
+        {"ingredientId": 110, "amount": 40},
         {"ingredientId": 40, "amount": 5},
         {"ingredientId": 57, "amount": 3}
     ],
@@ -2063,7 +2063,7 @@ export const recipes = {
     ],
     "Sazerac": [
         {"ingredientId": 5, "amount": 20},
-        {"ingredientId": 18, "amount": 20},
+        {"ingredientId": 110, "amount": 20},
         {"ingredientId": 59, "amount": 3},
         {"ingredientId": 57, "amount": 1},
         {"ingredientId": 51, "amount": 5}
@@ -2080,7 +2080,7 @@ export const recipes = {
     ],
     "VIEUX CAREE": [
         {"ingredientId": 5, "amount": 20},
-        {"ingredientId": 18, "amount": 20},
+        {"ingredientId": 110, "amount": 20},
         {"ingredientId": 29, "amount": 20},
         {"ingredientId": 37, "amount": 10},
         {"ingredientId": 59, "amount": 2},
