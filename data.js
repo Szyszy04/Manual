@@ -109,7 +109,9 @@ export const ingredients = [
     { id: 105, name: "Islay Whisky Spray" },
     { id: 106, name: "Amaro Nonino" },
     { id: 107, name: "Martini Rubino" },
-    { id: 108, name: "Martini Bitter" }
+    { id: 108, name: "Martini Bitter" },
+    { id: 109, name: "Papidoux V.S.O.P" },
+    { id: 110, name: "Hennessy V.S" }
 ];
 
 // Funkcje pomocnicze do pracy z składnikami
@@ -2013,9 +2015,9 @@ export const recipes = {
         {"ingredientId": 40, "amount": 20}
     ],
     "Corpse Reviver #1": [
-        {"ingredientId": 18, "amount": 20},
-        {"ingredientId": 18, "amount": 20},
-        {"ingredientId": 29, "amount": 20}
+        {"ingredientId": 107, "amount": 20},
+        {"ingredientId": 109, "amount": 20},
+        {"ingredientId": 110, "amount": 20}
     ],
     "Derby": [
         {"ingredientId": 4, "amount": 50},
