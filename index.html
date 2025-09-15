@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <meta author="Wiktor Fedorowicz">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Bartenderski - 70 Drinków</title>
@@ -311,10 +312,10 @@
                 </div>
 
                 <div class="score-message">
-                    <p v-if="score / questions.length >= 0.9">🌟 Mistrzowski wynik! Jesteś prawdziwym bartenderem!</p>
-                    <p v-else-if="score / questions.length >= 0.7">🎉 Świetna robota! Masz solidną wiedzę o drinkach!</p>
-                    <p v-else-if="score / questions.length >= 0.5">👍 Nieźle! Jeszcze trochę praktyki i będziesz ekspertem!</p>
-                    <p v-else>💪 Nie poddawaj się! Praktyka czyni mistrza!</p>
+                    <p v-if="score / questions.length >= 0.9">🌟 Mistrzowski wynik!</p>
+                    <p v-else-if="score / questions.length >= 0.7">🎉 Świetna robota!</p>
+                    <p v-else-if="score / questions.length >= 0.5">👍 Nieźle!</p>
+                    <p v-else>💪 Nie poddawaj się!</p>
                 </div>
 
                 <div class="actions">
