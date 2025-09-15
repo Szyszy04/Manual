@@ -1525,6 +1525,7 @@ export const drinkLibrary = {
                 "Dekorujemy zestem z pomarańczy.",
             ],
             ingredients: [
+                "40 ml Hennessy V.S.",
                 "10 ml Cointreau",
                 "10 ml Maraschino",
                 "20 ml soku z cytryny",
