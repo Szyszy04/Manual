@@ -107,7 +107,9 @@ export const ingredients = [
     { id: 103, name: "Agave Nectar" },
     { id: 104, name: "Peach Schnapps" },
     { id: 105, name: "Islay Whisky Spray" },
-    { id: 106, name: "Amaro Nonino" }
+    { id: 106, name: "Amaro Nonino" },
+    { id: 107, name: "Martini Rubino" },
+    { id: 108, name: "Martini Bitter" }
 ];
 
 // Funkcje pomocnicze do pracy z składnikami
@@ -1456,7 +1458,7 @@ export const drinkLibrary = {
             ingredients: [
                 "30 ml Bourbon Whiskey",
                 "20 ml Martini Bitter",
-                "20 ml Sweet Vermouth"
+                "20 ml Martini Rubino"
             ],
             decoration: "olejki pomarańczowe + coin z pomarańczy przypięte na spinaczu do rantu szkła"
         },
@@ -1978,8 +1980,8 @@ export const recipes = {
     ],
     "Boulevardier": [
         {"ingredientId": 4, "amount": 30},
-        {"ingredientId": 33, "amount": 20},
-        {"ingredientId": 29, "amount": 20}
+        {"ingredientId": 107, "amount": 20},
+        {"ingredientId": 108, "amount": 20}
     ],
     "Manhattan": [
         {"ingredientId": 4, "amount": 50},
