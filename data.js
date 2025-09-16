@@ -24,7 +24,7 @@ export const ingredients = [
     { id: 20, name: "Cointreau" },
     { id: 21, name: "Maraschino Liqueur" },
     { id: 22, name: "Green Chartreuse" },
-    { id: 23, name: "Amaretto" },
+    { id: 23, name: "Galliano Amaretto" },
     { id: 24, name: "Galliano Espresso" },
     { id: 25, name: "Galliano Autentico" },
     { id: 26, name: "Crème de Cacao" },
