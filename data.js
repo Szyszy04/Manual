@@ -84,7 +84,7 @@ export const ingredients = [
     { id: 80, name: "Bloody Mary Mix" },
     { id: 81, name: "Truffle Oil" },
     { id: 82, name: "Edible Glitter" },
-    { id: 83, name: "Passion Fruit Purée" },
+    { id: 83, name: "Przecier z marakui" },
     { id: 84, name: "Pineapple Juice" },
     { id: 85, name: "Raspberry Syrup" },
     { id: 86, name: "Lime Juice Cordial" },
@@ -111,7 +111,8 @@ export const ingredients = [
     { id: 107, name: "Martini Rubino" },
     { id: 108, name: "Martini Bitter" },
     { id: 109, name: "Papidoux V.S.O.P" },
-    { id: 110, name: "Hennessy V.S" }
+    { id: 110, name: "Hennessy V.S" },
+    { id: 111, name: "Carpano Antica Formula" }
 ];
 
 // Funkcje pomocnicze do pracy z składnikami
@@ -411,7 +412,7 @@ export const drinkLibrary = {
                 "20 ml syropu waniliowego",
                 "20 ml soku z limonki",
                 "20 ml przecieru z marakui",
-                "Obok koktajlu - shot prosecco"
+                "shot prosecco"
             ],
             decoration: "posypka z pudru buraczanego + kwiatostan róży"
         },
@@ -1421,7 +1422,7 @@ export const drinkLibrary = {
                 "Posypujemy pudrem buraczanym i po środku kładziemy suszony kwiatostan róży"
             ],
             ingredients: [
-                "40 ml Amaretto",
+                "40 ml Galliano Amaretto",
                 "10 ml Blended Scotch Whisky",
                 "30 ml soku z cytryny",
                 "10 ml syropu cukrowego",
@@ -1441,7 +1442,7 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "30 ml Aged Scotch Whisky",
-                "20 ml Sweet Vermouth",
+                "20 ml Carpano Antica Formula",
                 "20 ml Cherry Brandy",
                 "30 ml sok z pomarańczy",
                 "Islay Malt Spray"
@@ -1474,7 +1475,7 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "50 ml Bourbon Whiskey",
-                "20 ml Sweet Vermouth",
+                "20 ml Carpano Antica Formula",
                 "2 x dash Angostura Bitters"
             ],
             decoration: "Wiśnia Koktajlowa + spray z olejków pomarańczowych"
@@ -1559,8 +1560,8 @@ export const drinkLibrary = {
                 "Spray z olejków cytrynowych.",
             ],
             ingredients: [
-                "20 ml Cognac",
-                "20 ml Cognac",
+                "20 ml Papidoux V.S.O.P.",
+                "20 ml Hennessy V.S.",
                 "20 ml Martini Rubino",
             ],
             decoration: "Olejki cytrynowe (serwujemy bez garnishu)"
@@ -1574,7 +1575,7 @@ export const drinkLibrary = {
                 "Zest wycięty nożyczkami karbowanymi przypinamy na spinacz do",
             ],
             ingredients: [
-                "50 ml Bourbon Whiskey Bourbon",
+                "50 ml Bourbon Whiskey",
                 "30 ml soku grejpfrutowego",
                 "20 ml syropu miód imbir",
             ],
@@ -1609,7 +1610,7 @@ export const drinkLibrary = {
                 "Okraszamy olejkami cytrynowymi i dekorujemy wiśnią koktajlową",
             ],
             ingredients: [
-                "40 ml Cognac",
+                "40 ml Hennessyy V.S.",
                 "5 ml Orgeat",
                 "3 x dash Angostura Bitters",
             ],
@@ -1632,7 +1633,7 @@ export const drinkLibrary = {
                 "15 ml syropu cukrowego",
                 "20 ml albumina",
                 "1 x dash Angostura Bitters",
-                "15 ml Serenello Merlot",
+                "15 ml Red Wine",
             ],
             decoration: "coin z pomarańczy"
         },
@@ -1685,6 +1686,7 @@ export const drinkLibrary = {
                 "50 ml Blended Scotch Whisky",
                 "20 ml syrop miodowo - imbirowy",
                 "20 ml soku z cytryny",
+                "Islay Malt Spray",
             ],
             decoration: "kandyzowany imbir na wykałaczce koktajlowej"
         },
@@ -1701,10 +1703,11 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "20 ml Rye Whiskey",
-                "20 ml Cognac",
+                "20 ml Hennessy V.S.",
                 "3 x dash Peychaud's Bitters",
                 "1 x dash Angostura Bitters",
                 "5 ml syrop cukrowy",
+                "Absynth Spray",
             ],
             decoration: "olejki ze skórki cytrynowej"
         },
@@ -1736,6 +1739,8 @@ export const drinkLibrary = {
             ingredients: [
                 "50 ml Bourbon Whiskey",
                 "20 ml syropu cukrowego",
+                "1/2 cytryny",
+                "8 liści mięty"
             ],
             decoration: "Bukiet mięty opruszony pudrem pomarańczowym"
         },
@@ -1749,7 +1754,7 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "20 ml Rye Whiskey",
-                "20 ml Cognac",
+                "20 ml Hennessy V.S.",
                 "20 ml Martini Rubino",
                 "10 ml D.O.M Benedictine",
                 "2 x dash Peychaud's Bitters",
@@ -1976,7 +1981,7 @@ export const recipes = {
     ],
     "Blood & Sand": [
         {"ingredientId": 8, "amount": 30},
-        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 111, "amount": 20},
         {"ingredientId": 38, "amount": 20},
         {"ingredientId": 45, "amount": 30},
         {"ingredientId": 105, "amount": 1}
