@@ -2082,7 +2082,9 @@ export const recipes = {
     ],
     "WHISKEY SMASH": [
         {"ingredientId": 4, "amount": 50},
-        {"ingredientId": 51, "amount": 20}
+        {"ingredientId": 51, "amount": 20},
+        {"ingredientId": 48, "amount": 1},
+        {"ingredientId": 50, "amount": 8}
     ],
     "VIEUX CAREE": [
         {"ingredientId": 5, "amount": 20},
