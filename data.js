@@ -1418,8 +1418,7 @@ export const drinkLibrary = {
             method: [
                 "Wstrząsamy składniki bez lodu",
                 "Kolejno energicznie z lodem",
-                "Cedzimy koktajl do uprzednio zmrożonego szkła",
-                "Posypujemy pudrem buraczanym i po środku kładziemy suszony kwiatostan róży"
+                "Cedzimy koktajl do uprzednio zmrożonego szkła"
             ],
             ingredients: [
                 "40 ml Galliano Amaretto",
@@ -1436,9 +1435,7 @@ export const drinkLibrary = {
             method: [
                 "Wszystkie składniki (z wyjątkiem Islay Malt Spray) wstrząsamy z dużą ilością lodu",
                 "Zanim przecedzimy koktajl, szkło spryskujemy Islay Malt Spray",
-                "Cedzimy podwójnie koktajl do zmrożonego i okraszonego aromatem Islay Malt Spray szkła",
-                "Dodatkowo okraszamy koktajl olejkami pomarańczowymi",
-                "Dekorujemy wiśnią"
+                "Cedzimy podwójnie koktajl do zmrożonego i okraszonego aromatem Islay Malt Spray szkła"
             ],
             ingredients: [
                 "30 ml Aged Scotch Whisky",
@@ -1455,8 +1452,7 @@ export const drinkLibrary = {
             method: [
                 "Wlewamy składniki do szklanicy",
                 "Mieszamy przez około 15 sekund",
-                "Kolejno cedzimy do szkła z bryłką lodową ze stemplem (nie lejemy na lód, tylko po ściance aby nie rozmyć stempla)",
-                "Okraszamy olejkami pomarańczowymi i na spinacz do rantu szkła przyczepiamy żółtko z pomarańczy"
+                "Kolejno cedzimy do szkła z bryłką lodową ze stemplem (nie lejemy na lód, tylko po ściance aby nie rozmyć stempla)"
             ],
             ingredients: [
                 "30 ml Bourbon Whiskey",
@@ -1471,7 +1467,6 @@ export const drinkLibrary = {
             method: [
                 "Wszystkie składniki mieszamy w szklanicy (potrzebujemy około 20 sekund mieszania)",
                 "Cedzimy do uprzednio schłodzonego szkła",
-                "Okraszamy olejkami pomarańczowymi i dekorujemy wiśnią"
             ],
             ingredients: [
                 "50 ml Bourbon Whiskey",
@@ -1486,8 +1481,7 @@ export const drinkLibrary = {
             method: [
                 "Wstrząsamy wszystko bez lodu (szybki dry shake)",
                 "Kolejno dynamiczny shake z lodem",
-                "Cedzimy całość na lód do szkła",
-                "Dekorujemy coinem z pomarańczy"
+                "Cedzimy całość na lód do szkła"
             ],
             ingredients: [
                 "40 ml Blended Scotch Whisky",
@@ -1507,8 +1501,7 @@ export const drinkLibrary = {
                 "Mieszamy łyżą barmańską",
                 "Wlewamy kawę, tak aby zostało 1,5 centymetra przestrzeni od rantu szkła",
                 "Z lodówki wyciągamy śmietankę i wstrząsamy ją",
-                "po łyżce nalewamy śmietankę",
-                "Na wierzch ścieramy trochę fasoli tonka, oraz dekorujemy całość gwiazdką anyżu"
+                "po łyżce nalewamy śmietankę"
             ],
             ingredients: [
                 "50 ml Irish Whiskey",
@@ -1522,8 +1515,7 @@ export const drinkLibrary = {
             method: [
                 "Szkło opruszamy cukrem pomarańczowym - uprzednio smarujemycytryną aby się cukier",
                 "Wszystkie składniki wstrząsamy intensywnie.",
-                "Cedzimy podwójnie do szkła.",
-                "Dekorujemy zestem z pomarańczy.",
+                "Cedzimy podwójnie do szkła."
             ],
             ingredients: [
                 "40 ml Hennessy V.S.",
@@ -1539,8 +1531,7 @@ export const drinkLibrary = {
             glass: "Old Fashioned Glass",
             method: [
                 "Wstrząsamy wszystko z dużą ilością lodu.",
-                "Cedzimy do szkła w pełni wypełnionego lodem.",
-                "Dekorujemy coinem z pomarańczy .",
+                "Cedzimy do szkła w pełni wypełnionego lodem."
             ],
             ingredients: [
                 "20 ml Blended Scotch Whisky",
@@ -1572,14 +1563,14 @@ export const drinkLibrary = {
             method: [
                 "Wszystkie składniki wstrząsamy intensywnie z dużą ilością lodu.",
                 "Okraszamy całość olejkami grejpfrutowymi.",
-                "Zest wycięty nożyczkami karbowanymi przypinamy na spinacz do",
+                "Zest wycięty nożyczkami karbowanymi przypinamy na spinacz do rantu szkła",
             ],
             ingredients: [
                 "50 ml Bourbon Whiskey",
                 "30 ml soku grejpfrutowego",
                 "20 ml syropu miód imbir",
             ],
-            decoration: "zest z grejpfruta wycięty nożyczkami karbowanymi przypięty do"
+            decoration: "zest z grejpfruta wycięty nożyczkami karbowanymi przypięty do rantu szkła"
         },
         {
             name: "HOT TODDY",
