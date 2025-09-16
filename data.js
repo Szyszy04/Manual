@@ -1993,7 +1993,7 @@ export const recipes = {
     ],
     "Manhattan": [
         {"ingredientId": 4, "amount": 50},
-        {"ingredientId": 29, "amount": 20},
+        {"ingredientId": 111, "amount": 20},
         {"ingredientId": 57, "amount": 2}
     ],
     "Whisky Sour": [
