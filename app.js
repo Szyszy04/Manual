@@ -66,7 +66,7 @@ createApp({
 
     // Funkcja do generowania niepoprawnej receptury
     function generateWrongRecipe(drinkName) {
-      const recipeWithNames = getRecipeWithNamesSimple(drinkName); // Użyj wersji bez miar!
+      const recipeWithNames = getRecipeWithNamesSimple(drinkName); // Bez miar dla odpowiedzi
       if (!Array.isArray(recipeWithNames)) return [];
 
       return recipeWithNames.map(ingredient => ({
@@ -127,9 +127,10 @@ createApp({
       return currentQuestion.value.type === 'review' && answerSelected.value;
     });
 
+    // POPRAWKA - currentRecipe dla review używa getRecipeWithNames (Z MIARAMI)
     const currentRecipe = computed(() => {
       if (currentQuestion.value.type === 'review' && currentQuestion.value.drinkName) {
-        return getRecipeWithNamesSimple(currentQuestion.value.drinkName); // Bez miar dla review
+        return getRecipeWithNames(currentQuestion.value.drinkName); // Z MIARAMI dla review
       }
       return [];
     });
@@ -137,7 +138,7 @@ createApp({
     // POPRAWKA - Computed property dla przepisu builderu z nazwami składników + miarami
     const builderCorrectRecipeWithNames = computed(() => {
       if (currentQuestion.value.type === 'builder' && currentQuestion.value.drinkName) {
-        return getRecipeWithNames(currentQuestion.value.drinkName); // Z miarami dla buildera
+        return getRecipeWithNames(currentQuestion.value.drinkName); // Z MIARAMI dla buildera
       }
       return [];
     });
@@ -243,7 +244,7 @@ createApp({
           correctIndex: allAnswers.indexOf(correctRecipeWithNames)
         };
       } else if (type === 'review') {
-        const drinkRecipe = getRecipeWithNamesSimple(item); // BEZ MIAR
+        const drinkRecipe = getRecipeWithNamesSimple(item); // BEZ MIAR dla porównania składników
         if (!drinkRecipe) return null;
 
         const allIngredients = getAllIngredients();
@@ -379,7 +380,7 @@ createApp({
         showBuilderRecipe.value = true;
         setTimeout(() => {
           nextBuilderQuestion();
-        }, 3000);
+        }, 5000);
       }
     }
 
@@ -580,13 +581,13 @@ createApp({
       nextQuestion,
       restartQuiz,
 
-      // Recipe display
+      // Recipe display - POPRAWIONE!
       showRecipe,
-      currentRecipe,
+      currentRecipe,  // Teraz używa getRecipeWithNames (Z MIARAMI)
       recipes,
       getRecipeWithNames,
 
-      // Builder functionality - WSZYSTKIE COMPUTED MUSZĄ BYĆ TUTAJ!
+      // Builder functionality
       builderStep,
       selectedIngredients,
       selectedIngredientsCount,
