@@ -36,14 +36,6 @@
                                 <span v-if="category === 'Bezalkoholowe'">🚫</span>
                                 {{ category }}
                             </span>
-                            <span class="drink-count">
-                                <span v-if="category === 'Wódka'">(9 drinków)</span>
-                                <span v-if="category === 'Gin'">(30 drinków)</span>
-                                <span v-if="category === 'Whiskey'">(20 drinków)</span>
-                                <span v-if="category === 'Rum'">(5 drinków)</span>
-                                <span v-if="category === 'Tequila'">(3 drinki)</span>
-                                <span v-if="category === 'Bezalkoholowe'">(3 drinki)</span>
-                            </span>
                         </label>
                     </div>
                     <p class="selected-info" v-if="hasSelectedAlcoholCategories">
@@ -272,7 +264,7 @@
                             <h4>❌ Niepoprawnie! Prawidłowy przepis:</h4>
                             <div class="correct-recipe">
                                 <div class="recipe">
-                                    <div v-for="ingredient in currentQuestion.correctRecipe" :key="ingredient.name" class="ingredient">
+                                    <div v-for="ingredient in builderCorrectRecipeWithNames" :key="ingredient.name" class="ingredient">
                                         <span class="amount">{{ ingredient.amount }}ml</span>
                                         <span class="name">{{ ingredient.name }}</span>
                                     </div>
