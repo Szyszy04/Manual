@@ -161,7 +161,6 @@
                             <h4>📝 Przepis na {{ currentQuestion.drinkName }}:</h4>
                             <div class="recipe">
                                 <div v-for="ingredient in currentRecipe" :key="ingredient.name" class="ingredient">
-                                    <span class="amount">{{ ingredient.amount }}ml</span>
                                     <span class="name">{{ ingredient.name }}</span>
                                 </div>
                             </div>
@@ -264,9 +263,8 @@
                             <h4>❌ Niepoprawnie! Prawidłowy przepis:</h4>
                             <div class="correct-recipe">
                                 <div class="recipe">
-                                    <div v-for="ingredient in builderCorrectRecipeWithNames" :key="ingredient.name" class="ingredient">
-                                        <span class="amount">{{ ingredient.amount }}ml</span>
-                                        <span class="name">{{ ingredient.name }}</span>
+                                    <div v-for="ingredient in builderCorrectRecipeWithNames" class="ingredient">
+                                      <span class="name">{{ ingredient.name }}</span>  
                                     </div>
                                 </div>
                                 <p><strong>Szkło:</strong> {{ currentQuestion.correctGlass }}</p>
