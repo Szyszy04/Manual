@@ -337,7 +337,7 @@ h4 {
 
 .ingredient {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 8px 12px;
     background: #f8f9fa;
