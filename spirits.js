@@ -148,6 +148,29 @@ export const alcoholLibrary = {
       name: "Hendrick's",
       description: "Szkocki gin infuzowany esencją ogórka i płatkami róż bułgarskiej. Najlepiej podawać z plasterkami ogórka zamiast cytrusów."
     }
+  ],
+
+  "Martini ": [
+    {
+      name: "Martini Bittere",
+      description: "Intensywnie gorzki, rubinowy wermut stworzony według receptury z 1872 roku. Zawiera ponad 20 włoskich i egzotycznych ziół: szafran, angostura, kalumba, gorzką pomarańczę, rabarbar i kardamon. Aromat ziołowy, korzenny, pikantny z nutami cytrusów i kwiatów; w smaku wyrazista gorycz przełamana lukrecją. Idealny do klasycznych koktajli, np. Negroni."
+    },
+    {
+      name: "Martini Extra Dry",
+      description: "Wytrawny wermut o jasnej barwie i bardzo subtelnym bukiecie. Znany od 1900 roku, bardzo popularny wśród barmanów na całym świecie. Charakteryzuje się mocno ziołowym posmakiem, cytrusową świeżością i niską zawartością cukru; świetnie sprawdza się w drinkach — klasyczne Martini z oliwką"
+    },
+    {
+      name: "Martini Fiero", 
+      description: "Soczyście cytrusowy wermut z wyraźną nutą pomarańczy i mandarynki, obok podstawowych aromatów piołunu. Nowość w portfolio marki; lekki, orzeźwiający, polecany szczególnie do podania z tonikiem i lodem."
+    },
+    {
+      name: "Martini Rubino",
+      description: "Ekskluzywny czerwony wermut z linii Riserva Speciale. Składa się z piemonckich win czerwonych i ponad 40 ziół, z dominującymi aromatami czerwonych owoców i przypraw korzennych. Intensywny, złożony smak, polecany do degustacji solo, z lodem lub w koktajlach, np. Negroni."
+    },
+    {
+      name: "Martini Vibrante",
+      description: "Bezalkoholowa, innowacyjna wersja wermutu Martini stworzona dla osób niepijących alkoholu, zachowująca charakterystyczny styl aperitivo. Wyraziste nuty cytrusowe i ziołowe, lekka słodycz oraz goryczka; Vibrante czerpie inspirację z tradycyjnych składników."
+    }
   ]
 };
 
