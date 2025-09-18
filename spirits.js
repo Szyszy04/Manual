@@ -126,27 +126,27 @@ export const alcoholLibrary = {
   "Giny": [
     {
       name: "Bombay Sapphire",
-      description: "Destylowany metodą parowej infuzji z 10 botaników z całego świata. Charakterystyczne błękitne butelki inspirowane orientalnymi motywami. Harmonijne połączenie jałowca, cytrusów, korzennych przypraw i delikatej kwiatowości."
+      description: "Jeden z najsłynniejszych ginów na świecie, rozpoznawalny dzięki charakterystycznej szafirowej butelce. Produkowany metodą destylacji parowej, podczas której alkohol przechodzi przez kosze wypełnione ziołami. Zawiera 10 wyselekcjonowanych składników: jałowiec, kolendra, lukrecja, migdały, skórka cytrynowa, korzeń irysa, pieprz kubeba, aframon madagaskarski, arcydzięgiel, kora cynamonowa. Smak: cytrusowy, korzenny, jałowcowy, dobrze zbalansowany; idealny do Gin&Tonic oraz klasycznych koktajli."
     },
     {
       name: "Gin Mare",
-      description: "Śródziemnomorski gin z oliwkami, tymiankiem, rozmarynem i bazylią."
+      description: "Hiszpański gin inspirowany śródziemnomorskim klimatem i lokalnymi składnikami. Unikalna receptura oparta na botanicals takich jak oliwki Arbequina, bazylia, rozmaryn, tymianek i skórka pomarańczowa. Smak pełny i świeży — wyraźne ziołowe, oliwkowo-roślinne nuty; doskonały do nowoczesnych koktajli oraz orzeźwiającego Gin&Tonic na bazie toniku premium."
     },
     {
       name: "Tanqueray No. 10", 
-      description: "Premium gin z świeżymi cytrusami destylowanymi w małym szkarłatnym alembiku 'Tiny Ten'."
+      description: "Luksusowa wersja Tanqueray, powstała z myślą o koktajlach na bazie ginu; produkowana w małych partiach, destylowany w małym szkarłatnym alembiku 'Tiny Ten'. Botaniczne składniki: świeże owoce cytrusowe (limonka, grejpfrut, pomarańcza), jałowiec, kolendra, rumianek. Smak wyraźnie cytrusowy, idealny do Dry Martini, Gin Fizz oraz drinków wymagających czystego, odświeżającego alkoholu."
     },
     {
       name: "Oxley",
-      description: "Rewolucyjny gin destylowany w temperaturze -5°C. Pierwszy gin wykorzystujący próżniową destylację zimną. 8 lat prac nad 38 recepturami zaowocowało unikalnym profilem z 14 botaników."
+      description: "Innowacyjny, angielski gin destylowany „na zimno” w niskiej temperaturze(-5C) dzięki próżni – zachowuje najświeższe aromaty składników. Zawiera klasyczne botanicals: jałowiec, cytrusy, korzeń irysa, lukrecja, korzeń arcydzięgla i inne. Charakter: ultraczysty, rześki, intensywnie cytrusowy; polecany do wyrafinowanych koktajli."
     },
     {
       name: "Monkey 47",
-      description: "Niemiecki gin z Schwarzwaldu zawierający 47 botaników! Wiodące składniki to jałowiec, lawenda, szyszki świerkowe oraz egzotyczne botaniki jak aframon madagaskarski. Produkowany w małych 100-litrowych alembikach."
+      description: "Rzemieślniczy gin z niemieckiego Schwarzwaldu, słynie z bogactwa smaków i aromatów. Zawiera aż 47 składników botanicznych, m.in. sosnę, jagody, kwiaty, owoce, przyprawy. Profil: wytrawny, złożony, intensywnie aromatyczny — cytrusy, zioła, owoce leśne; doskonały do degustacji solo oraz w koktajlach."
     },
     {
       name: "Hendrick's",
-      description: "Szkocki gin infuzowany esencją ogórka i płatkami róż bułgarskiej. Najlepiej podawać z plasterkami ogórka zamiast cytrusów."
+      description: "Szkocki gin premium, niezwykle popularny na całym świecie. Destylowany z dodatkiem świeżego ogórka i płatków róży, poza klasycznymi przyprawami. Smak: subtelny, kwiatowy, lekko ziołowy z charakterystyczną nutą ogórka i róży; świetny podawany z tonikiem i plasterkiem ogórka, nie cytryną"
     }
   ],
 
