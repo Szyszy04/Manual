@@ -115,7 +115,8 @@ export const ingredients = [
   { id: 111, name: "różowy glitter", measure: "pinch" },
   { id: 112, name: "zalewy z wiśni", measure: "ml" },
   { id: 113, name: "Ćwiartka limonki", measure: "quarter" },
-  { id: 114, name: "Fernet Branca", measure: "ml" }
+  { id: 114, name: "Fernet Branca", measure: "ml" },
+  { id: 115, name: "kawa przelewowa", measure: "ml"}
 ];
 
 // Miary używane w aplikacji
