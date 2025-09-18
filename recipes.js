@@ -276,7 +276,7 @@ export const recipes = {
 
   "Irish Coffee": [
     {"ingredientId": 51, "amount": 50},
-    {"name": "kawy przelewowej", "amount": 120},
+    {"ingredientId": 115, "amount": 120},
     {"ingredientId": 95, "amount": 15}
   ],
 
