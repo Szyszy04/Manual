@@ -29,7 +29,6 @@ export const ingredients = [
   { id: 25, name: "Chartreuse Green", measure: "ml" },
   { id: 26, name: "Cherry Brandy", measure: "ml" },
   { id: 27, name: "Cherry Heering", measure: "ml" },
-  { id: 28, name: "Coca Coli", measure: "top_up" },
   { id: 29, name: "Cocchi Americano", measure: "ml" },
   { id: 30, name: "Cointreau", measure: "ml" },
   { id: 31, name: "Coca Cola", measure: "top_up" },
