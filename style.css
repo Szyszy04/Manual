@@ -1,5 +1,3 @@
-/* Quiz Bartenderski - Kompletny CSS dla nowego interfejsu */
-
 * {
     margin: 0;
     padding: 0;
@@ -742,5 +740,205 @@ h4 {
     .btn {
         padding: 12px 20px;
         font-size: 1rem;
+    }
+}
+
+
+
+/* Biblioteka składników - nowe style */
+
+.ingredient-library-content {
+    display: grid;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.ingredient-category-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #ecf0f1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.ingredient-category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+
+.ingredient-category-card h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.brand-sections {
+    display: grid;
+    gap: 20px;
+}
+
+.brand-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.brand-section h4 {
+    margin-bottom: 15px;
+    color: #34495e;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.brand-tag {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.brand-tag.manual {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.brand-tag.manual:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.brand-tag.other {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+}
+
+.brand-tag.other:hover {
+    background: #bdc3c7;
+    transform: translateY(-1px);
+}
+
+/* Responsywność dla biblioteki składników */
+@media (max-width: 768px) {
+    .ingredient-category-card {
+        padding: 20px;
+    }
+
+    .brand-section {
+        padding: 15px;
+    }
+
+    .brand-list {
+        gap: 8px;
+    }
+
+    .brand-tag {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ingredient-library-content {
+        gap: 20px;
+    }
+
+    .ingredient-category-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .brand-section h4 {
+        font-size: 1rem;
+    }
+}
+
+/* Dodatkowe style dla lepszej organizacji */
+.ingredient-stats {
+    background: #e8f4fd;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #3498db;
+}
+
+.ingredient-stats h4 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.ingredient-stats p {
+    color: #34495e;
+    margin: 5px 0;
+}
+
+.search-ingredients {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #ecf0f1;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Style dla kategorii składników w nawigacji */
+.categories-nav .category-btn {
+    position: relative;
+}
+
+.categories-nav .category-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+.categories-nav .category-btn.active::after {
+    width: 100%;
+}
+
+/* Animacje dla tagów marek */
+.brand-tag {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
