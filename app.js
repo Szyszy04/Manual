@@ -11,6 +11,12 @@ import {
     getRecipeWithNamesSimple
 } from './index.js';
 
+import {
+    ingredientLibrary,
+    getIngredientLibraryCategories,
+    getIngredientsByCategory
+} from './ingredient-library.js';
+
 const { createApp, ref, computed } = Vue;
 
 createApp({
@@ -41,6 +47,9 @@ createApp({
         const selectedDrinkCategory = ref('Wódka');
         const hiddenDrinks = ref(new Set());
 
+        // Stan dla biblioteki składników
+        const selectedIngredientCategory = ref('Whiskey');
+
         const questions = ref([]);
         const currentQuestionIndex = ref(0);
         const score = ref(0);
@@ -68,7 +77,6 @@ createApp({
         function generateWrongRecipe(drinkName) {
             const recipeWithNames = getRecipeWithNamesSimple(drinkName);
             if (!Array.isArray(recipeWithNames)) return [];
-
             return recipeWithNames.map(ingredient => ({
                 name: ingredient.name,
                 amount: Math.max(5, ingredient.amount + (Math.random() > 0.5 ?
@@ -92,7 +100,6 @@ createApp({
         const hasSelectedAlcoholCategories = computed(() =>
             Object.values(selectedAlcoholCategories.value).some(Boolean)
         );
-
         const selectedAlcoholCategoriesList = computed(() =>
             Object.keys(selectedAlcoholCategories.value).filter(category =>
                 selectedAlcoholCategories.value[category]
@@ -184,6 +191,10 @@ createApp({
         const drinkCategories = computed(() => Object.keys(drinkLibrary));
         const currentDrinkItems = computed(() => drinkLibrary[selectedDrinkCategory.value] || []);
 
+        // Nowe computed properties dla biblioteki składników
+        const ingredientLibraryCategories = computed(() => getIngredientLibraryCategories());
+        const currentIngredientLibraryItems = computed(() => getIngredientsByCategory(selectedIngredientCategory.value));
+
         const shuffledGlassOptions = computed(() => {
             if (currentQuestion.value.type === 'builder' && currentQuestion.value.allGlasses) {
                 return currentQuestion.value.allGlasses;
@@ -208,7 +219,6 @@ createApp({
         function createBuilderQuestion() {
             const availableDrinks = getDrinksFromSelectedCategories();
             if (availableDrinks.length === 0) return null;
-
             const randomDrink = availableDrinks[Math.floor(Math.random() * availableDrinks.length)];
             const allIngredients = shuffleArray(getAllIngredients());
             const allGlasses = shuffleArray([...glassOptions]);
@@ -249,7 +259,6 @@ createApp({
             // Losowo zdecyduj czy pokazać prawdziwą czy fałszywą proporcję
             const showCorrectAmount = Math.random() > 0.5;
             let displayAmount;
-
             if (showCorrectAmount) {
                 displayAmount = correctAmount;
             } else {
@@ -287,7 +296,6 @@ createApp({
                 const allIngredients = getAllIngredients();
                 const isTrue = Math.random() > 0.5;
                 let ingredient;
-
                 if (isTrue) {
                     const x = Math.floor(Math.random() * drinkRecipe.length);
                     ingredient = drinkRecipe[x].name;
@@ -316,7 +324,6 @@ createApp({
                     const correct = item.price;
                     const availableVodkas = vodkas.filter(v => v.name !== item.name && v.price);
                     if (availableVodkas.length === 0) return null;
-
                     const wrong = shuffleArray(availableVodkas.map(v => v.price))[0];
                     const options = shuffleArray([correct, wrong]);
 
@@ -331,7 +338,6 @@ createApp({
                     const correct = item.ingredient;
                     const availableVodkas = vodkas.filter(v => v.ingredient !== correct && v.ingredient);
                     if (availableVodkas.length === 0) return null;
-
                     const wrong = shuffleArray(availableVodkas.map(v => v.ingredient))[0];
                     const options = shuffleArray([correct, wrong]);
 
@@ -346,7 +352,6 @@ createApp({
             } else if (type === 'builder') {
                 return createBuilderQuestion();
             }
-
             return null;
         }
 
@@ -357,6 +362,10 @@ createApp({
 
         function goToDrinkLibrary() {
             currentScreen.value = 'drink-library';
+        }
+
+        function goToIngredientLibrary() {
+            currentScreen.value = 'ingredient-library';
         }
 
         function goToStart() {
@@ -370,6 +379,10 @@ createApp({
 
         function selectDrinkCategory(category) {
             selectedDrinkCategory.value = category;
+        }
+
+        function selectIngredientCategory(category) {
+            selectedIngredientCategory.value = category;
         }
 
         function toggleDrinkVisibility(drinkName) {
@@ -392,7 +405,6 @@ createApp({
         // FUNKCJE BUILDER
         function toggleIngredient(ingredient) {
             if (!ingredient) return;
-
             if (selectedIngredients.value.has(ingredient)) {
                 selectedIngredients.value.delete(ingredient);
             } else {
@@ -549,14 +561,11 @@ createApp({
 
         function answerQuestion(idx) {
             if (answerSelected.value) return;
-
             answerSelected.value = true;
             selectedAnswer.value = idx;
-
             if (idx === correctAnswerIndex.value) {
                 score.value++;
             }
-
             setTimeout(nextQuestion, 2000);
         }
 
@@ -589,6 +598,7 @@ createApp({
             currentScreen,
             goToLibrary,
             goToDrinkLibrary,
+            goToIngredientLibrary,
             goToStart,
 
             // Categories and selection
@@ -623,6 +633,7 @@ createApp({
             currentRecipe,
             recipes,
             getRecipeWithNames,
+
             // DODANE: Nowy computed property
             showProportionsInfo,
 
@@ -662,6 +673,13 @@ createApp({
             selectDrinkCategory,
             toggleDrinkVisibility,
             isDrinkHidden,
+
+            // Ingredient library functionality
+            ingredientLibrary,
+            selectedIngredientCategory,
+            ingredientLibraryCategories,
+            currentIngredientLibraryItems,
+            selectIngredientCategory,
 
             // Other
             glassOptions
