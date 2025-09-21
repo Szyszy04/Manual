@@ -888,3 +888,197 @@ h4 {
         font-size: 1rem;
     }
 }
+
+
+/* Styles dla Mapy Drinków */
+.drink-map-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.drink-group {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid #ecf0f1;
+}
+
+.group-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+.group-header h3 {
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.group-description {
+    color: #7f8c8d;
+    font-style: italic;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.drink-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px solid #ecf0f1;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.drink-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+
+.drink-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.drink-similarity {
+    text-align: center;
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.ingredients-section {
+    margin-bottom: 20px;
+}
+
+.ingredients-section h5 {
+    font-size: 0.9rem;
+    color: #34495e;
+    margin-bottom: 8px;
+    margin-top: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ingredients-section h5:first-of-type {
+    margin-top: 0;
+}
+
+.ingredients-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.ingredient-tag {
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.ingredient-tag.common {
+    background: #d5f4e6;
+    color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+.ingredient-tag.unique {
+    background: #ffeaa7;
+    color: #e17055;
+    border: 1px solid #e17055;
+}
+
+.ingredient-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-section h5 {
+    font-size: 0.9rem;
+    color: #34495e;
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.recipe-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.recipe-step {
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #2c3e50;
+    border-left: 3px solid #667eea;
+}
+
+/* Responsywność dla mapy drinków */
+@media (max-width: 768px) {
+    .drinks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .drink-card {
+        padding: 15px;
+    }
+
+    .drink-name {
+        font-size: 1.2rem;
+    }
+
+    .group-header h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .drink-map-content {
+        gap: 20px;
+    }
+
+    .drink-group {
+        padding: 15px;
+    }
+
+    .group-header {
+        margin-bottom: 15px;
+    }
+
+    .ingredients-list {
+        gap: 4px;
+    }
+
+    .ingredient-tag {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+}
