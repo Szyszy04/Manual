@@ -68,6 +68,19 @@ createApp({
 
         // FUNKCJE POMOCNICZE
 
+        // Funkcja do pobierania emoji dla kategorii
+        function getCategoryEmoji(category) {
+            const emojiMap = {
+                'Wódka': '🍀',
+                'Gin': '🌿',
+                'Whiskey': '🥃',
+                'Rum': '🏴‍☠️',
+                'Tequila': '🌵',
+                'Bezalkoholowe': '🥤'
+            };
+            return emojiMap[category] || '🍸';
+        }
+
         // Funkcja do pobierania wszystkich unikalnych składników
         function getAllIngredients() {
             return ingredients.map(ingredient => ingredient.name);
@@ -77,6 +90,7 @@ createApp({
         function generateWrongRecipe(drinkName) {
             const recipeWithNames = getRecipeWithNamesSimple(drinkName);
             if (!Array.isArray(recipeWithNames)) return [];
+
             return recipeWithNames.map(ingredient => ({
                 name: ingredient.name,
                 amount: Math.max(5, ingredient.amount + (Math.random() > 0.5 ?
@@ -100,6 +114,7 @@ createApp({
         const hasSelectedAlcoholCategories = computed(() =>
             Object.values(selectedAlcoholCategories.value).some(Boolean)
         );
+
         const selectedAlcoholCategoriesList = computed(() =>
             Object.keys(selectedAlcoholCategories.value).filter(category =>
                 selectedAlcoholCategories.value[category]
@@ -169,6 +184,7 @@ createApp({
             const selected = selectedIngredients.value;
             const correct = correctIngredients.value;
             if (!selected || !correct) return false;
+
             return selected.size === correct.size &&
                 Array.from(selected).every(ing => correct.has(ing));
         });
@@ -219,6 +235,7 @@ createApp({
         function createBuilderQuestion() {
             const availableDrinks = getDrinksFromSelectedCategories();
             if (availableDrinks.length === 0) return null;
+
             const randomDrink = availableDrinks[Math.floor(Math.random() * availableDrinks.length)];
             const allIngredients = shuffleArray(getAllIngredients());
             const allGlasses = shuffleArray([...glassOptions]);
@@ -258,6 +275,7 @@ createApp({
 
             // Losowo zdecyduj czy pokazać prawdziwą czy fałszywą proporcję
             const showCorrectAmount = Math.random() > 0.5;
+
             let displayAmount;
             if (showCorrectAmount) {
                 displayAmount = correctAmount;
@@ -295,6 +313,7 @@ createApp({
 
                 const allIngredients = getAllIngredients();
                 const isTrue = Math.random() > 0.5;
+
                 let ingredient;
                 if (isTrue) {
                     const x = Math.floor(Math.random() * drinkRecipe.length);
@@ -324,6 +343,7 @@ createApp({
                     const correct = item.price;
                     const availableVodkas = vodkas.filter(v => v.name !== item.name && v.price);
                     if (availableVodkas.length === 0) return null;
+
                     const wrong = shuffleArray(availableVodkas.map(v => v.price))[0];
                     const options = shuffleArray([correct, wrong]);
 
@@ -338,6 +358,7 @@ createApp({
                     const correct = item.ingredient;
                     const availableVodkas = vodkas.filter(v => v.ingredient !== correct && v.ingredient);
                     if (availableVodkas.length === 0) return null;
+
                     const wrong = shuffleArray(availableVodkas.map(v => v.ingredient))[0];
                     const options = shuffleArray([correct, wrong]);
 
@@ -352,6 +373,7 @@ createApp({
             } else if (type === 'builder') {
                 return createBuilderQuestion();
             }
+
             return null;
         }
 
@@ -405,6 +427,7 @@ createApp({
         // FUNKCJE BUILDER
         function toggleIngredient(ingredient) {
             if (!ingredient) return;
+
             if (selectedIngredients.value.has(ingredient)) {
                 selectedIngredients.value.delete(ingredient);
             } else {
@@ -561,11 +584,14 @@ createApp({
 
         function answerQuestion(idx) {
             if (answerSelected.value) return;
+
             answerSelected.value = true;
             selectedAnswer.value = idx;
+
             if (idx === correctAnswerIndex.value) {
                 score.value++;
             }
+
             setTimeout(nextQuestion, 2000);
         }
 
@@ -608,6 +634,7 @@ createApp({
             hasSelectedAlcoholCategories,
             selectedAlcoholCategoriesList,
             toggleAlcoholCategory,
+            getCategoryEmoji, // DODANE
 
             // Quiz state
             questions,
