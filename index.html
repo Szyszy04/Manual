@@ -223,7 +223,7 @@
                     <div v-if="showRecipe" class="recipe-reveal">
                         <h4>Receptura: {{ currentQuestion.drinkName }}</h4>
                         <div v-for="ingredient in currentRecipe" :key="ingredient.name" class="ingredient">
-                            <span class="amount">{{ ingredient.amount }} {{ ingredient.measure || 'ml' }}</span>
+                           <!-- <span class="amount">{{ ingredient.amount }} {{ ingredient.measure || 'ml' }}</span> -->
                             <span class="name">{{ ingredient.name }}</span>
                         </div>
                     </div>
