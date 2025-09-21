@@ -1,4 +1,8 @@
 import {
+    drinkGroups
+} from './drink-map.js';
+
+import {
     vodkas,
     alcoholLibrary,
     drinkLibrary,
@@ -618,6 +622,10 @@ createApp({
             resetState();
         }
 
+        function goToDrinkMap() {
+            currentScreen.value = 'drink-map';
+        }
+
         // RETURN
         return {
             // Screen management
@@ -625,6 +633,7 @@ createApp({
             goToLibrary,
             goToDrinkLibrary,
             goToIngredientLibrary,
+            goToDrinkMap,
             goToStart,
 
             // Categories and selection
@@ -707,6 +716,9 @@ createApp({
             ingredientLibraryCategories,
             currentIngredientLibraryItems,
             selectIngredientCategory,
+
+            // Drink map functionality
+            drinkGroups,
 
             // Other
             glassOptions
