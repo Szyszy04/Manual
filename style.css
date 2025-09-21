@@ -88,7 +88,7 @@ h4 {
     font-style: italic;
 }
 
-/* Kategorie alkoholi - nowy styl */
+/* Kategorie alkoholi i quizu - ULEPSZONE */
 .alcohol-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -96,7 +96,15 @@ h4 {
     margin-bottom: 20px;
 }
 
+.quiz-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+/* GŁÓWNE ULEPSZENIE: category-option jako właściwy label */
 .category-option {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -115,11 +123,27 @@ h4 {
     border-color: #3498db;
 }
 
+/* Checkbox styling */
 .category-option input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
     accent-color: #3498db;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* Dla trybów quizu - pionowy layout */
+.quiz-categories .category-option {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 15px;
+}
+
+.quiz-categories .category-option input[type="checkbox"] {
+    margin-top: 3px;
+    flex-shrink: 0;
 }
 
 .category-name {
@@ -129,36 +153,26 @@ h4 {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex: 1;
+    cursor: pointer;
 }
 
-.drink-count {
-    color: #7f8c8d;
-    font-size: 0.9rem;
-    margin-left: auto;
-    font-weight: normal;
+.quiz-categories .category-option > div {
+    flex: 1;
 }
 
-/* Quiz categories */
-.quiz-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-}
-
-.quiz-categories .category-option {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.quiz-categories .category-option input {
-    margin-bottom: 10px;
+.quiz-categories .category-option strong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
 }
 
 .description {
     color: #7f8c8d;
     font-size: 0.9rem;
     margin-top: 5px;
+    font-weight: normal;
 }
 
 /* Status messages */
@@ -725,6 +739,16 @@ h4 {
     .glasses-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
+
+    /* Mobilne ulepszenia dla category-option */
+    .category-option {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+
+    .category-name {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -743,10 +767,7 @@ h4 {
     }
 }
 
-
-
 /* Biblioteka składników - nowe style */
-
 .ingredient-library-content {
     display: grid;
     gap: 25px;
@@ -865,80 +886,5 @@ h4 {
 
     .brand-section h4 {
         font-size: 1rem;
-    }
-}
-
-/* Dodatkowe style dla lepszej organizacji */
-.ingredient-stats {
-    background: #e8f4fd;
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border-left: 4px solid #3498db;
-}
-
-.ingredient-stats h4 {
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-.ingredient-stats p {
-    color: #34495e;
-    margin: 5px 0;
-}
-
-.search-ingredients {
-    margin-bottom: 20px;
-}
-
-.search-input {
-    width: 100%;
-    padding: 12px 20px;
-    border: 2px solid #ecf0f1;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.search-input:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
-}
-
-/* Style dla kategorii składników w nawigacji */
-.categories-nav .category-btn {
-    position: relative;
-}
-
-.categories-nav .category-btn::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: #667eea;
-    transition: width 0.3s ease;
-}
-
-.categories-nav .category-btn.active::after {
-    width: 100%;
-}
-
-/* Animacje dla tagów marek */
-.brand-tag {
-    animation: fadeInUp 0.3s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
