@@ -1266,7 +1266,7 @@ export const drinkLibrary = {
         },
         {
             name: "CAMERON'S KICK",
-            glass: "Old Fashioned Glass",
+            glass: "Old Fashioned",
             method: [
                 "Wstrząsamy wszystko z dużą ilością lodu.",
                 "Cedzimy do szkła w pełni wypełnionego lodem."
@@ -1332,7 +1332,7 @@ export const drinkLibrary = {
         },
         {
             name: "JAPANESE COCKTAIL",
-            glass: "Old Fashioned Glass",
+            glass: "Old Fashioned",
             method: [
                 "Mieszamy wszystkie składniki w szklanicy.",
                 "Cedzimy na bryłkę lodową do niskiego szkła.",
@@ -1403,7 +1403,7 @@ export const drinkLibrary = {
         },
         {
             name: "PENICILLIN",
-            glass: "Old Fashioned Glass",
+            glass: "Old Fashioned",
             method: [
                 "Wlewamy składniki do shakera.",
                 "Wstrząsamy intensywnie.",
