@@ -622,10 +622,10 @@ createApp({
             resetState();
         }
 
+
         function goToDrinkMap() {
             currentScreen.value = 'drink-map';
         }
-
         // RETURN
         return {
             // Screen management
