@@ -11,8 +11,8 @@ export const drinkGroups = {
             {
                 name: "Vodka Sour",
                 similarity: 1.0,
-                commonIngredients: ["sok z cytryny", "syrop cukrowy", "albumina", "Angostura Bitters"],
-                uniqueIngredients: ["Wódka"],
+                commonIngredients: ["25 ml sok z cytryny", "15 ml syrop cukrowy", "20 ml albumina", "1 x dash Angostura Bitters"],
+                uniqueIngredients: ["40 ml Wódka"],
                 recipe: [
                     "40 ml Wódka",
                     "25 ml soku z cytryny", 
@@ -24,8 +24,8 @@ export const drinkGroups = {
             {
                 name: "Whisky Sour",
                 similarity: 0.95,
-                commonIngredients: ["sok z cytryny", "syrop cukrowy", "albumina", "Angostura Bitters"],
-                uniqueIngredients: ["Blended Scotch Whisky"],
+                commonIngredients: ["25 ml sok z cytryny", "15 ml syrop cukrowy", "20 ml albumina", "1 x dash Angostura Bitters"],
+                uniqueIngredients: ["40 ml Blended Scotch Whisky"],
                 recipe: [
                     "40 ml Blended Scotch Whisky",
                     "25 ml soku z cytryny",
@@ -37,8 +37,8 @@ export const drinkGroups = {
             {
                 name: "NEW YORK SOUR",
                 similarity: 0.85,
-                commonIngredients: ["sok z cytryny", "syrop cukrowy", "albumina", "Angostura Bitters"],
-                uniqueIngredients: ["Bourbon Whiskey", "Red Wine"],
+                commonIngredients: ["25 ml sok z cytryny", "15 ml syrop cukrowy", "20 ml albumina", "1 x dash Angostura Bitters"],
+                uniqueIngredients: ["40 ml Bourbon Whiskey", "15 ml Red Wine"],
                 recipe: [
                     "40 ml Bourbon Whiskey",
                     "25 ml soku z cytryny",
@@ -51,8 +51,8 @@ export const drinkGroups = {
             {
                 name: "Amaretto Sour",
                 similarity: 0.80,
-                commonIngredients: ["sok z cytryny", "syrop cukrowy", "albumina"],
-                uniqueIngredients: ["Blended Scotch Whisky", "Galliano Amaretto"],
+                commonIngredients: ["30 ml sok z cytryny", "10 ml syrop cukrowy", "20 ml albumina"],
+                uniqueIngredients: ["10 ml Blended Scotch Whisky", "40 ml Galliano Amaretto"],
                 recipe: [
                     "40 ml Galliano Amaretto",
                     "10 ml Blended Scotch Whisky",
@@ -73,8 +73,8 @@ export const drinkGroups = {
             {
                 name: "NEGRONI",
                 similarity: 1.0,
-                commonIngredients: ["Martini Bitter", "Martini Rubino"],
-                uniqueIngredients: ["London Dry Gin"],
+                commonIngredients: ["20 ml Martini Bitter", "20 ml Martini Rubino"],
+                uniqueIngredients: ["20 ml London Dry Gin"],
                 recipe: [
                     "20 ml London Dry Gin",
                     "20 ml Martini Rubino",
@@ -84,8 +84,8 @@ export const drinkGroups = {
             {
                 name: "Boulevardier",
                 similarity: 0.95,
-                commonIngredients: ["Martini Bitter", "Martini Rubino"],
-                uniqueIngredients: ["Bourbon Whiskey"],
+                commonIngredients: ["20 ml Martini Bitter", "20 ml Martini Rubino"],
+                uniqueIngredients: ["30 ml Bourbon Whiskey"],
                 recipe: [
                     "30 ml Bourbon Whiskey",
                     "20 ml Martini Bitter",
@@ -95,8 +95,8 @@ export const drinkGroups = {
             {
                 name: "Right Hand Cocktail",
                 similarity: 0.85,
-                commonIngredients: ["Martini Bitter", "Martini Rubino"],
-                uniqueIngredients: ["Aged Rum", "Mozart Black Dark Chocolate"],
+                commonIngredients: ["20 ml Martini Bitter", "20 ml Martini Rubino"],
+                uniqueIngredients: ["30 ml Aged Rum", "5 ml Mozart Black Dark Chocolate"],
                 recipe: [
                     "30 ml Aged Rum",
                     "20 ml Martini Bitter",
@@ -116,7 +116,7 @@ export const drinkGroups = {
             {
                 name: "Daiquiri",
                 similarity: 1.0,
-                commonIngredients: ["White Rum", "Sok z limonki", "Syrop cukrowy"],
+                commonIngredients: ["50 ml White Rum", "20 ml Sok z limonki", "10 ml Syrop cukrowy"],
                 uniqueIngredients: [],
                 recipe: [
                     "50 ml White Rum",
@@ -125,21 +125,10 @@ export const drinkGroups = {
                 ]
             },
             {
-                name: "Caipirinha", 
-                similarity: 0.98,
-                commonIngredients: ["rum", "sok z limonki", "syrop cukrowy"],
-                uniqueIngredients: ["Cachaça"],
-                recipe: [
-                    "50 ml Cachaça",
-                    "15 ml Syrop cukrowy",
-                    "2 ćwiartki limonki"
-                ]
-            },
-            {
                 name: "Classic Rum Swizzle",
                 similarity: 0.90,
-                commonIngredients: ["White Rum", "Sok z limonki", "Syrop cukrowy"],
-                uniqueIngredients: ["Angostura Bitters"],
+                commonIngredients: ["50 ml White Rum", "30 ml Sok z limonki", "20 ml Syrop cukrowy"],
+                uniqueIngredients: ["4 x dash Angostura Bitters"],
                 recipe: [
                     "50 ml White Rum",
                     "30 ml Soku z limonki",
@@ -150,8 +139,8 @@ export const drinkGroups = {
             {
                 name: "Hemingway Daiquiri",
                 similarity: 0.75,
-                commonIngredients: ["White Rum", "Sok z limonki", "Syrop cukrowy"],
-                uniqueIngredients: ["Sok grejpfrutowy", "Maraschino"],
+                commonIngredients: ["40 ml White Rum", "15 ml Sok z limonki", "10 ml Syrop cukrowy"],
+                uniqueIngredients: ["20 ml Sok grejpfrutowy", "5 ml Maraschino Liqueur"],
                 recipe: [
                     "40 ml White Rum",
                     "20 ml Sok grejpfrutowy",
@@ -163,8 +152,8 @@ export const drinkGroups = {
             {
                 name: "Nuclear Daiquiri",
                 similarity: 0.70,
-                commonIngredients: ["rum", "Sok z limonki", "Syrop cukrowy"],
-                uniqueIngredients: ["Overproof White Rum", "Green Chartreuse", "Falernum"],
+                commonIngredients: ["30 ml Overproof White Rum", "20 ml Sok z limonki", "10 ml Syrop cukrowy"],
+                uniqueIngredients: ["20 ml Green Chartreuse", "10 ml Falernum"],
                 recipe: [
                     "30 ml Overproof White Rum",
                     "20 ml Green Chartreuse",
@@ -185,7 +174,7 @@ export const drinkGroups = {
             {
                 name: "TOMMY'S MARGARITA",
                 similarity: 1.0,
-                commonIngredients: ["Tequila", "Sok z limonki", "Agave Mix"],
+                commonIngredients: ["50 ml Tequila", "20 ml Sok z limonki", "20 ml Agave Mix"],
                 uniqueIngredients: [],
                 recipe: [
                     "50 ml Tequila",
@@ -196,8 +185,8 @@ export const drinkGroups = {
             {
                 name: "LA PALOMA",
                 similarity: 0.95,
-                commonIngredients: ["Tequila", "Sok z limonki", "Agave Mix"],
-                uniqueIngredients: ["Three Cents Grapefruit Soda"],
+                commonIngredients: ["40 ml Tequila", "20 ml Sok z limonki", "20 ml Agave Mix"],
+                uniqueIngredients: ["100 ml Three Cents Grapefruit Soda"],
                 recipe: [
                     "40 ml Tequila",
                     "20 ml Agave Mix",
@@ -208,8 +197,8 @@ export const drinkGroups = {
             {
                 name: "margarita",
                 similarity: 0.80,
-                commonIngredients: ["Tequila", "Sok z limonki"],
-                uniqueIngredients: ["Cointreau", "Syrop cukrowy"],
+                commonIngredients: ["40 ml Tequila", "20 ml Sok z limonki"],
+                uniqueIngredients: ["20 ml Cointreau", "kilka kropli Syrop cukrowy"],
                 recipe: [
                     "40 ml Tequila",
                     "20 ml Cointreau",
@@ -229,7 +218,7 @@ export const drinkGroups = {
             {
                 name: "PENICILLIN",
                 similarity: 1.0,
-                commonIngredients: ["Blended Scotch Whisky", "Syrop miodowo-imbirowy", "sok z cytryny"],
+                commonIngredients: ["50 ml Blended Scotch Whisky", "20 ml Syrop miodowo-imbirowy", "20 ml sok z cytryny"],
                 uniqueIngredients: ["Islay Malt Spray"],
                 recipe: [
                     "50 ml Blended Scotch Whisky",
@@ -241,7 +230,7 @@ export const drinkGroups = {
             {
                 name: "HOT TODDY",
                 similarity: 0.90,
-                commonIngredients: ["Blended Scotch Whisky", "Syrop miodowo-imbirowy", "sok z cytryny"],
+                commonIngredients: ["50 ml Blended Scotch Whisky", "20 ml Syrop miodowo-imbirowy", "20 ml sok z cytryny"],
                 uniqueIngredients: ["Wrzątek", "Laska cynamonu", "plaster cytryn"],
                 recipe: [
                     "50 ml Blended Scotch Whisky",
@@ -255,8 +244,8 @@ export const drinkGroups = {
             {
                 name: "BEE'S KNEES",
                 similarity: 0.70,
-                commonIngredients: ["Syrop miodowo-imbirowy", "sok z cytryny"],
-                uniqueIngredients: ["London Dry Gin", "sok z pomarańczy"],
+                commonIngredients: ["20 ml Syrop miodowo-imbirowy", "20 ml sok z cytryny"],
+                uniqueIngredients: ["50 ml London Dry Gin", "20 ml sok z pomarańczy"],
                 recipe: [
                     "50 ml London Dry Gin",
                     "20 ml Syrop miodowo-imbirowy",
@@ -267,8 +256,8 @@ export const drinkGroups = {
             {
                 name: "Derby",
                 similarity: 0.65,
-                commonIngredients: ["Syrop miodowo-imbirowy"],
-                uniqueIngredients: ["Bourbon Whiskey", "sok grejpfrutowy"],
+                commonIngredients: ["20 ml Syrop miodowo-imbirowy"],
+                uniqueIngredients: ["50 ml Bourbon Whiskey", "30 ml sok grejpfrutowy"],
                 recipe: [
                     "50 ml Bourbon Whiskey",
                     "30 ml soku grejpfrutowego",
@@ -278,49 +267,34 @@ export const drinkGroups = {
         ]
     },
 
-    "MOJITO": {
-        name: "Grupa MOJITO",
-        description: "Drinki z miętą i rumem",
+    "SMASH": {
+        name: "Grupa SMASH",
+        description: "Drinki z liśćmi, cytryną i cykrem",
         icon: "🌿",
-        pattern: ["rum", "mięta"],
+        pattern: ["cytryny", "syropu cukrowego"],
         drinks: [
             {
-                name: "Mojito",
+                name: "WHISKEY SMASH",
                 similarity: 1.0,
-                commonIngredients: ["Aged Rum", "limonka", "Syrop miętowy", "liście mięty", "Woda gazowana"],
-                uniqueIngredients: [],
+                commonIngredients: ["20 ml syropu cukrowego", "1/2 cytryny"],
+                uniqueIngredients: ["50 ml Maker’s Mark", "8 liści mięty"],
                 recipe: [
-                    "50 ml Aged Rum",
-                    "1/2 limonki",
-                    "15 ml Syrop miętowy",
-                    "8 liści mięty",
-                    "Woda gazowana"
+                    "50 ml Maker’s Mark",
+                    "20 ml syropu cukrowego",
+                    "1/2 cytryny",
+                    "8 liści mięty"
                 ]
             },
             {
-                name: "Mojito Norblito",
+                name: "GIN BASIL SMASH",
                 similarity: 0.85,
-                commonIngredients: ["rum", "Syrop miętowy", "liście mięty"],
-                uniqueIngredients: ["White Rum", "Fake Lime Juice"],
+                commonIngredients: ["20 ml syrop cukrow", "1/2 cytryny"],
+                uniqueIngredients: ["50 ml Bombay Sapphire", "8 liści bazylii"],
                 recipe: [
-                    "50 ml White Rum",
-                    "30 ml Fake Lime Juice",
-                    "20 ml Syrop miętowy",
-                    "5 liści mięty"
-                ]
-            },
-            {
-                name: "Old Cuban",
-                similarity: 0.70,
-                commonIngredients: ["rum", "limonka", "liście mięty"],
-                uniqueIngredients: ["Aged Rum", "Syrop waniliowy", "Angostura Bitters", "Prosecco"],
-                recipe: [
-                    "50 ml Aged Rum",
-                    "20 ml Syrop waniliowy",
-                    "20 ml Sok z limonki",
-                    "1 x dash Angostura Bitters",
-                    "40 ml Prosecco",
-                    "5 liści mięty"
+                    "50 ml Bombay Sapphire",
+                    "20 ml syrop cukrow",
+                    "1/2 cytryny",
+                    "8 liści bazylii"
                 ]
             }
         ]
