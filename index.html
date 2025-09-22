@@ -86,55 +86,50 @@
                     <button @click="goToLibrary" class="btn btn-secondary">📚 Biblioteka Alkoholi</button>
                     <button @click="goToDrinkLibrary" class="btn btn-secondary">🍹 Biblioteka Drinków</button>
                     <button @click="goToIngredientLibrary" class="btn btn-secondary">🧪 Biblioteka Składników</button>
-                    <button @click="goToDrinkMap" class="btn btn-secondary">🗺️ Mapa Drinków</button>
+                                    <button @click="goToDrinkMap" class="btn btn-secondary">🗺️ Mapa Drinków</button>
                 </div>
             </div>
         </div>
-
-        <!-- Ekran mapy drinków -->
+        <!-- Ekran mapy drinków - poprawiony z danymi z drink-map.js -->
         <div v-if="currentScreen === 'drink-map'" class="screen">
             <div class="container">
                 <h1>🗺️ Mapa Drinków</h1>
                 <p class="subtitle">Podobne drinki pogrupowane według składników</p>
 
-                <div class="drink-map-content">
-                    <div v-for="(group, groupKey) in drinkGroups" :key="groupKey" class="drink-group">
-                        <div class="group-header">
+                <div class="drink-map-compact">
+                    <div v-for="(group, groupKey) in drinkGroups" :key="groupKey" class="compact-group">
+                        <div class="compact-group-header">
                             <h3>{{ group.icon }} {{ group.name }}</h3>
-                            <p class="group-description">{{ group.description }}</p>
+                            <span class="group-count">{{ group.drinks.length }} drinków</span>
                         </div>
 
-                        <div class="drinks-grid">
-                            <div v-for="drink in group.drinks" :key="drink.name" class="drink-card">
-                                <div class="drink-name">{{ drink.name }}</div>
-
-                                <div class="ingredients-section">
-                                    <h5>Składniki wspólne:</h5>
-                                    <div class="ingredients-list common-ingredients">
-                                        <span v-for="ingredient in drink.commonIngredients" 
-                                              :key="'common-' + ingredient" 
-                                              class="ingredient-tag common">
-                                            {{ ingredient }}
-                                        </span>
-                                    </div>
-
-                                    <h5 v-if="drink.uniqueIngredients.length > 0">Składniki unikalne:</h5>
-                                    <div v-if="drink.uniqueIngredients.length > 0" class="ingredients-list unique-ingredients">
-                                        <span v-for="ingredient in drink.uniqueIngredients" 
-                                              :key="'unique-' + ingredient" 
-                                              class="ingredient-tag unique">
-                                            {{ ingredient }}
-                                        </span>
-                                    </div>
+                        <div class="compact-drinks-grid">
+                            <div v-for="drink in group.drinks" :key="drink.name" class="compact-drink-card">
+                                <div class="compact-drink-header">
+                                    <h4>{{ drink.name }}</h4>
+                                    <span class="similarity-badge">{{ Math.round(drink.similarity * 100) }}%</span>
                                 </div>
 
-                                <div class="recipe-section">
-                                    <h5>Przepis:</h5>
-                                    <div class="recipe-list">
-                                        <div v-for="step in drink.recipe" 
-                                             :key="step" 
-                                             class="recipe-step">
-                                            {{ step }}
+                                <div class="ingredients-sections">
+                                    <!-- Wspólne składniki -->
+                                    <div v-if="drink.commonIngredients && drink.commonIngredients.length > 0" class="ingredients-group">
+                                        <div class="ingredients-list">
+                                            <div v-for="ingredient in drink.commonIngredients" 
+                                                 :key="'common-' + ingredient" 
+                                                 class="ingredient-item common-ingredient">
+                                                {{ ingredient }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Unikalne składniki -->
+                                    <div v-if="drink.uniqueIngredients && drink.uniqueIngredients.length > 0" class="ingredients-group">
+                                        <div class="ingredients-list">
+                                            <div v-for="ingredient in drink.uniqueIngredients" 
+                                                 :key="'unique-' + ingredient" 
+                                                 class="ingredient-item unique-ingredient">
+                                                {{ ingredient }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -148,6 +143,7 @@
                 </div>
             </div>
         </div>
+/div>
 
         <!-- Ekran quizu -->
         <div v-if="currentScreen === 'quiz'" class="screen quiz-screen">
