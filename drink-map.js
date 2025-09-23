@@ -313,8 +313,8 @@ export const drinkGroups = {
             {
                 name: "WHISKEY SMASH",
                 similarity: 1.0,
-                commonIngredients: ["20 ml syropu cukrowego", "1/2 cytryny"],
-                uniqueIngredients: ["50 ml Maker’s Mark", "8 liści mięty"],
+                commonIngredients: ["20 ml syropu cukrowego", "1/2 cytryny", "8 liści mięty"],
+                uniqueIngredients: ["50 ml Maker’s Mark"],
                 recipe: [
                     "50 ml Maker’s Mark",
                     "20 ml syropu cukrowego",
@@ -325,8 +325,8 @@ export const drinkGroups = {
             {
                 name: "GIN BASIL SMASH",
                 similarity: 0.85,
-                commonIngredients: ["20 ml syrop cukrow", "1/2 cytryny"],
-                uniqueIngredients: ["50 ml Bombay Sapphire", "8 liści bazylii"],
+                commonIngredients: ["20 ml syrop cukrow", "1/2 cytryny", "8 liści bazylii"],
+                uniqueIngredients: ["50 ml Bombay Sapphire"],
                 recipe: [
                     "50 ml Bombay Sapphire",
                     "20 ml syrop cukrow",
