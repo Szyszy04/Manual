@@ -347,7 +347,7 @@ export const drinkLibrary = {
                 "Spryskujemy całość olejkami cytrynowymi.",
             ],
             ingredients: [
-                "50 ml Fords (z zamrażarki*),
+                "50 ml Fords (z zamrażarki*)",
                 "10 ml Noilly Prat",
                 "1 x dash Orange Bitters",
             ],
