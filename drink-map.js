@@ -267,6 +267,43 @@ export const drinkGroups = {
         ]
     },
 
+    "PeychaudsBitter": {
+        name: "Grupa Peychaud’s Bitters",
+        description: "Drinki z żytnią whiskey + cognac + dwa bittery",
+        icon: "🗡️",
+        pattern: ["Tequila", "Sok z limonki"],
+        drinks: [
+            {
+                name: "sazerac",
+                similarity: 1.0,
+                commonIngredients: ["20 ml Jim Beam Rye", "20 ml Hennessy V.S.", "1 x dash Angostura Bitters", "3 x dash Peychaud’s Bitters"],
+                uniqueIngredients: ["5 ml syrop cukrowy", "Absynth Spray"],
+                recipe: [
+                    "20 ml Jim Beam Rye",
+                    "20 ml Hennessy V.S.",
+                    "5 ml syrop cukrowy",
+                    "1 x dash Angostura Bitters",
+                    "3 x dash Peychaud’s Bitters",
+                    "Absynth Spray"
+                ]
+            },
+            {
+                name: "VIEUX CAREE",
+                similarity: 0.95,
+                commonIngredients: ["20 ml Jim Beam Rye", "20 ml Hennessy V.S.", "1 x dash Angostura Bitters", "2 x dash Peychaud’s Bitters"],
+                uniqueIngredients: ["20 ml Martini Rubino", "10 ml D.O.M Benedictine"],
+                recipe: [
+                    "20 ml Jim Beam Rye",
+                    "20 ml Hennessy V.S.",
+                    "20 ml Martini Rubino",
+                    "10 ml D.O.M Benedictine",
+                    "1 x dash Angostura Bitters",
+                    "2 x dash Peychaud’s Bitters"
+                ]
+            }
+        ]
+    },
+
     "SMASH": {
         name: "Grupa SMASH",
         description: "Drinki z liśćmi, cytryną i cykrem",
