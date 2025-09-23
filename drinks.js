@@ -277,7 +277,7 @@ export const drinkLibrary = {
             glass: "",
             method: [],
             ingredients: [
-                "30 ml Sloe Gin",
+                "30 ml Hayman’s Sloe Gin",
                 "30 ml Archer’s",
                 "30 ml sok z limonki",
             ],
@@ -347,7 +347,7 @@ export const drinkLibrary = {
                 "Spryskujemy całość olejkami cytrynowymi.",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Fords (z zamrażarki*),
                 "10 ml Noilly Prat",
                 "1 x dash Orange Bitters",
             ],
@@ -484,7 +484,7 @@ export const drinkLibrary = {
                 "Z wierzchu kładziemy żółtą różyczkę.",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Ford’s",
                 "20 ml syrop cukrowy",
                 "15 ml soku z cytryny",
                 "15 ml soku z limonki",
@@ -539,7 +539,7 @@ export const drinkLibrary = {
                 "Wrzucamy do środka wiśnie.",
             ],
             ingredients: [
-                "30 ml Old Tom Gin",
+                "30 ml Hayman’s Old Tom Gin",
                 "30 ml Noilly Prat",
                 "5 ml Luxardo Maraschino",
                 "2 x dash Orange Bitters",
@@ -558,8 +558,8 @@ export const drinkLibrary = {
                 "Spryskujemy całość dużym zestem i wkładamy go do środka.",
             ],
             ingredients: [
-                "30 ml London Dry Gin",
-                "10 ml Vodka",
+                "30 ml Beefeater London Dry Gin",
+                "10 ml Belvedere Vodka",
                 "5 ml Cocchi Americano",
             ],
             decoration: "Zest z cytryny włożony do środka"
@@ -627,7 +627,7 @@ export const drinkLibrary = {
                 "Dekorujemy"
             ],
             ingredients: [
-                "50 ml Gold Rum",
+                "50 ml Bacardi Carta Oro",
                 "20 ml Syrop miodowo-imbirowy",
                 "20 ml Soku z limonki",
                 "40 ml Prosecco"
@@ -644,7 +644,7 @@ export const drinkLibrary = {
                 "Dosypujemy kruszonego lodu i dekorujemy limonką układając ją na wierzchu/po środku koktajlu"
             ],
             ingredients: [
-                "50 ml Cachaça",
+                "50 ml Leblon Cachaça",
                 "15 ml Syrop cukrowy",
                 "2 ćwiartki limonki"
             ],
@@ -663,7 +663,7 @@ export const drinkLibrary = {
                 "Dekorujemy bukietem miętowym posypanym pudrem cytrusowym"
             ],
             ingredients: [
-                "50 ml White Rum",
+                "50 ml Bacardi Carta Blanca",
                 "30 ml Soku z limonki",
                 "20 ml Syrop cukrowy",
                 "4 x dash Angostura Bitters"
@@ -680,8 +680,8 @@ export const drinkLibrary = {
                 "Mieszamy przez około 10 sekund i serwujemy"
             ],
             ingredients: [
-                "20 ml Aged Rum",
-                "10 ml Jamaican Rum",
+                "20 ml Bacardi 4 Anejo Cuatro",
+                "10 ml Smith & Cross",
                 "20 ml Falernum",
                 "10 ml Aperol",
                 "1 x dash Angostura Bitters",
@@ -699,7 +699,7 @@ export const drinkLibrary = {
                 "Dekorujemy limonką"
             ],
             ingredients: [
-                "40 ml Aged Rum",
+                "40 ml Bacardi Cuatro Anejo",
                 "1/2 limonki (2 ćwiartki)",
                 "Cola - top up"
             ],
@@ -714,7 +714,7 @@ export const drinkLibrary = {
                 "Dekorujemy zestem z limonki"
             ],
             ingredients: [
-                "50 ml White Rum",
+                "50 ml Bacardi Carta Blanca",
                 "20 ml Soku z limonki",
                 "10 ml Syrop cukrowy"
             ],
@@ -731,7 +731,7 @@ export const drinkLibrary = {
                 "Serwujemy z rurką - przed konsumpcją zamieszać"
             ],
             ingredients: [
-                "40 ml Jamaican Rum",
+                "40 ml Smith & Cross",
                 "1 x dash Angostura Bitters",
                 "1 ćwiartka limonki",
                 "Ginger Beer - top up"
@@ -748,7 +748,7 @@ export const drinkLibrary = {
                 "Do środka wrzucamy wiśnię"
             ],
             ingredients: [
-                "40 ml Caribbean Blend Rum",
+                "40 ml Bank’s Rum",
                 "15 ml Lillet Blanc",
                 "5 ml Cointreau",
                 "2,5 ml Syrop malinowy",
@@ -767,8 +767,8 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "20 ml Hennessy V.S.",
-                "20 ml Aged Rum",
-                "15 ml Peach Liqueur",
+                "20 ml Bacardi 4 Anejo Cuatro",
+                "15 ml De Kuyper Peach Tree",
                 "30 ml Napar z herbaty Earl Grey",
                 "20 ml Soku z cytryny",
                 "15 ml Oleo Saccharum"
@@ -785,7 +785,7 @@ export const drinkLibrary = {
             ingredients: [
                 "20 ml Pisco",
                 "20 ml London Dry Gin",
-                "20 ml Gold Rum",
+                "20 ml Bacardi Carta Oro",
                 "20 ml Orgeat",
                 "30 ml Soku z cytryny",
                 "30 ml Soku z pomarańczy",
@@ -803,7 +803,7 @@ export const drinkLibrary = {
                 "Wrzucamy wiśnię do środka"
             ],
             ingredients: [
-                "40 ml White Rum",
+                "40 ml Bacardi Carta Blanca",
                 "20 ml Sok grejpfrutowy",
                 "15 ml Soku z limonki",
                 "10 ml Syrop cukrowy",
@@ -820,7 +820,7 @@ export const drinkLibrary = {
                 "Dopełniamy wrzątkiem"
             ],
             ingredients: [
-                "50 ml Spiced Rum",
+                "50 ml Bacardi Spiced",
                 "20 ml Soku z cytryny",
                 "15 ml Soku z grejpfruta",
                 "15 ml Soku z pomarańczy",
@@ -841,8 +841,8 @@ export const drinkLibrary = {
                 "Dekorujemy"
             ],
             ingredients: [
-                "30 ml White Rum",
-                "20 ml Jamaican Rum",
+                "30 ml Bacardi Carta Blanca",
+                "20 ml Smith & Cross",
                 "15 ml Cointreau",
                 "10 ml Orgeat",
                 "30 ml Soku z limonki",
@@ -863,7 +863,7 @@ export const drinkLibrary = {
                 "Dekorujemy miętą i ją opruszamy"
             ],
             ingredients: [
-                "50 ml Aged Rum",
+                "50 ml Bacardi Cuatro Anejo",
                 "1/2 limonki",
                 "15 ml Syrop miętowy",
                 "8 liści mięty",
@@ -883,7 +883,7 @@ export const drinkLibrary = {
                 "Dekorujemy miętą"
             ],
             ingredients: [
-                "50 ml White Rum",
+                "50 ml Bacardi Carta Blanca",
                 "30 ml Fake Lime Juice",
                 "20 ml Syrop miętowy",
                 "5 liści mięty"
@@ -899,7 +899,7 @@ export const drinkLibrary = {
                 "Dekorujemy"
             ],
             ingredients: [
-                "30 ml Overproof White Rum",
+                "30 ml Rum Bar White Overproof",
                 "20 ml Green Chartreuse",
                 "10 ml Falernum",
                 "20 ml Sok z limonki",
@@ -917,7 +917,7 @@ export const drinkLibrary = {
                 "Dekorujemy"
             ],
             ingredients: [
-                "50 ml Aged Rum",
+                "50 ml Bacardi Cuatro Anejo",
                 "20 ml Syrop waniliowy",
                 "20 ml Sok z limonki",
                 "1 x dash Angostura Bitters",
@@ -938,8 +938,8 @@ export const drinkLibrary = {
                 "Dekorujemy miętą i czipsem z ananasa - całość posypujemy cukrem pudrem cytrusowym"
             ],
             ingredients: [
-                "30 ml Gold Rum",
-                "20 ml Jamaican Rum",
+                "30 ml Bacardi Carta Oro",
+                "20 ml Smith & Cross",
                 "10 ml Falernum",
                 "20 ml Soku z limonki",
                 "10 ml Syrop waniliowy",
@@ -974,7 +974,7 @@ export const drinkLibrary = {
                 "Okraszamy całość olejkami pomarańczowymi i dekorujemy coin na spinaczu przypiętym do rantu szkła"
             ],
             ingredients: [
-                "30 ml Aged Rum",
+                "30 ml Bacardi 8 yo",
                 "20 ml Martini Bitter",
                 "20 ml Martini Rubino",
                 "5 ml Mozart Black Dark Chocolate"
@@ -990,8 +990,8 @@ export const drinkLibrary = {
                 "Cedzimy na kości do wysokiego szkła"
             ],
             ingredients: [
-                "30 ml Gold Rum",
-                "20 ml Jamaican Rum",
+                "30 ml Bacardi Carta Oro",
+                "20 ml Smith & Cross",
                 "10 ml Falernum",
                 "30 ml Soku z grejpfruta",
                 "20 ml Soku z limonki",
@@ -1160,7 +1160,7 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "40 ml Galliano Amaretto",
-                "10 ml Blended Scotch Whisky",
+                "10 ml Dewar’s 8 Caribbean Smooth",
                 "30 ml soku z cytryny",
                 "10 ml syropu cukrowego",
                 "20 ml Albumina"
@@ -1176,7 +1176,7 @@ export const drinkLibrary = {
                 "Cedzimy podwójnie koktajl do zmrożonego i okraszonego aromatem Islay Malt Spray szkła"
             ],
             ingredients: [
-                "30 ml Aged Blended Scotch Whisky",
+                "30 ml Dewar’s 12 YO",
                 "20 ml Carpano Antica Formula",
                 "20 ml Cherry Brandy",
                 "30 ml sok z pomarańczy",
@@ -1193,7 +1193,7 @@ export const drinkLibrary = {
                 "Kolejno cedzimy do szkła z bryłką lodową ze stemplem (nie lejemy na lód, tylko po ściance aby nie rozmyć stempla)"
             ],
             ingredients: [
-                "30 ml Bourbon Whiskey",
+                "30 ml Maker’s Mark",
                 "20 ml Martini Bitter",
                 "20 ml Martini Rubino"
             ],
@@ -1207,7 +1207,7 @@ export const drinkLibrary = {
                 "Cedzimy do uprzednio schłodzonego szkła",
             ],
             ingredients: [
-                "50 ml Bourbon Whiskey",
+                "50 ml Maker’s Mark",
                 "20 ml Carpano Antica Formula",
                 "2 x dash Angostura Bitters"
             ],
@@ -1222,7 +1222,7 @@ export const drinkLibrary = {
                 "Cedzimy całość na lód do szkła"
             ],
             ingredients: [
-                "40 ml Blended Scotch Whisky",
+                "40 ml Dewar’s 8 Caribbean Smooth",
                 "25 ml soku z cytryny",
                 "15 ml syropu cukrowego",
                 "20 ml Albumina",
@@ -1242,7 +1242,7 @@ export const drinkLibrary = {
                 "po łyżce nalewamy śmietankę"
             ],
             ingredients: [
-                "50 ml Irish Whiskey",
+                "50 ml Tullamore DEW",
                 "120 ml kawy przelewowej",
                 "15 ml syropu waniliowego"
             ],
@@ -1272,8 +1272,8 @@ export const drinkLibrary = {
                 "Cedzimy do szkła w pełni wypełnionego lodem."
             ],
             ingredients: [
-                "20 ml Blended Scotch Whisky",
-                "20 ml Irish Whiskey",
+                "20 ml Dewar’s 8 Caribbean Smooth",
+                "20 ml Tullamore DEW",
                 "25 ml soku z cytryny",
                 "20 ml Orgeat",
             ],
@@ -1304,7 +1304,7 @@ export const drinkLibrary = {
                 "Zest wycięty nożyczkami karbowanymi przypinamy na spinacz do rantu szkła",
             ],
             ingredients: [
-                "50 ml Bourbon Whiskey",
+                "50 ml Maker’s Mark",
                 "30 ml soku grejpfrutowego",
                 "20 ml Syrop miodowo-imbirowy",
             ],
@@ -1321,7 +1321,7 @@ export const drinkLibrary = {
                 "Zalewamy wrzątkiem ( z ekspresu)",
             ],
             ingredients: [
-                "50 ml Blended Scotch Whisky",
+                "50 ml Dewar’s 8 Caribbean Smooth",
                 "20 ml Syrop miodowo-imbirowy",
                 "20 ml sok z cytryny",
                 "Wrzątek",
@@ -1357,12 +1357,12 @@ export const drinkLibrary = {
                 "dekorujemy coinem z pomarańczy",
             ],
             ingredients: [
-                "40 ml Bourbon Whiskey",
+                "40 ml Jim Beam Black",
                 "25 ml soku z cytryny",
                 "15 ml syropu cukrowego",
                 "20 ml albumina",
                 "1 x dash Angostura Bitters",
-                "15 ml Red Wine",
+                "15 ml Serenello Merlot",
             ],
             decoration: "coin z pomarańczy"
         },
@@ -1376,7 +1376,7 @@ export const drinkLibrary = {
                 "Wykańczamy zestem z pomarańczy i dekorujemy wiśnią",
             ],
             ingredients: [
-                "50 ml Bourbon Whiskey",
+                "50 ml Maker’s Mark",
                 "5 ml zalewy z wiśni",
                 "3 x dash Angostura Bitters",
                 "1 x dash Orange Bitters",
@@ -1394,7 +1394,7 @@ export const drinkLibrary = {
                 "Okraszamy całość olejkami pomarańczowymi i przypinamy zest do stópki",
             ],
             ingredients: [
-                "20 ml Bourbon Whiskey",
+                "20 ml Maker’s Mark",
                 "20 ml Amaro Nonino",
                 "20 ml Aperol",
                 "20 ml soku z cytryny",
@@ -1412,7 +1412,7 @@ export const drinkLibrary = {
                 "Dekorujemy kandyzowanym imbirem.",
             ],
             ingredients: [
-                "50 ml Blended Scotch Whisky",
+                "50 ml Dewar’s 8 Caribbean Smooth",
                 "20 ml syrop miodowo - imbirowy",
                 "20 ml soku z cytryny",
                 "Islay Malt Spray",
@@ -1431,7 +1431,7 @@ export const drinkLibrary = {
                 "Okraszamy olejkami cytrynowymi (zest wyrzucamy - nie dekorujemy nim)",
             ],
             ingredients: [
-                "20 ml Rye Whiskey",
+                "20 ml Jim Beam Rye",
                 "20 ml Hennessy V.S.",
                 "3 x dash Peychaud's Bitters",
                 "1 x dash Angostura Bitters",
@@ -1450,7 +1450,7 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "40 ml Angostura Aromatic Bitters",
-                "15 ml Rye Whiskey",
+                "15 ml Jim Beam Rye",
                 "30 ml Orgeat",
                 "20 ml soku z cytryny",
             ],
@@ -1466,7 +1466,7 @@ export const drinkLibrary = {
                 "Cedzimy podwójnie na lód i dekorujemy miętą, którą finalnie",
             ],
             ingredients: [
-                "50 ml Bourbon Whiskey",
+                "50 ml Maker’s Mark",
                 "20 ml syropu cukrowego",
                 "1/2 cytryny",
                 "8 liści mięty"
@@ -1482,7 +1482,7 @@ export const drinkLibrary = {
                 "Okraszamy olejkami cytrynowymi i dekorujemy coinem cytrynowym",
             ],
             ingredients: [
-                "20 ml Rye Whiskey",
+                "20 ml Jim Beam Rye",
                 "20 ml Hennessy V.S.",
                 "20 ml Martini Rubino",
                 "10 ml D.O.M Benedictine",
