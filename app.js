@@ -502,7 +502,7 @@ createApp({
                 score.value++;
                 showDecorationSuccess.value = true;
                 setTimeout(() => {
-                    resetCurrentBuilderQuestion();
+                    nextBuilderQuestion();
                 }, 3000);
             } else {
                 showBuilderRecipe.value = true;
