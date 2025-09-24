@@ -71,6 +71,16 @@
                                 <p class="description">Zbuduj drink od podstaw</p>
                             </div>
                         </label>
+
+                        <!-- Practice Mode option - only visible when builder is selected -->
+                        <div v-if="selectedCategories.builder" class="sub-option practice-mode-option">
+                            <label class="practice-toggle">
+                                <input type="checkbox" v-model="practiceMode">
+                                <span class="practice-label">
+                                    🎯 <strong>Tryb ćwiczeń</strong> - powtarzaj ten sam drink dopóki go nie skończysz
+                                </span>
+                            </label>
+                        </div>
                     </div>
                 </div>
 
