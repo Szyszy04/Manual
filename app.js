@@ -63,6 +63,7 @@ createApp({
 
         // Stan dla trybu builder
         const builderStep = ref(1);
+        const practiceMode = ref(false);
         const selectedIngredients = ref(new Set());
         const ingredientAmounts = ref({});
         const selectedGlass = ref('');
@@ -454,9 +455,15 @@ createApp({
                 });
             } else {
                 showBuilderRecipe.value = true;
-                setTimeout(() => {
-                    nextBuilderQuestion();
-                }, 5000);
+                if (!practiceMode.value) {
+                    setTimeout(() => {
+                        nextBuilderQuestion();
+                    }, 5000);
+                } else {
+                    setTimeout(() => {
+                        resetCurrentBuilderQuestion();
+                    }, 5000);
+                }
             }
         }
 
@@ -478,9 +485,15 @@ createApp({
                 selectedGlass.value = '';
             } else {
                 showBuilderRecipe.value = true;
-                setTimeout(() => {
-                    nextBuilderQuestion();
-                }, 3000);
+                if (!practiceMode.value) {
+                    setTimeout(() => {
+                        nextBuilderQuestion();
+                    }, 3000);
+                } else {
+                    setTimeout(() => {
+                        resetCurrentBuilderQuestion();
+                    }, 3000);
+                }
             }
         }
 
@@ -488,15 +501,41 @@ createApp({
             if (hasCorrectGlass.value) {
                 score.value++;
                 showDecorationSuccess.value = true;
-                setTimeout(() => {
-                    nextBuilderQuestion();
-                }, 3000);
+                if (!practiceMode.value) {
+                    setTimeout(() => {
+                        nextBuilderQuestion();
+                    }, 3000);
+                } else {
+                    setTimeout(() => {
+                        resetCurrentBuilderQuestion();
+                    }, 3000);
+                }
             } else {
                 showBuilderRecipe.value = true;
-                setTimeout(() => {
-                    nextBuilderQuestion();
-                }, 3000);
+                if (!practiceMode.value) {
+                    setTimeout(() => {
+                        nextBuilderQuestion();
+                    }, 3000);
+                } else {
+                    setTimeout(() => {
+                        resetCurrentBuilderQuestion();
+                    }, 3000);
+                }
             }
+        }
+
+        
+        function resetCurrentBuilderQuestion() {
+            builderStep.value = 1;
+            selectedIngredients.value = new Set();
+            ingredientAmounts.value = {};
+            selectedGlass.value = '';
+            showBuilderRecipe.value = false;
+            showDecorationSuccess.value = false;
+        }
+
+        function togglePracticeMode() {
+            practiceMode.value = !practiceMode.value;
         }
 
         function nextBuilderQuestion() {
@@ -675,6 +714,8 @@ createApp({
 
             // Builder functionality
             builderStep,
+            practiceMode,
+            togglePracticeMode,
             selectedIngredients,
             selectedIngredientsCount,
             ingredientAmounts,
