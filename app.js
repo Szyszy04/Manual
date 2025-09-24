@@ -501,15 +501,9 @@ createApp({
             if (hasCorrectGlass.value) {
                 score.value++;
                 showDecorationSuccess.value = true;
-                if (!practiceMode.value) {
-                    setTimeout(() => {
-                        nextBuilderQuestion();
-                    }, 3000);
-                } else {
-                    setTimeout(() => {
-                        resetCurrentBuilderQuestion();
-                    }, 3000);
-                }
+                setTimeout(() => {
+                    resetCurrentBuilderQuestion();
+                }, 3000);
             } else {
                 showBuilderRecipe.value = true;
                 if (!practiceMode.value) {
