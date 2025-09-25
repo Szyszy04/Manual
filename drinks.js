@@ -1475,7 +1475,7 @@ export const drinkLibrary = {
         },
         {
             name: "VIEUX CAREE",
-            glass: "Old fashioned",
+            glass: "Old Fashioned",
             method: [
                 "Wszystkie składniki mieszamy w szklanicy.",
                 "Cedzimy na bryłkę lodową- nie bezpośrednio na bryłkę, tak aby stempel się nie rozmył.",
