@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta author="Wiktor">
     <meta charset="UTF-8">
@@ -8,102 +9,112 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3.3.4/dist/vue.global.js"></script>
 </head>
+
 <body>
     <div id="app">
         <!-- Ekran startowy -->
         <div v-if="currentScreen === 'start'" class="screen">
             <div class="container">
-                <h1>🍸 Quiz Barmański</h1>
+                <h1>Quiz Barmański</h1>
                 <p class="subtitle">Wybierz kategorie i sprawdź swoją wiedzę o drinkach!</p>
 
                 <!-- Wybór kategorii alkoholi -->
                 <div class="section">
-                    <h3>🥃 Kategorie Alkoholi</h3>
-                    <p class="help-text">Pytania będą dotyczyły tylko wybranych kategorii</p>
+                    <h3>Kategorie Alkoholi</h3>
+                    <p class="help-text">Pytania będą dotyczyć tylko wybranych kategorii</p>
+
                     <div class="alcohol-categories">
-                        <label v-for="(category, index) in Object.keys(selectedAlcoholCategories)" :key="category" :for="'alcohol-' + index" class="category-option">
-                            <input type="checkbox" 
-                                   :id="'alcohol-' + index" 
-                                   v-model="selectedAlcoholCategories[category]">
+                        <label v-for="(category, index) in Object.keys(selectedAlcoholCategories)" :key="category"
+                            :for="'alcohol-' + index" class="category-option">
+                            <input type="checkbox" :id="'alcohol-' + index"
+                                v-model="selectedAlcoholCategories[category]">
                             <span class="category-name">
                                 <span>{{ getCategoryEmoji(category) }}</span>
                                 {{ category }}
                             </span>
                         </label>
                     </div>
+
                     <div v-if="hasSelectedAlcoholCategories" class="selected-info">
-                        ✅ Wybrano: {{ selectedAlcoholCategoriesList.join(', ') }}
+                        Wybrano: {{ selectedAlcoholCategoriesList.join(', ') }}
                     </div>
                     <div v-else class="warning">
-                        ⚠️ Wybierz przynajmniej jedną kategorię alkoholu!
+                        Wybierz przynajmniej jedną kategorię alkoholu!
                     </div>
                 </div>
 
                 <!-- Wybór trybu quizu -->
                 <div class="section">
-                    <h3>🎯 Tryby Quizu</h3>
+                    <h3>Tryby Quizu</h3>
+
                     <div class="quiz-categories">
                         <label for="mode-proportions" class="category-option">
                             <input type="checkbox" id="mode-proportions" v-model="selectedCategories.proportions">
                             <div>
-                                <strong>📊 Proporcje</strong>
+                                <strong>Proporcje</strong>
                                 <p class="description">Sprawdź znajomość proporcji składników</p>
                             </div>
                         </label>
+
                         <label for="mode-review" class="category-option">
                             <input type="checkbox" id="mode-review" v-model="selectedCategories.review">
                             <div>
-                                <strong>🔍 Składniki</strong>
+                                <strong>Składniki</strong>
                                 <p class="description">Czy składnik jest w drinku?</p>
                             </div>
                         </label>
+
                         <label for="mode-vodka" class="category-option">
                             <input type="checkbox" id="mode-vodka" v-model="selectedCategories.vodka">
                             <div>
-                                <strong>🍀 Wódka</strong>
+                                <strong>Wódka</strong>
                                 <p class="description">Pytania o ceny i surowce wódek</p>
                             </div>
                         </label>
+
                         <label for="mode-builder" class="category-option">
                             <input type="checkbox" id="mode-builder" v-model="selectedCategories.builder">
                             <div>
-                                <strong>🔧 Builder</strong>
+                                <strong>Builder</strong>
                                 <p class="description">Zbuduj drink od podstaw</p>
                             </div>
                         </label>
+                    </div>
 
-                        <!-- Practice Mode option - only visible when builder is selected -->
-                        <div v-if="selectedCategories.builder" class="sub-option practice-mode-option">
-                            <label class="practice-toggle">
-                                <input type="checkbox" v-model="practiceMode">
-                                <span class="practice-label">
-                                    🎯 <strong>Tylko poprawnie</strong> - powtarzaj ten sam drink dopóki go nie skończysz
-                                </span>
-                            </label>
-                        </div>
+                    <!-- Practice Mode option - only visible when builder is selected -->
+                    <div v-if="selectedCategories.builder" class="sub-option practice-mode-option">
+                        <label class="practice-toggle">
+                            <input type="checkbox" v-model="practiceMode">
+                            <span class="practice-label">
+                                <strong>Tylko poprawnie</strong> - powtarzaj ten sam drink dopóki go nie skończysz
+                            </span>
+                        </label>
                     </div>
                 </div>
 
                 <!-- Przycisk rozpoczęcia -->
                 <div class="actions">
-                    <button @click="startQuiz" :class="['btn', 'btn-primary', { disabled: !hasSelectedCategories || !hasSelectedAlcoholCategories }]" :disabled="!hasSelectedCategories || !hasSelectedAlcoholCategories">
-                        🚀 Rozpocznij Quiz
+                    <button @click="startQuiz" class="btn btn-primary"
+                        :class="{ disabled: !hasSelectedCategories || !hasSelectedAlcoholCategories }"
+                        :disabled="!hasSelectedCategories || !hasSelectedAlcoholCategories">
+                        Rozpocznij Quiz
                     </button>
                 </div>
 
                 <!-- Dodatkowe opcje -->
                 <div class="secondary-actions">
-                    <button @click="goToLibrary" class="btn btn-secondary">📚 Biblioteka Alkoholi</button>
-                    <button @click="goToDrinkLibrary" class="btn btn-secondary">🍹 Biblioteka Drinków</button>
-                    <button @click="goToIngredientLibrary" class="btn btn-secondary">🧪 Biblioteka Składników</button>
-                                    <button @click="goToDrinkMap" class="btn btn-secondary">🗺️ Mapa Drinków</button>
+                    <button @click="goToLibrary" class="btn btn-secondary">Biblioteka Alkoholi</button>
+                    <button @click="goToDrinkLibrary" class="btn btn-secondary">Biblioteka Drinków</button>
+                    <button @click="goToIngredientLibrary" class="btn btn-secondary">Biblioteka Składników</button>
+                    <button @click="goToDrinkMap" class="btn btn-secondary">Mapa Drinków</button>
                 </div>
             </div>
         </div>
+
         <!-- Ekran mapy drinków - poprawiony z danymi z drink-map.js -->
         <div v-if="currentScreen === 'drink-map'" class="screen">
             <div class="container">
-                <h1>🗺️ Mapa Drinków</h1>
+                <h1>Mapa Drinków</h1>
                 <p class="subtitle">Podobne drinki pogrupowane według składników</p>
 
                 <div class="drink-map-compact">
@@ -121,22 +132,22 @@
 
                                 <div class="ingredients-sections">
                                     <!-- Wspólne składniki -->
-                                    <div v-if="drink.commonIngredients && drink.commonIngredients.length > 0" class="ingredients-group">
+                                    <div v-if="drink.commonIngredients && drink.commonIngredients.length > 0"
+                                        class="ingredients-group">
                                         <div class="ingredients-list">
-                                            <div v-for="ingredient in drink.commonIngredients" 
-                                                 :key="'common-' + ingredient" 
-                                                 class="ingredient-item common-ingredient">
+                                            <div v-for="ingredient in drink.commonIngredients"
+                                                :key="'common-' + ingredient" class="ingredient-item common-ingredient">
                                                 {{ ingredient }}
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Unikalne składniki -->
-                                    <div v-if="drink.uniqueIngredients && drink.uniqueIngredients.length > 0" class="ingredients-group">
+                                    <div v-if="drink.uniqueIngredients && drink.uniqueIngredients.length > 0"
+                                        class="ingredients-group">
                                         <div class="ingredients-list">
-                                            <div v-for="ingredient in drink.uniqueIngredients" 
-                                                 :key="'unique-' + ingredient" 
-                                                 class="ingredient-item unique-ingredient">
+                                            <div v-for="ingredient in drink.uniqueIngredients"
+                                                :key="'unique-' + ingredient" class="ingredient-item unique-ingredient">
                                                 {{ ingredient }}
                                             </div>
                                         </div>
@@ -148,7 +159,7 @@
                 </div>
 
                 <div class="actions">
-                    <button @click="goToStart" class="btn btn-secondary">⬅️ Powrót do Menu</button>
+                    <button @click="goToStart" class="btn btn-secondary">Powrót do Menu</button>
                 </div>
             </div>
         </div>
@@ -166,19 +177,22 @@
                 <div class="question-container">
                     <h2 class="question">{{ currentQuestion.question }}</h2>
 
-                    <!-- Zwykle odpowiedzi (TAK/NIE) -->
-                    <div v-if="currentQuestion.answers && currentQuestion.answers.length === 2" class="answers-grid simple-answers">
-                        <button v-for="(answer, index) in shuffledAnswers" :key="index" @click="answerQuestion(index)" :disabled="answerSelected" :class="['answer-btn', getAnswerClass(index)]">
+                    <!-- Zwykłe odpowiedzi TAK/NIE -->
+                    <div v-if="currentQuestion.answers && currentQuestion.answers.length === 2"
+                        class="answers-grid simple-answers">
+                        <button v-for="(answer, index) in shuffledAnswers" :key="index" @click="answerQuestion(index)"
+                            :disabled="answerSelected" :class="['answer-btn', getAnswerClass(index)]">
                             {{ answer }}
                         </button>
                     </div>
 
                     <!-- Odpowiedzi z recepturami -->
                     <div v-else-if="currentQuestion.answers && currentQuestion.answers.length > 2" class="answers-grid">
-                        <button v-for="(answer, index) in shuffledAnswers" :key="index" @click="answerQuestion(index)" :disabled="answerSelected" :class="['answer-btn recipe-option', getAnswerClass(index)]">
+                        <button v-for="(answer, index) in shuffledAnswers" :key="index" @click="answerQuestion(index)"
+                            :disabled="answerSelected" :class="['answer-btn recipe-option', getAnswerClass(index)]">
                             <div class="recipe">
                                 <div v-for="ingredient in answer" :key="ingredient.name" class="ingredient">
-                                    <span class="amount">**{{ ingredient.amount }} ml**</span>
+                                    <span class="amount">{{ ingredient.amount }} ml</span>
                                     <span class="name">{{ ingredient.name }}</span>
                                 </div>
                             </div>
@@ -191,11 +205,28 @@
                         <div v-if="builderStep === 1" class="builder-step">
                             <h4>Krok 1: Wybierz składniki dla drinka "{{ currentQuestion.drinkName }}"</h4>
                             <p>Wybrane: {{ selectedIngredientsCount }}</p>
-                            <div class="ingredients-grid">
-                                <button v-for="ingredient in currentQuestion.allIngredients" :key="ingredient" @click="toggleIngredient(ingredient)" :class="['ingredient-btn', { selected: selectedIngredients.has(ingredient) }]">
-                                    {{ ingredient }}
-                                </button>
+
+                            <!-- Posortowane składniki według kategorii w kompaktowym layoutcie -->
+                            <div class="ingredients-categorized">
+                                <div v-for="group in groupedIngredientsForBuilder" :key="group.categoryName"
+                                    class="ingredient-group">
+                                    <!-- Nagłówek kategorii -->
+                                    <div class="ingredient-category-header">
+                                        <h5>{{ group.categoryName }}</h5>
+                                    </div>
+
+                                    <!-- Grid składników w tej kategorii -->
+                                    <div class="ingredient-category-content">
+                                        <button v-for="ingredient in group.ingredients" :key="ingredient"
+                                            @click="toggleIngredient(ingredient)" class="ingredient-btn"
+                                            :class="{ selected: selectedIngredients.has(ingredient) }"
+                                            :title="ingredient">
+                                            {{ ingredient }}
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
+
                             <button @click="checkIngredients" class="btn btn-primary">Sprawdź składniki</button>
                         </div>
 
@@ -203,7 +234,8 @@
                         <div v-if="builderStep === 2" class="builder-step">
                             <h4>Krok 2: Ustaw proporcje składników</h4>
                             <div class="proportions-input">
-                                <div v-for="ingredient in Array.from(selectedIngredients)" :key="ingredient" class="proportion-item">
+                                <div v-for="ingredient in Array.from(selectedIngredients)" :key="ingredient"
+                                    class="proportion-item">
                                     <label>{{ ingredient }}</label>
                                     <input type="number" v-model="ingredientAmounts[ingredient]" placeholder="ml">
                                     <span>ml</span>
@@ -216,18 +248,20 @@
                         <div v-if="builderStep === 3" class="builder-step">
                             <h4>Krok 3: Wybierz odpowiednie szkło</h4>
                             <div class="glasses-grid">
-                                <button v-for="glass in shuffledGlassOptions" :key="glass" @click="selectGlass(glass)" :class="['glass-btn', { selected: selectedGlass === glass }]">
+                                <button v-for="glass in shuffledGlassOptions" :key="glass" @click="selectGlass(glass)"
+                                    class="glass-btn" :class="{ selected: selectedGlass === glass }">
                                     {{ glass }}
                                 </button>
                             </div>
-                            <button @click="checkGlass" class="btn btn-primary" :disabled="!selectedGlass">Sprawdź szkło</button>
+                            <button @click="checkGlass" class="btn btn-primary" :disabled="!selectedGlass">Sprawdź
+                                szkło</button>
                         </div>
 
                         <!-- Komunikaty -->
                         <div v-if="showBuilderRecipe" class="recipe-reveal error">
                             <h4>Błędna odpowiedź!</h4>
                             <div class="correct-recipe">
-                                <h4>Poprawna receptura "{{ currentQuestion.drinkName }}":</h4>
+                                <h4>Poprawna receptura "{{ currentQuestion.drinkName }}"</h4>
                                 <div v-for="ingredient in builderCorrectRecipeWithNames" :key="ingredient.name">
                                     <p><strong>{{ ingredient.amount }} ml</strong> {{ ingredient.name }}</p>
                                 </div>
@@ -244,7 +278,7 @@
 
                     <!-- Pokazanie receptury po odpowiedzi -->
                     <div v-if="showRecipe" class="recipe-reveal">
-                        <h4>Receptura "{{ currentQuestion.drinkName }}":</h4>
+                        <h4>Receptura "{{ currentQuestion.drinkName }}"</h4>
                         <div v-for="ingredient in currentRecipe" :key="ingredient.name" class="ingredient">
                             <span class="name">{{ ingredient.name }}</span>
                         </div>
@@ -263,7 +297,8 @@
         <!-- Ekran wyników -->
         <div v-if="currentScreen === 'result'" class="screen">
             <div class="container">
-                <h1>🏆 Wyniki Quizu</h1>
+                <h1>Wyniki Quizu</h1>
+
                 <div class="final-score">
                     <div class="score-circle">
                         <div>
@@ -275,14 +310,14 @@
                 </div>
 
                 <div class="score-message">
-                    <p v-if="score === questions.length">Perfekcyjny wynik!🥇</p>
-                    <p v-else-if="score / questions.length >= 0.8">Świetny wynik!🥈</p>
-                    <p v-else-if="score / questions.length >= 0.6">Dobry wynik!🥉</p>
-                    <p v-else> Nie poddawaj się! 💪</p>
+                    <p v-if="score === questions.length">Perfekcyjny wynik!</p>
+                    <p v-else-if="score / questions.length >= 0.8">Świetny wynik!</p>
+                    <p v-else-if="score / questions.length >= 0.6">Dobry wynik!</p>
+                    <p v-else>Nie poddawaj się!</p>
                 </div>
 
                 <div class="actions">
-                    <button @click="restartQuiz" class="btn btn-primary">🔄 Spróbuj ponownie</button>
+                    <button @click="restartQuiz" class="btn btn-primary">Spróbuj ponownie</button>
                 </div>
             </div>
         </div>
@@ -290,11 +325,13 @@
         <!-- Biblioteka Alkoholi -->
         <div v-if="currentScreen === 'library'" class="screen">
             <div class="container">
-                <h1>📚 Biblioteka Alkoholi</h1>
+                <h1>Biblioteka Alkoholi</h1>
 
                 <div class="library-navigation">
                     <div class="categories-nav">
-                        <button v-for="category in libraryCategories" :key="category" @click="selectLibraryCategory(category)" :class="['category-btn', { active: selectedLibraryCategory === category }]">
+                        <button v-for="category in libraryCategories" :key="category"
+                            @click="selectLibraryCategory(category)"
+                            :class="['category-btn', { active: selectedLibraryCategory === category }]">
                             {{ category }}
                         </button>
                     </div>
@@ -308,7 +345,7 @@
                 </div>
 
                 <div class="actions">
-                    <button @click="goToStart" class="btn btn-secondary">⬅️ Powrót do menu</button>
+                    <button @click="goToStart" class="btn btn-secondary">Powrót do menu</button>
                 </div>
             </div>
         </div>
@@ -316,38 +353,42 @@
         <!-- Biblioteka Drinków -->
         <div v-if="currentScreen === 'drink-library'" class="screen">
             <div class="container">
-                <h1>🍹 Biblioteka Drinków</h1>
+                <h1>Biblioteka Drinków</h1>
 
                 <div class="library-navigation">
                     <div class="categories-nav">
-                        <button v-for="category in drinkCategories" :key="category" @click="selectDrinkCategory(category)" :class="['category-btn', { active: selectedDrinkCategory === category }]">
+                        <button v-for="category in drinkCategories" :key="category"
+                            @click="selectDrinkCategory(category)"
+                            :class="['category-btn', { active: selectedDrinkCategory === category }]">
                             {{ category }}
                         </button>
                     </div>
                 </div>
 
                 <div class="drinks-grid">
-                    <div v-for="drink in currentDrinkItems" :key="drink.name" :class="['drink-card', { hidden: isDrinkHidden(drink.name) }]" @click="toggleDrinkVisibility(drink.name)">
+                    <div v-for="drink in currentDrinkItems" :key="drink.name"
+                        :class="['drink-card', { hidden: isDrinkHidden(drink.name) }]"
+                        @click="toggleDrinkVisibility(drink.name)">
                         <h3>{{ drink.name }}</h3>
-                        <div class="glass-info">🥃 {{ drink.glass }}</div>
+                        <div class="glass-info">{{ drink.glass }}</div>
 
                         <div v-if="!isDrinkHidden(drink.name)" class="drink-details">
                             <div class="ingredients">
-                                <h4>Składniki:</h4>
+                                <h4>Składniki</h4>
                                 <ul>
                                     <li v-for="ingredient in drink.ingredients" :key="ingredient">{{ ingredient }}</li>
                                 </ul>
                             </div>
 
                             <div class="method">
-                                <h4>Przygotowanie:</h4>
+                                <h4>Przygotowanie</h4>
                                 <ol>
                                     <li v-for="step in drink.method" :key="step">{{ step }}</li>
                                 </ol>
                             </div>
 
                             <div v-if="drink.decoration" class="decoration">
-                                <h4>Dekoracja:</h4>
+                                <h4>Dekoracja</h4>
                                 <p>{{ drink.decoration }}</p>
                             </div>
                         </div>
@@ -358,7 +399,7 @@
                 </div>
 
                 <div class="actions">
-                    <button @click="goToStart" class="btn btn-secondary">⬅️ Powrót do menu</button>
+                    <button @click="goToStart" class="btn btn-secondary">Powrót do menu</button>
                 </div>
             </div>
         </div>
@@ -366,31 +407,35 @@
         <!-- Biblioteka Składników -->
         <div v-if="currentScreen === 'ingredient-library'" class="screen">
             <div class="container">
-                <h1>🧪 Biblioteka Składników</h1>
+                <h1>Biblioteka Składników</h1>
 
                 <div class="library-navigation">
                     <div class="categories-nav">
-                        <button v-for="category in ingredientLibraryCategories" :key="category" @click="selectIngredientCategory(category)" :class="['category-btn', { active: selectedIngredientCategory === category }]">
+                        <button v-for="category in ingredientLibraryCategories" :key="category"
+                            @click="selectIngredientCategory(category)"
+                            :class="['category-btn', { active: selectedIngredientCategory === category }]">
                             {{ category }}
                         </button>
                     </div>
                 </div>
 
                 <div class="ingredient-library-content">
-                    <div v-for="(details, ingredient) in currentIngredientLibraryItems" :key="ingredient" class="ingredient-category-card">
+                    <div v-for="(details, ingredient) in currentIngredientLibraryItems" :key="ingredient"
+                        class="ingredient-category-card">
                         <h3>{{ ingredient }}</h3>
                         <div class="brand-sections">
                             <div class="brand-section">
-                                <h4>📋 Manual</h4>
+                                <h4>Manual</h4>
                                 <div class="brand-list">
-                                    <span v-for="brand in details.manual" :key="brand" class="brand-tag manual">{{ brand }}</span>
+                                    <span v-for="brand in details.manual" :key="brand" class="brand-tag manual">{{ brand
+                                        }}</span>
                                 </div>
                             </div>
-
                             <div class="brand-section">
-                                <h4>🏷️ Inne</h4>
+                                <h4>Inne</h4>
                                 <div class="brand-list">
-                                    <span v-for="brand in details.inne" :key="brand" class="brand-tag other">{{ brand }}</span>
+                                    <span v-for="brand in details.inne" :key="brand" class="brand-tag other">{{ brand
+                                        }}</span>
                                 </div>
                             </div>
                         </div>
@@ -398,7 +443,7 @@
                 </div>
 
                 <div class="actions">
-                    <button @click="goToStart" class="btn btn-secondary">⬅️ Powrót do menu</button>
+                    <button @click="goToStart" class="btn btn-secondary">Powrót do menu</button>
                 </div>
             </div>
         </div>
@@ -406,4 +451,5 @@
 
     <script type="module" src="app.js"></script>
 </body>
+
 </html>
