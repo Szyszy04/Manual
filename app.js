@@ -1,7 +1,4 @@
-import {
-    drinkGroups
-} from './drink-map.js';
-
+import { drinkGroups } from './drink-map.js';
 import {
     vodkas,
     alcoholLibrary,
@@ -14,7 +11,6 @@ import {
     getRecipeWithNames,
     getRecipeWithNamesSimple
 } from './index.js';
-
 import {
     ingredientLibrary,
     getIngredientLibraryCategories,
@@ -79,14 +75,89 @@ createApp({
                 'Wódka': '🍀',
                 'Gin': '🌿',
                 'Whiskey': '🥃',
-                'Rum': '🏴‍☠️',
+                'Rum': '🏴☠️',
                 'Tequila': '🌵',
                 'Bezalkoholowe': '🥤'
             };
             return emojiMap[category] || '🍸';
         }
 
-        // Funkcja do pobierania wszystkich unikalnych składników
+        // NOWA FUNKCJA: Kategoryzacja składników z grupowaniem
+        function categorizeIngredientsForBuilder() {
+            const categorization = {
+                "Główne alkohole": [
+                    "Wódka", "Gin", "Aster Gin", "Bombay Sapphire", "Archer's", "London Dry Gin", "Old Tom Gin", "Sloe Gin",
+                    "Aged Blended Scotch Whisky", "Blended Scotch Whisky", "Bourbon Whiskey", "Irish Whiskey", "Rye Whiskey",
+                    "Aged Rum", "Caribbean Blend Rum", "Gold Rum", "Jamaican Rum", "Overproof White Rum", "Rum", "Spiced Rum", "White Rum",
+                    "Tequila", "Pisco", "Cachaça"
+                ],
+
+                "Dodatkowe alkohole": [
+                    "Hennessy V.S.", "Cherry Brandy", "Papidoux V.S.O.P.", "Absynth", "Absynth Spray", "Islay Malt Spray",
+                    "Carpano Antica Formula", "Cocchi Americano", "Lillet Blanc", "Martini Bitter", "Martini Extra Dry", 
+                    "Martini Fiero", "Martini Rubino", "Martini Vibrante", "Noilly Prat", "Prosecco", "Red Wine", "Ruby Port"
+                ],
+
+                "Likiery": [
+                    "Amaro Nonino", "Aperol", "Briottet - Violet", "Chambord", "Chartreuse Green", "Cherry Heering", 
+                    "Cointreau", "Creme De Cacao", "Creme De Menthe", "D.O.M Benedictine", "Falernum", 
+                    "Galliano Amaretto", "Galliano Autentico", "Galliano Espresso", "Green Chartreuse", 
+                    "Maraschino", "Mozart Black Dark Chocolate", "Peach Liqueur", "Suze", "Fernet Branca"
+                ],
+
+                "Soki i napoje": [
+                    "Big Tom Tomato Juice", "Fake Lime Juice", "Sok grejpfrutowy", "Sok z cytryny", "Sok z limonki", 
+                    "Sok z pomarańczy", "przecier ananasowy", "przecieru z marakui", "zalewy z wiśni",
+                    "Coca Cola", "Ginger Beer", "Tonic", "Three Cents Grapefruit Soda", "Woda gazowana", "Gin bezalkoholowy"
+                ],
+
+                "Syropy i mixy": [
+                    "Food Town Bars Lime Cordial", "Kordiał z Żurawiny i Róży", "Giffard Bitter Syrup", "Oleo Saccharum", 
+                    "Orgeat", "Syrop cukrowy", "Syrop malinowy", "Syrop miodowo-imbirowy", "Syrop miętowy", 
+                    "Syrop piernikowy", "Syrop waniliowy", "Agave Mix", "Belvoir Elderflower", "Bloody Mary Mix"
+                ],
+
+                "Bittery i dodatki": [
+                    "Angostura Aromatic Bitters", "Angostura Bitters", "Angostura Cocoa Bitters", "Inca Bitters", 
+                    "Orange Bitters", "Peychaud's Bitters", "Albumina", "Half Half", "woda z kwiatu pomarańczy", "oliwy truflowej"
+                ],
+
+                "Ozdoby i inne": [
+                    "Laska cynamonu", "Liście mięty", "Plaster cytryny", "liści bazylii", "ogórka", "różowy glitter", 
+                    "Ćwiartka limonki", "Esencji z trawy cytrynowej", "Espresso", "Napar z herbaty Earl Grey", 
+                    "Wrzątek", "marmolada z pomarańczy", "kawa przelewowa"
+                ]
+            };
+
+            return categorization;
+        }
+
+        // NOWA FUNKCJA: Generowanie struktury składników z grupowaniem gotowym do wyświetlenia
+        function getSortedIngredients() {
+            const categorization = categorizeIngredientsForBuilder();
+            const sortedIngredients = [];
+
+            // Kolejność kategorii
+            const categoryOrder = [
+                "Główne alkohole", "Dodatkowe alkohole", "Likiery",
+                "Soki i napoje", "Syropy i mixy", "Bittery i dodatki", "Ozdoby i inne"
+            ];
+
+            // Dodaj grupy składników
+            for (const category of categoryOrder) {
+                if (categorization[category] && categorization[category].length > 0) {
+                    sortedIngredients.push({
+                        type: 'category_group',
+                        categoryName: category,
+                        ingredients: categorization[category]
+                    });
+                }
+            }
+
+            return sortedIngredients;
+        }
+
+        // Funkcja do pobierania wszystkich unikalnych składników (zachowana dla kompatybilności)
         function getAllIngredients() {
             return ingredients.map(ingredient => ingredient.name);
         }
@@ -95,7 +166,6 @@ createApp({
         function generateWrongRecipe(drinkName) {
             const recipeWithNames = getRecipeWithNamesSimple(drinkName);
             if (!Array.isArray(recipeWithNames)) return [];
-
             return recipeWithNames.map(ingredient => ({
                 name: ingredient.name,
                 amount: Math.max(5, ingredient.amount + (Math.random() > 0.5 ?
@@ -154,7 +224,6 @@ createApp({
             return currentQuestion.value.type === 'review' && answerSelected.value;
         });
 
-        // NOWY computed property dla pokazywania poprawnej proporcji
         const showProportionsInfo = computed(() => {
             return currentQuestion.value.type === 'proportions' && answerSelected.value;
         });
@@ -189,7 +258,6 @@ createApp({
             const selected = selectedIngredients.value;
             const correct = correctIngredients.value;
             if (!selected || !correct) return false;
-
             return selected.size === correct.size &&
                 Array.from(selected).every(ing => correct.has(ing));
         });
@@ -212,9 +280,11 @@ createApp({
         const drinkCategories = computed(() => Object.keys(drinkLibrary));
         const currentDrinkItems = computed(() => drinkLibrary[selectedDrinkCategory.value] || []);
 
-        // Nowe computed properties dla biblioteki składników
         const ingredientLibraryCategories = computed(() => getIngredientLibraryCategories());
         const currentIngredientLibraryItems = computed(() => getIngredientsByCategory(selectedIngredientCategory.value));
+
+        // NOWY computed property dla pogrupowanych składników w builderze
+        const groupedIngredientsForBuilder = computed(() => getSortedIngredients());
 
         const shuffledGlassOptions = computed(() => {
             if (currentQuestion.value.type === 'builder' && currentQuestion.value.allGlasses) {
@@ -242,14 +312,13 @@ createApp({
             if (availableDrinks.length === 0) return null;
 
             const randomDrink = availableDrinks[Math.floor(Math.random() * availableDrinks.length)];
-            const allIngredients = shuffleArray(getAllIngredients());
             const allGlasses = shuffleArray([...glassOptions]);
             const drinkInfo = findDrinkByName(randomDrink);
 
             return {
                 type: 'builder',
                 drinkName: randomDrink,
-                allIngredients: allIngredients,
+                allIngredients: getSortedIngredients(), // Używamy pogrupowanej listy
                 allGlasses: allGlasses,
                 correctRecipe: recipes[randomDrink],
                 correctGlass: drinkInfo?.glass || '',
@@ -262,7 +331,6 @@ createApp({
             const recipe = recipes[drinkName];
             if (!recipe) return null;
 
-            // Pobierz tylko składniki z miarą 'ml'
             const mlIngredients = recipe.filter(item => {
                 if (item.ingredientId) {
                     const ingredient = getIngredientById(item.ingredientId);
@@ -273,20 +341,17 @@ createApp({
 
             if (mlIngredients.length === 0) return null;
 
-            // Wybierz losowy składnik z miarą 'ml'
             const randomIngredient = mlIngredients[Math.floor(Math.random() * mlIngredients.length)];
             const ingredient = getIngredientById(randomIngredient.ingredientId);
             const correctAmount = randomIngredient.amount;
 
-            // Losowo zdecyduj czy pokazać prawdziwą czy fałszywą proporcję
             const showCorrectAmount = Math.random() > 0.5;
 
             let displayAmount;
             if (showCorrectAmount) {
                 displayAmount = correctAmount;
             } else {
-                // ZMIANA: Generuj fałszywą proporcję (±5ml lub ±10ml)
-                const variations = [5, 10]; // Tylko 5ml lub 10ml
+                const variations = [5, 10];
                 const variation = variations[Math.floor(Math.random() * variations.length)];
                 const isAdd = Math.random() > 0.5;
                 displayAmount = Math.max(5, correctAmount + (isAdd ? variation : -variation));
@@ -304,7 +369,6 @@ createApp({
                 question: questionText,
                 answers: ['TAK', 'NIE'],
                 correctIndex: showCorrectAmount ? 0 : 1,
-                // DODANE: Info o poprawnej proporcji do wyświetlenia
                 correctInfo: `Poprawna proporcja: ${correctAmount} ml ${ingredient.name}`
             };
         }
@@ -318,8 +382,8 @@ createApp({
 
                 const allIngredients = getAllIngredients();
                 const isTrue = Math.random() > 0.5;
-
                 let ingredient;
+
                 if (isTrue) {
                     const x = Math.floor(Math.random() * drinkRecipe.length);
                     ingredient = drinkRecipe[x].name;
@@ -348,7 +412,6 @@ createApp({
                     const correct = item.price;
                     const availableVodkas = vodkas.filter(v => v.name !== item.name && v.price);
                     if (availableVodkas.length === 0) return null;
-
                     const wrong = shuffleArray(availableVodkas.map(v => v.price))[0];
                     const options = shuffleArray([correct, wrong]);
 
@@ -363,7 +426,6 @@ createApp({
                     const correct = item.ingredient;
                     const availableVodkas = vodkas.filter(v => v.ingredient !== correct && v.ingredient);
                     if (availableVodkas.length === 0) return null;
-
                     const wrong = shuffleArray(availableVodkas.map(v => v.ingredient))[0];
                     const options = shuffleArray([correct, wrong]);
 
@@ -378,7 +440,6 @@ createApp({
             } else if (type === 'builder') {
                 return createBuilderQuestion();
             }
-
             return null;
         }
 
@@ -518,7 +579,6 @@ createApp({
             }
         }
 
-        
         function resetCurrentBuilderQuestion() {
             builderStep.value = 1;
             selectedIngredients.value = new Set();
@@ -655,10 +715,10 @@ createApp({
             resetState();
         }
 
-
         function goToDrinkMap() {
             currentScreen.value = 'drink-map';
         }
+
         // RETURN
         return {
             // Screen management
@@ -676,7 +736,7 @@ createApp({
             hasSelectedAlcoholCategories,
             selectedAlcoholCategoriesList,
             toggleAlcoholCategory,
-            getCategoryEmoji, // DODANE
+            getCategoryEmoji,
 
             // Quiz state
             questions,
@@ -702,8 +762,6 @@ createApp({
             currentRecipe,
             recipes,
             getRecipeWithNames,
-
-            // DODANE: Nowy computed property
             showProportionsInfo,
 
             // Builder functionality
@@ -716,6 +774,7 @@ createApp({
             selectedGlass,
             showBuilderRecipe,
             showDecorationSuccess,
+            groupedIngredientsForBuilder, // NOWE: Pogrupowane składniki
             shuffledGlassOptions,
             correctIngredients,
             hasCorrectIngredients,
