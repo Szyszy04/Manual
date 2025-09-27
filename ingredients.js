@@ -5,7 +5,7 @@ export const ingredients = [
   { id: 1, name: "Absynth", measure: "ml" },
   { id: 2, name: "Absynth Spray", measure: "spray" },
   { id: 3, name: "Agave Mix", measure: "ml" },
-  { id: 4, name: "Aged Blended Scotch Whisky", measure: "ml" },
+  { id: 4, name: "Dewar’s 12 YO", measure: "ml" },
   { id: 5, name: "Aged Rum", measure: "ml" },
   { id: 6, name: "Albumina", measure: "ml" },
   { id: 7, name: "Amaro Nonino", measure: "ml" },
@@ -17,10 +17,10 @@ export const ingredients = [
   { id: 13, name: "Aster Gin", measure: "ml" },
   { id: 14, name: "Belvoir Elderflower", measure: "ml" },
   { id: 15, name: "Big Tom Tomato Juice", measure: "ml" },
-  { id: 16, name: "Blended Scotch Whisky", measure: "ml" },
+  { id: 16, name: "Dewar’s 8 Caribbean Smooth", measure: "ml" },
   { id: 17, name: "Bloody Mary Mix", measure: "ml" },
   { id: 18, name: "Bombay Sapphire", measure: "ml" },
-  { id: 19, name: "Bourbon Whiskey", measure: "ml" },
+  { id: 19, name: "Maker’s Mark", measure: "ml" },
   { id: 20, name: "Briottet - Violet", measure: "ml" },
   { id: 21, name: "Cachaça", measure: "ml" },
   { id: 22, name: "Caribbean Blend Rum", measure: "ml" },
@@ -51,7 +51,7 @@ export const ingredients = [
   { id: 48, name: "Half Half", measure: "ml" },
   { id: 49, name: "Hennessy V.S.", measure: "ml" },
   { id: 50, name: "Inca Bitters", measure: "drops" },
-  { id: 51, name: "Irish Whiskey", measure: "ml" },
+  { id: 51, name: "Tullamore DEW", measure: "ml" },
   { id: 52, name: "Islay Malt Spray", measure: "spray" },
   { id: 53, name: "Jamaican Rum", measure: "ml" },
   { id: 54, name: "Kordiał z Żurawiny i Róży", measure: "ml" },
@@ -82,7 +82,7 @@ export const ingredients = [
   { id: 79, name: "Red Wine", measure: "ml" },
   { id: 80, name: "Ruby Port", measure: "ml" },
   { id: 81, name: "Rum", measure: "ml" },
-  { id: 82, name: "Rye Whiskey", measure: "ml" },
+  { id: 82, name: "Jim Beam Rye", measure: "ml" },
   { id: 83, name: "Sloe Gin", measure: "ml" },
   { id: 84, name: "Sok grejpfrutowy", measure: "ml" },
   { id: 85, name: "Sok z cytryny", measure: "ml" },
@@ -115,7 +115,8 @@ export const ingredients = [
   { id: 112, name: "zalewy z wiśni", measure: "ml" },
   { id: 113, name: "Ćwiartka limonki", measure: "quarter" },
   { id: 114, name: "Fernet Branca", measure: "ml" },
-  { id: 115, name: "kawa przelewowa", measure: "ml"}
+  { id: 115, name: "kawa przelewowa", measure: "ml"},
+  { id: 116, name: "Jim Beam Black", measure: "ml"}
 ];
 
 // Miary używane w aplikacji
