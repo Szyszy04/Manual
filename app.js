@@ -87,7 +87,7 @@ createApp({
             const categorization = {
                 "Główne alkohole": [
                     "Wódka", "Gin", "Aster Gin", "Bombay Sapphire", "Archer's", "London Dry Gin", "Old Tom Gin", "Sloe Gin",
-                    "Aged Blended Scotch Whisky", "Blended Scotch Whisky", "Bourbon Whiskey", "Irish Whiskey", "Rye Whiskey",
+                    "Dewar’s 12 YO", "Dewar’s 8 Caribbean Smooth", "Maker’s Mark", "Jim Beam Black", "Jim Beam Rye", "Tullamore DEW",
                     "Aged Rum", "Caribbean Blend Rum", "Gold Rum", "Jamaican Rum", "Overproof White Rum", "Rum", "Spiced Rum", "White Rum",
                     "Tequila", "Pisco", "Cachaça"
                 ],
