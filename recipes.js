@@ -323,7 +323,7 @@ export const recipes = {
   ],
 
   "NEW YORK SOUR": [
-    {"ingredientId": 19, "amount": 40},
+    {"ingredientId": 116, "amount": 40},
     {"ingredientId": 85, "amount": 25},
     {"ingredientId": 90, "amount": 15},
     {"ingredientId": 6, "amount": 20},
