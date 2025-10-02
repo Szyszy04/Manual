@@ -232,7 +232,7 @@
 
                         <!-- Krok 2: Proporcje -->
                         <div v-if="builderStep === 2" class="builder-step">
-                            <h4>Krok 2: Ustaw proporcje składników</h4>
+                            <h4>Krok 2: Ustaw proporcje składników dla drinka "{{ currentQuestion.drinkName }}"</h4>
                             <div class="proportions-input">
                                 <div v-for="ingredient in Array.from(selectedIngredients)" :key="ingredient"
                                     class="proportion-item">
@@ -246,7 +246,7 @@
 
                         <!-- Krok 3: Szkło -->
                         <div v-if="builderStep === 3" class="builder-step">
-                            <h4>Krok 3: Wybierz odpowiednie szkło</h4>
+                            <h4>Krok 3: Wybierz odpowiednie szkło dla drinka "{{ currentQuestion.drinkName }}"</h4>
                             <div class="glasses-grid">
                                 <button v-for="glass in shuffledGlassOptions" :key="glass" @click="selectGlass(glass)"
                                     class="glass-btn" :class="{ selected: selectedGlass === glass }">
