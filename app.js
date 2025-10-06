@@ -2,9 +2,9 @@ import { drinkGroups } from './drink-map.js';
 import { alcoholLibrary } from './spirits.js';
 import { drinkLibrary } from './drinks.js';
 import {
-    ingredientLibrary,
-    getIngredientLibraryCategories,
-    getIngredientsByCategory
+    bottleLibrary,
+    getBottleLibraryCategories,
+    getBottlesByCategory
 } from './ingredient-library.js';
 
 const { createApp, ref, computed } = Vue;
@@ -21,8 +21,8 @@ createApp({
         const selectedDrinkCategory = ref('Wódka');
         const hiddenDrinks = ref(new Set());
 
-        // Stan dla biblioteki składników
-        const selectedIngredientCategory = ref('Whiskey');
+        // Stan dla biblioteki butelek (dawniej składników)
+        const selectedBottleCategory = ref('Wódka');
 
         // COMPUTED PROPERTIES
         const libraryCategories = computed(() => Object.keys(alcoholLibrary));
@@ -31,8 +31,8 @@ createApp({
         const drinkCategories = computed(() => Object.keys(drinkLibrary));
         const currentDrinkItems = computed(() => drinkLibrary[selectedDrinkCategory.value] || []);
 
-        const ingredientLibraryCategories = computed(() => getIngredientLibraryCategories());
-        const currentIngredientLibraryItems = computed(() => getIngredientsByCategory(selectedIngredientCategory.value));
+        const bottleLibraryCategories = computed(() => getBottleLibraryCategories());
+        const currentBottleLibraryItems = computed(() => getBottlesByCategory(selectedBottleCategory.value));
 
         // FUNKCJE NAWIGACJI
         function goToLibrary() {
@@ -43,8 +43,8 @@ createApp({
             currentScreen.value = 'drink-library';
         }
 
-        function goToIngredientLibrary() {
-            currentScreen.value = 'ingredient-library';
+        function goToBottleLibrary() {
+            currentScreen.value = 'bottle-library';
         }
 
         function goToStart() {
@@ -59,8 +59,8 @@ createApp({
             selectedDrinkCategory.value = category;
         }
 
-        function selectIngredientCategory(category) {
-            selectedIngredientCategory.value = category;
+        function selectBottleCategory(category) {
+            selectedBottleCategory.value = category;
         }
 
         function toggleDrinkVisibility(drinkName) {
@@ -86,7 +86,7 @@ createApp({
             currentScreen,
             goToLibrary,
             goToDrinkLibrary,
-            goToIngredientLibrary,
+            goToBottleLibrary,
             goToDrinkMap,
             goToStart,
 
@@ -107,12 +107,12 @@ createApp({
             toggleDrinkVisibility,
             isDrinkHidden,
 
-            // Ingredient library functionality
-            ingredientLibrary,
-            selectedIngredientCategory,
-            ingredientLibraryCategories,
-            currentIngredientLibraryItems,
-            selectIngredientCategory,
+            // Bottle library functionality
+            bottleLibrary,
+            selectedBottleCategory,
+            bottleLibraryCategories,
+            currentBottleLibraryItems,
+            selectBottleCategory,
 
             // Drink map functionality
             drinkGroups
