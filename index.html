@@ -6,69 +6,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteka</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/vue@3.3.4/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
     <div id="app">
         <!-- Ekran startowy -->
         <div v-if="currentScreen === 'start'" class="screen">
             <div class="container">
-                <h1>Biblioteka Barmańska</h1>
-
-                <!-- Opcje -->
+                <h1>Biblioteka</h1>
                 <div class="secondary-actions">
-                    <button @click="goToLibrary" class="btn btn-secondary">Alkohole</button>
-                    <button @click="goToDrinkLibrary" class="btn btn-secondary">Przepisy na Drinki</button>
-                    <button @click="goToIngredientLibrary" class="btn btn-secondary">Składniki</button>
-                    <button @click="goToDrinkMap" class="btn btn-secondary">Mapa Drinków</button>
-                </div>
-
-                <div class="footer-links">
-                    <a href="https://szyszy04.github.io/Manual_Quiz/" target="_blank"><p>Quizy</p></a>
+                    <button @click="goToLibrary" class="btn btn-secondary">
+                        🍸 Alkohole
+                    </button>
+                    <button @click="goToDrinkLibrary" class="btn btn-secondary">
+                        🍹 Przepisy na Drinki
+                    </button>
+                    <button @click="goToBottleLibrary" class="btn btn-secondary">
+                        🍾 Butelki
+                    </button>
+                    <button @click="goToDrinkMap" class="btn btn-secondary">
+                        🗺️ Mapa Drinków
+                    </button>
+                    <button class="btn btn-secondary">
+                        <a href="https://szyszy04.github.io/Manual_Quiz/" target="_blank">🎯 Quizy</a>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Ekran mapy drinków -->
+        <!-- Mapa drinków -->
         <div v-if="currentScreen === 'drink-map'" class="screen">
             <div class="container">
-                <h1>Mapa Drinków</h1>
+                <h2>Mapa Drinków</h2>
                 <p class="subtitle">Podobne drinki pogrupowane według składników</p>
 
-                <div class="drink-map-compact">
-                    <div v-for="(group, groupKey) in drinkGroups" :key="groupKey" class="compact-group">
-                        <div class="compact-group-header">
-                            <h3>{{ group.icon }} {{ group.name }}</h3>
+                <div class="drink-groups">
+                    <div v-for="group in drinkGroups" :key="group.name" class="drink-group">
+                        <div class="group-header">
+                            <h3 class="group-title">
+                                {{ group.icon }} {{ group.name }}
+                            </h3>
                             <span class="group-count">{{ group.drinks.length }} drinków</span>
                         </div>
 
-                        <div class="compact-drinks-grid">
-                            <div v-for="drink in group.drinks" :key="drink.name" class="compact-drink-card">
-                                <div class="compact-drink-header">
-                                    <h4>{{ drink.name }}</h4>
-                                </div>
-
-                                <div class="ingredients-sections">
-                                    <!-- Wspólne składniki -->
-                                    <div v-if="drink.commonIngredients && drink.commonIngredients.length > 0"
-                                        class="ingredients-group">
-                                        <div class="ingredients-list">
-                                            <div v-for="ingredient in drink.commonIngredients"
-                                                :key="'common-' + ingredient" class="ingredient-item common-ingredient">
-                                                {{ ingredient }}
-                                            </div>
-                                        </div>
+                        <div class="drinks-grid">
+                            <div v-for="drink in group.drinks" :key="drink.name" class="drink-card">
+                                <h4 class="drink-title">{{ drink.name }}</h4>
+                                <div class="ingredients-container">
+                                    <div v-for="ingredient in drink.commonIngredients" 
+                                         :key="ingredient" 
+                                         class="ingredient common-ingredient">
+                                        {{ ingredient }}
                                     </div>
-
-                                    <!-- Unikalne składniki -->
-                                    <div v-if="drink.uniqueIngredients && drink.uniqueIngredients.length > 0"
-                                        class="ingredients-group">
-                                        <div class="ingredients-list">
-                                            <div v-for="ingredient in drink.uniqueIngredients"
-                                                :key="'unique-' + ingredient" class="ingredient-item unique-ingredient">
-                                                {{ ingredient }}
-                                            </div>
-                                        </div>
+                                    <div v-for="ingredient in drink.specificIngredients" 
+                                         :key="ingredient" 
+                                         class="ingredient specific-ingredient">
+                                        {{ ingredient }}
                                     </div>
                                 </div>
                             </div>
@@ -82,16 +75,18 @@
             </div>
         </div>
 
-        <!-- Biblioteka Alkoholi -->
+        <!-- Biblioteka alkoholi -->
         <div v-if="currentScreen === 'library'" class="screen">
             <div class="container">
-                <h1>Biblioteka Alkoholi</h1>
+                <h2>Biblioteka Alkoholi</h2>
 
                 <div class="library-navigation">
                     <div class="categories-nav">
-                        <button v-for="category in libraryCategories" :key="category"
-                            @click="selectLibraryCategory(category)"
-                            :class="['category-btn', { active: selectedLibraryCategory === category }]">
+                        <button v-for="category in libraryCategories" 
+                                :key="category"
+                                @click="selectLibraryCategory(category)"
+                                :class="{ active: selectedLibraryCategory === category }"
+                                class="category-btn">
                             {{ category }}
                         </button>
                     </div>
@@ -110,25 +105,29 @@
             </div>
         </div>
 
-        <!-- Biblioteka Drinków -->
+        <!-- Biblioteka drinków -->
         <div v-if="currentScreen === 'drink-library'" class="screen">
             <div class="container">
-                <h1>Biblioteka Drinków</h1>
+                <h2>Biblioteka Drinków</h2>
 
                 <div class="library-navigation">
                     <div class="categories-nav">
-                        <button v-for="category in drinkCategories" :key="category"
-                            @click="selectDrinkCategory(category)"
-                            :class="['category-btn', { active: selectedDrinkCategory === category }]">
+                        <button v-for="category in drinkCategories" 
+                                :key="category"
+                                @click="selectDrinkCategory(category)"
+                                :class="{ active: selectedDrinkCategory === category }"
+                                class="category-btn">
                             {{ category }}
                         </button>
                     </div>
                 </div>
 
                 <div class="drinks-grid">
-                    <div v-for="drink in currentDrinkItems" :key="drink.name"
-                        :class="['drink-card', { hidden: isDrinkHidden(drink.name) }]"
-                        @click="toggleDrinkVisibility(drink.name)">
+                    <div v-for="drink in currentDrinkItems" 
+                         :key="drink.name" 
+                         class="drink-card"
+                         :class="{ hidden: isDrinkHidden(drink.name) }"
+                         @click="toggleDrinkVisibility(drink.name)">
                         <h3>{{ drink.name }}</h3>
                         <div class="glass-info">{{ drink.glass }}</div>
 
@@ -136,14 +135,18 @@
                             <div class="ingredients">
                                 <h4>Składniki</h4>
                                 <ul>
-                                    <li v-for="ingredient in drink.ingredients" :key="ingredient">{{ ingredient }}</li>
+                                    <li v-for="ingredient in drink.ingredients" :key="ingredient">
+                                        {{ ingredient }}
+                                    </li>
                                 </ul>
                             </div>
 
                             <div class="method">
                                 <h4>Przygotowanie</h4>
                                 <ol>
-                                    <li v-for="step in drink.method" :key="step">{{ step }}</li>
+                                    <li v-for="step in drink.preparation" :key="step">
+                                        {{ step }}
+                                    </li>
                                 </ol>
                             </div>
 
@@ -152,6 +155,7 @@
                                 <p>{{ drink.decoration }}</p>
                             </div>
                         </div>
+
                         <div v-else class="hidden-state">
                             Kliknij aby pokazać składniki i przepis
                         </div>
@@ -164,41 +168,28 @@
             </div>
         </div>
 
-        <!-- Biblioteka Składników -->
-        <div v-if="currentScreen === 'ingredient-library'" class="screen">
+        <!-- Biblioteka butelek -->
+        <div v-if="currentScreen === 'bottle-library'" class="screen">
             <div class="container">
-                <h1>Biblioteka Składników</h1>
+                <h2>Biblioteka Butelek</h2>
 
                 <div class="library-navigation">
                     <div class="categories-nav">
-                        <button v-for="category in ingredientLibraryCategories" :key="category"
-                            @click="selectIngredientCategory(category)"
-                            :class="['category-btn', { active: selectedIngredientCategory === category }]">
+                        <button v-for="category in bottleLibraryCategories" 
+                                :key="category"
+                                @click="selectBottleCategory(category)"
+                                :class="{ active: selectedBottleCategory === category }"
+                                class="category-btn">
                             {{ category }}
                         </button>
                     </div>
                 </div>
 
-                <div class="ingredient-library-content">
-                    <div v-for="(details, ingredient) in currentIngredientLibraryItems" :key="ingredient"
-                        class="ingredient-category-card">
-                        <h3>{{ ingredient }}</h3>
-                        <div class="brand-sections">
-                            <div class="brand-section">
-                                <h4>Manual</h4>
-                                <div class="brand-list">
-                                    <span v-for="brand in details.manual" :key="brand" class="brand-tag manual">{{ brand
-                                        }}</span>
-                                </div>
-                            </div>
-                            <div class="brand-section">
-                                <h4>Inne</h4>
-                                <div class="brand-list">
-                                    <span v-for="brand in details.inne" :key="brand" class="brand-tag other">{{ brand
-                                        }}</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="bottles-list">
+                    <div v-for="bottle in currentBottleLibraryItems" 
+                         :key="bottle" 
+                         class="bottle-item">
+                        {{ bottle }}
                     </div>
                 </div>
 
@@ -211,5 +202,4 @@
 
     <script type="module" src="app.js"></script>
 </body>
-
 </html>
