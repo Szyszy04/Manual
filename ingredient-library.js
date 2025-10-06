@@ -1,145 +1,277 @@
-// ingredient-library.js - Biblioteka składników z markami i typami
+// bottle-library.js - Biblioteka butelek zorganizowana według kategorii
 
-export const ingredientLibrary = {
-    "Whiskey": {
-        "Bourbon Whiskey": {
-            "manual": ["Maker's Mark", "Jim Beam Black"],
-            "inne": ["Angel's Envy", "Bulleit", "Wild Turkey 101", "Woodford Reserve"]
-        },
-        "Rye Whiskey": {
-            "manual": ["Jim Beam Rye"],
-            "inne": ["Bulleit 95 Rye", "Woodford Reserve Rye", "Jack Danis Rye"]
-        },
-        "Irish Whiskey": {
-            "manual": ["Tullamore DEW"],
-            "inne": ["Jameson"]
-        },
-        "Blended Scotch Whisky": {
-            "manual": ["Dewar’s 8 Caribbean Smooth", "Dewar’s 12 YO"],
-            "inne": ["Johnnie Walker", "Monkey Shoulder", "Chivas Regal"]
-        }
-    },
-    "Gin": {
-        "London Dry Gin": {
-            "manual": ["Bombay Sapphire", "Fords", "Beefeater"],
-            "inne": ["Tanqueray"]
-        },
-        "Old Tom Gin": {
-            "manual": ["Hayman's Old Tom"],
-            "inne": []
-        },
-        "Sloe Gin": {
-            "manual": ["Hayman’s Sloe Gin"],
-            "inne": []
-        },
-        "Contemporary  Gin": {
-            "manual": ["Aster Gin"],
-            "inne": ["Hendrick's", "Monkey 47", "Ginsanity", "Gin Mare", "Oxley", "Roku Gin"]
-        }
-    },
-    "Rum": {
-        "Aged Rum": {
-            "manual": ["Bacardi Carta Oro", "Bacardi 4 Anejo Cuatro", "Bacardi 8 yo"],
-            "inne": ["Havana Club Añejo 7 Años", "Dictador", "Santa Teresa 1796"]
-        },
-        "Spiced Rum": {
-            "manual": ["Bacardi Spiced"],
-            "inne": ["Union Spice & Sea Salt"]
-        },
-        "Overproof Rum": {
-            "manual": ["Rum Bar White Overproof"],
-            "inne": ["Worthy Park"]
-        },
-        "Jamaican Rum": {
-            "manual": ["Smith & Cross"],
-            "inne": []
-        },
-        "Other Rum": {
-            "manual": ["Wordl’s End Falernum", "Bank’s"],
-            "inne": []
-        }
-    },
-    "Tequila": {
-        "Blanco Tequila": {
-            "manual": ["Rooster Rojo Blanc"],
-            "inne": ["Casamigos Blanco", "Don Julio Blanco", "Patron Silver", "Sierra Antiguo Plata", "Sierra Antiguo Plata"]
-        },
-        "Reposado Tequila": {
-            "manual": ["Rooster Rojo Reposado"],
-            "inne": ["Don Julio Reposado", "Herradura Reposado", "Patrón Reposado"]
-        },
-    },
-    "Vodka": {
-        "Vodka": {
-            "manual": ["Ostoya", "Belvedere"],
-            "inne": ["Grey Goose", "Chopin"]
-        }
-    }
+export const bottleLibrary = {
+    "Wódka": [
+        "Belvedere",
+        "Belvedere Lake Bartężek",
+        "Belvedere Organic Infusions Blackberry & Lemongrass",
+        "Belvedere Organic Infusions Lemon & Basil",
+        "Belvedere Organic Infusions Pear & Ginger",
+        "Belvedere Smogóry Forest",
+        "Chopin",
+        "Grey Goose",
+        "Młody Ziemniak 2021",
+        "Ostoya",
+        "Podole Wielkie Okowita Pszenica",
+        "Podole Wielkie Okowita Ziemniak",
+        "Podole wielkie Okowita Żyto"
+    ],
+    "Gin": [
+        "Bombay Sapphire",
+        "Daybreak Astēr Gin",
+        "Fords Gin",
+        "Ginsanity",
+        "Gin Mare",
+        "Haymans Sloe Gin",
+        "Hendrick's",
+        "Hendrick's Amazonia",
+        "Hendrick's Grand Cabaret",
+        "Hendrick's Neptunia",
+        "Hendrick's Orbium",
+        "Monkey 47",
+        "Oxley",
+        "Roku Gin",
+        "Tanqueray Alcohol Free 0%",
+        "Tanqueray flor de Sevilla",
+        "Tanqueray nr. 10",
+        "Tessellis"
+    ],
+    "Whisky": [
+        "Aberfeldy 12",
+        "Aberfeldy 16",
+        "Aberlour 12",
+        "Ardbeg An Oa",
+        "Ardbeg Corryvreckan",
+        "Ardbeg The Ultimate Ten",
+        "Ardbeg Uigeadail",
+        "Ardbeg Wee Bestie",
+        "Auchentoshan 12",
+        "Auchentoshan 18",
+        "Auchentoshan American Oak",
+        "Auchentoshan Three Wood",
+        "Aultmore 12",
+        "Benriach The Original Ten 10",
+        "Benriach The Smoky Ten 10",
+        "Benriach The Smoky Twelve 12",
+        "Benriach The Twelve 12",
+        "Craigellachie 13",
+        "Glenfiddich 12",
+        "Glenfiddich 15",
+        "Glenfiddich 18",
+        "Glenfiddich Gran Reserva 21",
+        "Glenfiddich Project XX",
+        "Glenglassaugh Evolution",
+        "Glenglassaugh Revival",
+        "Glenglassaugh Torfa",
+        "Glenmorangie Extremely Rare 18",
+        "Glenmorangie Signet",
+        "Glenmorangie The Lasanta 12",
+        "Glenmorangie The Nectar D'Or",
+        "Glenmorangie The Original 12",
+        "Glenmorangie The Quinta Ruban 14",
+        "Laphroaig 10",
+        "Lagavulin 16",
+        "Mortlach 12 The Wee Witchie",
+        "Mortlach 16 Distiller's Dram",
+        "Oban 14",
+        "Royal Brackla 12 Sherry Cask Finish Oloroso",
+        "Singleton 12",
+        "Talisker 10",
+        "Talisker Storm",
+        "The Balvenie 12 American Oak",
+        "The Balvenie 16 Rum Cask",
+        "The Balvenie 21 Portwood",
+        "The Deveron 12",
+        "The Glenlivet 12",
+        "The Glenlivet 15",
+        "The Glendronach Allardice 18",
+        "The Glendronach Original 12",
+        "X by Glenmorangie",
+        "Chivas Regal 12",
+        "Chivas Regal 18",
+        "Chivas Regal XV",
+        "Johnnie Walker Aged 18 Year",
+        "Johnnie Walker Black Label",
+        "Johnnie Walker Black Label Sherry Finish",
+        "Johnnie Walker Blue Label",
+        "Johnnie Walker Gold Label Reserve",
+        "Johnnie Walker Green Label",
+        "Monkey Shoulder",
+        "Tullamore D.E.W.",
+        "Tullamore D.E.W. 12",
+        "Tullamore D.E.W. XO",
+        "Hibiki Suntory Whisky",
+        "Nikka Whisky From The Barrel"
+    ],
+    "Amerykańska Whiskey": [
+        "Angel's Envy Finished In Port Wine Barrels",
+        "Blantons The Original Single Barrel Bourbon Whiskey",
+        "Bulleit 95 Rye",
+        "Bulleit Aged 10 Years",
+        "Bulleit Bourbon",
+        "Gentleman Jack",
+        "Jack Daniels",
+        "Jack Daniels Apple",
+        "Jack Daniels Fire",
+        "Jack Daniels Honey",
+        "Jack Daniels Single Barrel",
+        "Jack Danis Rye",
+        "Jim Beam Black Extra-Aged",
+        "Jim Beam Rye",
+        "Maker's Mark",
+        "Maker's Mark 46",
+        "Wild Turkey 101",
+        "Woodford Reserve",
+        "Woodford Reserve Double Oaked",
+        "Woodford Reserve Rye"
+    ],
+    "Tequila i Mezcal": [
+        "Casamigos Añejo",
+        "Casamigos Blanco",
+        "Don Julio Blanco",
+        "Don Julio Reposado",
+        "Herradura Añejo",
+        "Herradura Plata",
+        "Herradura Reposado",
+        "Patrón Añejo",
+        "Patrón Reposado",
+        "Patrón Silver",
+        "Patrón XO Cafe",
+        "Rooster Rojo Blanco",
+        "Rooster Rojo Reposado",
+        "Sierra Antiguo Plata",
+        "el Rey Zapoteco (mezcal)"
+    ],
+    "Rum": [
+        "Bacardi Carta Blanca",
+        "Bacardi Reserva Ocho 8",
+        "Banks Island 5 Blend",
+        "Dictador 12 Ron Colombiano",
+        "Dictador 20 Colombian Rum",
+        "Dictador Aurum Colombian Aged Rum",
+        "Dictador Platinium Colombian Aged Rum",
+        "Dictador 2 Masters",
+        "Dictador Simfonia Libreto Port 2002",
+        "Dictador Simfonia Libreto Sherry 1998",
+        "Dictador Sinfonia Borbon 2002",
+        "Dictador Sinfonia Pardo 2004",
+        "Dos Maderas Trie Aged 5+5",
+        "Havana Club Añejo 7 Años",
+        "Havana Club Selección De Maestros",
+        "Santa Teresa 1796 Solera Rum",
+        "Smith & Cross Traditional Jamaican Rum",
+        "Union Spice & Sea Salt",
+        "World's End Rum Falernum",
+        "Worthy Park Overproof",
+        "Zacapa Sistema 23 Solera",
+        "Zacapa XO Solera Gran Reserva Especial"
+    ],
+    "Likiery, amari, bittery, kremy itp.": [
+        "Amaro Averna Sociliano",
+        "Amaro Montenegro",
+        "Amaro Nonino",
+        "Ancho Reyes",
+        "Aperol",
+        "Baileys The Original Irish Cream",
+        "Briottet Créme de Bergamote",
+        "Briottet Créme de Cacao Blanc",
+        "Briottet Créme de Cassis de Dijon",
+        "Briottet Créme de Mure",
+        "Briottet Liqueur de Menthe Verte",
+        "Briottet Liqueur de Violette",
+        "Campari",
+        "Carpano Antica Formula (wermut)",
+        "Chambord",
+        "Chartreuse Liqueur D'Elixir 1605",
+        "Chartreuse Par Les Pères",
+        "Cointreau",
+        "Cynamon Ricetta Originale",
+        "D.O.M. Bénédictine",
+        "Drambuie",
+        "Fernet Branca",
+        "Frangelico Liqueur",
+        "Galliano Amaretto",
+        "Galliano Espresso",
+        "Galliano L'autentico",
+        "Heering The Original Cherry Liqueur",
+        "Italicus Rosolio Di Bergamotto",
+        "Jägermeister",
+        "Kahlúa The Origin Coffee Liqueur",
+        "Lillet Blanc",
+        "Lillet Rose",
+        "Luxadro Maraschino Originale",
+        "Martini Riserva Speciale Ambrato",
+        "Martini Riserva Speciale Rubino",
+        "Metaxa 12 stars (grecki destylat winny z przyprawami)",
+        "Midori The Original Melon Liqueur",
+        "Mozart Darc Chocolate",
+        "Papidoux Calvasdos V.S.O.P. (calvados, brandy jabłkowa)",
+        "Pampelle",
+        "Peachtree",
+        "St~Germain Elderflower Liqueur",
+        "Suze",
+        "Patrón XO Cafe (tequila-likier kawowy)",
+        "Chartreuse Elixir 1605"
+    ],
+    "Pisco, Cachaça i inne destylaty": [
+        "Hennessy V.S. (koniak)",
+        "Hennessy V.S.O.P. (koniak)",
+        "Hennessy X.O. (koniak)",
+        "Leblon (cachaça)",
+        "Pisco Hermano (pisco)",
+        "Podole Wielkie Okowita Pszenica/Owocowa/Żyto/Ziemniak (okowita polska)"
+    ]
 };
 
-// Funkcje pomocnicze dla biblioteki składników
-export function getIngredientLibraryCategories() {
-    return Object.keys(ingredientLibrary);
+// Funkcje pomocnicze dla biblioteki butelek
+export function getBottleLibraryCategories() {
+    return Object.keys(bottleLibrary);
 }
 
-export function getIngredientsByCategory(category) {
-    return ingredientLibrary[category] || {};
+export function getBottlesByCategory(category) {
+    return bottleLibrary[category] || [];
 }
 
-export function getAllIngredientBrands() {
-    const allBrands = [];
-
-    Object.values(ingredientLibrary).forEach(category => {
-        Object.values(category).forEach(ingredient => {
-            allBrands.push(...ingredient.manual, ...ingredient.inne);
-        });
+export function getAllBottles() {
+    const allBottles = [];
+    Object.values(bottleLibrary).forEach(bottles => {
+        allBottles.push(...bottles);
     });
-
-    return [...new Set(allBrands)]; // usuń duplikaty
+    return allBottles;
 }
 
-export function searchIngredientBrand(brandName) {
+export function searchBottle(bottleName) {
     const results = [];
-
-    Object.entries(ingredientLibrary).forEach(([categoryName, category]) => {
-        Object.entries(category).forEach(([ingredientName, ingredient]) => {
-            const allBrands = [...ingredient.manual, ...ingredient.inne];
-            if (allBrands.some(brand => 
-                brand.toLowerCase().includes(brandName.toLowerCase())
-            )) {
-                results.push({
-                    category: categoryName,
-                    ingredient: ingredientName,
-                    brands: allBrands.filter(brand => 
-                        brand.toLowerCase().includes(brandName.toLowerCase())
-                    )
-                });
-            }
-        });
+    Object.entries(bottleLibrary).forEach(([categoryName, bottles]) => {
+        const matchingBottles = bottles.filter(bottle =>
+            bottle.toLowerCase().includes(bottleName.toLowerCase())
+        );
+        if (matchingBottles.length > 0) {
+            results.push({
+                category: categoryName,
+                bottles: matchingBottles
+            });
+        }
     });
-
     return results;
 }
 
-export function getIngredientStats() {
-    let totalIngredients = 0;
-    let totalBrands = 0;
-    let manualBrands = 0;
-    let otherBrands = 0;
+export function getBottleStats() {
+    let totalBottles = 0;
+    const categoryStats = {};
 
-    Object.values(ingredientLibrary).forEach(category => {
-        Object.values(category).forEach(ingredient => {
-            totalIngredients++;
-            manualBrands += ingredient.manual.length;
-            otherBrands += ingredient.inne.length;
-            totalBrands += ingredient.manual.length + ingredient.inne.length;
-        });
+    Object.entries(bottleLibrary).forEach(([category, bottles]) => {
+        totalBottles += bottles.length;
+        categoryStats[category] = bottles.length;
     });
 
     return {
-        totalIngredients,
-        totalBrands,
-        manualBrands,
-        otherBrands
+        totalBottles,
+        categoryStats
     };
 }
+
+// Eksport jako domyślna biblioteka składników dla kompatybilności
+export const ingredientLibrary = bottleLibrary;
+export const getIngredientLibraryCategories = getBottleLibraryCategories;
+export const getIngredientsByCategory = getBottlesByCategory;
