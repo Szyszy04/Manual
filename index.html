@@ -95,7 +95,85 @@
                 <div class="library-content">
                     <div v-for="item in currentLibraryItems" :key="item.name" class="library-item">
                         <h3>{{ item.name }}</h3>
-                        <p>{{ item.description }}</p>
+                        <div v-if="selectedLibraryCategory === 'Szkockie Single Malty'" class="spirit-details">
+               <div class="detail-section">
+                  <strong>Pochodzenie:</strong> {{ item.origin }}
+               </div>
+               <div class="detail-section">
+                  <strong>Beczki:</strong> {{ item.barrel }}
+               </div>
+               <div class="detail-section" v-if="item.facts">
+                  <strong>Ciekawostki:</strong>
+                  <ul v-if="Array.isArray(item.facts)">
+                     <li v-for="fact in item.facts" :key="fact">{{ fact }}</li>
+                  </ul>
+                  <p v-else>{{ item.facts }}</p>
+               </div>
+               <div class="detail-section">
+                  <strong>Aromat:</strong> {{ item.aromatic }}
+               </div>
+               <div class="detail-section">
+                  <strong>Smak:</strong> {{ item.flavor }}
+               </div>
+            </div>
+
+            <div v-else-if="selectedLibraryCategory === 'Rumy'" class="spirit-details">
+               <div class="detail-section">
+                  <strong>Kraj pochodzenia:</strong> {{ item.country }}
+               </div>
+               <div class="detail-section">
+                  <strong>Lata leżakowania:</strong> {{ item.aging }}
+               </div>
+               <div class="detail-section">
+                  <strong>Ciekawostki:</strong> {{ item.facts }}
+               </div>
+               <div class="detail-section">
+                  <strong>Aromat:</strong> {{ item.aroma }}
+               </div>
+               <div class="detail-section">
+                  <strong>Smak:</strong> {{ item.flavor }}
+               </div>
+            </div>
+
+            <div v-else-if="selectedLibraryCategory === 'Tequila'" class="spirit-details">
+               <div class="detail-section">
+                  <strong>Lata starzenia:</strong> {{ item.aging }}
+               </div>
+               <div class="detail-section">
+                  <strong>Charakterystyka/Ciekawostki:</strong> {{ item.characteristics }}
+               </div>
+               <div class="detail-section">
+                  <strong>Aromat:</strong> {{ item.aroma }}
+               </div>
+               <div class="detail-section">
+                  <strong>Smak:</strong> {{ item.flavor }}
+               </div>
+            </div>
+
+            <div v-else-if="selectedLibraryCategory === 'Amerykańskie Whiskey'" class="spirit-details">
+               <div class="detail-section">
+                  <strong>Styl:</strong> {{ item.style }}
+               </div>
+               <div class="detail-section">
+                  <strong>Beczki:</strong> {{ item.barrels }}
+               </div>
+               <div class="detail-section">
+                  <strong>Czas starzenia:</strong> {{ item.aging }}
+               </div>
+               <div class="detail-section">
+                  <strong>Ciekawostki:</strong> {{ item.facts }}
+               </div>
+               <div class="detail-section">
+                  <strong>Aromat:</strong> {{ item.aroma }}
+               </div>
+               <div class="detail-section">
+                  <strong>Smak:</strong> {{ item.flavor }}
+               </div>
+            </div>
+
+            <div v-else class="spirit-details">
+               <p>{{ item.description }}</p>
+            </div>
                     </div>
                 </div>
 
