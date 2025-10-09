@@ -611,3 +611,336 @@ grid-template-columns: 1fr;
         font-size: 0.9rem;
     }
 }
+
+
+
+/* Style dla zakładek w Mapie drinków */
+.map-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.map-tab-button {
+    padding: 12px 24px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.map-tab-button:hover {
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+.map-tab-button.tab-active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* Style dla zakładki Szkło */
+.glass-tab-content {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ecf0f1;
+}
+
+.glass-types-selector h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.glass-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.glass-button {
+    padding: 8px 16px;
+    border: 2px solid #ecf0f1;
+    border-radius: 6px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.glass-button:hover {
+    border-color: #3498db;
+    transform: translateY(-1px);
+}
+
+.glass-button.glass-active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.glass-drinks-section h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.glass-count {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.glass-drinks-list {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.glass-drink-item {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.glass-drink-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #dee2e6;
+    transform: translateY(-2px);
+}
+
+.drink-name {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.drink-category {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.drink-ingredients {
+    margin-bottom: 10px;
+}
+
+.ingredient-tag {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #bbdefb;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 2px 4px 2px 0;
+}
+
+.drink-decoration {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ecf0f1;
+    font-size: 0.9rem;
+    color: #34495e;
+}
+
+.drink-decoration strong {
+    color: #2c3e50;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .map-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .glass-buttons {
+        justify-content: flex-start;
+    }
+
+    .glass-drinks-list {
+        grid-template-columns: 1fr;
+    }
+
+    .glass-tab-content {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .glass-drink-item {
+        padding: 12px;
+    }
+
+    .drink-name {
+        font-size: 1rem;
+    }
+
+    .ingredient-tag {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+}
+
+
+
+/* Style dla nowego filtru alkoholu w zakładce Szkło */
+.alcohol-filter-selector {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.alcohol-filter-selector h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.alcohol-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.alcohol-filter-button {
+    padding: 10px 20px;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.alcohol-filter-button:hover {
+    border-color: #e74c3c;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.2);
+}
+
+.alcohol-filter-button.filter-active {
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.filter-info {
+    text-align: center;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.alcohol-filter-info {
+    text-align: center;
+    color: #e74c3c;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    background: #ffeaea;
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: 1px solid #ffcdd2;
+}
+
+.drink-alcohol-type {
+    display: inline-block;
+    background: #e8f5e8;
+    color: #2e7d32;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #c8e6c9;
+}
+
+.no-drinks-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.no-drinks-message p {
+    margin: 0;
+    font-style: italic;
+}
+
+/* Responsywność dla nowych elementów */
+@media (max-width: 768px) {
+    .alcohol-filter-selector {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .alcohol-filter-buttons {
+        justify-content: flex-start;
+        gap: 6px;
+    }
+
+    .alcohol-filter-button {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    .filter-info, .alcohol-filter-info {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .alcohol-filter-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .alcohol-filter-selector h3 {
+        font-size: 1.1rem;
+    }
+
+    .drink-alcohol-type {
+        font-size: 0.7rem;
+        padding: 2px 8px;
+    }
+}
