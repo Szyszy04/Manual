@@ -1366,6 +1366,22 @@ export const drinkLibrary = {
             ],
             decoration: "coin z pomarańczy"
         },
+                {
+            name: "Old fashioned",
+            glass: "Old Fashioned",
+            method: [
+                "Wlewamy wszystkie składniki do szklanicy (lub bezpośrednio",
+                "intensywnie mieszamy przez około 15 sekund.",
+                "Kolejno cedzimy do szkła na bryłkę (jeżeli koktajl robimy",
+                "Wykańczamy zestem z pomarańczy i dekorujemy wiśnią",
+            ],
+            ingredients: [
+                "50 ml Maker’s Mark",
+                "5 ml syropu cukrowego",
+                "3 x dash Angostura Bitters",
+            ],
+            decoration: "Kółko - coin z pomarańczy położony na bryłce + wiśnia"
+        },
         {
             name: "Loretto old fashioned",
             glass: "Old Fashioned",
