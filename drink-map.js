@@ -22,6 +22,11 @@ export const drinkGroups = [
                 specificIngredients: ["40 ml Bourbon Whiskey", "15 ml Red Wine"]
             },
             {
+                name: "Pisco Sour",
+                commonIngredients: ["30 ml sok z limonki", "20 ml syrop cukrowy", "20 ml albumina"],
+                specificIngredients: ["50 ml Pisco La Caravedo Quebranta", "3 krople Inca Bitters"]
+            },
+            {
                 name: "Amaretto Sour",
                 commonIngredients: ["30 ml sok z cytryny", "10 ml syrop cukrowy", "20 ml albumina"],
                 specificIngredients: ["10 ml Blended Scotch Whisky", "40 ml Galliano Amaretto"]
