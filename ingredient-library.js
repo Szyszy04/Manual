@@ -184,7 +184,7 @@ export const bottleLibrary = {
         "Chambord",
         "Chartreuse Liqueur D'Elixir 1605",
         "Chartreuse Par Les Pères",
-        "Cointreau",
+        "Cointreau (quantro)",
         "Cynamon Ricetta Originale",
         "D.O.M. Bénédictine",
         "Drambuie",
