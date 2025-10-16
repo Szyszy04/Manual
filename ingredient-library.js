@@ -10,11 +10,8 @@ export const bottleLibrary = {
         "Belvedere Smogóry Forest",
         "Chopin",
         "Grey Goose",
-        "Młody Ziemniak 2021",
         "Ostoya",
-        "Podole Wielkie Okowita Pszenica",
-        "Podole Wielkie Okowita Ziemniak",
-        "Podole wielkie Okowita Żyto"
+        "Ostoya Black"
     ],
     "Gin": [
         "Bombay Sapphire",
@@ -219,7 +216,8 @@ export const bottleLibrary = {
         "Hennessy X.O. (koniak)",
         "Leblon (cachaça)",
         "Pisco Hermano (pisco)",
-        "Podole Wielkie Okowita Pszenica/Owocowa/Żyto/Ziemniak (okowita polska)"
+        "Podole Wielkie Okowita Pszenica/Owocowa/Żyto/Ziemniak (okowita polska)",
+        "Młody Ziemniak 2021"
     ]
 };
 
