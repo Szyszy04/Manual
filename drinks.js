@@ -309,7 +309,7 @@ export const drinkLibrary = {
                 "Na środku układamy odrobinę maliny iofilizowanej oraz",
             ],
             ingredients: [
-                "40 ml London Dry Gin",
+                "40 ml Bombay Sapphire",
                 "10 ml Martini Extra Dry",
                 "20 ml soku z cytryny",
                 "15 ml syropu malinowego",
@@ -329,7 +329,7 @@ export const drinkLibrary = {
                 "Zest z cytryny karbowany przypinamy do stópki za pomocą",
             ],
             ingredients: [
-                "20 ml London Dry Gin",
+                "20 ml Bombay Sapphire",
                 "20 ml Cocchi Americano",
                 "20 ml Cointreau",
                 "20 ml soku z cytryny",
@@ -363,7 +363,7 @@ export const drinkLibrary = {
                 "Okraszamy olejkami grejpfrutowym + 3 krople oliwy mandarynkowej",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "20 ml Food Town Bars Lime Cordial",
             ],
             decoration: "olejki ze skórki grejpfrutowej + 3 krople oliwy mandarynkowej"
@@ -379,7 +379,7 @@ export const drinkLibrary = {
                 "Cedzimy podwójnie do szkła w pełni wypełnionego lodem.",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "20 ml syrop cukrowy",
                 "1/2 cytryny",
                 "8 liści bazylii",
@@ -396,7 +396,7 @@ export const drinkLibrary = {
                 "Mieszamy łyżeczką i dekorujemy miętą oraz ogórkiem.",
             ],
             ingredients: [
-                "40 ml London Dry Gin",
+                "40 ml Bombay Sapphire",
                 "20 ml Syrop miodowo-imbirowy",
                 "20 ml soku z limonki",
                 "8 liści mięty",
@@ -415,7 +415,7 @@ export const drinkLibrary = {
                 "Wrzucamy do środka kółko z pomarańczy.",
             ],
             ingredients: [
-                "40 ml London Dry Gin",
+                "40 ml Bombay Sapphire",
                 "40 ml Carpano Antica Formula",
                 "2,5 ml Fernet Branca",
             ],
@@ -431,7 +431,7 @@ export const drinkLibrary = {
                 "Okraszamy całość olejkami limonki i do środka wisienka.",
             ],
             ingredients: [
-                "20 ml London Dry Gin",
+                "20 ml Bombay Sapphire",
                 "20 ml Chartreuse Green",
                 "20 ml Luxardo Maraschino",
                 "20 ml Sok z limonki",
@@ -447,7 +447,7 @@ export const drinkLibrary = {
                 "Okraszamy olejkami pomarańczowymi i do środka wrzucamy wiśnie",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "20 ml Carpano Antica",
                 "10 ml Noilly Prat",
                 "5 ml Cointreau",
@@ -466,7 +466,7 @@ export const drinkLibrary = {
                 "Okraszamy całość olejkami pomarańczowymi i dekorujemy żółtkiem z pomarańczy",
             ],
             ingredients: [
-                "20 ml London Dry Gin",
+                "20 ml Bombay Sapphire",
                 "20 ml Martini Rubino",
                 "20 ml Martini Bitter",
             ],
@@ -503,7 +503,7 @@ export const drinkLibrary = {
                 "Cedzimy do szkła na lód.",
             ],
             ingredients: [
-                "40 ml London Dry Gin",
+                "40 ml Bombay Sapphire",
                 "15 ml Cherry Heering",
                 "5 ml D.O.M. Benedictine",
                 "5 ml Cointreau",
@@ -522,7 +522,7 @@ export const drinkLibrary = {
                 "Dekorujemy miętą wsadzoną w czips z limonki.",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "15 ml syrop miętowy",
                 "20 ml sok z limonki",
                 "6 liści mięty",
@@ -574,11 +574,11 @@ export const drinkLibrary = {
                 "Okraszamy olejkami cytrynowymi i dekorujemy dwiema żółtymi różyczkami",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "20 ml Cointreau",
                 "20 ml soku z cytryny",
-                "5 ml cukru",
                 "15 ml Albuminy",
+                "5 ml syropu cukrowego",
             ],
             decoration: "2 żółte różyczki + olejki cytrynowe"
         },
@@ -592,7 +592,7 @@ export const drinkLibrary = {
                 "Okraszamy całość olejkami grejpfrutowymi i i dekorujemy żółtkiem z grejpfruta",
             ],
             ingredients: [
-                "20 ml London Dry Gin",
+                "20 ml Bombay Sapphire",
                 "20 ml Suze",
                 "20 ml Lillet Blanc",
             ],
@@ -608,7 +608,7 @@ export const drinkLibrary = {
                 "Dekorujemy zestem z cytryny.",
             ],
             ingredients: [
-                "20 ml London Dry Gin",
+                "20 ml Bombay Sapphire",
                 "20 ml Cocchi Americano",
                 "20 ml creme de cacao",
                 "20 ml soku z cytryny",
