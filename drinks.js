@@ -168,7 +168,7 @@ export const drinkLibrary = {
                 "Spryskujemy całość olejkami cytrynowymi.",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "20 ml Orgeat",
                 "20 ml soku z cytryny",
                 "1 x dash Angostura Bitters",
@@ -184,7 +184,7 @@ export const drinkLibrary = {
                 "Okraszamy olejkami cytrynowymi.",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "10 ml Luxardo Maraschino",
                 "5 ml Briottet - Violet",
                 "15 ml soku z cytryny",
@@ -201,7 +201,7 @@ export const drinkLibrary = {
                 "Spryskujemy całość olejkami pomarańczowymi",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "20 ml Syrop miodowo-imbirowy",
                 "20 ml soku z cytryny",
                 "20 ml soku z pomarańczy",
@@ -249,7 +249,7 @@ export const drinkLibrary = {
                 "Dekorujemy i serwujemy z rurką.",
             ],
             ingredients: [
-                "40 ml London Dry Gin Gin",
+                "40 ml Bombay Sapphire",
                 "20 ml soku z cytryny",
                 "10 ml syropu cukrowego",
                 "15 ml Chambord",
@@ -265,10 +265,10 @@ export const drinkLibrary = {
                 "Okraszamy koktajl olejkami pomarańczowymi i dekorujemy żółtą różyczką",
             ],
             ingredients: [
-                "50 ml London Dry Gin",
+                "50 ml Bombay Sapphire",
                 "15 ml Cointreau",
                 "20 ml sok z cytryny",
-                "łyżeczka barmańska marmolady z pomarańczy",
+                "2,5 ml marmolady z pomarańczy",
             ],
             decoration: "olejki pomarańczowe i żółta różyczka położona na wierzchu."
         },
@@ -313,7 +313,7 @@ export const drinkLibrary = {
                 "10 ml Martini Extra Dry",
                 "20 ml soku z cytryny",
                 "15 ml syropu malinowego",
-                "2,5 ml cukru",
+                "2,5 ml syropu cukrowego",
                 "15 ml Albumina",
             ],
             decoration: "na środku koktajlu odrobinę maliny iofilizowanej + kwiat"
