@@ -323,7 +323,7 @@ export const drinkLibrary = {
             decoration: "na środku koktajlu odrobinę maliny iofilizowanej + kwiat gomfreny"
         },
         {
-            name: "Corpse",
+            name: "Corpse Reviver #2",
             glass: "Nick & Nora",
             method: [
                 "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
