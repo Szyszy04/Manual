@@ -212,7 +212,7 @@ export const drinkLibrary = {
             name: "BIJOU",
             glass: "Nick & Nora",
             method: [
-                "Wszystkie składniki mieszamy w szklanicy przez około 15 - 20",
+                "Wszystkie składniki mieszamy w szklanicy przez około 15 - 20 sekund",
                 "Cedzimy do uprzednio zmrożonego szkła.",
                 "Spryskujemy olejkami cytrynowymi.",
             ],
@@ -243,8 +243,8 @@ export const drinkLibrary = {
             glass: "Collins",
             method: [
                 "Do szkła wlewamy gin, sok z cytryny i cukier.",
-                "Uzupełniamy szkło w 3/4 kruszonym lodem i intensywnie",
-                "Dopełniamy kruszonym lodem, tak aby ponad rant wystawał lekki",
+                "Uzupełniamy szkło w 3/4 kruszonym lodem i intensywnie mieszamy",
+                "Dopełniamy kruszonym lodem, tak aby ponad rant wystawał lekki kopczyk",
                 "Nalewamy na wierzch likier Chambord.",
                 "Dekorujemy i serwujemy z rurką.",
             ],
@@ -274,14 +274,18 @@ export const drinkLibrary = {
         },
         {
             name: "CHARLIE CHAPLIN",
-            glass: "",
-            method: [],
+            glass: "Nick & Nora",
+            method: [
+                "Wszystkie składniki wlewamy do shakera",
+                "Wstrząsamy całość niezwykle mocno",
+                "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
+            ],
             ingredients: [
                 "30 ml Hayman’s Sloe Gin",
                 "30 ml Archer’s",
                 "30 ml sok z limonki",
             ],
-            decoration: ""
+            decoration: "suszony kwiatostan róży"
         },
         {
             name: "CHRYSANTHEMUM",
@@ -290,14 +294,14 @@ export const drinkLibrary = {
                 "Wszystkie składniki wlewamy do szklanicy.",
                 "Mieszamy około 15 sekund.",
                 "Cedzimy całość do uprzednio zmrożonego szkła.",
-                "zest z cytryny wycięty nożyczkami krawieckimi -",
+                "zest z cytryny przypinamy na spinacz do rantu szkła.",
             ],
             ingredients: [
                 "60 ml Noilly Prat",
                 "10 ml D.O.M. Benedictine",
                 "1 x dash Absynth",
             ],
-            decoration: "zest z cytryny wycięty nożyczkami krawieckimi -"
+            decoration: "zest z cytryny wycięty nożyczkami krawieckimi - karbowanymi"
         },
         {
             name: "CLOVER CLUB",
@@ -306,7 +310,7 @@ export const drinkLibrary = {
                 "Wszystkie składniki wstrząsamy energicznie bez lodu.",
                 "Kolejno mocny shake z dużą ilością lodu.",
                 "Cedzimy podwójnie koktajl do uprzednio zmrożonego szkła.",
-                "Na środku układamy odrobinę maliny iofilizowanej oraz",
+                "Na środku układamy odrobinę maliny liofilizowanej oraz dekorujemy kwiatem Gomfreny",
             ],
             ingredients: [
                 "40 ml Bombay Sapphire",
@@ -316,7 +320,7 @@ export const drinkLibrary = {
                 "2,5 ml syropu cukrowego",
                 "15 ml Albumina",
             ],
-            decoration: "na środku koktajlu odrobinę maliny iofilizowanej + kwiat"
+            decoration: "na środku koktajlu odrobinę maliny iofilizowanej + kwiat gomfreny"
         },
         {
             name: "Corpse",
@@ -326,7 +330,7 @@ export const drinkLibrary = {
                 "Zmrożone szkło spryskujemy absynthem.",
                 "Cedzimy koktajl podwójnie.",
                 "Spryskujemy całość olejkami cytrynowymi.",
-                "Zest z cytryny karbowany przypinamy do stópki za pomocą",
+                "Zest z cytryny karbowany przypinamy do stópki za pomocą spinacza",
             ],
             ingredients: [
                 "20 ml Bombay Sapphire",
@@ -335,7 +339,7 @@ export const drinkLibrary = {
                 "20 ml soku z cytryny",
                 "Absynth Spray",
             ],
-            decoration: "zest z cytryny wycięty nożyczkami krawieckimi -"
+            decoration: "zest z cytryny wycięty nożyczkami krawieckimi - karbowanymi"
         },
         {
             name: "DRY MARTINI",
@@ -390,7 +394,7 @@ export const drinkLibrary = {
             name: "GIN GIN MULE",
             glass: "Collins",
             method: [
-                "Wszystkie składniki (z wyjątkiem piwa imbirowego)",
+                "Wszystkie składniki wstrząsamy intensywnie (z ogórkiem/bez piwa)",
                 "Cedzimy na lód do wysokiego szkła.",
                 "Dopełniamy piwem imbirowym.",
                 "Mieszamy łyżeczką i dekorujemy miętą oraz ogórkiem.",
@@ -450,7 +454,7 @@ export const drinkLibrary = {
                 "50 ml Bombay Sapphire",
                 "20 ml Carpano Antica",
                 "10 ml Noilly Prat",
-                "5 ml Cointreau",
+                "5 ml Luxardo Maraschino / Cointreau",
                 "1 x dash Orange Bitters",
                 "1 x dash Angostura Bitters",
             ],
@@ -462,7 +466,7 @@ export const drinkLibrary = {
             method: [
                 "Wlewamy wszystkie składniki do szklanicy.",
                 "Mieszamy przez około 10 - 15 sekund.",
-                "Cedzimy do szkła po ściance (nie na bryłkę - tak aby nie zmazać",
+                "Cedzimy do szkła po ściance (nie na bryłkę - tak aby nie zmazać stempla)",
                 "Okraszamy całość olejkami pomarańczowymi i dekorujemy żółtkiem z pomarańczy",
             ],
             ingredients: [
@@ -477,10 +481,10 @@ export const drinkLibrary = {
             glass: "Collins",
             method: [
                 "Wstrząsamy wszystkie składniki intensywnie bez lodu.",
-                "Wstrząsamy potężnie, doprawdy intensywnie koktajl przez około",
-                "Cedzimy do szkła (doskonale kiedy jest zmrożone.",
+                "Wstrząsamy potężnie, doprawdy intensywnie koktajl przez około 20 sekund",
+                "Cedzimy do szkła (doskonale kiedy jest zmrożone)",
                 "Wypłukujemy shaker odrobiną wody gazowanej.",
-                "Wlewamy powoli wodę gazowaną na środek koktajlu chcąc",
+                "Wlewamy powoli wodę gazowaną na środek koktajlu chcąc uzyskać wzrastający ,,grzyb” z piany",
                 "Z wierzchu kładziemy żółtą różyczkę.",
             ],
             ingredients: [
@@ -588,7 +592,7 @@ export const drinkLibrary = {
             method: [
                 "Wlewamy wszystkie składniki do szklanicy.",
                 "Mieszamy przez około 10 - 15 sekund.",
-                "Cedzimy do szkła po ściance (nie na bryłkę - tak aby nie zmazać",
+                "Cedzimy do szkła po ściance (nie na bryłkę - tak aby nie zmazać stempla)",
                 "Okraszamy całość olejkami grejpfrutowymi i i dekorujemy żółtkiem z grejpfruta",
             ],
             ingredients: [
@@ -596,7 +600,7 @@ export const drinkLibrary = {
                 "20 ml Suze",
                 "20 ml Lillet Blanc",
             ],
-            decoration: "olejki grejpfrutowe + zest z grejpfruta wycięty nożyczkami"
+            decoration: "olejki grejpfrutowe + zest z grejpfruta wycięty nożyczkami karbowanymi / krawieckimi"
         },
         {
             name: "XX CENTURY COCKTAIL",
