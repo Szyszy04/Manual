@@ -219,7 +219,7 @@ export const drinkLibrary = {
             ingredients: [
                 "20 ml Aster Gin",
                 "20 ml Martini Rubino",
-                "20 ml Green Chartreuse",
+                "20 ml Chartreuse Green",
                 "1 x dash Orange Bitters",
             ],
             decoration: "Olejki z cytryny i wiśnia"
