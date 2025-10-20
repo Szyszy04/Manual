@@ -452,7 +452,7 @@ export const drinkLibrary = {
             ],
             ingredients: [
                 "50 ml Bombay Sapphire",
-                "20 ml Carpano Antica",
+                "20 ml Carpano Antica Formula",
                 "10 ml Noilly Prat",
                 "5 ml Luxardo Maraschino / Cointreau",
                 "1 x dash Orange Bitters",
