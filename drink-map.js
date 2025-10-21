@@ -156,6 +156,11 @@ export const drinkGroups = [
                 name: "XX Century Cocktail",
                 commonIngredients: ["20 ml Bombay Sapphire", "20 ml Cocchi Americano", "20 ml sok z cytryny"],
                 specificIngredients: ["20 ml creme de cacao"]
+            },
+            {
+                name: "vesper MARTINI",
+                commonIngredients: ["30 ml Beefeater London Dry Gin", "5 ml Cocchi Americano"],
+                specificIngredients: ["10 ml Belvedere Vodka"]
             }
         ]
     },
