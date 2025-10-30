@@ -19,17 +19,22 @@ createApp({
 
         // Stan dla biblioteki drinków
         const selectedDrinkCategory = ref('Wódka');
-        const hiddenDrinks = ref(new Set());
+        const expandedDrinks = ref(new Set());
 
-        // Stan dla biblioteki butelek (dawniej składników)
+        // Stan dla biblioteki butelek
         const selectedBottleCategory = ref('Wódka');
 
-        // Stan dla mapy drinków - nowa funkcjonalność
-        const selectedMapTab = ref('grupy'); // domyślna zakładka
-        const selectedGlassType = ref('Nick Nora'); // domyślny typ szkła
+        // Stan dla mapy drinków
+        const selectedMapTab = ref('grupy');
+        const selectedGlassType = ref('Nick Nora');
+        const selectedAlcoholFilter = ref('Wszystkie');
 
-        // NOWE: Stan dla filtrowania szkła po alkoholu
-        const selectedAlcoholFilter = ref('Wszystkie'); // nowy filtr alkoholu
+        // ===== NOWE: Stan dla AFK =====
+        const afkSelectedAlcohols = ref(new Set());
+        const afkSelectedTime = ref(30);
+        const afkIsRunning = ref(false);
+        const afkCurrentDrink = ref(null);
+        let afkInterval = null;
 
         // COMPUTED PROPERTIES
         const libraryCategories = computed(() => Object.keys(alcoholLibrary));
@@ -41,11 +46,10 @@ createApp({
         const bottleLibraryCategories = computed(() => getBottleLibraryCategories());
         const currentBottleLibraryItems = computed(() => getBottlesByCategory(selectedBottleCategory.value));
 
-        // Funkcja pomocnicza do kategoryzacji alkoholi w drinkach
+        // Funkcja kategoryzacji alkoholi
         function categorizeAlcohol(drink) {
             const ingredients = drink.ingredients || [];
             const ingredientsText = ingredients.join(' ').toLowerCase();
-
             if (ingredientsText.includes('wódka') || ingredientsText.includes('wdka') || ingredientsText.includes('vodka') || ingredientsText.includes('belvedere')) {
                 return 'Wódka';
             } else if (ingredientsText.includes('gin') || ingredientsText.includes('bombay') || ingredientsText.includes('fords') || ingredientsText.includes('beefeater')) {
@@ -54,12 +58,12 @@ createApp({
                 return 'Rum';
             } else if (ingredientsText.includes('tequila')) {
                 return 'Tequila';
-            } else if (ingredientsText.includes('whisky') || ingredientsText.includes('whiskey') || ingredientsText.includes('bourbon') || 
-                       ingredientsText.includes('mark') || ingredientsText.includes('jim beam') || ingredientsText.includes('dewar') ||
-                       ingredientsText.includes('tullamore') || ingredientsText.includes('hennessy')) {
+            } else if (ingredientsText.includes('whisky') || ingredientsText.includes('whiskey') || ingredientsText.includes('bourbon') ||
+                ingredientsText.includes('mark') || ingredientsText.includes('jim beam') || ingredientsText.includes('dewar') ||
+                ingredientsText.includes('tullamore') || ingredientsText.includes('hennessy')) {
                 return 'Whiskey';
-            } else if (ingredientsText.includes('martini fiero') || ingredientsText.includes('martini vibrantefloreale') || 
-                       ingredientsText.includes('gin bezalkoholowy')) {
+            } else if (ingredientsText.includes('martini fiero') || ingredientsText.includes('martini vibrantefloreale') ||
+                ingredientsText.includes('gin bezalkoholowy')) {
                 return 'Bezalkoholowe';
             } else {
                 return 'Inne';
@@ -78,14 +82,34 @@ createApp({
             return Array.from(types).sort();
         });
 
-        // Zmodyfikowane computed properties dla szkła z sortowaniem i filtrowaniem
+        // Computed dla wygodnej listy alkoholi do AFK
+        const afkAvailableAlcohols = computed(() => {
+            return Array.from(alcoholTypes.value).filter(a => a !== 'Wszystkie');
+        });
+
+        // ===== NOWE: Computed dla drinków w AFK puli =====
+        const afkAvailableDrinks = computed(() => {
+            if (afkSelectedAlcohols.value.size === 0) return [];
+
+            const drinks = [];
+            Object.values(drinkLibrary).forEach(categoryDrinks => {
+                categoryDrinks.forEach(drink => {
+                    const alcoholType = categorizeAlcohol(drink);
+                    if (afkSelectedAlcohols.value.has(alcoholType)) {
+                        drinks.push(drink);
+                    }
+                });
+            });
+            return drinks;
+        });
+
+        // Zmodyfikowane computed properties dla szkła
         const glassTypes = computed(() => {
             const types = new Set();
             Object.values(drinkLibrary).forEach(categoryDrinks => {
                 categoryDrinks.forEach(drink => {
                     if (drink.glass) {
-                        // Filtruj po alkoholu jeśli wybrano konkretny
-                        if (selectedAlcoholFilter.value === 'Wszystkie' || 
+                        if (selectedAlcoholFilter.value === 'Wszystkie' ||
                             categorizeAlcohol(drink) === selectedAlcoholFilter.value) {
                             types.add(drink.glass);
                         }
@@ -93,17 +117,14 @@ createApp({
                 });
             });
 
-            // Sortowanie szkła według liczby wystąpień (malejąco)
             const typesArray = Array.from(types);
             const glassCountMap = {};
-
             typesArray.forEach(glassType => {
                 glassCountMap[glassType] = 0;
                 Object.values(drinkLibrary).forEach(categoryDrinks => {
                     categoryDrinks.forEach(drink => {
                         if (drink.glass === glassType) {
-                            // Sprawdź czy drink pasuje do filtru alkoholowego
-                            if (selectedAlcoholFilter.value === 'Wszystkie' || 
+                            if (selectedAlcoholFilter.value === 'Wszystkie' ||
                                 categorizeAlcohol(drink) === selectedAlcoholFilter.value) {
                                 glassCountMap[glassType]++;
                             }
@@ -112,7 +133,6 @@ createApp({
                 });
             });
 
-            // Sortuj według liczby wystąpień (malejąco)
             return typesArray.sort((a, b) => glassCountMap[b] - glassCountMap[a]);
         });
 
@@ -121,10 +141,8 @@ createApp({
             Object.entries(drinkLibrary).forEach(([category, drinks]) => {
                 drinks.forEach(drink => {
                     if (drink.glass) {
-                        // Filtruj po alkoholu jeśli wybrano konkretny
-                        if (selectedAlcoholFilter.value === 'Wszystkie' || 
+                        if (selectedAlcoholFilter.value === 'Wszystkie' ||
                             categorizeAlcohol(drink) === selectedAlcoholFilter.value) {
-
                             if (!result[drink.glass]) {
                                 result[drink.glass] = [];
                             }
@@ -163,6 +181,64 @@ createApp({
             currentScreen.value = 'start';
         }
 
+        function goToDrinkMap() {
+            currentScreen.value = 'drink-map';
+        }
+
+        // ===== NOWE: Funkcje dla AFK =====
+        function goToAFK() {
+            currentScreen.value = 'afk';
+            afkIsRunning.value = false;
+            afkSelectedAlcohols.value = new Set();
+            afkCurrentDrink.value = null;
+        }
+
+        function afkToggleAlcohol(alcohol) {
+            const newSet = new Set(afkSelectedAlcohols.value);
+            if (newSet.has(alcohol)) {
+                newSet.delete(alcohol);
+            } else {
+                newSet.add(alcohol);
+            }
+            afkSelectedAlcohols.value = newSet;
+        }
+
+        function afkIsAlcoholSelected(alcohol) {
+            return afkSelectedAlcohols.value.has(alcohol);
+        }
+
+        function afkGetRandomDrink() {
+            if (afkAvailableDrinks.value.length === 0) return null;
+            const randomIndex = Math.floor(Math.random() * afkAvailableDrinks.value.length);
+            return afkAvailableDrinks.value[randomIndex];
+        }
+
+        function afkStart() {
+            if (afkSelectedAlcohols.value.size === 0 || afkAvailableDrinks.value.length === 0) {
+                alert('Wybierz przynajmniej jeden alkohol!');
+                return;
+            }
+
+            afkIsRunning.value = true;
+            afkCurrentDrink.value = afkGetRandomDrink();
+
+            // Ustaw interval do zmiany drinka
+            if (afkInterval) clearInterval(afkInterval);
+            afkInterval = setInterval(() => {
+                afkCurrentDrink.value = afkGetRandomDrink();
+            }, afkSelectedTime.value * 1000);
+        }
+
+        function afkStop() {
+            afkIsRunning.value = false;
+            afkCurrentDrink.value = null;
+            if (afkInterval) {
+                clearInterval(afkInterval);
+                afkInterval = null;
+            }
+        }
+
+        // Funkcje do wyboru
         function selectLibraryCategory(category) {
             selectedLibraryCategory.value = category;
         }
@@ -175,24 +251,19 @@ createApp({
             selectedBottleCategory.value = category;
         }
 
-        function toggleDrinkVisibility(drinkName) {
-            if (hiddenDrinks.value.has(drinkName)) {
-                hiddenDrinks.value.delete(drinkName);
+        function toggleDrinkExpanded(drinkName) {
+            if (expandedDrinks.value.has(drinkName)) {
+                expandedDrinks.value.delete(drinkName);
             } else {
-                hiddenDrinks.value.add(drinkName);
+                expandedDrinks.value.add(drinkName);
             }
-            hiddenDrinks.value = new Set(hiddenDrinks.value);
+            expandedDrinks.value = new Set(expandedDrinks.value);
         }
 
-        function isDrinkHidden(drinkName) {
-            return hiddenDrinks.value.has(drinkName);
+        function isDrinkExpanded(drinkName) {
+            return expandedDrinks.value.has(drinkName);
         }
 
-        function goToDrinkMap() {
-            currentScreen.value = 'drink-map';
-        }
-
-        // Nowe funkcje dla mapy drinków
         function selectMapTab(tab) {
             selectedMapTab.value = tab;
         }
@@ -201,10 +272,8 @@ createApp({
             selectedGlassType.value = glassType;
         }
 
-        // NOWA: Funkcja dla wyboru filtru alkoholu
         function selectAlcoholFilter(alcoholType) {
             selectedAlcoholFilter.value = alcoholType;
-            // Resetuj wybrane szkło do pierwszego dostępnego po filtrowaniu
             if (glassTypes.value.length > 0) {
                 selectedGlassType.value = glassTypes.value[0];
             }
@@ -219,6 +288,7 @@ createApp({
             goToBottleLibrary,
             goToDrinkMap,
             goToStart,
+            goToAFK,
 
             // Library functionality
             alcoholLibrary,
@@ -232,10 +302,10 @@ createApp({
             selectedDrinkCategory,
             drinkCategories,
             currentDrinkItems,
-            hiddenDrinks,
+            expandedDrinks,
             selectDrinkCategory,
-            toggleDrinkVisibility,
-            isDrinkHidden,
+            toggleDrinkExpanded,
+            isDrinkExpanded,
 
             // Bottle library functionality
             bottleLibrary,
@@ -256,10 +326,23 @@ createApp({
             drinksByGlass,
             currentGlassDrinks,
 
-            // NOWE: Alcohol filter functionality
+            // Alcohol filter functionality
             alcoholTypes,
             selectedAlcoholFilter,
-            selectAlcoholFilter
+            selectAlcoholFilter,
+
+            // ===== NOWE: AFK functionality =====
+            afkSelectedAlcohols,
+            afkSelectedTime,
+            afkIsRunning,
+            afkCurrentDrink,
+            afkAvailableAlcohols,
+            afkAvailableDrinks,
+            afkToggleAlcohol,
+            afkIsAlcoholSelected,
+            afkStart,
+            afkStop,
+            afkGetRandomDrink
         };
     }
 }).mount('#app');
