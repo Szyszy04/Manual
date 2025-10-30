@@ -6,6 +6,7 @@ export const drinkLibrary = {
         {
             name: "Bloody Mary",
             glass: "Collins",
+            shortMethod: "shake",
             method: [
                 "Do shakera wlewamy wszystkie składniki (z wyjątkiem oliwy truflowej)",
                 "Mieszamy łyżeczką barmańską",
@@ -25,6 +26,7 @@ export const drinkLibrary = {
         {
             name: "Cosmopolitan",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Do szklanicy wlewamy premix",
                 "Mieszamy koktajl około 15 sekund",
@@ -42,6 +44,7 @@ export const drinkLibrary = {
         {
             name: "Espresso Martini",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki intensywnie wstrząsamy z dużą ilością lodu",
                 "Cedzimy podwójnie do uprzednio zmrożonego szkła"
@@ -58,6 +61,7 @@ export const drinkLibrary = {
         {
             name: "Golden Cadillac",
             glass: "Nick & Nora",
+            shortMethod: "dry shake",
             method: [
                 "Wlewamy wszystkie składniki do shakera",
                 "Wstrząsamy intensywnie",
@@ -73,6 +77,7 @@ export const drinkLibrary = {
         {
             name: "Grasshooper",
             glass: "Nick & Nora",
+            shortMethod: "dry shake",
             method: [
                 "Wlewamy wszystkie składniki do shakera",
                 "Wstrząsamy intensywnie",
@@ -89,6 +94,7 @@ export const drinkLibrary = {
         {
             name: "Long Island Iced Tea",
             glass: "Swizzle Glass",
+            shortMethod: "dry shake",
             method: [
                 "Wlewamy wszystkie składniki do shakera (poza Colą)",
                 "Wstrząsamy intensywnie",
@@ -110,6 +116,7 @@ export const drinkLibrary = {
         {
             name: "Pornstar Martini",
             glass: "Coupe + kieliszek do wódki",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy z dużą ilością lodu",
                 "Cedzimy podwójnie do uprzednio zmrożonego szkła"
@@ -126,6 +133,7 @@ export const drinkLibrary = {
         {
             name: "Vodka Sour",
             glass: "Double Old Fashioned Glass",
+            shortMethod: "dry shake i zwykły",
             method: [
                 "Wstrząsamy wszystko bez lodu (szybki dry shake)",
                 "Kolejno dynamiczny shake z lodem",
@@ -143,6 +151,7 @@ export const drinkLibrary = {
         {
             name: "Kyiv Mule",
             glass: "Collins",
+            shortMethod: "szklo",
             method: [
                 "Do copper muga wlewamy wszystkie składniki",
                 "Mieszamy łyżeczką w celu połączenia wszystkich składników",
@@ -162,6 +171,7 @@ export const drinkLibrary = {
         {
             name: "ARM & NAVY",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
                 "Cedzimy koktajl podwójnie.",
@@ -178,6 +188,7 @@ export const drinkLibrary = {
         {
             name: "AVIATION",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wstrząsamy wszystkie składniki z dużą ilością lodu.",
                 "Cedzimy do uprzednio zmrożonego szkła.",
@@ -195,6 +206,7 @@ export const drinkLibrary = {
         {
             name: "BEE’S KNEES",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
                 "Cedzimy koktajl podwójnie.",
@@ -211,6 +223,7 @@ export const drinkLibrary = {
         {
             name: "BIJOU",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki mieszamy w szklanicy przez około 15 - 20 sekund",
                 "Cedzimy do uprzednio zmrożonego szkła.",
@@ -227,6 +240,7 @@ export const drinkLibrary = {
         {
             name: "Bombay & Tonic",
             glass: "Copa Bombay",
+            shortMethod: "szklo",
             method: [
                 "Do kieliszka wlewamy Gin",
                 "zasypujemy w pełni lodem",
@@ -241,6 +255,7 @@ export const drinkLibrary = {
         {
             name: "BRAMBLE",
             glass: "Collins",
+            shortMethod: "szklo",
             method: [
                 "Do szkła wlewamy gin, sok z cytryny i cukier.",
                 "Uzupełniamy szkło w 3/4 kruszonym lodem i intensywnie mieszamy",
@@ -259,6 +274,7 @@ export const drinkLibrary = {
         {
             name: "BREAKFAST MARTINI",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki mocno wstrząsamy z dużą ilością lodu.",
                 "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
@@ -275,6 +291,7 @@ export const drinkLibrary = {
         {
             name: "CHARLIE CHAPLIN",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wlewamy do shakera",
                 "Wstrząsamy całość niezwykle mocno",
@@ -290,6 +307,7 @@ export const drinkLibrary = {
         {
             name: "CHRYSANTHEMUM",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki wlewamy do szklanicy.",
                 "Mieszamy około 15 sekund.",
@@ -306,6 +324,7 @@ export const drinkLibrary = {
         {
             name: "CLOVER CLUB",
             glass: "Nick & Nora",
+            shortMethod: "dry shake i zwykły",
             method: [
                 "Wszystkie składniki wstrząsamy energicznie bez lodu.",
                 "Kolejno mocny shake z dużą ilością lodu.",
@@ -325,6 +344,7 @@ export const drinkLibrary = {
         {
             name: "Corpse Reviver #2",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
                 "Zmrożone szkło spryskujemy absynthem.",
@@ -344,6 +364,7 @@ export const drinkLibrary = {
         {
             name: "DRY MARTINI",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki wlewamy do szklanicy.",
                 "Mieszamy z lodem dłużej - rozcieńczamy bardziej koktajl.",
@@ -360,6 +381,7 @@ export const drinkLibrary = {
         {
             name: "gimlet",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki wlewamy do szklanicy.",
                 "Mieszamy intensywnie przez około 20 sekund.",
@@ -375,6 +397,7 @@ export const drinkLibrary = {
         {
             name: "GIN BASIL SMASH",
             glass: "Old Fashioned",
+            shortMethod: "shake",
             method: [
                 "Bazylię układamy na dnie shakera.",
                 "Przykrywamy ją połówką cytryny i dodajemy cukier.",
@@ -393,6 +416,7 @@ export const drinkLibrary = {
         {
             name: "GIN GIN MULE",
             glass: "Collins",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy intensywnie (z ogórkiem/bez piwa)",
                 "Cedzimy na lód do wysokiego szkła.",
@@ -412,6 +436,7 @@ export const drinkLibrary = {
         {
             name: "HANKY PANKY",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki mieszamy około 20 sekund w szklanicy.",
                 "Cedzimy całość do uprzednio zmrożonego szkła.",
@@ -428,6 +453,7 @@ export const drinkLibrary = {
         {
             name: "LAST WORD",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wlewamy do shakera.",
                 "Wstrząsamy niezwykle intensywnie.",
@@ -445,6 +471,7 @@ export const drinkLibrary = {
         {
             name: "Martinez",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki mieszamy przez około 15 sekund.",
                 "kolejno cedzimy do uprzednio zmrożonego szkła.",
@@ -463,6 +490,7 @@ export const drinkLibrary = {
         {
             name: "NEGRONI",
             glass: "Whisky Glass",
+            shortMethod: "szklanica",
             method: [
                 "Wlewamy wszystkie składniki do szklanicy.",
                 "Mieszamy przez około 10 - 15 sekund.",
@@ -479,6 +507,7 @@ export const drinkLibrary = {
         {
             name: "RAMOS GIN FIZZ",
             glass: "Collins",
+            shortMethod: "dry shake",
             method: [
                 "Wstrząsamy wszystkie składniki intensywnie bez lodu.",
                 "Wstrząsamy potężnie, doprawdy intensywnie koktajl przez około 20 sekund",
@@ -502,6 +531,7 @@ export const drinkLibrary = {
         {
             name: "SINGAPORE SLING",
             glass: "Collins",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy intensywnie z lodem",
                 "Cedzimy do szkła na lód.",
@@ -520,6 +550,7 @@ export const drinkLibrary = {
         {
             name: "Southside",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wstrząsamy wszystkie składniki z dużą ilością lodu.",
                 "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
@@ -536,6 +567,7 @@ export const drinkLibrary = {
         {
             name: "TUXEDO COCKTAIL",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki mieszamy około 20 sekund w szklanicy.",
                 "Cedzimy całość do uprzednio zmrożonego szkła.",
@@ -555,6 +587,7 @@ export const drinkLibrary = {
         {
             name: "vesper MARTINI",
             glass: "Mini Coupette",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wlewamy do shakera.",
                 "Wstrząsamy całość niezwykle mocno.",
@@ -571,6 +604,7 @@ export const drinkLibrary = {
         {
             name: "WHITE LADY",
             glass: "Nick & Nora",
+            shortMethod: "dry shake i zwykły",
             method: [
                 "Wszystkie składniki wstrząsamy bez lodu.",
                 "Kolejno wstrząsamy z dużą ilością lodu.",
@@ -589,6 +623,7 @@ export const drinkLibrary = {
         {
             name: "white NEGRONI",
             glass: "Whisky Glass",
+            shortMethod: "szklanica",
             method: [
                 "Wlewamy wszystkie składniki do szklanicy.",
                 "Mieszamy przez około 10 - 15 sekund.",
@@ -605,6 +640,7 @@ export const drinkLibrary = {
         {
             name: "XX CENTURY COCKTAIL",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy z dużą ilością lodu.",
                 "Cedzimy koktajl podwójnie.",
@@ -624,6 +660,7 @@ export const drinkLibrary = {
         {
             name: "AIR MAIL",
             glass: "Champagne Flute",
+            shortMethod: "shake",
             method: [
                 "Wstrząsamy niezwykle intensywnie wszystkie składnik (z wyjątkiem Prosecco)",
                 "Cedzimy do uprzednio zmrożonego szkła",
@@ -641,6 +678,7 @@ export const drinkLibrary = {
         {
             name: "Caipirinha",
             glass: "Double Old Fashioned Glass",
+            shortMethod: "szklo muddler",
             method: [
                 "Ćwiartki limonki ucieramy za pomocą muddlera w szkle",
                 "Dodajemy cachaçę i zasypujemy w pełni lodem",
@@ -657,6 +695,7 @@ export const drinkLibrary = {
         {
             name: "Classic Rum Swizzle",
             glass: "Collins",
+            shortMethod: "szklo",
             method: [
                 "Do szkła wlewamy wszystkie składniki (z wyjątkiem Angostura Bitters)",
                 "Do szkła z płynem wkładamy Swizzle Stick",
@@ -696,6 +735,7 @@ export const drinkLibrary = {
         {
             name: "Cuba Libre",
             glass: "Collins",
+            shortMethod: "szklo muddler",
             method: [
                 "Ćwiartki limonki ucieramy za pomocą muddlera w szkle",
                 "Dodajemy rum i zasypujemy w pełni lodem",
@@ -712,6 +752,7 @@ export const drinkLibrary = {
         {
             name: "Daiquiri",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki intensywnie wstrząsamy z dużą ilością lodu",
                 "Cedzimy podwójnie do uprzednio zmrożonego szkła",
@@ -745,6 +786,7 @@ export const drinkLibrary = {
         {
             name: "El Presidente",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki mieszamy przez około 15 sekund",
                 "Cedzimy całość do uprzednio zmrożonego szkła",
@@ -763,6 +805,7 @@ export const drinkLibrary = {
         {
             name: "Fish House Punch",
             glass: "Collins",
+            shortMethod: "shake",
             method: [
                 "Wlewamy składniki do shakera",
                 "Wstrząsamy intensywnie",
@@ -782,6 +825,7 @@ export const drinkLibrary = {
         {
             name: "Fog Cutter",
             glass: "Collins",
+            shortMethod: "shake",
             method: [
                 "Wstrząsamy niezwykle intensywnie wszystkie składniki",
                 "Cedzimy na lód do wysokiego szkła"
@@ -800,6 +844,7 @@ export const drinkLibrary = {
         {
             name: "Hemingway Daiquiri",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy intensywnie z lodem",
                 "Cedzimy do uprzednio zmrożonego szkła",
@@ -818,6 +863,7 @@ export const drinkLibrary = {
         {
             name: "Hot Rum Grog",
             glass: "Irish Coffee Cup",
+            shortMethod: "wrzątek",
             method: [
                 "Szkło uzupełniamy wrzątkiem i trzymamy przez chwilę aby je rozgrzać",
                 "Wlewamy wszystkie składniki",
@@ -837,6 +883,7 @@ export const drinkLibrary = {
         {
             name: "Mai Tai",
             glass: "Double Old Fashioned Glass",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wlewamy do shakera",
                 "Dodajemy kości lodu i wstrząsamy",
@@ -857,6 +904,7 @@ export const drinkLibrary = {
         {
             name: "Mojito",
             glass: "Collins",
+            shortMethod: "szklo",
             method: [
                 "Limonkę ucieramy wraz z syropem miętowym",
                 "Dodajemy miętę i rum",
@@ -878,6 +926,7 @@ export const drinkLibrary = {
         {
             name: "Mojito Norblito",
             glass: "Collins",
+            shortMethod: "shake",
             method: [
                 "Premix wlewamy do shakera",
                 "Wstrząsamy intensywnie",
@@ -897,6 +946,7 @@ export const drinkLibrary = {
         {
             name: "Nuclear Daiquiri",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wstrząsamy niezwykle intensywnie wszystkie składniki",
                 "Cedzimy podwójnie do uprzednio zmrożonego szkła",
@@ -914,6 +964,7 @@ export const drinkLibrary = {
         {
             name: "Old Cuban",
             glass: "Collins",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki intensywnie wstrząsamy z dużą ilością lodu (z wyjątkiem prosecco)",
                 "Cedzimy podwójnie do szkła na lód",
@@ -954,6 +1005,7 @@ export const drinkLibrary = {
         {
             name: "Pisco Sour",
             glass: "Nick & Nora",
+            shortMethod: "dry shake i zwykły",
             method: [
                 "Wszystkie składniki wstrząsamy bez lodu.",
                 "Kolejno wstrząsamy z dużą ilością lodu",
@@ -971,6 +1023,7 @@ export const drinkLibrary = {
         {
             name: "Right Hand Cocktail",
             glass: "Old Fashioned",
+            shortMethod: "szklanica",
             method: [
                 "Wlewamy wszystkie składniki do szklanicy",
                 "Intensywnie mieszamy przez około 15 sekund",
@@ -988,6 +1041,7 @@ export const drinkLibrary = {
         {
             name: "Zombie",
             glass: "Collins",
+            shortMethod: "shake",
             method: [
                 "Wlewamy wszystkie składniki do shakera",
                 "Wstrząsamy z dużą ilością lodu",
@@ -1011,6 +1065,7 @@ export const drinkLibrary = {
         {
             name: "PINK CHIHUAHUA",
             glass: "Nick & Nora",
+            shortMethod: "dry shake i zwykły",
             method: [
                 "Wszystkie składniki wstrząsamy bez lodu",
                 "Kolejno wstrząsamy z lodem.",
@@ -1029,6 +1084,7 @@ export const drinkLibrary = {
         {
             name: "margarita",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Szkło dekorujemy solą - crustę umieszczamy,",
                 "Wszystkie składniki wstrząsamy intensywnie z dużą ilością",
@@ -1045,6 +1101,7 @@ export const drinkLibrary = {
                 {
             name: "TOMMY’S MARGARITA",
             glass: "Old Fashioned",
+            shortMethod: "shake",
             method: [
                 "Wlewamy wszystkie składniki do shake",
                 "Wstrząsamy z dużą ilością lodu.",
@@ -1060,6 +1117,7 @@ export const drinkLibrary = {
         {
             name: "LA PALOMA",
             glass: "Collins",
+            shortMethod: "szklo",
             method: [
                 "Ściankę szklanki smarujemy limonką, bądź innym cytrusem. Posypujemy naszym pikantno - słonym miksem.",
                 "Do szkła wlewamy wszystkie składniki i mieszamy łyżeczką barmańską",
@@ -1078,6 +1136,7 @@ export const drinkLibrary = {
         {
             name: "NEGRONI 0%",
             glass: "Whisky Glass",
+            shortMethod: "szklanica",
             method: [
                 "Wlewamy wszystkie składniki do szklanicy.",
                 "Mieszamy przez około 10 - 15 sekund.",
@@ -1094,6 +1153,7 @@ export const drinkLibrary = {
         {
             name: "Martini Fiero spritz",
             glass: "Copa Martini",
+            shortMethod: "kieliszek",
             method: [
                 "Wlewamy 80 ml Martini Fiero do kieliszka",
                 "Dolewamy 100 ml Martini Prosecco",
@@ -1109,6 +1169,7 @@ export const drinkLibrary = {
         {
             name: "Martini Fiero & Tonik",
             glass: "Copa Martini",
+            shortMethod: "kieliszek",
             method: [
                 "Wlewamy 80 ml Martini Fiero do kieliszka",
                 "Zasypujemy w pełni lodem",
@@ -1124,6 +1185,7 @@ export const drinkLibrary = {
         {
             name: "Vibrante/Floreale Tonik",
             glass: "Copa Martini",
+            shortMethod: "kieliszek",
             method: [
                 "Wlewamy 40 ml Martini Vibrante/Floreale",
                 "Zasypujemy w pełni lodem",
@@ -1139,6 +1201,7 @@ export const drinkLibrary = {
         {
             name: "Martini vibrante/floreale spritz",
             glass: "Copa Martini",
+            shortMethod: "kieliszek",
             method: [
                 "Wlewamy 40 ml Martini Vibrante/Floreale do kieliszka",
                 "Dolewamy 80 ml Prosecco bezalkoholowego bezalkoholowego oraz kordiał z czarnego bzu",
@@ -1157,6 +1220,7 @@ export const drinkLibrary = {
         {
             name: "Amaretto Sour",
             glass: "Nick & Nora",
+            shortMethod: "dry shake i zwykły",
             method: [
                 "Wstrząsamy składniki bez lodu",
                 "Kolejno energicznie z lodem",
@@ -1174,6 +1238,7 @@ export const drinkLibrary = {
         {
             name: "Blood & Sand",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki (z wyjątkiem Islay Malt Spray) wstrząsamy z dużą ilością lodu",
                 "Zanim przecedzimy koktajl, szkło spryskujemy Islay Malt Spray",
@@ -1191,6 +1256,7 @@ export const drinkLibrary = {
         {
             name: "Boulevardier",
             glass: "Old Fashioned",
+            shortMethod: "szklanica",
             method: [
                 "Wlewamy składniki do szklanicy",
                 "Mieszamy przez około 15 sekund",
@@ -1206,6 +1272,7 @@ export const drinkLibrary = {
         {
             name: "Manhattan",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki mieszamy w szklanicy (potrzebujemy około 20 sekund mieszania)",
                 "Cedzimy do uprzednio schłodzonego szkła",
@@ -1220,6 +1287,7 @@ export const drinkLibrary = {
         {
             name: "Whisky Sour",
             glass: "Double Old Fashioned Glass",
+            shortMethod: "dry shake i zwykły",
             method: [
                 "Wstrząsamy wszystko bez lodu (szybki dry shake)",
                 "Kolejno dynamiczny shake z lodem",
@@ -1237,6 +1305,7 @@ export const drinkLibrary = {
         {
             name: "Irish Coffee",
             glass: "Irish Coffee Cup",
+            shortMethod: "wrzątek",
             method: [
                 "Do Irish Coffee Cup wlewamy wrzątek z ekspresu. Po chwili wylewamy",
                 "Kolejno wlewamy Whiskey i syrop waniliowy",
@@ -1254,6 +1323,7 @@ export const drinkLibrary = {
         },        {
             name: "BRANDY CRUSTA",
             glass: "Champagne Flute",
+            shortMethod: "shake",
             method: [
                 "Szkło opruszamy cukrem pomarańczowym - uprzednio smarujemycytryną aby się cukier",
                 "Wszystkie składniki wstrząsamy intensywnie.",
@@ -1286,6 +1356,7 @@ export const drinkLibrary = {
         {
             name: "Corpse Reviver #1",
             glass: "Nick & Nora",
+            shortMethod: "szklanica",
             method: [
                 "Wlewamy wszystkie składniki do szklanicy.",
                 "Mieszamy z dużą ilością lodu przez 20 sekund.",
@@ -1302,6 +1373,7 @@ export const drinkLibrary = {
         {
             name: "Derby",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wszystkie składniki wstrząsamy intensywnie z dużą ilością lodu.",
                 "Okraszamy całość olejkami grejpfrutowymi.",
@@ -1317,6 +1389,7 @@ export const drinkLibrary = {
         {
             name: "HOT TODDY",
             glass: "Hot Toddy Cup",
+            shortMethod: "wrzątek",
             method: [
                 "Szkło zalewamy wrzątkiem.",
                 "Wylewamy wrzątek.",
@@ -1337,6 +1410,7 @@ export const drinkLibrary = {
         {
             name: "JAPANESE COCKTAIL",
             glass: "Old Fashioned",
+            shortMethod: "szklanica",
             method: [
                 "Mieszamy wszystkie składniki w szklanicy.",
                 "Cedzimy na bryłkę lodową do niskiego szkła.",
@@ -1352,6 +1426,7 @@ export const drinkLibrary = {
         {
             name: "NEW YORK SOUR",
             glass: "Double Old Fashioned Glass",
+            shortMethod: "dry shake i zwykły",
             method: [
                 "Wstrząsamy wszystko bez lodu (szybki dry shake - bez wina",
                 "Kolejno dynamiczny shake z lodem.",
@@ -1373,6 +1448,7 @@ export const drinkLibrary = {
                 {
             name: "Old fashioned",
             glass: "Old Fashioned",
+            shortMethod: "szklanica",
             method: [
                 "Wlewamy wszystkie składniki do szklanicy (lub bezpośrednio",
                 "intensywnie mieszamy przez około 15 sekund.",
@@ -1389,6 +1465,7 @@ export const drinkLibrary = {
         {
             name: "Loretto old fashioned",
             glass: "Old Fashioned",
+            shortMethod: "szklanica",
             method: [
                 "Wlewamy wszystkie składniki do szklanicy (lub bezpośrednio",
                 "intensywnie mieszamy przez około 15 sekund.",
@@ -1406,6 +1483,7 @@ export const drinkLibrary = {
         {
             name: "PAPER PLANE",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wlewamy premix do shakera.",
                 "Dodajemy sok z cytryny",
@@ -1424,6 +1502,7 @@ export const drinkLibrary = {
         {
             name: "PENICILLIN",
             glass: "Old Fashioned",
+            shortMethod: "shake",
             method: [
                 "Wlewamy składniki do shakera.",
                 "Wstrząsamy intensywnie.",
@@ -1442,6 +1521,7 @@ export const drinkLibrary = {
         {
             name: "Sazerac",
             glass: "Szkło do koniaku - snifter",
+            shortMethod: "szklanica",
             method: [
                 "Szkło schładzamy uzupełniając lodem i wodą.",
                 "Wszystkie składniki wlewamy do szklanicy (oprócz Absynth Spray)",
@@ -1463,6 +1543,7 @@ export const drinkLibrary = {
         {
             name: "TRYNIDAD SOUR",
             glass: "Nick & Nora",
+            shortMethod: "shake",
             method: [
                 "Wstrząsamy wszystkie składniki z duża ilością lodu.",
                 "Cedzimy podwójnie do uprzednio zmrożonego szkła.",
@@ -1479,6 +1560,7 @@ export const drinkLibrary = {
         {
             name: "WHISKEY SMASH",
             glass: "Old Fashioned",
+            shortMethod: "shake",
             method: [
                 "Mięte kładziemy na spodzie shakera => przykrywamy ją cytryną",
                 "Dodajemy syrop cukrowy i naciskamy na cytrynę muddlerem wyciskając z niej sok(intensywnie)",
@@ -1496,6 +1578,7 @@ export const drinkLibrary = {
         {
             name: "VIEUX CAREE",
             glass: "Old Fashioned",
+            shortMethod: "szklanica",
             method: [
                 "Wszystkie składniki mieszamy w szklanicy.",
                 "Cedzimy na bryłkę lodową- nie bezpośrednio na bryłkę, tak aby stempel się nie rozmył.",
