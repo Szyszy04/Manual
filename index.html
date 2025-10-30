@@ -21,6 +21,7 @@
                     <button @click="goToDrinkLibrary()" class="btn btn-secondary">🍸 Przepisy na Drinki</button>
                     <button @click="goToBottleLibrary()" class="btn btn-secondary">🍺 Butelki</button>
                     <button @click="goToDrinkMap()" class="btn btn-secondary">🗺️ Mapa Drinków</button>
+                    <button @click="goToAFK()" class="btn btn-secondary">AFK</button>
                     <button class="btn btn-secondary">
                         <a href="https://szyszy04.github.io/Manual_Quiz/" target="_blank">🧠 Quizy</a>
                     </button>
@@ -261,12 +262,12 @@
 
                 <div class="drinks-grid">
                     <div v-for="drink in currentDrinkItems" :key="drink.name" class="drink-card"
-                         :class="{ 'hidden': isDrinkHidden(drink.name) }" @click="toggleDrinkVisibility(drink.name)">
+                        @click="toggleDrinkExpanded(drink.name)">
 
                         <h3>{{ drink.name }}</h3>
                         <div class="glass-info">{{ drink.glass }}</div>
 
-                        <div v-if="!isDrinkHidden(drink.name)" class="drink-details">
+                        <div class="drink-details">
                             <div class="ingredients">
                                 <h4>Składniki:</h4>
                                 <ul>
@@ -276,19 +277,19 @@
 
                             <div class="method">
                                 <h4>Przygotowanie:</h4>
-                                <ol>
-                                    <li v-for="step in drink.method" :key="step">{{ step }}</li>
-                                </ol>
+                                <p class="full-method">
+                                    <ol v-if="expandedDrinks.has(drink.name)">
+                                        <li v-for="step in drink.method" :key="step">{{ step }}</li>
+                                    </ol>
+
+                                    <p v-else class="short-method">{{ drink.shortMethod }}</p>
+                                </p>
                             </div>
 
                             <div v-if="drink.decoration" class="decoration">
                                 <h4>Dekoracja:</h4>
                                 <p>{{ drink.decoration }}</p>
                             </div>
-                        </div>
-
-                        <div v-else class="hidden-state">
-                            Kliknij aby pokazać składniki i przepis
                         </div>
                     </div>
                 </div>
@@ -322,6 +323,77 @@
 
                 <div class="actions">
                     <button @click="goToStart()" class="btn btn-secondary">Powrót do menu</button>
+                </div>
+            </div>
+        </div>
+
+        <div v-if="currentScreen === 'afk'" class="screen">
+            <div class="container">
+                <h2>AFK</h2>
+
+                <!-- Wybór alkoholi i czasu -->
+                <div v-if="!afkIsRunning" class="afk-setup">
+                    <div class="afk-section">
+                        <h3>Wybierz alkohole:</h3>
+                        <div class="afk-alcohol-buttons">
+                            <button 
+                                v-for="alcohol in afkAvailableAlcohols" 
+                                :key="alcohol"
+                                @click="afkToggleAlcohol(alcohol)"
+                                :class="['btn', 'afk-alcohol-btn', { 'selected': afkIsAlcoholSelected(alcohol) }]"
+                            >
+                                {{ alcohol }}
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="afk-section">
+                        <h3>Wybierz czas:</h3>
+                        <div class="afk-time-buttons">
+                            <button 
+                                v-for="time in [30, 60, 90, 120]" 
+                                :key="time"
+                                @click="afkSelectedTime = time"
+                                :class="['btn', 'afk-time-btn', { 'selected': afkSelectedTime === time }]"
+                            >
+                                {{ time }}s
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="afk-actions">
+                        <button @click="afkStart" class="btn btn-primary btn-large">START</button>
+                        <button @click="goToStart" class="btn btn-secondary">Wróć</button>
+                    </div>
+                </div>
+
+                <!-- PO STARCIE: Wyświetl drink -->
+                <div v-else class="afk-running">
+                    <div v-if="afkCurrentDrink" class="afk-drink-display">
+                        <h2>{{ afkCurrentDrink.name }}</h2>
+                        <p class="glass-type">{{ afkCurrentDrink.glass }}</p>
+
+                        <div class="ingredients-section">
+                            <h4>Składniki:</h4>
+                            <ul>
+                                <li v-for="ingredient in afkCurrentDrink.ingredients" :key="ingredient">
+                                    {{ ingredient }}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="method">
+                            <h4>Przygotowanie:</h4>
+                            <p class="short-method">{{ afkCurrentDrink.shortMethod }}</p>
+                        </div>
+
+                        <div class="decoration">
+                            <h4>Dekoracja:</h4>
+                            <p>{{ afkCurrentDrink.decoration }}</p>
+                        </div>
+                    </div>
+
+                    <button @click="afkStop" class="btn btn-danger btn-large">STOP</button>
                 </div>
             </div>
         </div>
