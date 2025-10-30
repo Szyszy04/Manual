@@ -944,3 +944,149 @@ grid-template-columns: 1fr;
         padding: 2px 8px;
     }
 }
+
+/* Pełna metoda */
+.full-method ol {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+
+/* ===== AFK Screen Styles ===== */
+.afk-setup {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 10px;
+}
+
+.afk-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.afk-section h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.afk-alcohol-buttons,
+.afk-time-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.afk-alcohol-btn,
+.afk-time-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px #000 solid;
+}
+
+.afk-alcohol-btn:hover,
+.afk-time-btn:hover {
+    color: #000;
+    transform: scale(1.05);
+}
+
+.afk-alcohol-btn.selected,
+.afk-time-btn.selected {
+    color: #000;
+    font-weight: bold;
+    background: #d7d235;
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    /* margin-top: 20px; */
+}
+
+.btn-danger {
+    background: #d32f2f;
+    border-color: #d32f2f;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #ff5252;
+}
+
+.btn-primary {
+    color: #000;
+    font-weight: bold;
+    background: #32bf32;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.afk-actions {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.afk-running {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.afk-drink-display {
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.afk-drink-display h2 {
+    font-size: 2em;
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.afk-drink-display .glass-type {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.afk-drink-display .ingredients-section,
+.afk-drink-display .method,
+.afk-drink-display .decoration {
+    margin: 20px 0;
+}
+
+.afk-drink-display h4 {
+    margin-bottom: 10px;
+}
+
+.afk-drink-display ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.afk-drink-display li {
+    margin: 5px 0;
+    color: #333;
+}
+
+.afk-drink-display .short-method {
+    font-size: 1.1em;
+}
