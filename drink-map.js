@@ -55,7 +55,7 @@ export const drinkGroups = [
         ]
     },
     {
-        name: "Grupa DAIQUIRI",
+        name: "Grupa RUMY",
         icon: "🏝️",
         drinks: [
             {
@@ -77,6 +77,11 @@ export const drinkGroups = [
                 name: "Nuclear  Daiquiri",
                 commonIngredients: ["30 ml Overproof White Rum", "20 ml Sok z limonki", "10 ml Syrop cukrowy"],
                 specificIngredients: ["20 ml Green Chartreuse", "10 ml Falernum"]
+            },
+            {
+                name: "Mai Tai",
+                commonIngredients: ["30 ml Bacardi Carta Blanca", "20 ml Smith & Cross", "30 ml Soku z limonki", "5 ml Syrop cukrowy"],
+                specificIngredients: ["15 ml Cointreau", "10 ml Orgeat"]
             }
         ]
     },
