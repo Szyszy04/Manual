@@ -25,6 +25,30 @@ export const alcoholLibrary = {
    "Tequila": [
 
       {
+         name: "Rooster Rojo Blanco",
+         aging: "Nie starzona (blanco)",
+         characteristics: "Rooster Rojo to marża tequili premium produkowana przez Fabrica de Tequilas Finos w mieście Tequila, Jalisco, u podnóża wulkanu Tequila. Marka znana jest z tradycyjnych metod produkcji, wysokiej jakości składników i unikalnego podejścia do filtrowania wody przez srebro mexicańskie.",
+         aroma: "Limonka, mięta",
+         flavor: "Świeży, pieprznowaty, cytrusowy"
+      },
+
+      {
+         name: "Rooster Rojo Reposado",
+         aging: "Leżakowana 2+ miesiące w beczkach z białego dąbu (French oak)",
+         characteristics: "Rooster Rojo to marża tequili premium produkowana przez Fabrica de Tequilas Finos w mieście Tequila, Jalisco, u podnóża wulkanu Tequila. Marka znana jest z tradycyjnych metod produkcji, wysokiej jakości składników i unikalnego podejścia do filtrowania wody przez srebro mexicańskie.",
+         aroma: "Dym, vanilia",
+         flavor: "Drewniany, słodki, z toffi"
+      },
+
+      {
+         name: "Sierra Antiguo Plata",
+         aging: "Nie starzona (blanco)",
+         characteristics: "Sierra Antiguo Plata pochodzi z słynnego miasta Tequila w stanie Jalisco w Meksyku. Nazwa Plata oznacza w języku hiszpańskim srebro – odniesienie do przezroczystego, srebrzystego koloru tequili. Produkt wytwarzany jest w postaci tequili typu Blanco, czyli destylowanej bez etapu leżakowania w beczkach, co zapewnia jej krystalicznie czysty wygląd i świeży, niezmącony smak.",
+         aroma: "Dominująca owocowa słodycz i silne nuty agawy, z subtelnym dodatkiem świeżych owoców cytrusowych i limonki",
+         flavor: "Łagodna z aromatami fermentowanych agaw, świeżych owoców cytrusowych i dojrzałych gruszek"
+      },
+      
+      {
          name: "Patrón Silver",
          aging: "Nie starzona (blanco)",
          characteristics: "Wytwarzana w Hacienda Patrón w regionie Jalisco - sercu produkcji tequili. Powstaje wyłącznie z dojrzałej agawy Blue Weber. Destylowana dwukrotnie w małych partiach. 100% naturalna - bez dodatków, aromatów i barwników. Produkcja odbywa się w dużej mierze ręcznie - od pieczenia agawy po butelkowanie.",
