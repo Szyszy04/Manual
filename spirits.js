@@ -197,7 +197,7 @@ export const alcoholLibrary = {
             "Woda używana do produkcji pochodzi z rzeki Spey, jednej z najczystszych w regionie.",
             "Craigellachie 13 dojrzewa w beczkach po bourbonie i sherry, jest butelkowana bez filtracji na zimno i bez dodatku barwników."
          ],
-         aromatic: "Pieczone jabłka z goździkami, grillowany ananas, przypieczone pianki i subtelny akcent kordytu.",
+         aromatic: "Pieczone jabłka z goździkami, grillowany ananas, pikantny, pieprzny, przypieczone pianki i subtelny akcent kordytu.",
          flavor: "Egzotyczne owoce, karmel, przyprawy korzenne i delikatne nutywanilii."
       },
 
@@ -236,6 +236,30 @@ export const alcoholLibrary = {
          ],
          aromatic: "Świeży, ziołowo-kwiatowy – lawenda, wanilia, mleczna czekolada, cappuccino, skórka pomarańczy i delikatne orzechy.",
          flavor: "Słodki z pikantnym akcentem – mleczna czekolada, maślane bułki, pomarańcze i szczypta cynamonu, charakterystyczna mineralność."
+      }
+
+   ],
+
+   "Irlandzka Whiskeyr": [
+
+      {
+         name: "Teeling Small Batch",
+         description: "Blended irish whiskey łączący destylaty malt i grain. Ten whiskey składa się z 7-letniego malt whiskey i 4-letniego grain whiskey, które są początkowo leżakowane w beczkach ex-bourbon, a następnie przez 6-9 miesięcy (maksymalnie do 12 miesięcy) finiszowane w beczkach Central American rum. To daje łączny wiek wynoszący około 7-8 lat z wyraźnym charakterem rumu."
+      },
+
+      {
+         name: "Teeling Single Grain",
+         description: "Whiskey zrobiony z 95% kukurydzy i 5% słodowego jęczmienia, destylowany w kolumnowych destylach. Cały czas dojrzewania tego whiskey wynosi około 5-6 lat wyłącznie w beczkach ex-Californian Cabernet Sauvignon. Ten niekonwencjonalny wybór beczek imporuje charakterystyczny profil smakowy z nutami czerwonych owoców jagodowych i taniny."
+      },
+
+      {
+         name: "Teeling Single Malt",
+         description: "Produkowany z 100% słodowego jęczmienia, ale nie ma jasno określonego wieku na butelce. Według dostępnych informacji, whiskey ta jest pochodząca ze zapasów Cooley i zawiera whiskey z 1991 roku. Ten whiskey jest finiszowany przez 14-14 miesięcy w pięciu typach beczek: bourbon, dziewiczym amerykańskim dębie, Madeirze, Carcavellosie i Burgundzie białej. Ta kombinacja beczek tworzy złożony profil smakowy opisywany jako 'symfonia smaków'."
+      },
+
+      {
+         name: "Teeling Blackpitts Peated Single Malt",
+         description: "Teeling Blackpitts to peated single malt wytwarzany z ciężko roślikiem słodowego jęczmienia (torfem suszonym). Ten whiskey nie ma oświadczenia o wieku, ale jest triple distilled. Jest leżakowany w beczkach ex-bourbon i ex-Sauternes białego wina. Nazwa Blackpitts pochodzi od historycznego obszaru w Liberties, gdzie tradycyjnie używano torfu do suszenia słodu w XIX wieku."
       }
 
    ],
