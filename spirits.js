@@ -240,7 +240,7 @@ export const alcoholLibrary = {
 
    ],
 
-   "Irlandzka Whiskeyr": [
+   "Irlandzka Whiskey": [
 
       {
          name: "Teeling Small Batch",
