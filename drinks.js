@@ -1459,6 +1459,7 @@ export const drinkLibrary = {
                 "50 ml Maker’s Mark",
                 "5 ml syropu cukrowego",
                 "3 x dash Angostura Bitters",
+                "1 x dash Orange Bitters",
             ],
             decoration: "Kółko - coin z pomarańczy położony na bryłce + wiśnia"
         },
