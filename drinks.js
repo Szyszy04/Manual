@@ -1614,7 +1614,7 @@ export const drinkLibrary = {
                 "10 ml Syropu cukrowego",
                 "Top up - winem bez alkoholowym musującym",
             ],
-            decoration: "Zest z cytryny przypięty do rantu szkła + złoty brokat"
+            decoration: "Zest z cytryny przypięty do rantu szkła + złoty pył"
         },
     ]
 };
