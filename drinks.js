@@ -1595,6 +1595,23 @@ export const drinkLibrary = {
             ],
             decoration: "coin z cytryny"
         }
+    ], "Kinogram": [
+    {
+            name: "Milioner",
+            glass: "Old Fashioned",
+            shortMethod: "shake",
+            method: [
+                "Wlewamy wszystkie składniki do shake",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy na lód do szkła..",
+            ],
+            ingredients: [
+                "50 ml Tequila",
+                "20 ml Agave Mix",
+                "20 ml Soku z limonki",
+            ],
+            decoration: "czips z ananas"
+        },
     ]
 };
 
