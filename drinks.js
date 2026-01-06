@@ -1630,6 +1630,58 @@ export const drinkLibrary = {
             ],
             decoration: "Czerwona różyczka"
         }
+    ], "Inne": [
+    {
+            name: "French 75",
+            glass: "Champagne flute",
+            shortMethod: "shake",
+            method: [
+                "Wlewamy wszystkie składniki do shakera (oprócz wina musującego)",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy podwójnie do szkła",
+                "Dopełniamy winem musującym",
+            ],
+            ingredients: [
+                "40 ml Gin",
+                "20 ml Soku z cytryny",
+                "20 ml Syropu cukrowego",
+                "80 ml Wino musujące",
+            ],
+            decoration: "Twist ze skórki cytrynowej"
+        },
+            {
+            name: "Tom Collins",
+            glass: "Collins",
+            shortMethod: "Shake",
+            method: [
+                "Wlewamy wszystkie składniki do shakera (oprócz wody gazowanej)",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy pojedyńczo do szkła",
+                "Dopełniamy wodą gazowaną",
+            ],
+            ingredients: [
+                "60 ml Gin",
+                "30 ml sok z cytryny",
+                "15 ml syropu cukrowego",
+                "Top up - wodą gazowaną",
+            ],
+            decoration: "Plasterek cytryny"
+        },
+            {
+            name: "Hugo",
+            glass: "Collins",
+            shortMethod: "Build",
+            method: [
+                "Wolej składniki do szkła i wymieszaj",
+                "Dodaj kostki lodu.",
+            ],
+            ingredients: [
+                "60 ml wina musującego",
+                "30 ml sok z limonki",
+                "20 ml Belvoir Elderflower",
+            ],
+            decoration: "Gałązki świeżego bzu"
+        }
     ]
 };
 
