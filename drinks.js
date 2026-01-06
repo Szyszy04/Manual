@@ -1601,9 +1601,9 @@ export const drinkLibrary = {
             glass: "Champagne flute",
             shortMethod: "shake",
             method: [
-                "Wlewamy wszystkie składniki do shake",
+                "Wlewamy wszystkie składniki do shake (oprócz wina musującego)",
                 "Wstrząsamy z dużą ilością lodu.",
-                "Cedzimy podwójnie na lód do szkła",
+                "Cedzimy podwójnie do szkła",
                 "Dopełniamy bez alkoholowym winem musującym",
             ],
             ingredients: [
@@ -1616,6 +1616,20 @@ export const drinkLibrary = {
             ],
             decoration: "Zest z cytryny przypięty do rantu szkła + złoty pył"
         },
+            {
+            name: "Sex & The City",
+            glass: "Nick & Nora",
+            shortMethod: "stir",
+            method: [
+                "Wlewamy premix do szklanicy",
+                "Mieszamy przez kilka sekund",
+                "Cedzimy podwójnie do szkła",
+            ],
+            ingredients: [
+                "80 ml Premixu",
+            ],
+            decoration: "Czerwona różyczka"
+        }
     ]
 };
 
