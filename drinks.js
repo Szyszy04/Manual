@@ -1597,20 +1597,24 @@ export const drinkLibrary = {
         }
     ], "Kinogram": [
     {
-            name: "Milioner",
-            glass: "Old Fashioned",
+            name: "Millionaire Cocktail",
+            glass: "Champagne flute",
             shortMethod: "shake",
             method: [
                 "Wlewamy wszystkie składniki do shake",
                 "Wstrząsamy z dużą ilością lodu.",
-                "Cedzimy na lód do szkła..",
+                "Cedzimy podwójnie na lód do szkła",
+                "Dopełniamy bez alkoholowym winem musującym",
             ],
             ingredients: [
-                "50 ml Tequila",
-                "20 ml Agave Mix",
-                "20 ml Soku z limonki",
+                "40 ml Gin bezalkoholowy",
+                "20 ml Przecieru z marakui",
+                "20 ml Soku z pomarańczy",
+                "10 ml Soku z cytryny",
+                "10 ml Syropu cukrowego",
+                "Top up - winem bez alkoholowym musującym",
             ],
-            decoration: "czips z ananas"
+            decoration: "Zest z cytryny przypięty do rantu szkła + złoty brokat"
         },
     ]
 };
