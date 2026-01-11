@@ -1601,7 +1601,7 @@ export const drinkLibrary = {
             glass: "Champagne flute",
             shortMethod: "shake",
             method: [
-                "Wlewamy wszystkie składniki do shake (oprócz wina musującego)",
+                "Wlewamy wszystkie składniki do shakera (oprócz wina musującego)",
                 "Wstrząsamy z dużą ilością lodu.",
                 "Cedzimy podwójnie do szkła",
                 "Dopełniamy bez alkoholowym winem musującym",
@@ -1617,6 +1617,99 @@ export const drinkLibrary = {
             decoration: "Zest z cytryny przypięty do rantu szkła + złoty pył"
         },
             {
+            name: "Purple Hearts",
+            glass: "Nick & Nora",
+            shortMethod: "shake",
+            method: [
+                "Wlewamy wszystkie składniki do shakera",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy podwójnie do szkła",
+            ],
+            ingredients: [
+                "60 ml Premixu",
+                "20 ml Soku z cytryny",
+                "2 x dash Peychaud bitter",
+            ],
+            decoration: "Jadalny kwiat + perfumy rozmaryn"
+        },
+                    {
+            name: "Litter big man",
+            glass: "Short",
+            shortMethod: "shake",
+            method: [
+                "Wlewamy wszystkie składniki do shakera",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy do szkła",
+            ],
+            ingredients: [
+                "70 ml Premixu",
+                "15 ml Soku z cytryny",
+                "2 x dash Orange bitter",
+            ],
+            decoration: "Coin z limonki + crusta z tajin"
+        },
+                            {
+            name: "Birdman",
+            glass: "Short",
+            shortMethod: "shake",
+            method: [
+                "Wlewamy wszystkie składniki do shakera",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy do szkła",
+            ],
+            ingredients: [
+                "65 ml Premixu",
+                "15 ml Soku z pomarańczy",
+                "25 ml Soku z limonki",
+            ],
+            decoration: "Pianka hibiskusowa + puder z malin i jadalnego złota"
+        },
+                                    {
+            name: "The hundred foot journey",
+            glass: "Short",
+            shortMethod: "stir",
+            method: [
+                "Wlewamy wszystkie składniki do szklanicy",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy do szkła",
+            ],
+            ingredients: [
+                "55 ml Premixu",
+            ],
+            decoration: "Zest z grapefruita + absynt"
+        },
+                                            {
+            name: "Eat a bowl of tea",
+            glass: "Collins",
+            shortMethod: "shake",
+            method: [
+                "Wlewamy wszystkie składniki do shakera",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy do szkła",
+            ],
+            ingredients: [
+                "70 ml Premixu",
+                "30 ml Pure brzoskwiniowe",
+                "20 ml Soku z cytryny",
+            ],
+            decoration: "Jadalne kwiaty"
+        },
+                                                    {
+            name: "Casablanca",
+            glass: "Collins",
+            shortMethod: "shake",
+            method: [
+                "Wlewamy wszystkie składniki do shakera",
+                "Wstrząsamy z dużą ilością lodu.",
+                "Cedzimy do szkła",
+            ],
+            ingredients: [
+                "110 ml Premixu",
+                "Mięta",
+            ],
+            decoration: "Szczyt mięty spryskany złotem"
+        },
+            {
             name: "Sex & The City",
             glass: "Nick & Nora",
             shortMethod: "stir",
@@ -1629,6 +1722,20 @@ export const drinkLibrary = {
                 "80 ml Premixu",
             ],
             decoration: "Czerwona różyczka"
+        },
+                    {
+            name: "Cinema old fashioned",
+            glass: "Short",
+            shortMethod: "stir",
+            method: [
+                "Wlewamy premix do szklanicy",
+                "Mieszamy przez kilka sekund",
+                "Cedzimy podwójnie do szkła",
+            ],
+            ingredients: [
+                "80 ml Premixu",
+            ],
+            decoration: "Wiśnia + zest z pomarańczy"
         }
     ], "Inne": [
     {
