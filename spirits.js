@@ -369,122 +369,122 @@ export const alcoholLibrary = {
 
       {
          name: "Tanqueray AF 0%",
-         description: "Jałowiec, cytrus, zioła, bez alkoholu."
+         description: "Jałowiec, cytrus, zioła, bez alkoholu. Destylowany jak zwykły Tanqueray, potem alkohol usuwany"
       },
 
       {
          name: "Tanqueray Flor de Sevilla",
-         description: "Pomarańcza Sewilska, gorzko‑słodki cytrus, jałowiec."
+         description: "Pomarańcza Sewilska, gorzko‑słodki cytrus, jałowiec. Inspirowany pomarańczami z Sewilli"
       },
 
       {
          name: "Tanqueray No. 10	",
-         description: "Świeże cytrusy, jałowiec, rumianek, bardzo czysty."
+         description: "Świeże cytrusy, jałowiec, rumianek, bardzo czysty. Destylowany w małych alembikach; zawiera świeże cytrusy (grejpfrut, limonka, pomarańcza), a nie tylko ekstrakty. Mocny grejpfrut"
       },
 
       {
          name: "Lagavulin 16",
-         description: "Mocny torf, dym, jod, suszone owoce, długi finisz."
+         description: "Mocny torf, dym, jod, suszone owoce, długi finisz. Malto destylowane nad torfem z Islay; dojrzewa 16 lat w beczkach po ex‑bourbon i sherry"
       },
 
       {
          name: "Mortlach 12 Wee Witchie",
-         description: "Mięsisty, lekko „sosowaty”, suszone owoce, przyprawy."
+         description: "Mięsisty, lekko „sosowaty”, suszone owoce, przyprawy. Unikalna '2,81‑krotna destylacja' (6 alembików w skomplikowanym systemie); cieszy się mięsnym, gęstym charakterem; dojrzewa głównie w stali nierdzewnej, dlatego owoce wyraźne."
       },
 
             {
          name: "Mortlach 16 Distiller’s Dram",
-         description: "Głębsze sherry, śliwki, rodzynki, przyprawy, dąb."
+         description: "Głębsze sherry, śliwki, rodzynki, przyprawy, dąb. Te same '2,81‑krotna destylacja' co 12-tka, ale dojrzewa głównie w beczkach po sherry (lub sherry + bourbon); bardziej skoncentrowany"
       },
 
                {
          name: "The Singleton 12",
-         description: "Delikatny, gruszka, jabłko, wanilia, karmel."
+         description: "Delikatny, gruszka, jabłko, wanilia, karmel. Marka umbrella Diageo obejmująca różne destylarnie (Dufftown, Glen Ord, Glendullan); ta wersja z Dufftown; projektowana jako dostępna, łatwa do picia entry point do single maltów. "
       },
 
                         {
          name: "Talisker 10",
-         description: "Sól morska, pieprzny dym, cytrus, lekka słoność."
+         description: "Sól morska, pieprzny dym, cytrus, lekka słoność. Wyspiarski malt z Islay Talisker; malto suszowane dymem, potem destylat ma naturalny, pieprzny charakter"
       },
 
                         {
          name: "Johnnie Walker Aged 18",
-         description: "Suszone owoce, toffi, miękki dym, gładka tekstura."
+         description: "Suszone owoce, toffi, miękki dym, gładka tekstura. blend minimum 18‑letnich whisky (może być mix whisky znacznie starszych); jedna z pięciu klasycznych ekspresji 'kolorowych' JW; bardzo gładka, projektowana do eleganckie picia."
       },
 
                         {
          name: "Johnnie Walker Black Label",
-         description: "Zbalansowany dym, wanilia, karmel, delikatne owoce."
+         description: "Zbalansowany dym, wanilia, karmel, delikatne owoce. 12‑letni blend, filar marki JW; zawiera whisky z różnych regionów Szkocji (Islay dym, Speyside owoce, Highland charakteru); każda butelka blend z ponad 40 whisky."
       },
 
                         {
          name: "JW Black Sherry Finish",
-         description: "Black Label + mocniejsza sherry: rodzynki, śliwka, przyprawy."
+         description: "Black Label + mocniejsza sherry: rodzynki, śliwka, przyprawy. Bazuje na Black Label, ale finał (ostatnie miesiące dojrzewania) to beczki po sherry"
       },
 
                         {
          name: "Johnnie Walker Blue Label",
-         description: "Bardzo gładki, miód, ciemne owoce, subtelny dym."
+         description: "Bardzo gładki, miód, ciemne owoce, subtelny dym. Ultra‑premium blend z najrzadszych, najstarszych whisky w portfelu Diageo (m.in. Port Ellen, Brora); bez age statement, ale najmniej 25‑letni średnio; ikoniczny luksusowy blend."
       },
 
                      {
          name: "Johnnie Walker Gold Label Reserve",
-         description: "Kremowy, miód, wanilia, lekki dym, złoty profil."
+         description: "Kremowy, miód, wanilia, lekki dym, złoty profil. Blend z akcentem na słodsze, waniliowe whisky (wiele w ex‑bourbon); projektowana do picia na lodzie; mniej intensywna niż Black, bardziej treściwa niż Red."
       },
 
                {
          name: "Johnnie Walker Green Label",
-         description: "Mieszanka maltów (bez grain); owoce, słód, dym w balansie."
+         description: "Mieszanka maltów (bez grain); owoce, słód, dym w balansie. 15‑letni blend wyłącznie single maltów (zero grain whisky); oprócz 'kolorowych' (Red, Black, Blue, Gold) jest najbardziej złożony; zawiera Talisker (dym), Oban (sól), Glenmorangie (delikatny) i inne. "
       },
 
                         {
          name: "Bulleit Bourbon",
-         description: "Wanilia, karmel, ale wytrawniejszy (wysokie żyto), pikantny finisz."
+         description: "Wanilia, karmel, ale wytrawniejszy (wysokie żyto), pikantny finisz. High‑rye bourbon (stanowi ~27% zasypu); destylowany i dojrzewający w Kentucky; mniej słodki niż klasyczne bourbon, bardziej pikantny;"
       },
 
                         {
          name: "Bulleit 95 Rye",
-         description: "95% żyta: przyprawy, zielony pieprz, wytrawny charakter."
+         description: "95% żyta: przyprawy, zielony pieprz, wytrawny charakter. 95% żyta w zasywie (vs. zwykle 51% minimum); jeden z najwyższych udziałów żyta na rynku; ekstremalna pikantność"
       },
 
                         {
          name: "Bulleit 10 Years",
-         description: "Głębsza wanilia, dąb, karmel, bardziej złożony niż standard."
+         description: "Głębsza wanilia, dąb, karmel, bardziej złożony niż standard. Bulleit z minimum 10 lata dojrzewania (vs. zwykły Bulleit ~6 lat); znacznie więcej charakteru dębu, bardziej zintegrowany"
       },
 
                         {
          name: "Casamigos Blanco",
-         description: "Bardzo gładka, słodka agawa, cytrus, biały pieprz."
+         description: "Bardzo gładka, słodka agawa, cytrus, biały pieprz. Oryginalnie stworzona przez George'a Clooneya; 100% blue agave z Jalisco Highlands; handcrafted, mała produkcja; destylowana 2x, potem filtrowana;"
       },
 
                         {
          name: "Casamigos Añejo",
-         description: "Wanilia, karmel, lekkie drewno, miękka agawa."
+         description: "Wanilia, karmel, lekkie drewno, miękka agawa. Casamigos dojrzewająca min. 1 rok w nowych beczkach z drewna białego (French oak)"
       },
 
                                  {
          name: "Don Julio Blanco",
-         description: "Czysta agawa, cytrus, lekko ziołowe nuty, świeżość."
+         description: "Czysta agawa, cytrus, lekko ziołowe nuty, świeżość. Jedna z najlepiej sprzedających się tequil na świecie; 100% blue agave z Jalisco; destylowana w tradycyjny sposób (copper pot stills); bardzo czysta, świeża, bez stażu."
       },
 
                         {
          name: "Don Julio Reposado",
-         description: "Agawa + wanilia, miód, delikatny dąb."
+         description: "Agawa + wanilia, miód, delikatny dąb. Don Julio dojrzewający min. 2 miesiące w beczkach (zwykle French oak); złoty kolor"
       },
 
                         {
          name: "Zacapa Sistema 23 Solera",
-         description: "Słodki profil: karmel, miód, suszone owoce, kakao."
+         description: "Słodki profil: karmel, miód, suszone owoce, kakao. Dojrzewany systemem solera (blendowanie roczników) w Gwatemali na wysokości 2300 metrów (stąd nazwa); mały dochód alkoholu rocznie, więc nawet młody rum 'przetrawia' się lata; bardzo miękki, słodziutki profil."
       },
 
                         {
          name: "Zacapa XO Solera",
-         description: "Bardziej skoncentrowany, ciemne owoce, przyprawy, czekolada. Finish w beczkach po koniaku"
+         description: "Bardziej skoncentrowany, ciemne owoce, przyprawy, czekolada. Zacapa finiszowana w beczkach po koniaku (ostatni stage); bardzo bogata, skoncentrowana nuta"
       },
 
                         {
          name: "Baileys Original",
-         description: "Śmietanka, kakao, kawa, słodki i kremowy."
+         description: "Śmietanka, kakao, kawa, słodki i kremowy. Pierwszy na świecie likier whisky‑śmietankowy (wynaleziony 1974 w Irlandii); emulsja whisky irlandzkiej, śmietanki i czekolady;"
       },
    ],
    
