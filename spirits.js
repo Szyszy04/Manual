@@ -363,6 +363,157 @@ export const alcoholLibrary = {
          name: "Martini Vibrante",
          description: "Bezalkoholowa, innowacyjna wersja wermutu Martini stworzona dla osób niepijących alkoholu, zachowująca charakterystyczny styl aperitivo. Wyraziste nuty cytrusowe i ziołowe, lekka słodycz oraz goryczka; Vibrante czerpie inspirację z tradycyjnych składników."
       }
+   ],
+
+      "Diageo ": [
+
+      {
+         name: "Tanqueray AF 0%",
+         description: "Jałowiec, cytrus, zioła, bez alkoholu."
+      },
+
+      {
+         name: "Tanqueray Flor de Sevilla",
+         description: "Pomarańcza Sewilska, gorzko‑słodki cytrus, jałowiec."
+      },
+
+      {
+         name: "Tanqueray No. 10	",
+         description: "Świeże cytrusy, jałowiec, rumianek, bardzo czysty."
+      },
+
+      {
+         name: "Lagavulin 16",
+         description: "Mocny torf, dym, jod, suszone owoce, długi finisz."
+      },
+
+      {
+         name: "Mortlach 12 Wee Witchie",
+         description: "Mięsisty, lekko „sosowaty”, suszone owoce, przyprawy."
+      },
+
+            {
+         name: "Mortlach 16 Distiller’s Dram",
+         description: "Głębsze sherry, śliwki, rodzynki, przyprawy, dąb."
+      },
+
+               {
+         name: "The Singleton 12",
+         description: "Delikatny, gruszka, jabłko, wanilia, karmel."
+      },
+
+                        {
+         name: "Talisker 10",
+         description: "Sól morska, pieprzny dym, cytrus, lekka słoność."
+      },
+
+                        {
+         name: "Johnnie Walker Aged 18",
+         description: "Suszone owoce, toffi, miękki dym, gładka tekstura."
+      },
+
+                        {
+         name: "Johnnie Walker Black Label",
+         description: "Zbalansowany dym, wanilia, karmel, delikatne owoce."
+      },
+
+                        {
+         name: "JW Black Sherry Finish",
+         description: "Black Label + mocniejsza sherry: rodzynki, śliwka, przyprawy."
+      },
+
+                        {
+         name: "Johnnie Walker Blue Label",
+         description: "Bardzo gładki, miód, ciemne owoce, subtelny dym."
+      },
+
+                     {
+         name: "Johnnie Walker Gold Label Reserve",
+         description: "Kremowy, miód, wanilia, lekki dym, złoty profil."
+      },
+
+               {
+         name: "Johnnie Walker Green Label",
+         description: "Mieszanka maltów (bez grain); owoce, słód, dym w balansie."
+      },
+
+                        {
+         name: "Bulleit Bourbon",
+         description: "Wanilia, karmel, ale wytrawniejszy (wysokie żyto), pikantny finisz."
+      },
+
+                        {
+         name: "Bulleit 95 Rye",
+         description: "95% żyta: przyprawy, zielony pieprz, wytrawny charakter."
+      },
+
+                        {
+         name: "Bulleit 10 Years",
+         description: "Głębsza wanilia, dąb, karmel, bardziej złożony niż standard."
+      },
+
+                        {
+         name: "Casamigos Blanco",
+         description: "Bardzo gładka, słodka agawa, cytrus, biały pieprz."
+      },
+
+                        {
+         name: "Casamigos Añejo",
+         description: "Wanilia, karmel, lekkie drewno, miękka agawa."
+      },
+
+                                 {
+         name: "Don Julio Blanco",
+         description: "Czysta agawa, cytrus, lekko ziołowe nuty, świeżość."
+      },
+
+                        {
+         name: "Don Julio Reposado",
+         description: "Agawa + wanilia, miód, delikatny dąb."
+      },
+
+                        {
+         name: "Zacapa Sistema 23 Solera",
+         description: "Słodki profil: karmel, miód, suszone owoce, kakao."
+      },
+
+                        {
+         name: "Zacapa XO Solera",
+         description: "Bardziej skoncentrowany, ciemne owoce, przyprawy, czekolada. Finish w beczkach po koniaku"
+      },
+
+                        {
+         name: "Baileys Original",
+         description: "Śmietanka, kakao, kawa, słodki i kremowy."
+      },
+   ],
+   
+      "Wina ": [
+
+      {
+         name: "Don Aparo Torrontés (Mendoza, Argentyna)",
+         description: "Białe, wytrawne, 100% Torrontés z Mendozy, producent Pascual Toso. Aromaty: cytrusy (cytryna, limonka), marakuja, kwiaty (róża, jaśmin), czasem nuty ziół; w ustach lekkie, bardzo świeże, z wyraźną, ale przyjemną kwasowością."
+      },
+
+      {
+         name: "Paul Mas Gewurztraminer (Languedoc, Francja)",
+         description: "Białe, wytrawne, 100% Gewurztraminer z Langwedocji (IGP Pays d’Oc), producent Chateau Paul Mas. Aromaty: płatki róży, liczi, dojrzała brzoskwinia, cytrusy, często lekki korzenny finisz; treściwsze, oleiste, ale oficjalnie wytrawne."
+      },
+
+      {
+         name: "Babich Sauvignon Blanc (Marlborough, Nowa Zelandia)",
+         description: "Białe, wytrawne, 100% Sauvignon Blanc z Marlborough, klasyczny styl nowozelandzki. Aromaty: agrest, cytrusy (cytryna, mandarynka, lemoniada cytrynowa), marakuja, melon, brzoskwinia, liść czarnej porzeczki i świeże zioła; wysoka, soczysta kwasowość, mineralny finisz."
+      },
+
+      {
+         name: "Don Aparo Malbec (Mendoza, Argentyna)",
+         description: "Czerwone, wytrawne, 100% Malbec z regionu Mendoza (Las Barrancas), producent Pascual Toso. Aromaty: czarne owoce – jeżyna, śliwka, czarna wiśnia, dojrzała czereśnia; wino dojrzewa w stali, więc jest świeże, owocowe, z umiarkowaną taniną i soczystym finiszem."
+      },
+
+      {
+         name: "Masseria Civitella Primitivo (Apulia, Włochy)",
+         description: "Czerwone, wytrawne Primitivo z Apulii (Salento lub Manduria – zależnie od konkretnej etykiety), rubinowa barwa z fioletowymi refleksami. Aromaty: śliwki, wiśnie, dojrzałe czerwone owoce, często lekka konfiturowość i przyprawy; w ustach pełne, miękkie, z wyraźnym alkoholem i słodkawym odczuciem owocu."
+      }
    ]
 };
 
